@@ -1,3 +1,5 @@
+import tkinter as tk
+
 class BMIframe(tk.Frame):
 
    def __init__(self, parent, controller):

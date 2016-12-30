@@ -1,6 +1,8 @@
 import tkinter as tk   # python3
 #import Tkinter as tk   # python
 
+from frames.testFrame import BMIframe
+
 TITLE_FONT = ("Helvetica", 18, "bold")
 
 framesToCycle = list()
@@ -356,6 +358,7 @@ class PageTwo(tk.Frame):
                           command=lambda: controller.show_frame("MainPage"))
        button.pack()
 
+'''
 class BMIframe(tk.Frame):
 
    def __init__(self, parent, controller):
@@ -388,6 +391,8 @@ class BMIframe(tk.Frame):
        self.QuitB["fg"] = "black"
        self.QuitB["command"] = lambda: controller.show_frame("MainPage")
        self.QuitB.grid(row=2, column=2)
+
+'''
 
 class Circumference(tk.Frame):
    def __init__(self, parent, controller):
