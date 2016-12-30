@@ -1,5 +1,4 @@
 import tkinter as tk
-
 from buttons.NextButton import NextButton
 
 class BMIframe(tk.Frame):

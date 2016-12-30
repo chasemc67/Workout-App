@@ -34,7 +34,7 @@ TITLE_FONT = ("Helvetica", 18, "bold")
 #currentFrameIndex = list()
 #currentFrameIndex.append(0)
 
-class SampleApp(tk.Tk):
+class WorkoutApp(tk.Tk):
 
    def __init__(self, *args, **kwargs):
        tk.Tk.__init__(self, *args, **kwargs)
@@ -80,6 +80,6 @@ class SampleApp(tk.Tk):
        frame.tkraise()
 
 if __name__ == "__main__":
-   app = SampleApp()
+   app = WorkoutApp()
    app.mainloop()
 
