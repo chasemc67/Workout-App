@@ -17,9 +17,6 @@ class BMIframe(tk.Frame):
        self.BMIresult.grid(row=1, column=1)
 
        self.NextB = NextButton(self, controller)
-       #self.NextB["text"] = "Next"
-       #self.NextB["fg"] = "black"
-       #self.NextB["command"] = lambda: controller.next_page()
        self.NextB.grid(row=2, column=0)
 
        self.Back = tk.Button(self)
