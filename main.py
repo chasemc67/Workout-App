@@ -47,8 +47,7 @@ class SampleApp(tk.Tk):
        container.grid_columnconfigure(0, weight=1)
 
        self.framesToCycle = list()
-       self.currentFrameIndex = list()
-       self.currentFrameIndex.append(0)
+       self.currentFrameIndex = 0
 
        self.frames = {}
        for F in (MainPage, BMIframe, Circumference, ThreeSiteSkinfold, SvnSiteSkinfold, ModAst, Ebelling, Rockport, Coopers, MBtoss, VertJump, RMtest, RMpredict, GripStrength, PushUps, CurlUps, PlankEnd, WallSit, FlexTests, SLstance, DeepSquat, WallSlide, HipHinge, FrontPlank):
@@ -66,18 +65,18 @@ class SampleApp(tk.Tk):
 
    def show_frame(self, page_name):
        '''Show a frame for the given page name'''
-       self.currentFrameIndex[0] = 0
+       self.currentFrameIndex = 0
        frame = self.frames[page_name]
        frame.tkraise()
 
    def next_page(self):
-       frame = self.frames[self.framesToCycle[self.currentFrameIndex[0]]]
-       self.currentFrameIndex[0] += 1
+       frame = self.frames[self.framesToCycle[self.currentFrameIndex]]
+       self.currentFrameIndex += 1
        frame.tkraise()
 
    def prev_page(self):
-       frame = self.frames[self.framesToCycle[self.currentFrameIndex[0]-1]]
-       self.currentFrameIndex[0] -= 1
+       frame = self.frames[self.framesToCycle[self.currentFrameIndex-1]]
+       self.currentFrameIndex -= 1
        frame.tkraise()
 
 if __name__ == "__main__":

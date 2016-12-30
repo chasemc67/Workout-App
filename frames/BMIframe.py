@@ -1,5 +1,7 @@
 import tkinter as tk
 
+from buttons.NextButton import NextButton
+
 class BMIframe(tk.Frame):
 
    def __init__(self, parent, controller):
@@ -15,10 +17,10 @@ class BMIframe(tk.Frame):
        self.BMIresult["width"] = 5
        self.BMIresult.grid(row=1, column=1)
 
-       self.NextB = tk.Button(self)
-       self.NextB["text"] = "Next"
-       self.NextB["fg"] = "black"
-       self.NextB["command"] = lambda: controller.next_page()
+       self.NextB = NextButton(self, controller)
+       #self.NextB["text"] = "Next"
+       #self.NextB["fg"] = "black"
+       #self.NextB["command"] = lambda: controller.next_page()
        self.NextB.grid(row=2, column=0)
 
        self.Back = tk.Button(self)
