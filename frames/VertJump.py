@@ -1,5 +1,9 @@
 import tkinter as tk
 
+from buttons.NextButton import NextButton
+from buttons.BackButton import BackButton
+from buttons.QuitButton import QuitButton
+
 class VertJump(tk.Frame):
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
@@ -27,20 +31,11 @@ class VertJump(tk.Frame):
        self.VertJumpBest["width"] = 5
        self.VertJumpBest.grid(row=2, column=1)
 
-       self.NextE = tk.Button(self)
-       self.NextE["text"] = "Next"
-       self.NextE["fg"] = "black"
-       self.NextE["command"] = lambda: controller.next_page()
-       self.NextE.grid(row=3, column=0)
+       self.Next = NextButton(self, controller)
+       self.Next.grid(row=3, column=0)
 
-       self.Back = tk.Button(self)
-       self.Back["text"] = "Back"
-       self.Back["fg"] = "black"
-       self.Back["command"] = lambda: controller.prev_page()
+       self.Back = BackButton(self, controller)
        self.Back.grid(row=3, column=1)
 
-       self.QuitE = tk.Button(self)
-       self.QuitE["text"] = "Quit"
-       self.QuitE["fg"] = "black"
-       self.QuitE["command"] = lambda: controller.show_frame("MainPage")
-       self.QuitE.grid(row=3, column=2)
+       self.Quit = QuitButton(self, controller)
+       self.Quit.grid(row=3, column=2)

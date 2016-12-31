@@ -1,0 +1,86 @@
+﻿Merge branch 'master' of https://github.com/chasemc67/Workout-App
+
+# Conflicts:
+#	frames/__pycache__/BMIframe.cpython-35.pyc
+#	frames/__pycache__/Circumference.cpython-35.pyc
+#	frames/__pycache__/Coopers.cpython-35.pyc
+#	frames/__pycache__/CurlUps.cpython-35.pyc
+#	frames/__pycache__/DeepSquat.cpython-35.pyc
+#	frames/__pycache__/Ebelling.cpython-35.pyc
+#	frames/__pycache__/FlexTests.cpython-35.pyc
+#	frames/__pycache__/FrontPlank.cpython-35.pyc
+#	frames/__pycache__/GripStrength.cpython-35.pyc
+#	frames/__pycache__/HipHinge.cpython-35.pyc
+#	frames/__pycache__/MBtoss.cpython-35.pyc
+#	frames/__pycache__/MainPage.cpython-35.pyc
+#	frames/__pycache__/ModAst.cpython-35.pyc
+#	frames/__pycache__/PlankEnd.cpython-35.pyc
+#	frames/__pycache__/PushUps.cpython-35.pyc
+#	frames/__pycache__/RMpredict.cpython-35.pyc
+#	frames/__pycache__/RMtest.cpython-35.pyc
+#	frames/__pycache__/Rockport.cpython-35.pyc
+#	frames/__pycache__/SLstance.cpython-35.pyc
+#	frames/__pycache__/SvnSiteSkinfold.cpython-35.pyc
+#	frames/__pycache__/ThreeSiteSkinfold.cpython-35.pyc
+#	frames/__pycache__/VertJump.cpython-35.pyc
+#	frames/__pycache__/WallSit.cpython-35.pyc
+#	frames/__pycache__/WallSlide.cpython-35.pyc
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 1 and 4 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	modified:   .gitignore
+#	modified:   buttons/NextButton.py
+#	modified:   frames/MBtoss.py
+#	modified:   frames/ModAst.py
+#	modified:   frames/PlankEnd.py
+#	modified:   frames/PushUps.py
+#	modified:   frames/RMpredict.py
+#	modified:   frames/RMtest.py
+#	modified:   frames/Rockport.py
+#	modified:   frames/SLstance.py
+#	modified:   frames/StartPage.py
+#	modified:   frames/SvnSiteSkinfold.py
+#	modified:   frames/ThreeSiteSkinfold.py
+#	modified:   frames/VertJump.py
+#	modified:   frames/WallSit.py
+#	modified:   frames/WallSlide.py
+#	deleted:    frames/__pycache__/BMIframe.cpython-35.pyc
+#	deleted:    frames/__pycache__/Circumference.cpython-35.pyc
+#	deleted:    frames/__pycache__/Coopers.cpython-35.pyc
+#	deleted:    frames/__pycache__/CurlUps.cpython-35.pyc
+#	deleted:    frames/__pycache__/DeepSquat.cpython-35.pyc
+#	deleted:    frames/__pycache__/Ebelling.cpython-35.pyc
+#	deleted:    frames/__pycache__/FlexTests.cpython-35.pyc
+#	deleted:    frames/__pycache__/FrontPlank.cpython-35.pyc
+#	deleted:    frames/__pycache__/GripStrength.cpython-35.pyc
+#	deleted:    frames/__pycache__/HipHinge.cpython-35.pyc
+#	deleted:    frames/__pycache__/MBtoss.cpython-35.pyc
+#	deleted:    frames/__pycache__/MainPage.cpython-35.pyc
+#	deleted:    frames/__pycache__/ModAst.cpython-35.pyc
+#	deleted:    frames/__pycache__/PlankEnd.cpython-35.pyc
+#	deleted:    frames/__pycache__/PushUps.cpython-35.pyc
+#	deleted:    frames/__pycache__/RMpredict.cpython-35.pyc
+#	deleted:    frames/__pycache__/RMtest.cpython-35.pyc
+#	deleted:    frames/__pycache__/Rockport.cpython-35.pyc
+#	deleted:    frames/__pycache__/SLstance.cpython-35.pyc
+#	deleted:    frames/__pycache__/SvnSiteSkinfold.cpython-35.pyc
+#	deleted:    frames/__pycache__/ThreeSiteSkinfold.cpython-35.pyc
+#	deleted:    frames/__pycache__/VertJump.cpython-35.pyc
+#	deleted:    frames/__pycache__/WallSit.cpython-35.pyc
+#	deleted:    frames/__pycache__/WallSlide.cpython-35.pyc
+#
+
