@@ -1,5 +1,9 @@
 import tkinter as tk
 
+from buttons.NextButton import NextButton
+from buttons.BackButton import BackButton
+from buttons.QuitButton import QuitButton
+
 class RMpredict(tk.Frame):
 
    def __init__(self, parent, controller):
@@ -37,20 +41,11 @@ class RMpredict(tk.Frame):
        self.RMPredictEst["width"] = 5
        self.RMPredictEst.grid(row=3, column=1)
 
-       self.NextD = tk.Button(self)
-       self.NextD["text"] = "Next"
-       self.NextD["fg"] = "black"
-       self.NextD["command"] = lambda: controller.next_page()
-       self.NextD.grid(row=4, column=0)
+       self.Next = NextButton(self, controller)
+       self.Next.grid(row=4, column=0)
 
-       self.Back = tk.Button(self)
-       self.Back["text"] = "Back"
-       self.Back["fg"] = "black"
-       self.Back["command"] = lambda: controller.prev_page()
+       self.Back = BackButton(self, controller)
        self.Back.grid(row=4, column=1)
 
-       self.QuitD = tk.Button(self)
-       self.QuitD["text"] = "Quit"
-       self.QuitD["fg"] = "black"
-       self.QuitD["command"] = lambda: controller.show_frame("MainPage")
-       self.QuitD.grid(row=4, column=2)
+       self.Quit = QuitButton(self, controller)
+       self.Quit.grid(row=4, column=2)

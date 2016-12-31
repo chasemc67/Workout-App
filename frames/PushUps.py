@@ -1,5 +1,9 @@
 import tkinter as tk
 
+from buttons.NextButton import NextButton
+from buttons.BackButton import BackButton
+from buttons.QuitButton import QuitButton
+
 class PushUps(tk.Frame):
 
    def __init__(self, parent, controller):
@@ -19,20 +23,11 @@ class PushUps(tk.Frame):
        self.PushUpNum["width"] = 5
        self.PushUpNum.grid(row=1, column=1)
 
-       self.NextF = tk.Button(self)
-       self.NextF["text"] = "Next"
-       self.NextF["fg"] = "black"
-       self.NextF["command"] = lambda: controller.next_page()
-       self.NextF.grid(row=2, column=0)
+       self.Next = NextButton(self, controller)
+       self.Next.grid(row=2, column=0)
 
-       self.Back = tk.Button(self)
-       self.Back["text"] = "Back"
-       self.Back["fg"] = "black"
-       self.Back["command"] = lambda: controller.prev_page()
+       self.Back = BackButton(self, controller)
        self.Back.grid(row=2, column=1)
 
-       self.QuitF = tk.Button(self)
-       self.QuitF["text"] = "Quit"
-       self.QuitF["fg"] = "black"
-       self.QuitF["command"] = lambda: controller.show_frame("MainPage")
-       self.QuitF.grid(row=2, column=2)
+       self.Quit = QuitButton(self, controller)
+       self.Quit.grid(row=2, column=2)
