@@ -1,5 +1,6 @@
 import tkinter as tk
 from buttons.NextButton import NextButton
+from buttons.BackButton import BackButton
 
 class BMIframe(tk.Frame):
 
@@ -19,10 +20,7 @@ class BMIframe(tk.Frame):
        self.NextB = NextButton(self, controller)
        self.NextB.grid(row=2, column=0)
 
-       self.Back = tk.Button(self)
-       self.Back["text"] = "Back"
-       self.Back["fg"] = "black"
-       self.Back["command"] = lambda: controller.prev_page()
+       self.Back = BackButton(self, controller)
        self.Back.grid(row=2, column=1)
 
        self.QuitB = tk.Button(self)
