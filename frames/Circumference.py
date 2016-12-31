@@ -1,4 +1,7 @@
 import tkinter as tk
+from buttons.NextButton import NextButton
+from buttons.BackButton import BackButton
+from buttons.QuitButton import QuitButton
 
 class Circumference(tk.Frame):
    def __init__(self, parent, controller):
@@ -54,20 +57,11 @@ class Circumference(tk.Frame):
        self.ChestCirc["width"] = 5
        self.ChestCirc.grid(row=5, column=1)
 
-       self.NextB = tk.Button(self)
-       self.NextB["text"] = "Next"
-       self.NextB["fg"] = "black"
-       self.NextB["command"] = lambda: controller.next_page()
-       self.NextB.grid(row=6, column=0)
+       self.Next = NextButton(self, controller)
+       self.Next.grid(row=6, column=0)
 
-       self.Back = tk.Button(self)
-       self.Back["text"] = "Back"
-       self.Back["fg"] = "black"
-       self.Back["command"] = lambda: controller.prev_page()
+       self.Back = BackButton(self, controller)
        self.Back.grid(row=6, column=1)
 
-       self.QuitB = tk.Button(self)
-       self.QuitB["text"] = "Quit"
-       self.QuitB["fg"] = "black"
-       self.QuitB["command"] = lambda: controller.show_frame("MainPage")
-       self.QuitB.grid(row=6, column=2)
+       self.Quit = QuitButton(self, controller)
+       self.Quit.grid(row=6, column=2)

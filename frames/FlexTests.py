@@ -1,4 +1,7 @@
 import tkinter as tk
+from buttons.NextButton import NextButton
+from buttons.BackButton import BackButton
+from buttons.QuitButton import QuitButton
 
 class FlexTests(tk.Frame):
 
@@ -19,20 +22,11 @@ class FlexTests(tk.Frame):
        self.SitReachDist["width"] = 5
        self.SitReachDist.grid(row=1, column=1)
 
-       self.NextG = tk.Button(self)
-       self.NextG["text"] = "Next"
-       self.NextG["fg"] = "black"
-       self.NextG["command"] = lambda: controller.next_page()
-       self.NextG.grid(row=2, column=0)
+       self.Next = NextButton(self, controller)
+       self.Next.grid(row=2, column=0)
 
-       self.Back = tk.Button(self)
-       self.Back["text"] = "Back"
-       self.Back["fg"] = "black"
-       self.Back["command"] = lambda: controller.prev_page()
+       self.Back = BackButton(self, controller)
        self.Back.grid(row=2, column=1)
 
-       self.QuitG = tk.Button(self)
-       self.QuitG["text"] = "Quit"
-       self.QuitG["fg"] = "black"
-       self.QuitG["command"] = lambda: controller.show_frame("MainPage")
-       self.QuitG.grid(row=2, column=2)
+       self.Quit = QuitButton(self, controller)
+       self.Quit.grid(row=2, column=2)

@@ -1,4 +1,7 @@
 import tkinter as tk
+from buttons.NextButton import NextButton
+from buttons.BackButton import BackButton
+from buttons.QuitButton import QuitButton
 
 class FrontPlank(tk.Frame):
 
@@ -19,20 +22,11 @@ class FrontPlank(tk.Frame):
        self.FrPlankRate["width"] = 5
        self.FrPlankRate.grid(row=1, column=1)
 
-       self.NextH = tk.Button(self)
-       self.NextH["text"] = "Next"
-       self.NextH["fg"] = "black"
-       self.NextH["command"] = lambda: controller.next_page()
-       self.NextH.grid(row=2, column=0)
+       self.Next = NextButton(self, controller)
+       self.Next.grid(row=2, column=0)
 
-       self.Back = tk.Button(self)
-       self.Back["text"] = "Back"
-       self.Back["fg"] = "black"
-       self.Back["command"] = lambda: controller.prev_page()
+       self.Back = BackButton(self, controller)
        self.Back.grid(row=2, column=1)
 
-       self.QuitH = tk.Button(self)
-       self.QuitH["text"] = "Quit"
-       self.QuitH["fg"] = "black"
-       self.QuitH["command"] = lambda: controller.show_frame("MainPage")
-       self.QuitH.grid(row=2, column=2)
+       self.Quit = QuitButton(self, controller)
+       self.Quit.grid(row=2, column=2)

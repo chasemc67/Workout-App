@@ -1,4 +1,7 @@
 import tkinter as tk
+from buttons.NextButton import NextButton
+from buttons.BackButton import BackButton
+from buttons.QuitButton import QuitButton
 
 class Coopers(tk.Frame):
    def __init__(self, parent, controller):
@@ -18,20 +21,11 @@ class Coopers(tk.Frame):
        self.CooperDist["width"] = 5
        self.CooperDist.grid(row=1, column=1)
 
-       self.NextC = tk.Button(self)
-       self.NextC["text"] = "Next"
-       self.NextC["fg"] = "black"
-       self.NextC["command"] = lambda: controller.next_page()
-       self.NextC.grid(row=2, column=0)
+       self.Next = NextButton(self, controller)
+       self.Next.grid(row=2, column=0)
 
-       self.Back = tk.Button(self)
-       self.Back["text"] = "Back"
-       self.Back["fg"] = "black"
-       self.Back["command"] = lambda: controller.prev_page()
+       self.Back = BackButton(self, controller)
        self.Back.grid(row=2, column=1)
 
-       self.QuitC = tk.Button(self)
-       self.QuitC["text"] = "Quit"
-       self.QuitC["fg"] = "black"
-       self.QuitC["command"] = lambda: controller.show_frame("MainPage")
-       self.QuitC.grid(row=2, column=1)
+       self.Quit = QuitButton(self, controller)
+       self.Quit.grid(row=2, column=2)

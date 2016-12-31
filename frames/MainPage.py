@@ -1,4 +1,6 @@
 import tkinter as tk
+from buttons.NextButton import NextButton
+from buttons.QuitButton import QuitButton
 
 class MainPage(tk.Frame):
    def __init__(self, parent, controller):
@@ -183,11 +185,8 @@ class MainPage(tk.Frame):
        self.checkPlankAssess = tk.Checkbutton(self, text="Front Plank Assessment", command = lambda: self.boxChecked("FrontPlank"))
        self.checkPlankAssess.grid(row=16, column=4)
 
-       self.NextA = tk.Button(self)
-       self.NextA["text"] = "Next"
-       self.NextA["fg"]   = "black"
-       self.NextA["command"] =  lambda: controller.next_page()
-       self.NextA.grid(row=17, column=0)
+       self.Next = NextButton(self, controller)
+       self.Next.grid(row=17, column=0)
 
        self.SaveA = tk.Button(self)
        self.SaveA["text"] = "Save"
@@ -195,11 +194,8 @@ class MainPage(tk.Frame):
        self.SaveA["command"] = self.SaveA
        self.SaveA.grid(row=17, column=1)
 
-       self.QuitA = tk.Button(self)
-       self.QuitA["text"] = "Quit"
-       self.QuitA["fg"] = "black"
-       self.QuitA["command"] = lambda: controller.show_frame("MainPage")
-       self.QuitA.grid(row=17, column=2)
+       self.Quit = QuitButton(self, controller)
+       self.Quit.grid(row=17, column=2)
 
    def boxChecked(self, text):
        if text in self.controller.framesToCycle:
