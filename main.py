@@ -71,6 +71,12 @@ class WorkoutApp(tk.Tk):
        self.currentFrameIndex = 0
        frame = self.frames[page_name]
        frame.tkraise()
+       # TODO refactor out into one function
+       try:
+        frame.loadData(self.person)
+        print("loaded data successfully")
+       except:
+        print("frame has no loadData function")
 
    def next_page(self, saveFunction=None):
        if saveFunction:
@@ -78,11 +84,31 @@ class WorkoutApp(tk.Tk):
        frame = self.frames[self.framesToCycle[self.currentFrameIndex]]
        self.currentFrameIndex += 1
        frame.tkraise()
+       # TODO refactor out into one function
+       try:
+        frame.loadData(self.person)
+        print("loaded data successfully")
+       # We specify attribute error because we want to skip
+       # If frame doesn'r specify a load function, but we 
+       # Want to be notified, if the load funciton fails for
+       # some other reason
+       except AttributeError:
+        print("frame has no loadData function")
 
    def prev_page(self):
        frame = self.frames[self.framesToCycle[self.currentFrameIndex-1]]
        self.currentFrameIndex -= 1
        frame.tkraise()
+       # TODO refactor out into one function
+       try:
+        frame.loadData(self.person)
+        print("loaded data successfully")
+       # We specify attribute error because we want to skip
+       # If frame doesn'r specify a load function, but we 
+       # Want to be notified, if the load funciton fails for
+       # some other reason
+       except AttributeError:  
+        print("frame has no loadData function")
 
    def getPerson(self):
     return self.person

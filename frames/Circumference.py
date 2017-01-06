@@ -65,3 +65,6 @@ class Circumference(tk.Frame):
 
        self.Quit = QuitButton(self, controller)
        self.Quit.grid(row=6, column=2)
+
+   def loadData(self, person):
+      print("loading data for circumference")
