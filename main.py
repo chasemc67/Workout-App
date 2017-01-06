@@ -27,6 +27,7 @@ from frames.VertJump import VertJump
 from frames.WallSit import WallSit
 from frames.WallSlide import WallSlide
 
+from Person import Person
 
 TITLE_FONT = ("Helvetica", 18, "bold")
 
@@ -49,6 +50,8 @@ class WorkoutApp(tk.Tk):
        self.framesToCycle = list()
        self.currentFrameIndex = 0
 
+       self.person = Person()
+
        self.frames = {}
        for F in (MainPage, BMIframe, Circumference, ThreeSiteSkinfold, SvnSiteSkinfold, ModAst, Ebelling, Rockport, Coopers, MBtoss, VertJump, RMtest, RMpredict, GripStrength, PushUps, CurlUps, PlankEnd, WallSit, FlexTests, SLstance, DeepSquat, WallSlide, HipHinge, FrontPlank):
            page_name = F.__name__
@@ -69,7 +72,9 @@ class WorkoutApp(tk.Tk):
        frame = self.frames[page_name]
        frame.tkraise()
 
-   def next_page(self):
+   def next_page(self, saveFunction=None):
+       if saveFunction:
+        saveFunction(self.person)
        frame = self.frames[self.framesToCycle[self.currentFrameIndex]]
        self.currentFrameIndex += 1
        frame.tkraise()
@@ -78,6 +83,9 @@ class WorkoutApp(tk.Tk):
        frame = self.frames[self.framesToCycle[self.currentFrameIndex-1]]
        self.currentFrameIndex -= 1
        frame.tkraise()
+
+   def getPerson(self):
+    return self.person
 
 if __name__ == "__main__":
    app = WorkoutApp()

@@ -43,7 +43,6 @@ class Person():
         self.distance = 0
         self.distanceMiles = 0
 
-
     # Calculations
     def getBMI(self):
         return self.weight / (self.height * self.height)
