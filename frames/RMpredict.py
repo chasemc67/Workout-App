@@ -18,30 +18,21 @@ class RMpredict(tk.Frame):
        self.RMPredictEx["text"] = "Exercise: "
        self.RMPredictEx.grid(row=1, column=0)
 
-       self.RMPredictEx = tk.Text(self)
-       self.RMPredictEx["height"] = 1
-       self.RMPredictEx["width"] = 5
-       self.RMPredictEx.grid(row=1, column=1)
+       self.RMPredictExText = tk.Text(self)
+       self.RMPredictExText["height"] = 1
+       self.RMPredictExText["width"] = 5
+       self.RMPredictExText.grid(row=1, column=1)
 
        self.RMPredictReps = tk.Label(self)
        self.RMPredictReps["text"] = "Reps: "
        self.RMPredictReps.grid(row=2, column=0)
 
-       self.RMPredictReps = tk.Text(self)
-       self.RMPredictReps["height"] = 1
-       self.RMPredictReps["width"] = 5
-       self.RMPredictReps.grid(row=2, column=1)
+       self.RMPredictRepsText = tk.Text(self)
+       self.RMPredictRepsText["height"] = 1
+       self.RMPredictRepsText["width"] = 5
+       self.RMPredictRepsText.grid(row=2, column=1)
 
-       self.RMPredictEst = tk.Label(self)
-       self.RMPredictEst["text"] = "Estimated 1RM(kg): "
-       self.RMPredictEst.grid(row=3, column=0)
-
-       self.RMPredictEst = tk.Text(self)
-       self.RMPredictEst["height"] = 1
-       self.RMPredictEst["width"] = 5
-       self.RMPredictEst.grid(row=3, column=1)
-
-       self.Next = NextButton(self, controller)
+       self.Next = NextButton(self, controller, self.saveData)
        self.Next.grid(row=4, column=0)
 
        self.Back = BackButton(self, controller)
@@ -49,3 +40,15 @@ class RMpredict(tk.Frame):
 
        self.Quit = QuitButton(self, controller)
        self.Quit.grid(row=4, column=2)
+
+   def loadData(self, person):
+
+       self.RMPredictExText.delete(1.0, tk.END)
+       self.RMPredictExText.insert(tk.END, person.RMPredictEx)
+
+       self.RMPredictRepsText.delete(1.0, tk.END)
+       self.RMPredictRepsText.insert(tk.END, person.RMPredictEx)
+
+   def saveData(self, person):
+       person.RMPredictEx = self.RMPredictExText.get(1.0, tk.END)
+       person.RMPredictReps = self.RMPredictRepsText.get(1.0, tk.END)

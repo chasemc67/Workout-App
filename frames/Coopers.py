@@ -16,12 +16,12 @@ class Coopers(tk.Frame):
        self.CooperDist["text"] = "Distance(miles): "
        self.CooperDist.grid(row=1, column=0)
 
-       self.CooperDist = tk.Text(self)
-       self.CooperDist["height"] = 1
-       self.CooperDist["width"] = 5
-       self.CooperDist.grid(row=1, column=1)
+       self.CooperDistText = tk.Text(self)
+       self.CooperDistText["height"] = 1
+       self.CooperDistText["width"] = 5
+       self.CooperDistText.grid(row=1, column=1)
 
-       self.Next = NextButton(self, controller)
+       self.Next = NextButton(self, controller, self.saveData)
        self.Next.grid(row=2, column=0)
 
        self.Back = BackButton(self, controller)
@@ -29,3 +29,10 @@ class Coopers(tk.Frame):
 
        self.Quit = QuitButton(self, controller)
        self.Quit.grid(row=2, column=2)
+
+   def loadData(self, person):
+      self.CooperDistText.delete(1.0, tk.END)
+      self.CooperDistText.insert(tk.END, person.hipCirc)
+
+   def saveData(self, person):
+      person.CooperDist = self.CooperDistText.get(1.0, tk.END)

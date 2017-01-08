@@ -18,39 +18,39 @@ class RMtest(tk.Frame):
        self.RMTestExA["text"] = "Exercise: "
        self.RMTestExA.grid(row=1, column=0)
 
-       self.RMTestExA = tk.Text(self)
-       self.RMTestExA["height"] = 1
-       self.RMTestExA["width"] = 5
-       self.RMTestExA.grid(row=1, column=1)
+       self.RMTestExAText = tk.Text(self)
+       self.RMTestExAText["height"] = 1
+       self.RMTestExAText["width"] = 5
+       self.RMTestExAText.grid(row=1, column=1)
 
        self.RMTestExAWeight = tk.Label(self)
        self.RMTestExAWeight["text"] = "1RM(kg): "
        self.RMTestExAWeight.grid(row=1, column=2)
 
-       self.RMTestExAWeight = tk.Text(self)
-       self.RMTestExAWeight["height"] = 1
-       self.RMTestExAWeight["width"] = 5
-       self.RMTestExAWeight.grid(row=1, column=3)
+       self.RMTestExAWeightText = tk.Text(self)
+       self.RMTestExAWeightText["height"] = 1
+       self.RMTestExAWeightText["width"] = 5
+       self.RMTestExAWeightText.grid(row=1, column=3)
 
        self.RMTestExB = tk.Label(self)
        self.RMTestExB["text"] = "Exercise: "
        self.RMTestExB.grid(row=2, column=0)
 
-       self.RMTestExB = tk.Text(self)
-       self.RMTestExB["height"] = 1
-       self.RMTestExB["width"] = 5
-       self.RMTestExB.grid(row=2, column=1)
+       self.RMTestExBText = tk.Text(self)
+       self.RMTestExBText["height"] = 1
+       self.RMTestExBText["width"] = 5
+       self.RMTestExBText.grid(row=2, column=1)
 
        self.RMTestExBWeight = tk.Label(self)
        self.RMTestExBWeight["text"] = "1RM(kg): "
        self.RMTestExBWeight.grid(row=2, column=2)
 
-       self.RMTestExBWeight = tk.Text(self)
-       self.RMTestExBWeight["height"] = 1
-       self.RMTestExBWeight["width"] = 5
-       self.RMTestExBWeight.grid(row=2, column=3)
+       self.RMTestExBWeightText = tk.Text(self)
+       self.RMTestExBWeightText["height"] = 1
+       self.RMTestExBWeightText["width"] = 5
+       self.RMTestExBWeightText.grid(row=2, column=3)
 
-       self.Next = NextButton(self, controller)
+       self.Next = NextButton(self, controller, self.saveData)
        self.Next.grid(row=3, column=0)
 
        self.Back = BackButton(self, controller)
@@ -58,3 +58,23 @@ class RMtest(tk.Frame):
 
        self.Quit = QuitButton(self, controller)
        self.Quit.grid(row=3, column=2)
+
+   def loadData(self, person):
+
+       self.RMTestExAText.delete(1.0, tk.END)
+       self.RMTestExAText.insert(tk.END, person.RMTestExA)
+
+       self.RMTestExAWeightText.delete(1.0, tk.END)
+       self.RMTestExAWeightText.insert(tk.END, person.RMTestExAWeight)
+
+       self.RMTestExBText.delete(1.0, tk.END)
+       self.RMTestExBText.insert(1.0, person.RMTestExB)
+
+       self.RMTestExBWeight.delete(1.0, tk.END)
+       self.RMTestExBWeight.insert(1.0, person.RMTestExBWeight)
+
+   def saveData(self, person):
+       person.RMTestExA = self.RMTestExAText.get(1.0, tk.END)
+       person.RMTestExAWeight = self.RMTestExAWeightText.get(1.0, tk.END)
+       person.RMTestExB = self.RMTestExBText.get(1.0, tk.END)
+       person.RMTestExBWeight = self.RMTestExBWeightText.get(1.0, tk.END)

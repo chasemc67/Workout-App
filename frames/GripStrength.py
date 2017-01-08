@@ -17,21 +17,21 @@ class GripStrength(tk.Frame):
        self.GripStrLeft["text"] = "Max. Left Hand(kg): "
        self.GripStrLeft.grid(row=1, column=0)
 
-       self.GripStrLeft = tk.Text(self)
-       self.GripStrLeft["height"] = 1
-       self.GripStrLeft["width"] = 5
-       self.GripStrLeft.grid(row=1, column=1)
+       self.GripStrLeftText = tk.Text(self)
+       self.GripStrLeftText["height"] = 1
+       self.GripStrLeftText["width"] = 5
+       self.GripStrLeftText.grid(row=1, column=1)
 
        self.GripStrRight = tk.Label(self)
        self.GripStrRight["text"] = "Max. Right Hand(kg): "
        self.GripStrRight.grid(row=2, column=0)
 
-       self.GripStrRight = tk.Text(self)
-       self.GripStrRight["height"] = 1
-       self.GripStrRight["width"] = 5
-       self.GripStrRight.grid(row=2, column=1)
+       self.GripStrRightText = tk.Text(self)
+       self.GripStrRightText["height"] = 1
+       self.GripStrRightText["width"] = 5
+       self.GripStrRightText.grid(row=2, column=1)
 
-       self.Next = NextButton(self, controller)
+       self.Next = NextButton(self, controller, self.saveData)
        self.Next.grid(row=3, column=0)
 
        self.Back = BackButton(self, controller)
@@ -39,3 +39,15 @@ class GripStrength(tk.Frame):
 
        self.Quit = QuitButton(self, controller)
        self.Quit.grid(row=3, column=2)
+
+   def loadData(self, person):
+
+       self.GripStrLeftText.delete(1.0, tk.END)
+       self.GripStLeftText.insert(tk.END, person.GripStrLeft)
+
+       self.GripStrRightText.delete(1.0, tk.END)
+       self.GripStrRightText.insert(tk.END, person.GripStrRight)
+
+   def saveData(self, person):
+       person.GripStrLeft = self.GripStrLeftText.get(1.0, tk.END)
+       person.GripStrRight = self.GripStrRightText.get(1.0, tk.END)

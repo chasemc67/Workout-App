@@ -75,13 +75,14 @@ class WorkoutApp(tk.Tk):
        try:
         frame.loadData(self.person)
         print("loaded data successfully")
-       except:
+       except AttributeError:
         print("frame has no loadData function")
 
    def next_page(self, saveFunction=None):
        if saveFunction:
         saveFunction(self.person)
        frame = self.frames[self.framesToCycle[self.currentFrameIndex]]
+       print(self.person.armCirc)
        self.currentFrameIndex += 1
        frame.tkraise()
        # TODO refactor out into one function

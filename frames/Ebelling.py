@@ -16,21 +16,21 @@ class Ebelling(tk.Frame):
        self.EbellingWU["text"] = "Warm Up Speed"
        self.EbellingWU.grid(row=1, column=0)
 
-       self.EbellingWU = tk.Text(self)
-       self.EbellingWU["height"] = 1
-       self.EbellingWU["width"] = 5
-       self.EbellingWU.grid(row=1, column=1)
+       self.EbellingWUText = tk.Text(self)
+       self.EbellingWUText["height"] = 1
+       self.EbellingWUText["width"] = 5
+       self.EbellingWUText.grid(row=1, column=1)
 
        self.EbellingWork = tk.Label(self)
        self.EbellingWork["text"] = "Workload Speed"
        self.EbellingWork.grid(row=2, column=0)
 
-       self.EbellingWork = tk.Text(self)
-       self.EbellingWork["height"] = 1
-       self.EbellingWork["width"] = 5
-       self.EbellingWork.grid(row=2, column=1)
+       self.EbellingWorkText = tk.Text(self)
+       self.EbellingWorkText["height"] = 1
+       self.EbellingWorkText["width"] = 5
+       self.EbellingWorkText.grid(row=2, column=1)
 
-       self.Next = NextButton(self, controller)
+       self.Next = NextButton(self, controller, self.saveData)
        self.Next.grid(row=3, column=0)
 
        self.Back = BackButton(self, controller)
@@ -38,3 +38,15 @@ class Ebelling(tk.Frame):
 
        self.Quit = QuitButton(self, controller)
        self.Quit.grid(row=3, column=2)
+
+   def loadData(self, person):
+
+       self.EbellingWUText.delete(1.0, tk.END)
+       self.EbellingWUText.insert(tk.END, person.EbellingWU)
+
+       self.EbellingWorkText.delete(1.0, tk.END)
+       self.EbellingWorkText.insert(tk.END, person.EbellingWork)
+
+   def saveData(self, person):
+       person.EbellingWU = self.EbellingWUText.get(1.0, tk.END)
+       person.EbellingWork = self.EbellingWorkText.get(1.0, tk.END)

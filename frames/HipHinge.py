@@ -17,12 +17,12 @@ class HipHinge(tk.Frame):
        self.HipHingeRate["text"] = "Rating(0-3): "
        self.HipHingeRate.grid(row=1, column=0)
 
-       self.HipHingeRate = tk.Text(self)
-       self.HipHingeRate["height"] = 1
-       self.HipHingeRate["width"] = 5
-       self.HipHingeRate.grid(row=1, column=1)
+       self.HipHingeRateText = tk.Text(self)
+       self.HipHingeRateText["height"] = 1
+       self.HipHingeRateText["width"] = 5
+       self.HipHingeRateText.grid(row=1, column=1)
 
-       self.Next = NextButton(self, controller)
+       self.Next = NextButton(self, controller, self.saveData)
        self.Next.grid(row=2, column=0)
 
        self.Back = BackButton(self, controller)
@@ -30,3 +30,11 @@ class HipHinge(tk.Frame):
 
        self.Quit = QuitButton(self, controller)
        self.Quit.grid(row=2, column=2)
+
+   def loadData(self, person):
+
+       self.HipHingeRateText.delete(1.0, tk.END)
+       self.HipHingeRateText.insert(tk.END, person.HipHingeRate)
+
+   def saveData(self, person):
+       person.HipHingeRate = self.HipHingeRateText.get(1.0, tk.END)

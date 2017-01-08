@@ -34,7 +34,6 @@ class BMIframe(tk.Frame):
       person.height = self.BMIresultText.get(1.0, tk.END)
       #print("saved " + person.height + " to person.height")
 
-
    # example function called when frame is rendered onto the screen
    # to load up data incase user has already entered data for person
    def loadData(self, person):

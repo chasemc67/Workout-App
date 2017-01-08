@@ -18,19 +18,19 @@ class SvnSiteSkinfold(tk.Frame):
        self.SvnSiteChest["text"] = "Chest: "
        self.SvnSiteChest.grid(row=1, column=0)
 
-       self.SvnSiteChest = tk.Text(self)
-       self.SvnSiteChest["height"] = 1
-       self.SvnSiteChest["width"] = 5
-       self.SvnSiteChest.grid(row=1, column=1)
+       self.SvnSiteChestText = tk.Text(self)
+       self.SvnSiteChestText["height"] = 1
+       self.SvnSiteChestText["width"] = 5
+       self.SvnSiteChestText.grid(row=1, column=1)
 
        self.SvnSiteMidAx = tk.Label(self)
        self.SvnSiteMidAx["text"] = "Mid-Axillary: "
        self.SvnSiteMidAx.grid(row=1, column=2)
 
-       self.SvnSiteMidAx = tk.Text(self)
-       self.SvnSiteMidAx["height"] = 1
-       self.SvnSiteMidAx["width"] = 5
-       self.SvnSiteMidAx.grid(row=1, column=3)
+       self.SvnSiteMidAxText = tk.Text(self)
+       self.SvnSiteMidAxText["height"] = 1
+       self.SvnSiteMidAxText["width"] = 5
+       self.SvnSiteMidAxText.grid(row=1, column=3)
 
        self.SvnSiteTri = tk.Label(self)
        self.SvnSiteTri["text"] = "Triceps: "

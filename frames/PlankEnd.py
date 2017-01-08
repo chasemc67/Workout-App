@@ -18,12 +18,12 @@ class PlankEnd(tk.Frame):
        self.PlankTime["text"] = "Time(sec.)"
        self.PlankTime.grid(row=1, column=0)
 
-       self.PlankTime = tk.Text(self)
-       self.PlankTime["height"] = 1
-       self.PlankTime["width"] = 5
-       self.PlankTime.grid(row=1, column=1)
+       self.PlankTimeText = tk.Text(self)
+       self.PlankTimeText["height"] = 1
+       self.PlankTimeText["width"] = 5
+       self.PlankTimeText.grid(row=1, column=1)
 
-       self.Next = NextButton(self, controller)
+       self.Next = NextButton(self, controller, self.saveData)
        self.Next.grid(row=2, column=0)
 
        self.Back = BackButton(self, controller)
@@ -31,3 +31,11 @@ class PlankEnd(tk.Frame):
 
        self.Quit = QuitButton(self, controller)
        self.Quit.grid(row=2, column=2)
+
+   def loadData(self, person):
+
+       self.PlankTimeText.delete(1.0, tk.END)
+       self.PlankTimeText.insert(tk.END, person.PlankTime)
+
+   def saveData(self, person):
+       person.PlankTime = self.PlankTimeText.get(1.0, tk.END)

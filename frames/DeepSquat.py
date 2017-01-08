@@ -17,12 +17,12 @@ class DeepSquat(tk.Frame):
        self.DeepSquatRate["text"] = "Rating(0-3): "
        self.DeepSquatRate.grid(row=1, column=0)
 
-       self.DeepSquatRate = tk.Text(self)
-       self.DeepSquatRate["height"] = 1
-       self.DeepSquatRate["width"] = 5
-       self.DeepSquatRate.grid(row=1, column=1)
+       self.DeepSquatRateText = tk.Text(self)
+       self.DeepSquatRateText["height"] = 1
+       self.DeepSquatRateText["width"] = 5
+       self.DeepSquatRateText.grid(row=1, column=1)
 
-       self.Next = NextButton(self, controller)
+       self.Next = NextButton(self, controller, self.saveData)
        self.Next.grid(row=2, column=0)
 
        self.Back = BackButton(self, controller)
@@ -30,3 +30,12 @@ class DeepSquat(tk.Frame):
 
        self.Quit = QuitButton(self, controller)
        self.Quit.grid(row=2, column=2)
+
+   def loadData(self, person):
+
+       self.DeepSquatRateText.delete(1.0, tk.END)
+       self.DeepSquatRateText.insert(tk.END, person.DeepSquatRate)
+
+   def saveData(self, person):
+       person.DeepSquatRate = self.DeepSquatRateText.get(1.0, tk.END)
+

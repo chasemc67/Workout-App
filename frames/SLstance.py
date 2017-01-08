@@ -18,39 +18,39 @@ class SLstance(tk.Frame):
        self.SLOpenLeft["text"] = "Eyes Open Left(sec.): "
        self.SLOpenLeft.grid(row=1, column=0)
 
-       self.SLOpenLeft = tk.Text(self)
-       self.SLOpenLeft["height"] = 1
-       self.SLOpenLeft["width"] = 5
-       self.SLOpenLeft.grid(row=1, column=1)
+       self.SLOpenLeftText = tk.Text(self)
+       self.SLOpenLeftText["height"] = 1
+       self.SLOpenLeftText["width"] = 5
+       self.SLOpenLeftText.grid(row=1, column=1)
 
        self.SLOpenRight = tk.Label(self)
        self.SLOpenRight["text"] = "Eyes Open Right(sec.): "
        self.SLOpenRight.grid(row=1, column=2)
 
-       self.SLOpenRight = tk.Text(self)
-       self.SLOpenRight["height"] = 1
-       self.SLOpenRight["width"] = 5
-       self.SLOpenRight.grid(row=1, column=3)
+       self.SLOpenRightText = tk.Text(self)
+       self.SLOpenRightText["height"] = 1
+       self.SLOpenRightText["width"] = 5
+       self.SLOpenRightText.grid(row=1, column=3)
 
        self.SLCloseLeft = tk.Label(self)
        self.SLCloseLeft["text"] = "Eyes Closed Left(sec.): "
        self.SLCloseLeft.grid(row=2, column=0)
 
-       self.SLCloseLeft = tk.Text(self)
-       self.SLCloseLeft["height"] = 1
-       self.SLCloseLeft["width"] = 5
-       self.SLCloseLeft.grid(row=2, column=1)
+       self.SLCloseLeftText = tk.Text(self)
+       self.SLCloseLeftText["height"] = 1
+       self.SLCloseLeftText["width"] = 5
+       self.SLCloseLeftText.grid(row=2, column=1)
 
        self.SLCloseRight = tk.Label(self)
        self.SLCloseRight["text"] = "Eyes Closed Right(sec.): "
        self.SLCloseRight.grid(row=2, column=2)
 
-       self.SLCloseRight = tk.Text(self)
-       self.SLCloseRight["height"] = 1
-       self.SLCloseRight["width"] = 5
-       self.SLCloseRight.grid(row=2, column=3)
+       self.SLCloseRightText = tk.Text(self)
+       self.SLCloseRightText["height"] = 1
+       self.SLCloseRightText["width"] = 5
+       self.SLCloseRightText.grid(row=2, column=3)
 
-       self.Next = NextButton(self, controller)
+       self.Next = NextButton(self, controller, self.saveData)
        self.Next.grid(row=3, column=0)
 
        self.Back = BackButton(self, controller)
@@ -58,3 +58,23 @@ class SLstance(tk.Frame):
 
        self.Quit = QuitButton(self, controller)
        self.Quit.grid(row=3, column=2)
+
+   def loadData(self, person):
+
+       self.SLOpenLeftText.delete(1.0, tk.END)
+       self.SLOpenLeftText.insert(tk.END, person.SLOpenLeft)
+
+       self.SLOpenRightText.delete(1.0, tk.END)
+       self.SLOpenRightText.insert(tk.END, person.SLOpenRight)
+
+       self.SLCloseLeftText.delete(1.0, tk.END)
+       self.SLCloseLeftText.insert(tk.END, person.SLCloseLeft)
+
+       self.SLCloseRightText.delete(1.0, tk.END)
+       self.SLCloseRightText.insert(tk.END, person.SLCloseRight)
+
+   def saveData(self, person):
+       person.SLOpenLeft = self.SLOpenLeftText.get(1.0, tk.END)
+       person.SLOpenRight = self.SLOpenRightText.get(1.0, tk.END)
+       person.SLCloseLeft = self.SLCloseLeftText.get(1.0, tk.END)
+       person.SLCloseRight = self.SLCloseRightText.get(1.0, tk.END)

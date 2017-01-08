@@ -17,12 +17,12 @@ class FrontPlank(tk.Frame):
        self.FrPlankRate["text"] = "Rating(0-3): "
        self.FrPlankRate.grid(row=1, column=0)
 
-       self.FrPlankRate = tk.Text(self)
-       self.FrPlankRate["height"] = 1
-       self.FrPlankRate["width"] = 5
-       self.FrPlankRate.grid(row=1, column=1)
+       self.FrPlankRateText = tk.Text(self)
+       self.FrPlankRateText["height"] = 1
+       self.FrPlankRateText["width"] = 5
+       self.FrPlankRateText.grid(row=1, column=1)
 
-       self.Next = NextButton(self, controller)
+       self.Next = NextButton(self, controller, self.saveData)
        self.Next.grid(row=2, column=0)
 
        self.Back = BackButton(self, controller)
@@ -30,3 +30,11 @@ class FrontPlank(tk.Frame):
 
        self.Quit = QuitButton(self, controller)
        self.Quit.grid(row=2, column=2)
+
+   def loadData(self, person):
+
+       self.FrPlankRateText.delete(1.0, tk.END)
+       self.FrPlankRateText.insert(tk.END, person.FrPlankRate)
+
+   def saveData(self, person):
+       person.FrPlankRate = self.FrPlankRateText.get(1.0, tk.END)

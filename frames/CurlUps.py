@@ -17,12 +17,12 @@ class CurlUps(tk.Frame):
        self.CurlUpNum["text"] = "Number: "
        self.CurlUpNum.grid(row=1, column=0)
 
-       self.CurlUpNum = tk.Text(self)
-       self.CurlUpNum["height"] = 1
-       self.CurlUpNum["width"] = 5
-       self.CurlUpNum.grid(row=1, column=1)
+       self.CurlUpNumText = tk.Text(self)
+       self.CurlUpNumText["height"] = 1
+       self.CurlUpNumText["width"] = 5
+       self.CurlUpNumText.grid(row=1, column=1)
 
-       self.Next = NextButton(self, controller)
+       self.Next = NextButton(self, controller, self.saveData)
        self.Next.grid(row=2, column=0)
 
        self.Back = BackButton(self, controller)
@@ -30,3 +30,10 @@ class CurlUps(tk.Frame):
 
        self.Quit = QuitButton(self, controller)
        self.Quit.grid(row=2, column=2)
+
+   def loadData(self, person):
+       self.CurlUpNumText.delete(1.0, tk.END)
+       self.CurlUpNumText.insert(tk.END, person.CurlUpNum)
+
+   def saveData(self, person):
+       person.CurlUpNum = self.CurlUpNumText.get(1.0, tk.END)

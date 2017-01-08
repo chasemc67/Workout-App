@@ -17,12 +17,12 @@ class FlexTests(tk.Frame):
        self.SitReachDist["text"] = "Max Distance (cm): "
        self.SitReachDist.grid(row=1, column=0)
 
-       self.SitReachDist = tk.Text(self)
-       self.SitReachDist["height"] = 1
-       self.SitReachDist["width"] = 5
-       self.SitReachDist.grid(row=1, column=1)
+       self.SitReachDistText = tk.Text(self)
+       self.SitReachDistText["height"] = 1
+       self.SitReachDistText["width"] = 5
+       self.SitReachDistText.grid(row=1, column=1)
 
-       self.Next = NextButton(self, controller)
+       self.Next = NextButton(self, controller, self.saveData)
        self.Next.grid(row=2, column=0)
 
        self.Back = BackButton(self, controller)
@@ -30,3 +30,11 @@ class FlexTests(tk.Frame):
 
        self.Quit = QuitButton(self, controller)
        self.Quit.grid(row=2, column=2)
+
+   def loadData(self, person):
+
+       self.SitReachDistText.delete(1.0, tk.END)
+       self.SitReachDistText.insert(tk.END, person.SitReachDist)
+
+   def saveData(self, person):
+       person.SitReachDist = self.SitReachDistText.get(1.0, tk.END)

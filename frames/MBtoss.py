@@ -17,12 +17,12 @@ class MBtoss(tk.Frame):
        self.SeatMBDist["text"] = "Max. Distance(cm): "
        self.SeatMBDist.grid(row=1, column=0)
 
-       self.SeatMBDist = tk.Text(self)
-       self.SeatMBDist["height"] = 1
-       self.SeatMBDist["width"] = 5
-       self.SeatMBDist.grid(row=1, column=1)
+       self.SeatMBDistText = tk.Text(self)
+       self.SeatMBDistText["height"] = 1
+       self.SeatMBDistText["width"] = 5
+       self.SeatMBDistText.grid(row=1, column=1)
 
-       self.Next = NextButton(self, controller)
+       self.Next = NextButton(self, controller, self.saveData)
        self.Next.grid(row=2, column=0)
 
        self.Back = BackButton(self, controller)
@@ -30,3 +30,11 @@ class MBtoss(tk.Frame):
 
        self.Quit = QuitButton(self, controller)
        self.Quit.grid(row=2, column=2)
+
+   def loadData(self, person):
+
+       self.SeatMBDistText.delete(1.0, tk.END)
+       self.SeatMBDistText.insert(tk.END, person.SeatMBDist)
+
+   def saveData(self, person):
+       person.SeatMBDist = self.SeatMBDistText.get(1.0, tk.END)
