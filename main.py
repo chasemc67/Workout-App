@@ -81,6 +81,15 @@ class WorkoutApp(tk.Tk):
    def next_page(self, saveFunction=None):
        if saveFunction:
         saveFunction(self.person)
+
+       # to get the results page to show as the last frame, you can
+       # do something like:
+       # if !self.frames[self.framesToCycle[self.currentFrameIndex]]:
+       # frame = self.frames["resultsFrame"]
+       #else:
+       # Keep in mind the above code wont just work out of the box, 
+       # You'll need to modify and play with it a little bit
+
        frame = self.frames[self.framesToCycle[self.currentFrameIndex]]
        self.currentFrameIndex += 1
        frame.tkraise()
