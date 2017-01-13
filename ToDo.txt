@@ -1,9 +1,5 @@
 Challenge:
 
-	[X] (easy) create a new frame for the results page
-	To test what the results page looks like, find some way to get it to appear. Whatever you do to get it to appear doesn't have to be "good". I usually just do things like switching it out with another frame. For example you could hook the checkbox from BMIframe up to your results page instead of the BMIframe
-	Keep in mind, if you want to populate the results page with data, you'll probably need to go through some other frames before getting to it. So the person object will have data in some of its attributes
-
 	[ ] (medium) Make the results from modular, so that we check if the person object's attribute != "" (doesn't equal empty string), and if it doesn't then we do the calculation and show the label for the thing.  For this part you'll probably need to use .pack rather than .grid for laying our the labels. You can google "tk pack vs grid" to see examples of how to do this.
 
 	[ ] (hard) find a way to get the new results frame to show when a user hits the next button on the last data entry frame. Dont forget to import the frame in main, and add it to the list on line 56 where it says "for F in ..." 
