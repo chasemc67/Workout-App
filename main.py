@@ -90,8 +90,10 @@ class WorkoutApp(tk.Tk):
        #else:
        # Keep in mind the above code wont just work out of the box, 
        # You'll need to modify and play with it a little bit
-
-       frame = self.frames[self.framesToCycle[self.currentFrameIndex]]
+       if (self.currentFrameIndex == len(self.framesToCycle)):
+        frame = self.frames["Results"]
+       else:
+        frame = self.frames[self.framesToCycle[self.currentFrameIndex]]
        print(self.person.armCirc)
        self.currentFrameIndex += 1
        frame.tkraise()

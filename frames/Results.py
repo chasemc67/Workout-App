@@ -4,20 +4,6 @@ from buttons.NextButton import NextButton
 from buttons.BackButton import BackButton
 from buttons.QuitButton import QuitButton
 
-from tkinter import *
-
-root = Tk()
-
-listbox = Listbox(root)
-listbox.pack(fill=BOTH, expand=1)
-
-for i in range(23):
-    listbox.insert(END, str(i))
-
-mainloop()
-
-from Person import Person
-
 class Results(tk.Frame):
 
    def __init__(self, parent, controller):
