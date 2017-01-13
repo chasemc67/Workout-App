@@ -185,6 +185,9 @@ class MainPage(tk.Frame):
        self.checkPlankAssess = tk.Checkbutton(self, text="Front Plank Assessment", command = lambda: self.boxChecked("FrontPlank"))
        self.checkPlankAssess.grid(row=16, column=4)
 
+       self.checkResults = tk.Checkbutton(self, text="Results", command = lambda: self.boxChecked("Results"))
+       self.checkResults.grid(row=16, column=5)
+
        self.Next = NextButton(self, controller)
        self.Next.grid(row=17, column=0)
 

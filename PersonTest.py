@@ -1,9 +1,12 @@
 from Person import Person
 
 person = Person()
+person.jumpHeight = 200
+person.bodyMass = 65
 
-person.weight = 5
-person.height = 10
+#print("getVertJump: " + str(person.getVertJump()))
+assert person.getVertJump() == 13029.5
 
-print(person.getBMI())
-assert(person.getBMI() == 0.05)
+person.sumOfFolds = 10
+person.age = 20
+print("getBodyFatThreeFemale: " + str(person.getBodyFatThreeFemale()))

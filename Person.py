@@ -42,6 +42,9 @@ class Person():
         self.repWeight = ""
         self.distance = ""
         self.distanceMiles = ""
+        self.jumpHeigh = ""
+        self.bodyMass = ""
+        self.results = ""
 
     # Calculations
     def getBMI(self):
@@ -60,16 +63,16 @@ class Person():
         return 1.097 - (0.00046971 * self.sumOfFolds) + (0.00000056 * (self.sumOfFolds * self.sumOfFolds)) - (0.00012828 * self.age)
 
     def getBodyFatThreeMale(self):
-        return (495 / self.getThreeSiteMale())
+        return ((495 / self.getThreeSiteMale()) - 450)
 
     def getBodyFatThreeFemale(self):
-        return (495 / self.getThreeSiteFemale())
+        return ((495 / self.getThreeSiteFemale()) - 450)
 
     def getBodyFatSevenMale(self):
-        return (495 / self.getSevenSiteMale())
+        return ((495 / self.getSevenSiteMale()) - 450)
 
     def getBodyFatSevenFemale(self):
-        return (495 / self.getSevenSiteFemale())
+        return ((495 / self.getSevenSiteFemale()) - 450)
 
     def getEbellingAerobic(self):
         if self.gender == "male" or self.gender == "Male" or self.gender == "M":
@@ -87,6 +90,9 @@ class Person():
 
     def getCooperAerobic(self):
         return (35.97 * self.distanceMiles) - 11.29
+
+    def getVertJump(self):
+        return(60.7 * self.jumpHeight) + (45.3 * self.bodyMass) - 2055
 
     def getRepMaxPredict(self):
         return (1.0 + 0.0333 * self.reps) * self.repWeight

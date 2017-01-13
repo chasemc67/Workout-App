@@ -17,12 +17,12 @@ class WallSlide(tk.Frame):
        self.WallSlideRate["text"] = "Rating(0-3): "
        self.WallSlideRate.grid(row=1, column=0)
 
-       self.WallSlideRate = tk.Text(self)
-       self.WallSlideRate["height"] = 1
-       self.WallSlideRate["width"] = 5
-       self.WallSlideRate.grid(row=1, column=1)
+       self.WallSlideRateText = tk.Text(self)
+       self.WallSlideRateText["height"] = 1
+       self.WallSlideRateText["width"] = 5
+       self.WallSlideRateText.grid(row=1, column=1)
 
-       self.Next = NextButton(self, controller)
+       self.Next = NextButton(self, controller, self.saveData)
        self.Next.grid(row=2, column=0)
 
        self.Back = BackButton(self, controller)
@@ -30,3 +30,11 @@ class WallSlide(tk.Frame):
 
        self.Quit = QuitButton(self, controller)
        self.Quit.grid(row=2, column=2)
+
+   def loadData(self, person):
+
+       self.WallSlideRateText.delete(1.0, tk.END)
+       self.WallSlideRateText.insert(tk.END, person.WallSlideRate)
+
+   def saveData(self, person):
+       person.WallSlideRate = self.WallSlideRateText.get(1.0, tk.END)

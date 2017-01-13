@@ -26,6 +26,7 @@ from frames.ThreeSiteSkinfold import ThreeSiteSkinfold
 from frames.VertJump import VertJump
 from frames.WallSit import WallSit
 from frames.WallSlide import WallSlide
+from frames.Results import Results
 
 from Person import Person
 
@@ -53,7 +54,7 @@ class WorkoutApp(tk.Tk):
        self.person = Person()
 
        self.frames = {}
-       for F in (MainPage, BMIframe, Circumference, ThreeSiteSkinfold, SvnSiteSkinfold, ModAst, Ebelling, Rockport, Coopers, MBtoss, VertJump, RMtest, RMpredict, GripStrength, PushUps, CurlUps, PlankEnd, WallSit, FlexTests, SLstance, DeepSquat, WallSlide, HipHinge, FrontPlank):
+       for F in (MainPage, Circumference, ThreeSiteSkinfold, SvnSiteSkinfold, ModAst, Ebelling, Rockport, Coopers, MBtoss, VertJump, RMtest, RMpredict, GripStrength, PushUps, CurlUps, PlankEnd, WallSit, FlexTests, SLstance, DeepSquat, WallSlide, HipHinge, FrontPlank, Results):
            page_name = F.__name__
            frame = F(parent=container, controller=self)
            self.frames[page_name] = frame

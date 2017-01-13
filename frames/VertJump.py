@@ -17,21 +17,21 @@ class VertJump(tk.Frame):
        self.VertJumpSR["text"] = "Standing Reach(ft/inch): "
        self.VertJumpSR.grid(row=1, column=0)
 
-       self.VertJumpSR = tk.Text(self)
-       self.VertJumpSR["height"] = 1
-       self.VertJumpSR["width"] = 5
-       self.VertJumpSR.grid(row=1, column=1)
+       self.VertJumpSRText = tk.Text(self)
+       self.VertJumpSRText["height"] = 1
+       self.VertJumpSRText["width"] = 5
+       self.VertJumpSRText.grid(row=1, column=1)
 
        self.VertJumpBest = tk.Label(self)
        self.VertJumpBest["text"] = "Best Attempt(ft/inch): "
        self.VertJumpBest.grid(row=2, column=0)
 
-       self.VertJumpBest = tk.Text(self)
-       self.VertJumpBest["height"] = 1
-       self.VertJumpBest["width"] = 5
-       self.VertJumpBest.grid(row=2, column=1)
+       self.VertJumpBestText = tk.Text(self)
+       self.VertJumpBestText["height"] = 1
+       self.VertJumpBestText["width"] = 5
+       self.VertJumpBestText.grid(row=2, column=1)
 
-       self.Next = NextButton(self, controller)
+       self.Next = NextButton(self, controller, self.saveData)
        self.Next.grid(row=3, column=0)
 
        self.Back = BackButton(self, controller)
@@ -39,3 +39,15 @@ class VertJump(tk.Frame):
 
        self.Quit = QuitButton(self, controller)
        self.Quit.grid(row=3, column=2)
+
+   def loadData(self, person):
+
+       self.VertJumpSRText.delete(1.0, tk.END)
+       self.VertJumpSRText.insert(tk.END, person.VertJumpSR)
+
+       self.VertJumpBestText.delete(1.0, tk.END)
+       self.VertJumpBestText.insert(tk.END, person.VertJumpBest)
+
+   def saveData(self, person):
+       person.VertJumpSR = self.VertJumpSRText.get(1.0, tk.END)
+       person.VertJumpBest = self.VertJumpBestText.get(1.0, tk.END)

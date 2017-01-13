@@ -36,48 +36,48 @@ class SvnSiteSkinfold(tk.Frame):
        self.SvnSiteTri["text"] = "Triceps: "
        self.SvnSiteTri.grid(row=1, column=4)
 
-       self.SvnSiteTri = tk.Text(self)
-       self.SvnSiteTri["height"] = 1
-       self.SvnSiteTri["width"] = 5
-       self.SvnSiteTri.grid(row=1, column=5)
+       self.SvnSiteTriText = tk.Text(self)
+       self.SvnSiteTriText["height"] = 1
+       self.SvnSiteTriText["width"] = 5
+       self.SvnSiteTriText.grid(row=1, column=5)
 
        self.SvnSiteScap = tk.Label(self)
        self.SvnSiteScap["text"] = "Subscapular: "
        self.SvnSiteScap.grid(row=1, column=6)
 
-       self.SvnSiteScap = tk.Text(self)
-       self.SvnSiteScap["height"] = 1
-       self.SvnSiteScap["width"] = 5
-       self.SvnSiteScap.grid(row=1, column=7)
+       self.SvnSiteScapText = tk.Text(self)
+       self.SvnSiteScapText["height"] = 1
+       self.SvnSiteScapText["width"] = 5
+       self.SvnSiteScapText.grid(row=1, column=7)
 
        self.SvnSiteSupra = tk.Label(self)
        self.SvnSiteSupra["text"] = "Suprailiac: "
        self.SvnSiteSupra.grid(row=1, column=8)
 
-       self.SvnSiteSupra = tk.Text(self)
-       self.SvnSiteSupra["height"] = 1
-       self.SvnSiteSupra["width"] = 5
-       self.SvnSiteSupra.grid(row=1, column=9)
+       self.SvnSiteSupraText = tk.Text(self)
+       self.SvnSiteSupraText["height"] = 1
+       self.SvnSiteSupraText["width"] = 5
+       self.SvnSiteSupraText.grid(row=1, column=9)
 
        self.SvnSiteAb = tk.Label(self)
        self.SvnSiteAb["text"] = "Abdomen: "
        self.SvnSiteAb.grid(row=1, column=10)
 
-       self.SvnSiteAb = tk.Text(self)
-       self.SvnSiteAb["height"] = 1
-       self.SvnSiteAb["width"] = 5
-       self.SvnSiteAb.grid(row=1, column=11)
+       self.SvnSiteAbText = tk.Text(self)
+       self.SvnSiteAbText["height"] = 1
+       self.SvnSiteAbText["width"] = 5
+       self.SvnSiteAbText.grid(row=1, column=11)
 
        self.SvnSiteThigh = tk.Label(self)
        self.SvnSiteThigh["text"] = "Thigh: "
        self.SvnSiteThigh.grid(row=1, column=12)
 
-       self.SvnSiteThigh = tk.Text(self)
-       self.SvnSiteThigh["height"] = 1
-       self.SvnSiteThigh["width"] = 5
-       self.SvnSiteThigh.grid(row=1, column=13)
+       self.SvnSiteThighText = tk.Text(self)
+       self.SvnSiteThighText["height"] = 1
+       self.SvnSiteThighText["width"] = 5
+       self.SvnSiteThighText.grid(row=1, column=13)
 
-       self.Next = NextButton(self, controller)
+       self.Next = NextButton(self, controller, self.saveData)
        self.Next.grid(row=2, column=0)
 
        self.Back = BackButton(self, controller)
@@ -85,3 +85,35 @@ class SvnSiteSkinfold(tk.Frame):
 
        self.Quit = QuitButton(self, controller)
        self.Quit.grid(row=2, column=2)
+
+   def loadData(self, person):
+
+       self.SvnSiteChestText.delete(1.0, tk.END)
+       self.SvnSiteChestText.insert(tk.END, person.SvnSiteChest)
+
+       self.SvnSiteMidAxText.delete(1.0, tk.END)
+       self.SvnSiteMidAxText.insert(tk.END, person.SvnSiteMidAx)
+
+       self.SvnSiteTriText.delete(1.0, tk.END)
+       self.SvnSiteTriText.insert(tk.END, person.SvnSiteTri)
+
+       self.SvnSiteScapText.delete(1.0, tk.END)
+       self.SvnSiteScapText.insert(tk.END, person.SvnSiteScap)
+
+       self.SvnSiteSupraText.delete(1.0, tk.END)
+       self.SvnSiteSupraText.insert(tk.END, person.SvnSiteSupra)
+
+       self.SvnSiteAbText.delete(1.0, tk.END)
+       self.SvnSiteAbText.insert(tk.END, person.SvnSiteAb)
+
+       self.SvnSiteThighText.delete(1.0, tk.END)
+       self.SvnSiteThighText.insert(tk.END, person.SvnSiteThigh)
+
+   def saveData(self, person):
+       person.SvnSiteChest = self.SvnSiteChestText.get(1.0, tk.END)
+       person.SvnSiteMidAx = self.SvnSiteMidAxText.get(1.0, tk.END)
+       person.SvnSiteTri = self.SvnSiteTriText.get(1.0, tk.END)
+       person.SvnSiteScap = self.SvnSiteScapText.get(1.0, tk.END)
+       person.SvnSiteSupra = self.SvnSiteSupraText.get(1.0, tk.END)
+       person.SvnSiteAb = self.SvnSiteAbText.get(1.0, tk.END)
+       person.SvnSiteThigh = self.SvnSiteThighText.get(1.0, tk.END)
