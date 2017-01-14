@@ -92,17 +92,14 @@ class MainPage(tk.Frame):
        self.labelBodyComp["text"] = "Body Composition Assessments: "
        self.labelBodyComp.grid(row=3, column=0)
 
-       self.checkBMI = tk.Checkbutton(self, text="BMI", command = lambda: self.boxChecked("BMIframe"))
-       self.checkBMI.grid(row=4, column=0)
-
        self.checkCircumference = tk.Checkbutton(self, text="Circumferences", command = lambda: self.boxChecked("Circumference"))
-       self.checkCircumference.grid(row=4, column=1)
+       self.checkCircumference.grid(row=4, column=0)
 
        self.checkThreeSkinfold = tk.Checkbutton(self, text="3-Site Skinfold", command = lambda: self.boxChecked("ThreeSiteSkinfold"))
-       self.checkThreeSkinfold.grid(row=4, column=2)
+       self.checkThreeSkinfold.grid(row=4, column=1)
 
        self.checkSevenSkinfold = tk.Checkbutton(self, text="7-Site Skinfold", command = lambda: self.boxChecked("SvnSiteSkinfold"))
-       self.checkSevenSkinfold.grid(row=4, column=3)
+       self.checkSevenSkinfold.grid(row=4, column=2)
 
        self.labelAerobicTest = tk.Label(self)
        self.labelAerobicTest["text"] = "Maximal/Submaximal VO2 Max Assessments: "
@@ -184,9 +181,6 @@ class MainPage(tk.Frame):
 
        self.checkPlankAssess = tk.Checkbutton(self, text="Front Plank Assessment", command = lambda: self.boxChecked("FrontPlank"))
        self.checkPlankAssess.grid(row=16, column=4)
-
-       self.checkResults = tk.Checkbutton(self, text="Results", command = lambda: self.boxChecked("Results"))
-       self.checkResults.grid(row=16, column=5)
 
        self.Next = NextButton(self, controller)
        self.Next.grid(row=17, column=0)
