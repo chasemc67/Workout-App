@@ -205,3 +205,11 @@ class MainPage(tk.Frame):
            self.controller.framesToCycle.remove(text)
        else:
            self.controller.framesToCycle.append(text)
+
+
+   def loadData(self, person):
+       return
+
+   def saveData(self, person):
+       return
+

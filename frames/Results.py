@@ -12,18 +12,30 @@ class Results(tk.Frame):
 
        self.Results = tk.Label(self)
        self.Results["text"] = "Results"
-       self.Results.grid(row=0, column=0)
+       self.Results.pack()
 
-       self.Back = BackButton(self, controller)
-       self.Back.grid(row=2, column=1)
 
-       self.Quit = QuitButton(self, controller)
-       self.Quit.grid(row=2, column=2)
+       self.person = self.controller.person
 
    def loadData(self, person):
+       if (self.person.vertJump != "" and self.person.vertReach != ""):
+        self.vertJumpLabel = tk.Label(self)
+        self.vertJumpLabel["text"] = "VertJump (W):"
+        self.vertJumpLabel.pack()
 
-       self.PushUpNumText.delete(1.0, tk.END)
-       self.PushUpNumText.insert(tk.END, person.PushUpNum)
+        self.vertJumpReachLabel = tk.Label(self)
+        self.vertJumpReachLabel['text'] = ("Reach: " + self.person.vertReach)
+        self.vertJumpReachLabel.pack()
+
+        self.vertJumpCalcOutput = tk.Label(self)
+        self.vertJumpCalcOutput['text'] = "Calc output: " + str(person.getVertJump())
+        self.vertJumpCalcOutput.pack()
+
+       self.Back = BackButton(self, self.controller)
+       self.Back.pack()
+
+       self.Quit = QuitButton(self, self.controller)
+       self.Quit.pack()
 
    def saveData(self, person):
        person.PushUpNum = self.PushUpNumText.get(1.0, tk.END)

@@ -105,8 +105,10 @@ class WorkoutApp(tk.Tk):
        # If frame doesn'r specify a load function, but we 
        # Want to be notified, if the load funciton fails for
        # some other reason
-       except AttributeError:
-        print("frame has no loadData function")
+       except AttributeError as e:
+        print("Something went wrong loading data for frame")
+        print(e)
+
 
    def prev_page(self):
        frame = self.frames[self.framesToCycle[self.currentFrameIndex-1]]
