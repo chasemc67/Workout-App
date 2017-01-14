@@ -1,9 +1,19 @@
 Challenge:
 
-	[ ] (medium) Make the results from modular, so that we check if the person object's attribute != "" (doesn't equal empty string), and if it doesn't then we do the calculation and show the label for the thing.  For this part you'll probably need to use .pack rather than .grid for laying our the labels. You can google "tk pack vs grid" to see examples of how to do this.
+	[ ] Add if statments in results load function to display all the calculations depending on whether the data has been entered or not. 
 
-	[ ] (hard) find a way to get the new results frame to show when a user hits the next button on the last data entry frame. Dont forget to import the frame in main, and add it to the list on line 56 where it says "for F in ..." 
-	See line 85 in main.py for a hint in the comments
+	[ ] Add units for all labels
+
+	[ ] In calculation functions in Person make sure we're typecasting strings to floats (decimal numbers) 
+	so for example
+	return (35.97 * self.distanceMiles) - 11.29
+	becomes
+	return (35.97 * float(self.distanceMiles)) - 11.29
+
+	[ ] Save data function on main page to save things like name and stuff
+
+
+	[ ] Look up docs for tkinter pack. and understand how to use it to pack stuff pretty. 
 
 features:
 	view results page
