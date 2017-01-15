@@ -1,17 +1,16 @@
 Challenge:
 
-	[ ] Add if statments in results load function to display all the calculations depending on whether the data has been entered or not. 
+	[ ] Add if statements in results load function to display all the calculations depending on whether the data has been entered or not.
 
-	[ ] Add units for all labels
+	[X] Add units for all labels
 
-	[ ] In calculation functions in Person make sure we're typecasting strings to floats (decimal numbers) 
+	[X] In calculation functions in Person make sure we're typecasting strings to floats (decimal numbers)
 	so for example
 	return (35.97 * self.distanceMiles) - 11.29
 	becomes
 	return (35.97 * float(self.distanceMiles)) - 11.29
 
-	[ ] Save data function on main page to save things like name and stuff
-
+	[X] Save data function on main page to save things like name and stuff
 
 	[ ] Look up docs for tkinter pack. and understand how to use it to pack stuff pretty. 
 

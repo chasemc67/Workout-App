@@ -15,7 +15,7 @@ class ThreeSiteSkinfold(tk.Frame):
        self.ThreeSiteMaleCalc.grid(row=2, column=0)
 
        self.ThreeSiteMaleChest = tk.Label(self)
-       self.ThreeSiteMaleChest["text"] = "Chest: "
+       self.ThreeSiteMaleChest["text"] = "Chest(mm): "
        self.ThreeSiteMaleChest.grid(row=2, column=1)
 
        self.ThreeSiteMaleChestText = tk.Text(self)
@@ -24,7 +24,7 @@ class ThreeSiteSkinfold(tk.Frame):
        self.ThreeSiteMaleChestText.grid(row=2, column=2)
 
        self.ThreeSiteMaleAb = tk.Label(self)
-       self.ThreeSiteMaleAb["text"] = "Abdomen: "
+       self.ThreeSiteMaleAb["text"] = "Abdomen(mm): "
        self.ThreeSiteMaleAb.grid(row=2, column=3)
 
        self.ThreeSiteMaleAbText = tk.Text(self)
@@ -33,7 +33,7 @@ class ThreeSiteSkinfold(tk.Frame):
        self.ThreeSiteMaleAbText.grid(row=2, column=4)
 
        self.ThreeSiteMaleThigh = tk.Label(self)
-       self.ThreeSiteMaleThigh["text"] = "Thigh: "
+       self.ThreeSiteMaleThigh["text"] = "Thigh(mm): "
        self.ThreeSiteMaleThigh.grid(row=2, column=5)
 
        self.ThreeSiteMaleThighText = tk.Text(self)
@@ -46,7 +46,7 @@ class ThreeSiteSkinfold(tk.Frame):
        self.ThreeSiteFemaleCalc.grid(row=3, column=0)
 
        self.ThreeSiteFemaleSupra = tk.Label(self)
-       self.ThreeSiteFemaleSupra["text"] = "Suprailiac: "
+       self.ThreeSiteFemaleSupra["text"] = "Suprailiac(mm): "
        self.ThreeSiteFemaleSupra.grid(row=3, column=1)
 
        self.ThreeSiteFemaleSupraText = tk.Text(self)
@@ -55,7 +55,7 @@ class ThreeSiteSkinfold(tk.Frame):
        self.ThreeSiteFemaleSupraText.grid(row=3, column=2)
 
        self.ThreeSiteFemaleTricep = tk.Label(self)
-       self.ThreeSiteFemaleTricep["text"] = "Tricep: "
+       self.ThreeSiteFemaleTricep["text"] = "Tricep(mm): "
        self.ThreeSiteFemaleTricep.grid(row=3, column=3)
 
        self.ThreeSiteFemaleTricepText = tk.Text(self)
@@ -64,7 +64,7 @@ class ThreeSiteSkinfold(tk.Frame):
        self.ThreeSiteFemaleTricepText.grid(row=3, column=4)
 
        self.ThreeSiteFemaleThigh = tk.Label(self)
-       self.ThreeSiteFemaleThigh["text"] = "Thigh: "
+       self.ThreeSiteFemaleThigh["text"] = "Thigh(mm): "
        self.ThreeSiteFemaleThigh.grid(row=3, column=5)
 
        self.ThreeSiteFemaleThighText = tk.Text(self)

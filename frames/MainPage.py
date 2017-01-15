@@ -71,7 +71,7 @@ class MainPage(tk.Frame):
        self.RestBP.grid(row=1, column=5)
 
        self.labelHeight = tk.Label(self)
-       self.labelHeight["text"] = "Height: "
+       self.labelHeight["text"] = "Height (cm): "
        self.labelHeight.grid(row=1, column=6)
 
        self.Height = tk.Text(self)
@@ -80,7 +80,7 @@ class MainPage(tk.Frame):
        self.Height.grid(row=1, column=7)
 
        self.labelWeight = tk.Label(self)
-       self.labelWeight["text"] = "Weight: "
+       self.labelWeight["text"] = "Weight (kg): "
        self.labelWeight.grid(row=2, column=0)
 
        self.Weight = tk.Text(self)
@@ -108,7 +108,7 @@ class MainPage(tk.Frame):
        self.checkModAstrand = tk.Checkbutton(self, text="Modified Astrand Cycle Test", command = lambda: self.boxChecked("ModAst"))
        self.checkModAstrand.grid(row=6, column=0)
 
-       self.checkEbelling = tk.Checkbutton(self, text="Ebelling Treadmill Test", command = lambda: self.boxChecked("Ebelling"))
+       self.checkEbelling = tk.Checkbutton(self, text="Ebbeling Treadmill Test", command = lambda: self.boxChecked("Ebelling"))
        self.checkEbelling.grid(row=6, column=1)
 
        self.checkRockport = tk.Checkbutton(self, text="Rockport 1 Mile Walk Test", command = lambda: self.boxChecked("Rockport"))
@@ -205,5 +205,13 @@ class MainPage(tk.Frame):
        return
 
    def saveData(self, person):
-       return
+       person.name = self.nameText.get(1.0, tk.END)
+       person.testDate = self.testDateText.get(1.0, tk.END)
+       person.gender = self.genderText.get(1.0, tk.END)
+       person.birthDate = self.birthDateText.get(1.0, tk.END)
+       person.phoneNumber = self.phoneNumberText.get(1.0, tk.END)
+       person.restHR = self.restHRText.get(1.0, tk.END)
+       person.restBP = self.restBPText.get(1.0, tk.END)
+       person.height = self.heightText.get(1.0, tk.END)
+       person.weight = self.weightText.get(1.0, tk.END)
 
