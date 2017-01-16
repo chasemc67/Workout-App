@@ -1,6 +1,6 @@
 Challenge:
 
-	[ ] Add if statements in results load function to display all the calculations depending on whether the data has been entered or not.
+	[X] Add if statements in results load function to display all the calculations depending on whether the data has been entered or not.
 
 	[X] Add units for all labels
 

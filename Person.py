@@ -63,6 +63,10 @@ class Person():
         self.ebbelingHR = ""
         self.ebbelingLoad = ""
         self.ebbelingSpeed = ""
+        self.RMTestExA = ""
+        self.RMTestExB = ""
+        self.RMTestExAWeight = ""
+        self.RMTestExBWeight = ""
 
     # Calculations
     def getBMI(self):
