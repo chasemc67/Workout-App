@@ -278,10 +278,10 @@ class Results(tk.Frame):
 
    def loadData(self, person):
        if (person.vertJump != "\n" and person.vertReach != "\n"):
-        self.showVertJumpResult()
+        self.showVertJumpResult(person)
 
        if (person.height != "\n" and person.weight != "\n"):
-        self.showBMIresult()
+        self.showBMIresult(person)
 
        if 1==1: # change self.person.height and weight
         self.showCircumferenceResult(person)

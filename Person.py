@@ -16,7 +16,7 @@ class Person():
         self.armCirc = ""
         self.thighCirc = ""
         self.chestCirc = ""
-        self.mbToss = ""
+        self.SeatMBDist = ""
         self.vertReach = ""
         self.vertJump = ""
         self.repMaxTestWeight = ""
@@ -56,7 +56,7 @@ class Person():
         self.suprailiac = ""
         self.tricep = ""
         self.femaleThigh = ""
-        self.modAstLoadA = ""
+        self.ModAstLoadA = ""
         self.modAstLoadB = ""
         self.modAstHR = ""
         self.modAstCapacity = ""
@@ -67,6 +67,8 @@ class Person():
         self.RMTestExB = ""
         self.RMTestExAWeight = ""
         self.RMTestExBWeight = ""
+        self.ThreeSiteMaleChest = ""
+
 
     # Calculations
     def getBMI(self):
