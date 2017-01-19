@@ -9,7 +9,7 @@ class Ebelling(tk.Frame):
        self.controller = controller
 
        self.Ebelling = tk.Label(self)
-       self.Ebelling["text"] = "Ebelling Treadmill Test"
+       self.Ebelling["text"] = "Ebbeling Treadmill Test"
        self.Ebelling.grid(row=0, column=0)
 
        self.EbellingWU = tk.Label(self)
@@ -30,14 +30,23 @@ class Ebelling(tk.Frame):
        self.EbellingWorkText["width"] = 5
        self.EbellingWorkText.grid(row=2, column=1)
 
+       self.EbellingHR = tk.Label(self)
+       self.EbellingHR["text"] = "Average HR"
+       self.EbellingHR.grid(row=3, column=0)
+
+       self.EbellingHRText = tk.Text(self)
+       self.EbellingHRText["height"] = 1
+       self.EbellingHRText["width"] = 5
+       self.EbellingHRText.grid(row=3, column=1)
+
        self.Next = NextButton(self, controller, self.saveData)
-       self.Next.grid(row=3, column=0)
+       self.Next.grid(row=4, column=0)
 
        self.Back = BackButton(self, controller)
-       self.Back.grid(row=3, column=1)
+       self.Back.grid(row=4, column=1)
 
        self.Quit = QuitButton(self, controller)
-       self.Quit.grid(row=3, column=2)
+       self.Quit.grid(row=4, column=2)
 
    def loadData(self, person):
 

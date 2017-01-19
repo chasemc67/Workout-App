@@ -15,7 +15,7 @@ class SvnSiteSkinfold(tk.Frame):
        self.SvnSiteSkFold.grid(row=0, column=0)
 
        self.SvnSiteChest = tk.Label(self)
-       self.SvnSiteChest["text"] = "Chest: "
+       self.SvnSiteChest["text"] = "Chest(mm): "
        self.SvnSiteChest.grid(row=1, column=0)
 
        self.SvnSiteChestText = tk.Text(self)
@@ -24,7 +24,7 @@ class SvnSiteSkinfold(tk.Frame):
        self.SvnSiteChestText.grid(row=1, column=1)
 
        self.SvnSiteMidAx = tk.Label(self)
-       self.SvnSiteMidAx["text"] = "Mid-Axillary: "
+       self.SvnSiteMidAx["text"] = "Mid-Axillary(mm): "
        self.SvnSiteMidAx.grid(row=1, column=2)
 
        self.SvnSiteMidAxText = tk.Text(self)
@@ -33,7 +33,7 @@ class SvnSiteSkinfold(tk.Frame):
        self.SvnSiteMidAxText.grid(row=1, column=3)
 
        self.SvnSiteTri = tk.Label(self)
-       self.SvnSiteTri["text"] = "Triceps: "
+       self.SvnSiteTri["text"] = "Triceps(mm): "
        self.SvnSiteTri.grid(row=1, column=4)
 
        self.SvnSiteTriText = tk.Text(self)
@@ -42,7 +42,7 @@ class SvnSiteSkinfold(tk.Frame):
        self.SvnSiteTriText.grid(row=1, column=5)
 
        self.SvnSiteScap = tk.Label(self)
-       self.SvnSiteScap["text"] = "Subscapular: "
+       self.SvnSiteScap["text"] = "Subscapular(mm): "
        self.SvnSiteScap.grid(row=1, column=6)
 
        self.SvnSiteScapText = tk.Text(self)
@@ -51,7 +51,7 @@ class SvnSiteSkinfold(tk.Frame):
        self.SvnSiteScapText.grid(row=1, column=7)
 
        self.SvnSiteSupra = tk.Label(self)
-       self.SvnSiteSupra["text"] = "Suprailiac: "
+       self.SvnSiteSupra["text"] = "Suprailiac(mm): "
        self.SvnSiteSupra.grid(row=1, column=8)
 
        self.SvnSiteSupraText = tk.Text(self)
@@ -60,7 +60,7 @@ class SvnSiteSkinfold(tk.Frame):
        self.SvnSiteSupraText.grid(row=1, column=9)
 
        self.SvnSiteAb = tk.Label(self)
-       self.SvnSiteAb["text"] = "Abdomen: "
+       self.SvnSiteAb["text"] = "Abdomen(mm): "
        self.SvnSiteAb.grid(row=1, column=10)
 
        self.SvnSiteAbText = tk.Text(self)
@@ -69,7 +69,7 @@ class SvnSiteSkinfold(tk.Frame):
        self.SvnSiteAbText.grid(row=1, column=11)
 
        self.SvnSiteThigh = tk.Label(self)
-       self.SvnSiteThigh["text"] = "Thigh: "
+       self.SvnSiteThigh["text"] = "Thigh(mm): "
        self.SvnSiteThigh.grid(row=1, column=12)
 
        self.SvnSiteThighText = tk.Text(self)

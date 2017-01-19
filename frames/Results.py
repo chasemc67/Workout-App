@@ -17,19 +17,334 @@ class Results(tk.Frame):
 
        self.person = self.controller.person
 
-   def loadData(self, person):
-       if (self.person.vertJump != "" and self.person.vertReach != ""):
+   def showBMIresult(self):
+       self.BMIresult = tk.Label(self)
+       self.BMIresult["text"] = "BMI: "
+       self.BMIresult.pack()
+
+   def showCircumferenceResult(self, person):
+
+       if person.hipCirc != "\n":
+        self.hipCircLabel = tk.Label(self)
+        self.hipCircLabel["text"] = "Hip Circumference(cm): "
+        self.hipCircLabel.pack()
+        self.hipCircValue = tk.Label(self)
+        self.hipCircValue["text"] = person.hipCirc
+        self.hipCircValue.pack()
+
+       if person.waistCirc != "\n":
+        self.waistCircLabel = tk.Label(self)
+        self.waistCircLabel["text"] = "Waist Circumference(cm): "
+        self.waistCircLabel.pack()
+
+       if person.armCirc != "\n":
+        self.armCircLabel = tk.Label(self)
+        self.armCircLabel["text"] = "Arm Circumference(cm): "
+        self.armCircLabel.pack()
+
+       if person.thighCirc != "\n":
+        self.thighCircLabel = tk.Label(self)
+        self.thighCircLabel["text"] = "Thigh Circumference(cm): "
+        self.thighCircLabel.pack()
+
+       if person.chestCirc != "\n":
+        self.chestCircLabel = tk.Label(self)
+        self.chestCircLabel["text"] = "Chest Circumference(cm): "
+        self.chestCircLabel.pack()
+
+   def showThreeSiteSkinfoldResult(self, person):
+      if (person.suprailiac != "\n" and person.tricep != "\n" and person.femaleThigh != "\n"):
+       self.threeSiteBDMaleLabel = tk.Label(self)
+       self.threeSiteBDMaleLabel["text"] = "Body Density: "
+       self.threeSiteBDMaleLabel.pack()
+
+       self.threeSiteBFMaleLabel = tk.Label(self)
+       self.threeSiteBFMaleLabel["text"] = "Body Fat %: "
+       self.threeSiteBFMaleLabel.pack()
+
+      if (person.chest != "\n" and person.ab != "\n" and person.maleThigh != "\n"):
+        self.threeSiteBDFemaleLabel = tk.Label(self)
+        self.threeSiteBDFemaleLabel["text"] = "Body Density: "
+        self.threeSiteBDFemaleLabel.pack()
+
+        self.threeSiteBFFemaleLabel = tk.Label(self)
+        self.threeSiteBFFemaleLabel["text"] = "Body Fat %: "
+        self.threeSiteBFFemaleLabel.pack()
+
+   def showSvnSiteSkinfoldResult(self, person):
+       self.SvnSiteBDLabel = tk.Label(self)
+       self.SvnSiteBDLabel["text"] = "Body Density: "
+       self.SvnSiteBDLabel.pack()
+
+       self.SvnSiteBFLabel = tk.Label(self)
+       self.SvnSiteBFLabel["text"] = "Body Fat %: "
+       self.SvnSiteBFLabel.pack()
+
+   def showModAstResult(self, person):
+       self.ModAstCapacityLabel = tk.Label(self)
+       self.ModAstCapacityLabel["text"] = "Test: Modified Astrand Cycle Test VO2max(ml/kg/min): "
+       self.ModAstCapacityLabel.pack()
+
+   def showEbbelingResult(self, person):
+       self.EbbelingCapacityLabel = tk.Label(self)
+       self.EbbelingCapacityLabel["text"] = "Test: Ebbeling Treadmill Test VO2max(ml/kg/min): "
+       self.EbbelingCapacityLabel.pack()
+
+   def showRockportResult(self, person):
+       self.RockportCapacityLabel = tk.Label(self)
+       self.RockportCapacityLabel["text"] = "Test: Rockport 1 Mile Walk VO2max(ml/kg/min): "
+       self.RockportCapacityLabel.pack()
+
+   def showCoopersResult(self, person):
+       self.CoopersCapacityLabel = tk.Label(self)
+       self.CoopersCapacityLabel["text"] = "Test: Coopers Run Test VO2max(ml/kg/min): "
+       self.CoopersCapacityLabel.pack()
+
+   def showMBTossResult(self, person):
+       self.MBTossLabel = tk.Label(self)
+       self.MBTossLabel["text"] = "Med. Ball Toss"
+       self.MBTossLabel.pack()
+
+       self.MBTossDistLabel = tk.Label(self)
+       self.MBTossDistLabel["text"] = "Throw Distance(cm): "
+       self.MBTossDistLabel.pack()
+
+   def showVertJumpResult(self, person):
         self.vertJumpLabel = tk.Label(self)
-        self.vertJumpLabel["text"] = "VertJump (W):"
+        self.vertJumpLabel["text"] = "Vertical Jump"
         self.vertJumpLabel.pack()
 
         self.vertJumpReachLabel = tk.Label(self)
         self.vertJumpReachLabel['text'] = ("Reach: " + self.person.vertReach)
         self.vertJumpReachLabel.pack()
 
-        self.vertJumpCalcOutput = tk.Label(self)
-        self.vertJumpCalcOutput['text'] = "Calc output: " + str(person.getVertJump())
-        self.vertJumpCalcOutput.pack()
+        self.vertJumpCalcOutputLabel = tk.Label(self)
+        self.vertJumpCalcOutputLabel['text'] = "Calc output: " + str(person.getVertJump())
+        self.vertJumpCalcOutputLabel.pack()
+
+        self.vertJumpPowerLabel = tk.Label(self)
+        self.vertJumpPowerLabel["text"] = "Peak Power(W): "
+        self.vertJumpPowerLabel.pack()
+
+   def showRMTestResult(self, person):
+       self.RMTestResultLabel = tk.Label(self)
+       self.RMTestResultLabel["text"] = "1RM Test"
+       self.RMTestResultLabel.pack()
+
+       if (person.RMTestExA != "\n" and person.RMTestExAWeight != "\n"):
+        self.RMTestExALabel = tk.Label(self)
+        self.RMTestExALabel["text"] = "Exercise: "
+        self.RMTestExALabel.pack()
+
+        self.RMTestExAWeightLabel = tk.Label(self)
+        self.RMTestExAWeightLabel["text"] = "1 Rep Max: "
+        self.RMTestExAWeightLabel.pack()
+
+       if (person.RMTestExB != "\n" and person.RMTestExBWeight != "\n"):
+        self.RMTestExBLabel = tk.Label(self)
+        self.RMTestExBLabel["text"] = "Exercise: "
+        self.RMTestExBLabel.pack()
+
+        self.RMTestExBWeightLabel = tk.Label(self)
+        self.RMTestExBWeightLabel["text"] = "1 Rep Max: "
+        self.RMTestExBWeightLabel.pack()
+
+   def showRMPredictResult(self, person):
+       self.RMPredictResultLabel = tk.Label(self)
+       self.RMPredictResultLabel["text"] = "1RM Predicted"
+
+       self.RMPredictExLabel = tk.Label(self)
+       self.RMPredictExLabel["text"] = "Exercise: "
+       self.RMPredictExLabel.pack()
+
+       self.RMPredictWeightLabel = tk.Label(self)
+       self.RMPredictWeightLabel["text"] = "1 Rep Max: "
+       self.RMPredictWeightLabel.pack()
+
+   def showGripStrengthResult(self, person):
+       self.GripStrengthLabel = tk.Label
+       self.GripStrengthLabel["text"] = "Grip Strength"
+       self.GripStrengthLabel.pack()
+
+       self.GripStrengthLeftLabel = tk.Label
+       self.GripStrengthLeftLabel["text"] = "Left Hand(kg): "
+       self.GripStrengthLeftLabel.pack()
+
+       self.GripStrengthRightLabel = tk.Label
+       self.GripStrengthRightLabel["text"] = "Right Hand(kg)"
+       self.GripStrengthRightLabel.pack()
+
+   def showPushUpResult(self, person):
+       self.PushUpLabel = tk.Label
+       self.PushUpLabel["text"] = "Push Ups"
+       self.PushUpLabel.pack()
+
+       self.PushUpNumLabel = tk.Label
+       self.PushUpNumLabel["text"] = "Number: "
+       self.PushUpNumLabel.pack()
+
+   def showCurlUpResult(self, person):
+       self.CurlUpLabel = tk.Label
+       self.CurlUpLabel["text"] = "10cm Curl Ups"
+       self.CurlUpLabel.pack()
+
+       self.CurlUpNumLabel = tk.Label
+       self.CurlUpNumLabel["text"] = "Number: "
+       self.CurlUpNumLabel.pack()
+
+   def showFrontPlankResult(self, person):
+       self.FrontPlankLabel = tk.Label
+       self.FrontPlankLabel["text"] = "Front Plank"
+       self.FrontPlankLabel.pack()
+
+       self.FrontPlankTime = tk.Label
+       self.FrontPlankTime["text"] = "Time(sec.): "
+       self.FrontPlankTime.pack()
+
+   def showWallSitResult(self, person):
+       self.WallSitLabel = tk.Label
+       self.WallSitLabel["text"] = "Wall Sit"
+       self.WallSitLabel.pack()
+
+       self.WallSitTime = tk.Label
+       self.WallSitTime["text"] = "Time(sec.): "
+       self.WallSitTime.pack()
+
+   def showSitReachResult(self, person):
+       self.SitReachLabel = tk.Label
+       self.SitReachLabel["text"] = "Sit and Reach"
+       self.SitReachLabel.pack()
+
+       self.SitReachResult = tk.Label
+       self.SitReachResult["text"] = "Max. Distance(cm): "
+       self.SitReachResult.pack()
+
+   def showSLStanceResult(self, person):
+       self.SLStanceLabel = tk.Label
+       self.SLStanceLabel["text"] = "Single Leg Stance Test"
+       self.SLStanceLabel.pack()
+
+       self.SLStanceLeftOpen = tk.Label
+       self.SLStanceLeftOpen["text"] = "Left Leg Eyes Open Time(sec.): "
+       self.SLStanceLeftOpen.pack()
+
+       self.SLStanceRightOpen = tk.Label
+       self.SLStanceRightOpen["text"] = "Right Leg Eyes Open Time(sec.): "
+       self.SLStanceRightOpen.pack()
+
+       self.SLStanceLeftClosed = tk.Label
+       self.SLStanceLeftClosed["text"] = "Left Leg Eyes Closed Time(sec.): "
+       self.SLStanceLeftClosed.pack()
+
+       self.SLStanceRightClosed = tk.Label
+       self.SLStanceRightClosed["text"] = "Right Leg Eyes Closed Time(sec.): "
+       self.SLStanceRightClosed.pack()
+
+   def showDeepSquatAssessResult(self, person):
+       self.deepSquatAssessLabel = tk.Label
+       self.deepSquatAssessLabel["text"] = "Deep Squat Assessment"
+       self.deepSquatAssessLabel.pack()
+
+       self.deepSquatRatingLabel = tk.Label
+       self.deepSquatRatingLabel["text"] = "Rating: "
+       self.deepSquatRatingLabel.pack()
+
+   def showWallSlideAssessResult(self, person):
+       self.wallSlideLabel = tk.Label
+       self.wallSlideLabel["text"] = "Wall Slide Assessment"
+       self.wallSlideLabel.pack()
+
+       self.wallSlideRatingLabel = tk.Label
+       self.wallSlideRatingLabel["text"] = "Rating: "
+       self.wallSlideRatingLabel.pack()
+
+   def showHipHingeAssessResult(self, person):
+       self.hipHingeLabel = tk.Label
+       self.hipHingeLabel["text"] = "Hip Hinge Assessment"
+       self.hipHingeLabel.pack()
+
+       self.hipHingeRatingLabel = tk.Label
+       self.hipHingeRatingLabel["text"] = "Rating: "
+       self.hipHingeRatingLabel.pack()
+
+   def showPlankAssessResult(self, person):
+       self.plankAssessLabel = tk.Label
+       self.plankAssessLabel["text"] = "Front Plank Assessment"
+       self.plankAssessLabel.pack()
+
+       self.plankRatingLabel = tk.Label
+       self.plankRatingLabel["text"] = "Rating: "
+       self.plankRatingLabel.pack()
+
+   def loadData(self, person):
+       if (person.vertJump != "\n" and person.vertReach != "\n"):
+        self.showVertJumpResult(person)
+
+       if (person.height != "\n" and person.weight != "\n"):
+        self.showBMIresult(person)
+
+       if 1==1: # change self.person.height and weight
+        self.showCircumferenceResult(person)
+
+       if 1==1:
+        self.showThreeSiteSkinfoldResult(person)
+
+       if 1==1:
+        self.showSvnSiteSkinfoldResult(person)
+
+       if 1==1:
+        self.showModAstResult(person)
+
+       if 1==1:
+        self.showEbbelingResult(person)
+
+       if 1==1:
+        self.showRockportResult(person)
+
+       if 1==1:
+        self.showCoopersResult(person)
+
+       if 1==1:
+        self.showMBTossResult(person)
+
+       if 1==1:
+        self.showRMTestResult(person)
+
+       if 1==1:
+        self.showRMPredictResult(person)
+
+       if 1==1:
+        self.showGripStrengthResult(person)
+
+       if 1==1:
+        self.showPushUpResult(person)
+
+       if 1==1:
+        self.showCurlUpResult(person)
+
+       if 1==1:
+        self.showFrontPlankResult(person)
+
+       if 1==1:
+        self.showWallSitResult(person)
+
+       if 1==1:
+        self.showSitReachResult(person)
+
+       if 1==1:
+        self.showSLStanceResult(person)
+
+       if 1==1:
+        self.showDeepSquatAssessResult(person)
+
+       if 1==1:
+        self.showWallSlideAssessResult(person)
+
+       if 1==1:
+        self.showHipHingeAssessResult(person)
+
+       if 1==1:
+        self.showPlankAssessResult(person)
 
        self.Back = BackButton(self, self.controller)
        self.Back.pack()

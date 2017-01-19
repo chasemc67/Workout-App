@@ -40,14 +40,23 @@ class ModAst(tk.Frame):
        self.ModAstHRText["width"] = 5
        self.ModAstHRText.grid(row=3, column=3)
 
+       self.ModAstCapacity = tk.Label(self)
+       self.ModAstCapacity["text"] = "Est. VO2max(kg/ml/min): "
+       self.ModAstCapacity.grid(row=4, column=0)
+
+       self.ModAstCapacityText = tk.Text(self)
+       self.ModAstCapacityText["height"] = 1
+       self.ModAstCapacityText["width"] = 5
+       self.ModAstCapacityText.grid(row=4, column=1)
+
        self.Next = NextButton(self, controller, self.saveData)
-       self.Next.grid(row=4, column=0)
+       self.Next.grid(row=5, column=0)
 
        self.Back = BackButton(self, controller)
-       self.Back.grid(row=4, column=1)
+       self.Back.grid(row=5, column=1)
 
        self.Quit = QuitButton(self, controller)
-       self.Quit.grid(row=4, column=2)
+       self.Quit.grid(row=5, column=2)
 
    def loadData(self, person):
 

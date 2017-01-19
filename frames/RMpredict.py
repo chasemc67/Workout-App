@@ -32,6 +32,15 @@ class RMpredict(tk.Frame):
        self.RMPredictRepsText["width"] = 5
        self.RMPredictRepsText.grid(row=2, column=1)
 
+       self.RMPredictLoad = tk.Label(self)
+       self.RMPredictLoad["text"] = "Rep Weight(kg): "
+       self.RMPredictLoad.grid(row=3, column=0)
+
+       self.RMPredictLoadText = tk.Text(self)
+       self.RMPredictLoadText["height"] = 1
+       self.RMPredictLoadText["width"] = 5
+       self.RMPredictLoadText.grid(row=3, column=1)
+
        self.Next = NextButton(self, controller, self.saveData)
        self.Next.grid(row=4, column=0)
 
