@@ -2,6 +2,8 @@ Challenge:
 
 	[ ] Add if statments in results load function to display all the calculations depending on whether the data has been entered or not. 
 
+	[ ] Add ability to check which checkboxes are check in results page, and swap the 1 == 1 for checking resepctive boxes
+
 	[ ] Add units for all labels
 
 	[ ] In calculation functions in Person make sure we're typecasting strings to floats (decimal numbers) 
