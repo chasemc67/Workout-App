@@ -3,6 +3,11 @@ from buttons.NextButton import NextButton
 from buttons.QuitButton import QuitButton
 
 class MainPage(tk.Frame):
+
+   def focus_next_window(self, event):
+      event.widget.tk_focusNext().focus()
+      return("break")
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller
@@ -14,6 +19,7 @@ class MainPage(tk.Frame):
        self.Name = tk.Text(self)
        self.Name["height"] = 1
        self.Name["width"] = 15
+       self.Name.bind("<Tab>", self.focus_next_window)
        self.Name.grid(row=0, column=1)
 
        self.labelDateOfTest = tk.Label(self)
@@ -23,6 +29,7 @@ class MainPage(tk.Frame):
        self.DateOfTest = tk.Text(self)
        self.DateOfTest["height"] = 1
        self.DateOfTest["width"] = 15
+       self.DateOfTest.bind("<Tab>", self.focus_next_window)
        self.DateOfTest.grid(row=0, column=3)
 
        self.labelGender = tk.Label(self)
@@ -32,6 +39,7 @@ class MainPage(tk.Frame):
        self.Gender = tk.Text(self)
        self.Gender["height"] = 1
        self.Gender["width"] = 15
+       self.Gender.bind("<Tab>", self.focus_next_window)
        self.Gender.grid(row=0, column=5)
 
        self.labelDOB = tk.Label(self)
@@ -41,6 +49,7 @@ class MainPage(tk.Frame):
        self.DateOfBirth = tk.Text(self)
        self.DateOfBirth["height"] = 1
        self.DateOfBirth["width"] = 15
+       self.DateOfBirth.bind("<Tab>", self.focus_next_window)
        self.DateOfBirth.grid(row=0, column=7)
 
        self.labelPhoneNumber = tk.Label(self)
@@ -50,6 +59,7 @@ class MainPage(tk.Frame):
        self.PhoneNumber = tk.Text(self)
        self.PhoneNumber["height"] = 1
        self.PhoneNumber["width"] = 15
+       self.PhoneNumber.bind("<Tab>", self.focus_next_window)
        self.PhoneNumber.grid(row=1, column=1)
 
        self.labelRestHR = tk.Label(self)
@@ -59,6 +69,7 @@ class MainPage(tk.Frame):
        self.RestHR = tk.Text(self)
        self.RestHR["height"] = 1
        self.RestHR["width"] = 15
+       self.RestHR.bind("<Tab>", self.focus_next_window)
        self.RestHR.grid(row=1, column=3,padx=0, pady=3)
 
        self.labelRestBP = tk.Label(self)
@@ -68,6 +79,7 @@ class MainPage(tk.Frame):
        self.RestBP = tk.Text(self)
        self.RestBP["height"] = 1
        self.RestBP["width"] = 15
+       self.RestBP.bind("<Tab>", self.focus_next_window)
        self.RestBP.grid(row=1, column=5)
 
        self.labelHeight = tk.Label(self)
@@ -77,6 +89,7 @@ class MainPage(tk.Frame):
        self.Height = tk.Text(self)
        self.Height["height"] = 1
        self.Height["width"] = 15
+       self.Height.bind("<Tab>", self.focus_next_window)
        self.Height.grid(row=1, column=7)
 
        self.labelWeight = tk.Label(self)
@@ -86,6 +99,7 @@ class MainPage(tk.Frame):
        self.Weight = tk.Text(self)
        self.Weight["height"] = 1
        self.Weight["width"] = 15
+       self.Weight.bind("<Tab>", self.focus_next_window)
        self.Weight.grid(row=2, column=1)
 
        self.labelBodyComp = tk.Label(self)
