@@ -67,12 +67,14 @@ class Person():
 
     # Database Functions
         # returns a list of names of attributes
+        # Excluding the list of frames checked
     def getAttributes(self):
         attrList = list()
         for A in dir(self):
-            if not A.startswith('__') and not callable(getattr(self, A)):
+            if not A.startswith('__') and not callable(getattr(self, A)) and not A.startswith('framesChecked'):
                 attrList.append(A)
         print(attrList)
+
 
     # Calculations
     def getBMI(self):
