@@ -34,7 +34,7 @@ class WallSlide(tk.Frame):
    def loadData(self, person):
 
        self.WallSlideRateText.delete(1.0, tk.END)
-       self.WallSlideRateText.insert(tk.END, person.WallSlideRate)
+       self.WallSlideRateText.insert(tk.END, person.wallSlideRate)
 
    def saveData(self, person):
-       person.WallSlideRate = self.WallSlideRateText.get(1.0, tk.END)
+       person.wallSlideRate = self.WallSlideRateText.get(1.0, tk.END)

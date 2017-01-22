@@ -89,31 +89,31 @@ class SvnSiteSkinfold(tk.Frame):
    def loadData(self, person):
 
        self.SvnSiteChestText.delete(1.0, tk.END)
-       self.SvnSiteChestText.insert(tk.END, person.SvnSiteChest)
+       self.SvnSiteChestText.insert(tk.END, person.svnSiteChest)
 
        self.SvnSiteMidAxText.delete(1.0, tk.END)
-       self.SvnSiteMidAxText.insert(tk.END, person.SvnSiteMidAx)
+       self.SvnSiteMidAxText.insert(tk.END, person.svnSiteMidAx)
 
        self.SvnSiteTriText.delete(1.0, tk.END)
-       self.SvnSiteTriText.insert(tk.END, person.SvnSiteTri)
+       self.SvnSiteTriText.insert(tk.END, person.svnSiteTri)
 
        self.SvnSiteScapText.delete(1.0, tk.END)
-       self.SvnSiteScapText.insert(tk.END, person.SvnSiteScap)
+       self.SvnSiteScapText.insert(tk.END, person.svnSiteScap)
 
        self.SvnSiteSupraText.delete(1.0, tk.END)
-       self.SvnSiteSupraText.insert(tk.END, person.SvnSiteSupra)
+       self.SvnSiteSupraText.insert(tk.END, person.svnSiteSupra)
 
        self.SvnSiteAbText.delete(1.0, tk.END)
-       self.SvnSiteAbText.insert(tk.END, person.SvnSiteAb)
+       self.SvnSiteAbText.insert(tk.END, person.svnSiteAb)
 
        self.SvnSiteThighText.delete(1.0, tk.END)
-       self.SvnSiteThighText.insert(tk.END, person.SvnSiteThigh)
+       self.SvnSiteThighText.insert(tk.END, person.svnSiteThigh)
 
    def saveData(self, person):
-       person.SvnSiteChest = self.SvnSiteChestText.get(1.0, tk.END)
-       person.SvnSiteMidAx = self.SvnSiteMidAxText.get(1.0, tk.END)
-       person.SvnSiteTri = self.SvnSiteTriText.get(1.0, tk.END)
-       person.SvnSiteScap = self.SvnSiteScapText.get(1.0, tk.END)
-       person.SvnSiteSupra = self.SvnSiteSupraText.get(1.0, tk.END)
-       person.SvnSiteAb = self.SvnSiteAbText.get(1.0, tk.END)
-       person.SvnSiteThigh = self.SvnSiteThighText.get(1.0, tk.END)
+       person.svnSiteChest = self.SvnSiteChestText.get(1.0, tk.END)
+       person.svnSiteMidAx = self.SvnSiteMidAxText.get(1.0, tk.END)
+       person.svnSiteTri = self.SvnSiteTriText.get(1.0, tk.END)
+       person.svnSiteScap = self.SvnSiteScapText.get(1.0, tk.END)
+       person.svnSiteSupra = self.SvnSiteSupraText.get(1.0, tk.END)
+       person.svnSiteAb = self.SvnSiteAbText.get(1.0, tk.END)
+       person.svnSiteThigh = self.SvnSiteThighText.get(1.0, tk.END)

@@ -34,7 +34,7 @@ class MBtoss(tk.Frame):
    def loadData(self, person):
 
        self.SeatMBDistText.delete(1.0, tk.END)
-       self.SeatMBDistText.insert(tk.END, person.SeatMBDist)
+       self.SeatMBDistText.insert(tk.END, person.seatMBDist)
 
    def saveData(self, person):
-       person.SeatMBDist = self.SeatMBDistText.get(1.0, tk.END)
+       person.seatMBDist = self.SeatMBDistText.get(1.0, tk.END)

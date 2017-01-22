@@ -35,7 +35,7 @@ class PushUps(tk.Frame):
    def loadData(self, person):
 
        self.PushUpNumText.delete(1.0, tk.END)
-       self.PushUpNumText.insert(tk.END, person.PushUpNum)
+       self.PushUpNumText.insert(tk.END, person.pushUpNum)
 
    def saveData(self, person):
-       person.PushUpNum = self.PushUpNumText.get(1.0, tk.END)
+       person.pushUpNum = self.PushUpNumText.get(1.0, tk.END)

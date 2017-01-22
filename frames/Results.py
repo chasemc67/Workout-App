@@ -353,5 +353,3 @@ class Results(tk.Frame):
        self.Quit.pack()
 
    def saveData(self, person):
-       person.PushUpNum = self.PushUpNumText.get(1.0, tk.END)
-

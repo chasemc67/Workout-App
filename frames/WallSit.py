@@ -35,7 +35,7 @@ class WallSit(tk.Frame):
    def loadData(self, person):
 
        self.WallSitTimeText.delete(1.0, tk.END)
-       self.WallSitTimeText.insert(tk.END, person.WallSitTime)
+       self.WallSitTimeText.insert(tk.END, person.wallSitTime)
 
    def saveData(self, person):
-       person.WallSitTime = self.WallSitTimeText.get(1.0, tk.END)
+       person.wallSitTime = self.WallSitTimeText.get(1.0, tk.END)

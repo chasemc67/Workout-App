@@ -84,27 +84,27 @@ class ThreeSiteSkinfold(tk.Frame):
    def loadData(self, person):
 
        self.ThreeSiteMaleChestText.delete(1.0, tk.END)
-       self.ThreeSiteMaleChestText.insert(tk.END, person.ThreeSiteMaleChest)
+       self.ThreeSiteMaleChestText.insert(tk.END, person.threeSiteMaleChest)
 
        self.ThreeSiteMaleAbText.delete(1.0, tk.END)
-       self.ThreeSiteMaleAbText.insert(tk.END, person.ThreeSiteMaleAb)
+       self.ThreeSiteMaleAbText.insert(tk.END, person.threeSiteMaleAb)
 
        self.ThreeSiteMaleThighText.delete(1.0, tk.END)
-       self.ThreeSiteMaleThighText.insert(tk.END, person.ThreeSiteMaleThigh)
+       self.ThreeSiteMaleThighText.insert(tk.END, person.threeSiteMaleThigh)
 
        self.ThreeSiteFemaleSupraText.delete(1.0, tk.END)
-       self.ThreeSiteFemaleSupraText.insert(tk.END, person.ThreeSiteFemaleSupra)
+       self.ThreeSiteFemaleSupraText.insert(tk.END, person.threeSiteFemaleSupra)
 
        self.ThreeSiteFemaleTricepText.delete(1.0, tk.END)
-       self.ThreeSiteFemaleTricepText.insert(tk.END, person.ThreeSiteFemaleTricep)
+       self.ThreeSiteFemaleTricepText.insert(tk.END, person.threeSiteFemaleTricep)
 
        self.ThreeSiteFemaleThighText.delete(1.0, tk.END)
        self.ThreeSiteFemaleThighText.insert(1.0, tk.END)
 
    def saveData(self, person):
-       person.ThreeSiteMaleChest = self.ThreeSiteMaleChestText.get(1.0, tk.END)
-       person.ThreeSiteMaleAb = self.ThreeSiteMaleAbText.get(1.0, tk.END)
-       person.ThreeSiteMaleThigh = self.ThreeSiteMaleThighText.get(1.0, tk.END)
-       person.ThreeSiteFemaleSupra = self.ThreeSiteFemaleSupraText.get(1.0, tk.END)
-       person.ThreeSiteFemaleTricep = self.ThreeSiteFemaleTricepText.get(1.0, tk.END)
-       person.ThreeSiteFemaleThigh = self.ThreeSiteFemaleThighText.get(1.0, tk.END)
+       person.threeSiteMaleChest = self.ThreeSiteMaleChestText.get(1.0, tk.END)
+       person.threeSiteMaleAb = self.ThreeSiteMaleAbText.get(1.0, tk.END)
+       person.threeSiteMaleThigh = self.ThreeSiteMaleThighText.get(1.0, tk.END)
+       person.threeSiteFemaleSupra = self.ThreeSiteFemaleSupraText.get(1.0, tk.END)
+       person.threeSiteFemaleTricep = self.ThreeSiteFemaleTricepText.get(1.0, tk.END)
+       person.threeSiteFemaleThigh = self.ThreeSiteFemaleThighText.get(1.0, tk.END)

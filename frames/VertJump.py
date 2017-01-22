@@ -43,11 +43,11 @@ class VertJump(tk.Frame):
    def loadData(self, person):
 
        self.VertJumpSRText.delete(1.0, tk.END)
-       self.VertJumpSRText.insert(tk.END, person.VertJumpSR)
+       self.VertJumpSRText.insert(tk.END, person.vertJumpSR)
 
        self.VertJumpBestText.delete(1.0, tk.END)
-       self.VertJumpBestText.insert(tk.END, person.VertJumpBest)
+       self.VertJumpBestText.insert(tk.END, person.vertJumpBest)
 
    def saveData(self, person):
-       person.vertReach = self.VertJumpSRText.get(1.0, tk.END)
-       person.vertJump = self.VertJumpBestText.get(1.0, tk.END)
+       person.vertJumpSR = self.VertJumpSRText.get(1.0, tk.END)
+       person.vertJumpBest = self.VertJumpBestText.get(1.0, tk.END)

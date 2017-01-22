@@ -34,7 +34,7 @@ class HipHinge(tk.Frame):
    def loadData(self, person):
 
        self.HipHingeRateText.delete(1.0, tk.END)
-       self.HipHingeRateText.insert(tk.END, person.HipHingeRate)
+       self.HipHingeRateText.insert(tk.END, person.hipHingeRate)
 
    def saveData(self, person):
-       person.HipHingeRate = self.HipHingeRateText.get(1.0, tk.END)
+       person.hipHingeRate = self.HipHingeRateText.get(1.0, tk.END)
