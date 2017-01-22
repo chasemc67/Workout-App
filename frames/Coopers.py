@@ -32,7 +32,7 @@ class Coopers(tk.Frame):
 
    def loadData(self, person):
       self.CooperDistText.delete(1.0, tk.END)
-      self.CooperDistText.insert(tk.END, person.hipCirc)
+      self.CooperDistText.insert(tk.END, person.cooperDist)
 
    def saveData(self, person):
-      person.CooperDist = self.CooperDistText.get(1.0, tk.END)
+      person.cooperDist = self.CooperDistText.get(1.0, tk.END)

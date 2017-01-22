@@ -35,7 +35,7 @@ class PlankEnd(tk.Frame):
    def loadData(self, person):
 
        self.PlankTimeText.delete(1.0, tk.END)
-       self.PlankTimeText.insert(tk.END, person.PlankTime)
+       self.PlankTimeText.insert(tk.END, person.plankTime)
 
    def saveData(self, person):
-       person.PlankTime = self.PlankTimeText.get(1.0, tk.END)
+       person.plankTime = self.PlankTimeText.get(1.0, tk.END)

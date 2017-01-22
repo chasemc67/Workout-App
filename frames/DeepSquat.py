@@ -34,8 +34,8 @@ class DeepSquat(tk.Frame):
    def loadData(self, person):
 
        self.DeepSquatRateText.delete(1.0, tk.END)
-       self.DeepSquatRateText.insert(tk.END, person.DeepSquatRate)
+       self.DeepSquatRateText.insert(tk.END, person.deepSquatRate)
 
    def saveData(self, person):
-       person.DeepSquatRate = self.DeepSquatRateText.get(1.0, tk.END)
+       person.deepSquatRate = self.DeepSquatRateText.get(1.0, tk.END)
 

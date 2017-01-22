@@ -51,11 +51,15 @@ class Ebelling(tk.Frame):
    def loadData(self, person):
 
        self.EbellingWUText.delete(1.0, tk.END)
-       self.EbellingWUText.insert(tk.END, person.EbellingWU)
+       self.EbellingWUText.insert(tk.END, person.ebbelingWU)
 
        self.EbellingWorkText.delete(1.0, tk.END)
-       self.EbellingWorkText.insert(tk.END, person.EbellingWork)
+       self.EbellingWorkText.insert(tk.END, person.ebbelingWork)
+
+       self.EbellingHRText.delete(1.0, tk.END)
+       self.EbellingHRText.insert(tk.END, person.ebbelingHR)
 
    def saveData(self, person):
-       person.EbellingWU = self.EbellingWUText.get(1.0, tk.END)
-       person.EbellingWork = self.EbellingWorkText.get(1.0, tk.END)
+       person.ebbelingWU = self.EbellingWUText.get(1.0, tk.END)
+       person.ebbelingWork = self.EbellingWorkText.get(1.0, tk.END)
+       person.ebbelingHR = self.EbellingHRText.get(1.0,tk.END)

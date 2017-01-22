@@ -43,11 +43,11 @@ class Rockport(tk.Frame):
    def loadData(self, person):
 
        self.RockportHRText.delete(1.0, tk.END)
-       self.RockportHRText.insert(tk.END, person.RockportHR)
+       self.RockportHRText.insert(tk.END, person.rockportHR)
 
        self.RockportTimeText.delete(1.0, tk.END)
-       self.RockportTimeText.insert(tk.END, person.RockportTime)
+       self.RockportTimeText.insert(tk.END, person.rockportTime)
 
    def saveData(self, person):
-       person.RockportHR = self.RockportHRText.get(1.0, tk.END)
-       person.RockportTime = self.RockportTimeText.get(1.0, tk.END)
+       person.rockportHR = self.RockportHRText.get(1.0, tk.END)
+       person.rockportTime = self.RockportTimeText.get(1.0, tk.END)

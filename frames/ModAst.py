@@ -61,15 +61,15 @@ class ModAst(tk.Frame):
    def loadData(self, person):
 
        self.ModAstLoadAText.delete(1.0, tk.END)
-       self.ModAstLoadAText.insert(tk.END, person.ModAstLoadA)
+       self.ModAstLoadAText.insert(tk.END, person.modAstLoadA)
 
        self.ModAstLoadBText.delete(1.0, tk.END)
-       self.ModAstLoadBText.insert(tk.END, person.ModAstLoadB)
+       self.ModAstLoadBText.insert(tk.END, person.modAstLoadB)
 
        self.ModAstHRText.delete(1.0, tk.END)
-       self.ModAstHRText.insert(tk.END, person.ModAstHR)
+       self.ModAstHRText.insert(tk.END, person.modAstHR)
 
    def saveData(self, person):
-       person.ModAstLoadA = self.ModAstLoadAText.get(1.0, tk.END)
-       person.ModAstLoadB = self.ModAstLoadBText.get(1.0, tk.END)
-       person.ModAstHR = self.ModAstHRText.get(1.0, tk.END)
+       person.modAstLoadA = self.ModAstLoadAText.get(1.0, tk.END)
+       person.modAstLoadB = self.ModAstLoadBText.get(1.0, tk.END)
+       person.modAstHR = self.ModAstHRText.get(1.0, tk.END)

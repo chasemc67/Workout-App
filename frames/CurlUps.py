@@ -33,7 +33,7 @@ class CurlUps(tk.Frame):
 
    def loadData(self, person):
        self.CurlUpNumText.delete(1.0, tk.END)
-       self.CurlUpNumText.insert(tk.END, person.CurlUpNum)
+       self.CurlUpNumText.insert(tk.END, person.curlUpNum)
 
    def saveData(self, person):
-       person.CurlUpNum = self.CurlUpNumText.get(1.0, tk.END)
+       person.curlUpNum = self.CurlUpNumText.get(1.0, tk.END)
