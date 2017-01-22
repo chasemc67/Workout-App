@@ -162,117 +162,117 @@ class Results(tk.Frame):
        self.RMPredictWeightLabel.pack()
 
    def showGripStrengthResult(self, person):
-       self.GripStrengthLabel = tk.Label
+       self.GripStrengthLabel = tk.Label(self)
        self.GripStrengthLabel["text"] = "Grip Strength"
        self.GripStrengthLabel.pack()
 
-       self.GripStrengthLeftLabel = tk.Label
+       self.GripStrengthLeftLabel = tk.Label(self)
        self.GripStrengthLeftLabel["text"] = "Left Hand(kg): "
        self.GripStrengthLeftLabel.pack()
 
-       self.GripStrengthRightLabel = tk.Label
+       self.GripStrengthRightLabel = tk.Label(self)
        self.GripStrengthRightLabel["text"] = "Right Hand(kg)"
        self.GripStrengthRightLabel.pack()
 
    def showPushUpResult(self, person):
-       self.PushUpLabel = tk.Label
+       self.PushUpLabel = tk.Label(self)
        self.PushUpLabel["text"] = "Push Ups"
        self.PushUpLabel.pack()
 
-       self.PushUpNumLabel = tk.Label
+       self.PushUpNumLabel = tk.Label(self)
        self.PushUpNumLabel["text"] = "Number: "
        self.PushUpNumLabel.pack()
 
    def showCurlUpResult(self, person):
-       self.CurlUpLabel = tk.Label
+       self.CurlUpLabel = tk.Label(self)
        self.CurlUpLabel["text"] = "10cm Curl Ups"
        self.CurlUpLabel.pack()
 
-       self.CurlUpNumLabel = tk.Label
+       self.CurlUpNumLabel = tk.Label(self)
        self.CurlUpNumLabel["text"] = "Number: "
        self.CurlUpNumLabel.pack()
 
    def showFrontPlankResult(self, person):
-       self.FrontPlankLabel = tk.Label
+       self.FrontPlankLabel = tk.Label(self)
        self.FrontPlankLabel["text"] = "Front Plank"
        self.FrontPlankLabel.pack()
 
-       self.FrontPlankTime = tk.Label
+       self.FrontPlankTime = tk.Label(self)
        self.FrontPlankTime["text"] = "Time(sec.): "
        self.FrontPlankTime.pack()
 
    def showWallSitResult(self, person):
-       self.WallSitLabel = tk.Label
+       self.WallSitLabel = tk.Label(self)
        self.WallSitLabel["text"] = "Wall Sit"
        self.WallSitLabel.pack()
 
-       self.WallSitTime = tk.Label
+       self.WallSitTime = tk.Label(self)
        self.WallSitTime["text"] = "Time(sec.): "
        self.WallSitTime.pack()
 
    def showSitReachResult(self, person):
-       self.SitReachLabel = tk.Label
+       self.SitReachLabel = tk.Label(self)
        self.SitReachLabel["text"] = "Sit and Reach"
        self.SitReachLabel.pack()
 
-       self.SitReachResult = tk.Label
+       self.SitReachResult = tk.Label(self)
        self.SitReachResult["text"] = "Max. Distance(cm): "
        self.SitReachResult.pack()
 
    def showSLStanceResult(self, person):
-       self.SLStanceLabel = tk.Label
+       self.SLStanceLabel = tk.Label(self)
        self.SLStanceLabel["text"] = "Single Leg Stance Test"
        self.SLStanceLabel.pack()
 
-       self.SLStanceLeftOpen = tk.Label
+       self.SLStanceLeftOpen = tk.Label(self)
        self.SLStanceLeftOpen["text"] = "Left Leg Eyes Open Time(sec.): "
        self.SLStanceLeftOpen.pack()
 
-       self.SLStanceRightOpen = tk.Label
+       self.SLStanceRightOpen = tk.Label(self)
        self.SLStanceRightOpen["text"] = "Right Leg Eyes Open Time(sec.): "
        self.SLStanceRightOpen.pack()
 
-       self.SLStanceLeftClosed = tk.Label
+       self.SLStanceLeftClosed = tk.Label(self)
        self.SLStanceLeftClosed["text"] = "Left Leg Eyes Closed Time(sec.): "
        self.SLStanceLeftClosed.pack()
 
-       self.SLStanceRightClosed = tk.Label
+       self.SLStanceRightClosed = tk.Label(self)
        self.SLStanceRightClosed["text"] = "Right Leg Eyes Closed Time(sec.): "
        self.SLStanceRightClosed.pack()
 
    def showDeepSquatAssessResult(self, person):
-       self.deepSquatAssessLabel = tk.Label
+       self.deepSquatAssessLabel = tk.Label(self)
        self.deepSquatAssessLabel["text"] = "Deep Squat Assessment"
        self.deepSquatAssessLabel.pack()
 
-       self.deepSquatRatingLabel = tk.Label
+       self.deepSquatRatingLabel = tk.Label(self)
        self.deepSquatRatingLabel["text"] = "Rating: "
        self.deepSquatRatingLabel.pack()
 
    def showWallSlideAssessResult(self, person):
-       self.wallSlideLabel = tk.Label
+       self.wallSlideLabel = tk.Label(self)
        self.wallSlideLabel["text"] = "Wall Slide Assessment"
        self.wallSlideLabel.pack()
 
-       self.wallSlideRatingLabel = tk.Label
+       self.wallSlideRatingLabel = tk.Label(self)
        self.wallSlideRatingLabel["text"] = "Rating: "
        self.wallSlideRatingLabel.pack()
 
    def showHipHingeAssessResult(self, person):
-       self.hipHingeLabel = tk.Label
+       self.hipHingeLabel = tk.Label(self)
        self.hipHingeLabel["text"] = "Hip Hinge Assessment"
        self.hipHingeLabel.pack()
 
-       self.hipHingeRatingLabel = tk.Label
+       self.hipHingeRatingLabel = tk.Label(self)
        self.hipHingeRatingLabel["text"] = "Rating: "
        self.hipHingeRatingLabel.pack()
 
    def showPlankAssessResult(self, person):
-       self.plankAssessLabel = tk.Label
+       self.plankAssessLabel = tk.Label(self)
        self.plankAssessLabel["text"] = "Front Plank Assessment"
        self.plankAssessLabel.pack()
 
-       self.plankRatingLabel = tk.Label
+       self.plankRatingLabel = tk.Label(self)
        self.plankRatingLabel["text"] = "Rating: "
        self.plankRatingLabel.pack()
 
