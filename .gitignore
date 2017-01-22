@@ -4,3 +4,4 @@ frames/__pycache__/*
 */__pycache__/*
 .idea/
 .idea/*
+.idea/workspace.xml
