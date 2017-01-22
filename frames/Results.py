@@ -53,7 +53,7 @@ class Results(tk.Frame):
         self.chestCircLabel.pack()
 
    def showThreeSiteSkinfoldResult(self, person):
-      if (person.suprailiac != "\n" and person.tricep != "\n" and person.femaleThigh != "\n"):
+      if (person.threeSiteFemaleSupra != "\n" and person.threeSiteFemaleTricep != "\n" and person.threeSiteFemaleThigh != "\n"):
        self.threeSiteBDMaleLabel = tk.Label(self)
        self.threeSiteBDMaleLabel["text"] = "Body Density: "
        self.threeSiteBDMaleLabel.pack()
@@ -62,7 +62,7 @@ class Results(tk.Frame):
        self.threeSiteBFMaleLabel["text"] = "Body Fat %: "
        self.threeSiteBFMaleLabel.pack()
 
-      if (person.chest != "\n" and person.ab != "\n" and person.maleThigh != "\n"):
+      if (person.threeSiteMaleChest != "\n" and person.threeSiteMaleAb != "\n" and person.threeSiteMaleThigh != "\n"):
         self.threeSiteBDFemaleLabel = tk.Label(self)
         self.threeSiteBDFemaleLabel["text"] = "Body Density: "
         self.threeSiteBDFemaleLabel.pack()
@@ -352,4 +352,4 @@ class Results(tk.Frame):
        self.Quit = QuitButton(self, self.controller)
        self.Quit.pack()
 
-   def saveData(self, person):
+   #def saveData(self, person):

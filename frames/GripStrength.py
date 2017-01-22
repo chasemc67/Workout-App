@@ -43,11 +43,11 @@ class GripStrength(tk.Frame):
    def loadData(self, person):
 
        self.GripStrLeftText.delete(1.0, tk.END)
-       self.GripStLeftText.insert(tk.END, person.gripStrengthLeft)
+       self.GripStrLeftText.insert(tk.END, person.gripStrengthLeft)
 
        self.GripStrRightText.delete(1.0, tk.END)
        self.GripStrRightText.insert(tk.END, person.gripStrengthRight)
 
    def saveData(self, person):
-       person.GripStrLeft = self.gripStrengthLeftText.get(1.0, tk.END)
-       person.GripStrRight = self.gripStrengthRightText.get(1.0, tk.END)
+       person.GripStrLeft = self.GripStrengthLeftText.get(1.0, tk.END)
+       person.GripStrRight = self.GripStrengthRightText.get(1.0, tk.END)
