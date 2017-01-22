@@ -30,11 +30,16 @@ from frames.Results import Results
 
 from Person import Person
 
+from Database.CreateDB import *
+from Database.getAllPeople import *
+from Database.InsertSampleData import *
+
 TITLE_FONT = ("Helvetica", 18, "bold")
 
-#framesToCycle = list()
-#currentFrameIndex = list()
-#currentFrameIndex.append(0)
+#createDB()
+#insertSampleData()
+#getAllPeople()
+#exit()
 
 class WorkoutApp(tk.Tk):
 
