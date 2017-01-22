@@ -65,6 +65,15 @@ class Person():
         self.framesChecked = list()
 
 
+    # Database Functions
+        # returns a list of names of attributes
+    def getAttributes(self):
+        attrList = list()
+        for A in dir(self):
+            if not A.startswith('__') and not callable(getattr(self, A)):
+                attrList.append(A)
+        print(attrList)
+
     # Calculations
     def getBMI(self):
         return float(self.weight) / (float(self.height) * float(self.height))
