@@ -6,7 +6,7 @@ def createDB():
 
 	conn.execute('''CREATE TABLE IF NOT EXISTS
 		PEOPLE (
-	       ID INT PRIMARY KEY     NOT NULL,
+	       ID INTEGER PRIMARY KEY   AUTOINCREMENT,
 	       NAME           CHAR(50)    NOT NULL,
 	       PHONE          CHAR(50),
 	       DATEOFTEST        CHAR(50),
