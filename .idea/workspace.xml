@@ -45,8 +45,8 @@
           <file leaf-file-name="Person.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Person.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="374">
-                  <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+                <state relative-caret-position="-43">
+                  <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -80,8 +80,14 @@
             <entry file="file://$PROJECT_DIR$/Person.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="200">
-                  <caret line="135" column="18" selection-start-line="135" selection-start-column="18" selection-end-line="135" selection-end-column="18" />
-                  <folding />
+                  <caret line="136" column="18" selection-start-line="136" selection-start-column="18" selection-end-line="136" selection-end-column="18" />
+                  <folding>
+                    <marker date="1485123512741" expanded="true" signature="15:5301" ph="..." />
+                    <marker date="1485123512741" expanded="true" signature="39:2021" ph="..." />
+                    <marker date="1485123512741" expanded="true" signature="1953:2021" ph="..." />
+                    <marker date="1485123512741" expanded="true" signature="2538:2855" ph="..." />
+                    <marker date="1485123512741" expanded="true" signature="4996:5063" ph="..." />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -154,8 +160,8 @@
         <option value="$PROJECT_DIR$/frames/GripStrength.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/frames/RMpredict.py" />
-        <option value="$PROJECT_DIR$/Person.py" />
         <option value="$PROJECT_DIR$/frames/Results.py" />
+        <option value="$PROJECT_DIR$/Person.py" />
       </list>
     </option>
   </component>
@@ -891,18 +897,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Person.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="135" column="18" selection-start-line="135" selection-start-column="18" selection-end-line="135" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frames/Results.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="168" column="44" selection-start-line="168" selection-start-column="44" selection-end-line="168" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Person.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-43">
+          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
           <folding />
         </state>
       </provider>
