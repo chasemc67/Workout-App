@@ -129,9 +129,7 @@ class Results(tk.Frame):
    def showRMTestResult(self, person):
        self.RMTestResultLabel = tk.Label(self)
        self.RMTestResultLabel["text"] = "1RM Test"
-       self.RMTestResultLabel.pack()
-
-       if (person.RMTestExA != "\n" and person.RMTestExAWeight != "\n"):
+       self.RMTestResultLaf    if (person.RMTestExA != "\n" and person.RMTestExAWeight != "\n"):
         self.RMTestExALabel = tk.Label(self)
         self.RMTestExALabel["text"] = "Exercise: "
         self.RMTestExALabel.pack()
@@ -277,10 +275,10 @@ class Results(tk.Frame):
        self.plankRatingLabel.pack()
 
    def loadData(self, person):
-       if (person.vertJump != "\n" and person.vertReach != "\n"):
+       if "VertJump" in person.framesChecked:
         self.showVertJumpResult(person)
 
-       if (person.height != "\n" and person.weight != "\n"):
+       if "BMIframe" in person.framesChecked:
         self.showBMIresult(person)
 
        if "Circumference" in person.framesChecked: # change self.person.height
