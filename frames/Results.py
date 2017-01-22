@@ -129,7 +129,9 @@ class Results(tk.Frame):
    def showRMTestResult(self, person):
        self.RMTestResultLabel = tk.Label(self)
        self.RMTestResultLabel["text"] = "1RM Test"
-       self.RMTestResultLaf    if (person.RMTestExA != "\n" and person.RMTestExAWeight != "\n"):
+       self.RMTestResultLabel.pack()
+
+       if (person.RMTestExA != "\n" and person.RMTestExAWeight != "\n"):
         self.RMTestExALabel = tk.Label(self)
         self.RMTestExALabel["text"] = "Exercise: "
         self.RMTestExALabel.pack()
