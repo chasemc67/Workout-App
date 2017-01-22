@@ -6,6 +6,10 @@ from buttons.QuitButton import QuitButton
 
 class RMpredict(tk.Frame):
 
+   def focus_next_window(self, event):
+       event.widget.tk_focusNext().focus()
+       return("break")
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller
@@ -21,6 +25,7 @@ class RMpredict(tk.Frame):
        self.RMPredictExText = tk.Text(self)
        self.RMPredictExText["height"] = 1
        self.RMPredictExText["width"] = 5
+       self.RMPredictExText.bind("<Tab>", self.focus_next_window)
        self.RMPredictExText.grid(row=1, column=1)
 
        self.RMPredictReps = tk.Label(self)
@@ -30,6 +35,7 @@ class RMpredict(tk.Frame):
        self.RMPredictRepsText = tk.Text(self)
        self.RMPredictRepsText["height"] = 1
        self.RMPredictRepsText["width"] = 5
+       self.RMPredictRepsText.bind("<Tab>", self.focus_next_window)
        self.RMPredictRepsText.grid(row=2, column=1)
 
        self.RMPredictLoad = tk.Label(self)
@@ -39,6 +45,7 @@ class RMpredict(tk.Frame):
        self.RMPredictLoadText = tk.Text(self)
        self.RMPredictLoadText["height"] = 1
        self.RMPredictLoadText["width"] = 5
+       self.RMPredictLoadText.bind("<Tab>", self.focus_next_window)
        self.RMPredictLoadText.grid(row=3, column=1)
 
        self.Next = NextButton(self, controller, self.saveData)

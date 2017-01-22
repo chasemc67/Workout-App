@@ -6,6 +6,10 @@ from buttons.QuitButton import QuitButton
 
 class SvnSiteSkinfold(tk.Frame):
 
+   def focus_next_window(self, event):
+       event.widget.tk_focusNext().focus()
+       return("break")
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller
@@ -21,6 +25,7 @@ class SvnSiteSkinfold(tk.Frame):
        self.SvnSiteChestText = tk.Text(self)
        self.SvnSiteChestText["height"] = 1
        self.SvnSiteChestText["width"] = 5
+       self.SvnSiteChestText.bind("<Tab>", self.focus_next_window)
        self.SvnSiteChestText.grid(row=1, column=1)
 
        self.SvnSiteMidAx = tk.Label(self)
@@ -30,6 +35,7 @@ class SvnSiteSkinfold(tk.Frame):
        self.SvnSiteMidAxText = tk.Text(self)
        self.SvnSiteMidAxText["height"] = 1
        self.SvnSiteMidAxText["width"] = 5
+       self.SvnSiteMidAxText.bind("<Tab>", self.focus_next_window)
        self.SvnSiteMidAxText.grid(row=1, column=3)
 
        self.SvnSiteTri = tk.Label(self)
@@ -39,6 +45,7 @@ class SvnSiteSkinfold(tk.Frame):
        self.SvnSiteTriText = tk.Text(self)
        self.SvnSiteTriText["height"] = 1
        self.SvnSiteTriText["width"] = 5
+       self.SvnSiteTriText.bind("<Tab>", self.focus_next_window)
        self.SvnSiteTriText.grid(row=1, column=5)
 
        self.SvnSiteScap = tk.Label(self)
@@ -48,6 +55,7 @@ class SvnSiteSkinfold(tk.Frame):
        self.SvnSiteScapText = tk.Text(self)
        self.SvnSiteScapText["height"] = 1
        self.SvnSiteScapText["width"] = 5
+       self.SvnSiteScapText.bind("<Tab>", self.focus_next_window)
        self.SvnSiteScapText.grid(row=1, column=7)
 
        self.SvnSiteSupra = tk.Label(self)
@@ -57,6 +65,7 @@ class SvnSiteSkinfold(tk.Frame):
        self.SvnSiteSupraText = tk.Text(self)
        self.SvnSiteSupraText["height"] = 1
        self.SvnSiteSupraText["width"] = 5
+       self.SvnSiteSupraText.bind("<Tab>", self.focus_next_window)
        self.SvnSiteSupraText.grid(row=1, column=9)
 
        self.SvnSiteAb = tk.Label(self)
@@ -66,6 +75,7 @@ class SvnSiteSkinfold(tk.Frame):
        self.SvnSiteAbText = tk.Text(self)
        self.SvnSiteAbText["height"] = 1
        self.SvnSiteAbText["width"] = 5
+       self.SvnSiteAbText.bind("<Tab>", self.focus_next_window)
        self.SvnSiteAbText.grid(row=1, column=11)
 
        self.SvnSiteThigh = tk.Label(self)
@@ -75,6 +85,7 @@ class SvnSiteSkinfold(tk.Frame):
        self.SvnSiteThighText = tk.Text(self)
        self.SvnSiteThighText["height"] = 1
        self.SvnSiteThighText["width"] = 5
+       self.SvnSiteThighText.bind("<Tab>", self.focus_next_window)
        self.SvnSiteThighText.grid(row=1, column=13)
 
        self.Next = NextButton(self, controller, self.saveData)

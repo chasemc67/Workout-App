@@ -4,6 +4,11 @@ from buttons.BackButton import BackButton
 from buttons.QuitButton import QuitButton
 
 class Coopers(tk.Frame):
+
+   def focus_next_window(self, event):
+       event.widget.tk_focusNext().focus()
+       return("break")
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller
@@ -19,6 +24,7 @@ class Coopers(tk.Frame):
        self.CooperDistText = tk.Text(self)
        self.CooperDistText["height"] = 1
        self.CooperDistText["width"] = 5
+       self.CooperDistText.bind("<Tab>", self.focus_next_window)
        self.CooperDistText.grid(row=1, column=1)
 
        self.Next = NextButton(self, controller, self.saveData)

@@ -5,6 +5,11 @@ from buttons.BackButton import BackButton
 from buttons.QuitButton import QuitButton
 
 class Rockport(tk.Frame):
+
+   def focus_next_window(self, event):
+       event.widget.tk_focusNext().focus()
+       return("break")
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller
@@ -20,6 +25,7 @@ class Rockport(tk.Frame):
        self.RockportHRText = tk.Text(self)
        self.RockportHRText["height"] = 1
        self.RockportHRText["width"] = 5
+       self.RockportHRText.bind("<Tab>", self.focus_next_window)
        self.RockportHRText.grid(row=1, column=1)
 
        self.RockportTime = tk.Label(self)
@@ -29,6 +35,7 @@ class Rockport(tk.Frame):
        self.RockportTimeText = tk.Text(self)
        self.RockportTimeText["height"] = 1
        self.RockportTimeText["width"] = 5
+       self.RockportTimeText.bind("<Tab>", self.focus_next_window)
        self.RockportTimeText.grid(row=2, column=1)
 
        self.Next = NextButton(self, controller, self.saveData)

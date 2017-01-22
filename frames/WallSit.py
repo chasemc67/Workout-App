@@ -6,6 +6,10 @@ from buttons.QuitButton import QuitButton
 
 class WallSit(tk.Frame):
 
+   def focus_next_window(self, event):
+       event.widget.tk_focusNext().focus()
+       return("break")
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller
@@ -21,6 +25,7 @@ class WallSit(tk.Frame):
        self.WallSitTimeText = tk.Text(self)
        self.WallSitTimeText["height"] = 1
        self.WallSitTimeText["width"] = 5
+       self.WallSitTimeText.bind("<Tab>", self.focus_next_window)
        self.WallSitTimeText.grid(row=1, column=1)
 
        self.Next = NextButton(self, controller, self.saveData)

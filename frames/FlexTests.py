@@ -5,6 +5,10 @@ from buttons.QuitButton import QuitButton
 
 class FlexTests(tk.Frame):
 
+   def focus_next_window(self, event):
+       event.widget.tk_focusNext().focus()
+       return("break")
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller
@@ -20,6 +24,7 @@ class FlexTests(tk.Frame):
        self.SitReachDistText = tk.Text(self)
        self.SitReachDistText["height"] = 1
        self.SitReachDistText["width"] = 5
+       self.SitReachDistText.bind("<Tab>", self.focus_next_window)
        self.SitReachDistText.grid(row=1, column=1)
 
        self.Next = NextButton(self, controller, self.saveData)

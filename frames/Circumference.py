@@ -4,6 +4,11 @@ from buttons.BackButton import BackButton
 from buttons.QuitButton import QuitButton
 
 class Circumference(tk.Frame):
+
+   def focus_next_window(self, event):
+      event.widget.tk_focusNext().focus()
+      return("break")
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self,parent)
        self.controller = controller
@@ -19,6 +24,7 @@ class Circumference(tk.Frame):
        self.HipCircText = tk.Text(self)
        self.HipCircText["height"] = 1
        self.HipCircText["width"] = 5
+       self.HipCircText.bind("<Tab>", self.focus_next_window)
        self.HipCircText.grid(row=1, column=1)
 
        self.WaistCirc = tk.Label(self)
@@ -28,6 +34,7 @@ class Circumference(tk.Frame):
        self.WaistCircText = tk.Text(self)
        self.WaistCircText["height"] = 1
        self.WaistCircText["width"] = 5
+       self.WaistCircText.bind("<Tab>", self.focus_next_window)
        self.WaistCircText.grid(row=2, column=1)
 
        self.ArmCirc = tk.Label(self)
@@ -37,6 +44,7 @@ class Circumference(tk.Frame):
        self.ArmCircText = tk.Text(self)
        self.ArmCircText["height"] = 1
        self.ArmCircText["width"] = 5
+       self.ArmCircText.bind("<Tab>", self.focus_next_window)
        self.ArmCircText.grid(row=3, column=1)
 
        self.ThighCirc = tk.Label(self)
@@ -46,6 +54,7 @@ class Circumference(tk.Frame):
        self.ThighCircText = tk.Text(self)
        self.ThighCircText["height"] = 1
        self.ThighCircText["width"] = 5
+       self.ThighCircText.bind("<Tab>", self.focus_next_window)
        self.ThighCircText.grid(row=4, column=1)
 
        self.ChestCirc = tk.Label(self)
@@ -55,6 +64,7 @@ class Circumference(tk.Frame):
        self.ChestCircText = tk.Text(self)
        self.ChestCircText["height"] = 1
        self.ChestCircText["width"] = 5
+       self.ChestCircText.bind("<Tab>", self.focus_next_window)
        self.ChestCircText.grid(row=5, column=1)
 
        self.Next = NextButton(self, controller, self.saveData)
