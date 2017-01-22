@@ -10,6 +10,11 @@ class SvnSiteSkinfold(tk.Frame):
        event.widget.tk_focusNext().focus()
        return("break")
 
+
+   def focus_last_window(self, event):
+       event.widget.tk_focusPrev().focus()
+       return("break")
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller
@@ -26,6 +31,7 @@ class SvnSiteSkinfold(tk.Frame):
        self.SvnSiteChestText["height"] = 1
        self.SvnSiteChestText["width"] = 5
        self.SvnSiteChestText.bind("<Tab>", self.focus_next_window)
+       self.SvnSiteChestText.bind("<Shift-Tab>", self.focus_last_window)
        self.SvnSiteChestText.grid(row=1, column=1)
 
        self.SvnSiteMidAx = tk.Label(self)
@@ -36,6 +42,7 @@ class SvnSiteSkinfold(tk.Frame):
        self.SvnSiteMidAxText["height"] = 1
        self.SvnSiteMidAxText["width"] = 5
        self.SvnSiteMidAxText.bind("<Tab>", self.focus_next_window)
+       self.SvnSiteMidAxText.bind("<Shift-Tab>", self.focus_last_window)
        self.SvnSiteMidAxText.grid(row=1, column=3)
 
        self.SvnSiteTri = tk.Label(self)
@@ -46,6 +53,7 @@ class SvnSiteSkinfold(tk.Frame):
        self.SvnSiteTriText["height"] = 1
        self.SvnSiteTriText["width"] = 5
        self.SvnSiteTriText.bind("<Tab>", self.focus_next_window)
+       self.SvnSiteTriText.bind("<Shift-Tab>", self.focus_last_window)
        self.SvnSiteTriText.grid(row=1, column=5)
 
        self.SvnSiteScap = tk.Label(self)
@@ -56,6 +64,7 @@ class SvnSiteSkinfold(tk.Frame):
        self.SvnSiteScapText["height"] = 1
        self.SvnSiteScapText["width"] = 5
        self.SvnSiteScapText.bind("<Tab>", self.focus_next_window)
+       self.SvnSiteScapText.bind("<Shift-Tab>", self.focus_last_window)
        self.SvnSiteScapText.grid(row=1, column=7)
 
        self.SvnSiteSupra = tk.Label(self)
@@ -66,6 +75,7 @@ class SvnSiteSkinfold(tk.Frame):
        self.SvnSiteSupraText["height"] = 1
        self.SvnSiteSupraText["width"] = 5
        self.SvnSiteSupraText.bind("<Tab>", self.focus_next_window)
+       self.SvnSiteSupraText.bind("<Shift-Tab>", self.focus_last_window)
        self.SvnSiteSupraText.grid(row=1, column=9)
 
        self.SvnSiteAb = tk.Label(self)
@@ -76,6 +86,7 @@ class SvnSiteSkinfold(tk.Frame):
        self.SvnSiteAbText["height"] = 1
        self.SvnSiteAbText["width"] = 5
        self.SvnSiteAbText.bind("<Tab>", self.focus_next_window)
+       self.SvnSiteAbText.bind("<Shift-Tab>", self.focus_last_window)
        self.SvnSiteAbText.grid(row=1, column=11)
 
        self.SvnSiteThigh = tk.Label(self)
@@ -86,6 +97,7 @@ class SvnSiteSkinfold(tk.Frame):
        self.SvnSiteThighText["height"] = 1
        self.SvnSiteThighText["width"] = 5
        self.SvnSiteThighText.bind("<Tab>", self.focus_next_window)
+       self.SvnSiteThighText.bind("<Shift-Tab>", self.focus_last_window)
        self.SvnSiteThighText.grid(row=1, column=13)
 
        self.Next = NextButton(self, controller, self.saveData)

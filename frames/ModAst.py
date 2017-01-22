@@ -10,6 +10,10 @@ class ModAst(tk.Frame):
        event.widget.tk_focusNext().focus()
        return("break")
 
+   def focus_last_window(self, event):
+       event.widget.tk_focusPrev().focus()
+       return("break")
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller
@@ -26,6 +30,7 @@ class ModAst(tk.Frame):
        self.ModAstLoadAText["height"] = 1
        self.ModAstLoadAText["width"] = 5
        self.ModAstLoadAText.bind("<Tab>", self.focus_next_window)
+       self.ModAstLoadAText.bind("<Shift-Tab>", self.focus_last_window)
        self.ModAstLoadAText.grid(row=2, column =1)
 
        self.ModAstLoadB = tk.Label(self)
@@ -36,6 +41,7 @@ class ModAst(tk.Frame):
        self.ModAstLoadBText["height"] = 1
        self.ModAstLoadBText["width"] = 5
        self.ModAstLoadBText.bind("<Tab>", self.focus_next_window)
+       self.ModAstLoadBText.bind("<Shift-Tab>", self.focus_last_window)
        self.ModAstLoadBText.grid(row=3, column=1)
 
        self.ModAstHR = tk.Label(self)
@@ -46,6 +52,7 @@ class ModAst(tk.Frame):
        self.ModAstHRText["height"] = 1
        self.ModAstHRText["width"] = 5
        self.ModAstHRText.bind("<Tab>", self.focus_next_window)
+       self.ModAstHRText.bind("<Shift-Tab>", self.focus_last_window)
        self.ModAstHRText.grid(row=3, column=3)
 
        self.ModAstCapacity = tk.Label(self)
@@ -56,6 +63,7 @@ class ModAst(tk.Frame):
        self.ModAstCapacityText["height"] = 1
        self.ModAstCapacityText["width"] = 5
        self.ModAstCapacityText.bind("<Tab>", self.focus_next_window)
+       self.ModAstCapacityText.bind("<Shift-Tab>", self.focus_last_window)
        self.ModAstCapacityText.grid(row=4, column=1)
 
        self.Next = NextButton(self, controller, self.saveData)

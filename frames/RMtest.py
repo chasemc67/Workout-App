@@ -10,6 +10,10 @@ class RMtest(tk.Frame):
        event.widget.tk_focusNext().focus()
        return("break")
 
+   def focus_last_window(self, event):
+       event.widget.tk_focusPrev().focus()
+       return("break")
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller
@@ -26,6 +30,7 @@ class RMtest(tk.Frame):
        self.RMTestExAText["height"] = 1
        self.RMTestExAText["width"] = 5
        self.RMTestExAText.bind("<Tab>", self.focus_next_window)
+       self.RMTestExAText.bind("<Shift-Tab>", self.focus_last_window)
        self.RMTestExAText.grid(row=1, column=1)
 
        self.RMTestExAWeight = tk.Label(self)
@@ -36,6 +41,7 @@ class RMtest(tk.Frame):
        self.RMTestExAWeightText["height"] = 1
        self.RMTestExAWeightText["width"] = 5
        self.RMTestExAWeightText.bind("<Tab>", self.focus_next_window)
+       self.RMTestExAWeightText.bind("<Shift-Tab>", self.focus_last_window)
        self.RMTestExAWeightText.grid(row=1, column=3)
 
        self.RMTestExB = tk.Label(self)
@@ -46,6 +52,7 @@ class RMtest(tk.Frame):
        self.RMTestExBText["height"] = 1
        self.RMTestExBText["width"] = 5
        self.RMTestExBText.bind("<Tab>", self.focus_next_window)
+       self.RMTestExBText.bind("<Shift-Tab>", self.focus_last_window)
        self.RMTestExBText.grid(row=2, column=1)
 
        self.RMTestExBWeight = tk.Label(self)
@@ -56,6 +63,7 @@ class RMtest(tk.Frame):
        self.RMTestExBWeightText["height"] = 1
        self.RMTestExBWeightText["width"] = 5
        self.RMTestExBWeightText.bind("<Tab>", self.focus_next_window)
+       self.RMTestExBWeightText.bind("<Shift-Tab>", self.focus_last_window)
        self.RMTestExBWeightText.grid(row=2, column=3)
 
        self.Next = NextButton(self, controller, self.saveData)

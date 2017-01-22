@@ -10,6 +10,11 @@ class PlankEnd(tk.Frame):
        event.widget.tk_focusNext().focus()
        return("break")
 
+
+   def focus_last_window(self, event):
+       event.widget.tk_focusPrev().focus()
+       return("break")
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller
@@ -26,6 +31,7 @@ class PlankEnd(tk.Frame):
        self.PlankTimeText["height"] = 1
        self.PlankTimeText["width"] = 5
        self.PlankTimeText.bind("<Tab>", self.focus_next_window)
+       self.PlankTimeText.bind("<Shift-Tab>", self.focus_last_window)
        self.PlankTimeText.grid(row=1, column=1)
 
        self.Next = NextButton(self, controller, self.saveData)

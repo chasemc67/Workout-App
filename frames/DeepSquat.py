@@ -9,6 +9,10 @@ class DeepSquat(tk.Frame):
        event.widget.tk_focusNext().focus()
        return("break")
 
+   def focus_last_window(self, event):
+       event.widget.tk_focusPrev().focus()
+       return("break")
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller
@@ -25,6 +29,7 @@ class DeepSquat(tk.Frame):
        self.DeepSquatRateText["height"] = 1
        self.DeepSquatRateText["width"] = 5
        self.DeepSquatRateText.bind("<Tab>", self.focus_next_window)
+       self.DeepSquatRateText.bind("<Shift-Tab>", self.focus_last_window)
        self.DeepSquatRateText.grid(row=1, column=1)
 
        self.Next = NextButton(self, controller, self.saveData)

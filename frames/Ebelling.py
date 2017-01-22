@@ -8,6 +8,10 @@ class Ebelling(tk.Frame):
        event.widget.tk_focusNext().focus()
        return("break")
 
+   def focus_last_window(self, event):
+       event.widget.tk_focusPrev().focus()
+       return("break")
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller
@@ -24,6 +28,7 @@ class Ebelling(tk.Frame):
        self.EbellingWUText["height"] = 1
        self.EbellingWUText["width"] = 5
        self.EbellingWUText.bind("<Tab>", self.focus_next_window)
+       self.EbellingWUText.bind("<Shift-Tab>", self.focus_last_window)
        self.EbellingWUText.grid(row=1, column=1)
 
        self.EbellingWork = tk.Label(self)
@@ -34,6 +39,7 @@ class Ebelling(tk.Frame):
        self.EbellingWorkText["height"] = 1
        self.EbellingWorkText["width"] = 5
        self.EbellingWorkText.bind("<Tab>", self.focus_next_window)
+       self.EbellingWorkText.bind("<Shift-Tab>", self.focus_last_window)
        self.EbellingWorkText.grid(row=2, column=1)
 
        self.EbellingHR = tk.Label(self)
@@ -44,6 +50,7 @@ class Ebelling(tk.Frame):
        self.EbellingHRText["height"] = 1
        self.EbellingHRText["width"] = 5
        self.EbellingHRText.bind("<Tab>", self.focus_next_window)
+       self.EbellingHRText.bind("<Shift-Tab>", self.focus_last_window)
        self.EbellingHRText.grid(row=3, column=1)
 
        self.Next = NextButton(self, controller, self.saveData)

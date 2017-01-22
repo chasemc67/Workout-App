@@ -10,6 +10,10 @@ class SLstance(tk.Frame):
        event.widget.tk_focusNext().focus()
        return("break")
 
+   def focus_last_window(self, event):
+       event.widget.tk_focusPrev().focus()
+       return("break")
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller
@@ -26,6 +30,7 @@ class SLstance(tk.Frame):
        self.SLOpenLeftText["height"] = 1
        self.SLOpenLeftText["width"] = 5
        self.SLOpenLeftText.bind("<Tab>", self.focus_next_window)
+       self.SLOpenLeftTextxt.bind("<Shift-Tab>", self.focus_last_window)
        self.SLOpenLeftText.grid(row=1, column=1)
 
        self.SLOpenRight = tk.Label(self)
@@ -36,6 +41,7 @@ class SLstance(tk.Frame):
        self.SLOpenRightText["height"] = 1
        self.SLOpenRightText["width"] = 5
        self.SLOpenRightText.bind("<Tab>", self.focus_next_window)
+       self.SLOpenRightTextt.bind("<Shift-Tab>", self.focus_last_window)
        self.SLOpenRightText.grid(row=1, column=3)
 
        self.SLCloseLeft = tk.Label(self)
@@ -46,6 +52,7 @@ class SLstance(tk.Frame):
        self.SLCloseLeftText["height"] = 1
        self.SLCloseLeftText["width"] = 5
        self.SLCloseLeftText.bind("<Tab>", self.focus_next_window)
+       self.SLCloseLeftTextt.bind("<Shift-Tab>", self.focus_last_window)
        self.SLCloseLeftText.grid(row=2, column=1)
 
        self.SLCloseRight = tk.Label(self)
@@ -56,6 +63,7 @@ class SLstance(tk.Frame):
        self.SLCloseRightText["height"] = 1
        self.SLCloseRightText["width"] = 5
        self.SLCloseRightText.bind("<Tab>", self.focus_next_window)
+       self.SLCloseRightText.bind("<Shift-Tab>", self.focus_last_window)
        self.SLCloseRightText.grid(row=2, column=3)
 
        self.Next = NextButton(self, controller, self.saveData)

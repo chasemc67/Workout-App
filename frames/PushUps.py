@@ -10,6 +10,11 @@ class PushUps(tk.Frame):
        event.widget.tk_focusNext().focus()
        return("break")
 
+
+   def focus_last_window(self, event):
+       event.widget.tk_focusPrev().focus()
+       return("break")
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller
@@ -26,6 +31,7 @@ class PushUps(tk.Frame):
        self.PushUpNumText["height"] = 1
        self.PushUpNumText["width"] = 5
        self.PushUpNumText.bind("<Tab>", self.focus_next_window)
+       self.PushUpNumText.bind("<Shift-Tab>", self.focus_last_window)
        self.PushUpNumText.grid(row=1, column=1)
 
        self.Next = NextButton(self, controller, self.saveData)

@@ -9,6 +9,10 @@ class GripStrength(tk.Frame):
        event.widget.tk_focusNext().focus()
        return("break")
 
+   def focus_last_window(self, event):
+       event.widget.tk_focusPrev().focus()
+       return("break")
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller
@@ -25,6 +29,7 @@ class GripStrength(tk.Frame):
        self.GripStrLeftText["height"] = 1
        self.GripStrLeftText["width"] = 5
        self.GripStrLeftText.bind("<Tab>", self.focus_next_window)
+       self.GripStrLeftText.bind("<Shift-Tab>", self.focus_last_window)
        self.GripStrLeftText.grid(row=1, column=1)
 
        self.GripStrRight = tk.Label(self)
@@ -35,6 +40,7 @@ class GripStrength(tk.Frame):
        self.GripStrRightText["height"] = 1
        self.GripStrRightText["width"] = 5
        self.GripStrRightText.bind("<Tab>", self.focus_next_window)
+       self.GripStrRightText.bind("<Shift-Tab>", self.focus_last_window)
        self.GripStrRightText.grid(row=2, column=1)
 
        self.Next = NextButton(self, controller, self.saveData)

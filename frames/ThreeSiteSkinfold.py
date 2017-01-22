@@ -10,6 +10,10 @@ class ThreeSiteSkinfold(tk.Frame):
        event.widget.tk_focusNext().focus()
        return("break")
 
+   def focus_last_window(self, event):
+       event.widget.tk_focusPrev().focus()
+       return("break")
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller
@@ -26,6 +30,7 @@ class ThreeSiteSkinfold(tk.Frame):
        self.ThreeSiteMaleChestText["height"] = 1
        self.ThreeSiteMaleChestText["width"] = 5
        self.ThreeSiteMaleChestText.bind("<Tab>", self.focus_next_window)
+       self.ThreeSiteMaleChestText.bind("<Shift-Tab>", self.focus_last_window)
        self.ThreeSiteMaleChestText.grid(row=2, column=2)
 
        self.ThreeSiteMaleAb = tk.Label(self)
@@ -36,6 +41,7 @@ class ThreeSiteSkinfold(tk.Frame):
        self.ThreeSiteMaleAbText["height"] = 1
        self.ThreeSiteMaleAbText["width"] = 5
        self.ThreeSiteMaleAbText.bind("<Tab>", self.focus_next_window)
+       self.ThreeSiteMaleAbText.bind("<Shift-Tab>", self.focus_last_window)
        self.ThreeSiteMaleAbText.grid(row=2, column=4)
 
        self.ThreeSiteMaleThigh = tk.Label(self)
@@ -46,6 +52,7 @@ class ThreeSiteSkinfold(tk.Frame):
        self.ThreeSiteMaleThighText["height"] = 1
        self.ThreeSiteMaleThighText["width"] = 5
        self.ThreeSiteMaleThighText.bind("<Tab>", self.focus_next_window)
+       self.ThreeSiteMaleThighText.bind("<Shift-Tab>", self.focus_last_window)
        self.ThreeSiteMaleThighText.grid(row=2, column=6)
 
        self.ThreeSiteFemaleCalc = tk.Label(self)
@@ -60,6 +67,7 @@ class ThreeSiteSkinfold(tk.Frame):
        self.ThreeSiteFemaleSupraText["height"] = 1
        self.ThreeSiteFemaleSupraText["width"] = 5
        self.ThreeSiteFemaleSupraText.bind("<Tab>", self.focus_next_window)
+       self.ThreeSiteFemaleSupraText.bind("<Shift-Tab>", self.focus_last_window)
        self.ThreeSiteFemaleSupraText.grid(row=3, column=2)
 
        self.ThreeSiteFemaleTricep = tk.Label(self)
@@ -70,6 +78,7 @@ class ThreeSiteSkinfold(tk.Frame):
        self.ThreeSiteFemaleTricepText["height"] = 1
        self.ThreeSiteFemaleTricepText["width"] = 5
        self.ThreeSiteFemaleTricepText.bind("<Tab>", self.focus_next_window)
+       self.ThreeSiteFemaleTricepText.bind("<Shift-Tab>", self.focus_last_window)
        self.ThreeSiteFemaleTricepText.grid(row=3, column=4)
 
        self.ThreeSiteFemaleThigh = tk.Label(self)
@@ -80,6 +89,7 @@ class ThreeSiteSkinfold(tk.Frame):
        self.ThreeSiteFemaleThighText["height"] = 1
        self.ThreeSiteFemaleThighText["width"] = 5
        self.ThreeSiteFemaleThighText.bind("<Tab>", self.focus_next_window)
+       self.ThreeSiteFemaleThighText.bind("<Shift-Tab>", self.focus_last_window)
        self.ThreeSiteFemaleThighText.grid(row=3, column=6)
 
        self.Next = NextButton(self, controller, self.saveData)

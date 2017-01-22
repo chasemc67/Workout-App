@@ -25,7 +25,6 @@ class MainPage(tk.Frame):
        self.Name["width"] = 15
        self.Name.bind("<Tab>", self.focus_next_window)
        self.Name.bind("<Shift-Tab>", self.focus_last_window)
-       self.Name.bind("<Shift-Tab>", self.focus_last_window)
        self.Name.grid(row=0, column=1)
 
        self.labelDateOfTest = tk.Label(self)
@@ -36,7 +35,6 @@ class MainPage(tk.Frame):
        self.DateOfTest["height"] = 1
        self.DateOfTest["width"] = 15
        self.DateOfTest.bind("<Tab>", self.focus_next_window)
-       self.DateOfTest.bind("<Shift-Tab>", self.focus_last_window)
        self.DateOfTest.bind("<Shift-Tab>", self.focus_last_window)
        self.DateOfTest.grid(row=0, column=3)
 

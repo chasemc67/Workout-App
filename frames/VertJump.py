@@ -10,6 +10,10 @@ class VertJump(tk.Frame):
        event.widget.tk_focusNext().focus()
        return("break")
 
+   def focus_last_window(self, event):
+       event.widget.tk_focusPrev().focus()
+       return("break")
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller
@@ -26,6 +30,7 @@ class VertJump(tk.Frame):
        self.VertJumpSRText["height"] = 1
        self.VertJumpSRText["width"] = 5
        self.VertJumpSRText.bind("<Tab>", self.focus_next_window)
+       self.VertJumpSRText.bind("<Shift-Tab>", self.focus_last_window)
        self.VertJumpSRText.grid(row=1, column=1)
 
        self.VertJumpBest = tk.Label(self)
@@ -36,6 +41,7 @@ class VertJump(tk.Frame):
        self.VertJumpBestText["height"] = 1
        self.VertJumpBestText["width"] = 5
        self.VertJumpBestText.bind("<Tab>", self.focus_next_window)
+       self.VertJumpBestText.bind("<Shift-Tab>", self.focus_last_window)
        self.VertJumpBestText.grid(row=2, column=1)
 
        self.Next = NextButton(self, controller, self.saveData)

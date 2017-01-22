@@ -8,6 +8,10 @@ class FrontPlank(tk.Frame):
        event.widget.tk_focusNext().focus()
        return("break")
 
+   def focus_last_window(self, event):
+       event.widget.tk_focusPrev().focus()
+       return("break")
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller
@@ -24,6 +28,7 @@ class FrontPlank(tk.Frame):
        self.FrPlankRateText["height"] = 1
        self.FrPlankRateText["width"] = 5
        self.FrPlankRateText.bind("<Tab>", self.focus_next_window)
+       self.FrPlankRateText.bind("<Shift-Tab>", self.focus_last_window)
        self.FrPlankRateText.grid(row=1, column=1)
 
        self.Next = NextButton(self, controller, self.saveData)
