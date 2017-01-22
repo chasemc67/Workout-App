@@ -17,7 +17,7 @@ class Results(tk.Frame):
 
        self.person = self.controller.person
 
-   def showBMIresult(self):
+   def showBMIresult(self, person):
        self.BMIresult = tk.Label(self)
        self.BMIresult["text"] = "BMI: "
        self.BMIresult.pack()
@@ -283,67 +283,67 @@ class Results(tk.Frame):
        if (person.height != "\n" and person.weight != "\n"):
         self.showBMIresult(person)
 
-       if 1==1: # change self.person.height and weight
+       if "Circumference" in person.framesChecked: # change self.person.height
         self.showCircumferenceResult(person)
 
-       if 1==1:
+       if "ThreeSiteSkinfold" in person.framesChecked:
         self.showThreeSiteSkinfoldResult(person)
 
-       if 1==1:
+       if "SvnSiteSkinfold" in person.framesChecked:
         self.showSvnSiteSkinfoldResult(person)
 
-       if 1==1:
+       if "ModAst" in person.framesChecked:
         self.showModAstResult(person)
 
-       if 1==1:
+       if "Ebelling" in person.framesChecked:
         self.showEbbelingResult(person)
 
-       if 1==1:
+       if "Rockport" in person.framesChecked:
         self.showRockportResult(person)
 
-       if 1==1:
+       if "Coopers" in person.framesChecked:
         self.showCoopersResult(person)
 
-       if 1==1:
+       if "MBtoss" in person.framesChecked:
         self.showMBTossResult(person)
 
-       if 1==1:
+       if "RMtest" in person.framesChecked:
         self.showRMTestResult(person)
 
-       if 1==1:
+       if "RMpredict" in person.framesChecked:
         self.showRMPredictResult(person)
 
-       if 1==1:
+       if "GripStrength" in person.framesChecked:
         self.showGripStrengthResult(person)
 
-       if 1==1:
+       if "PushUps" in person.framesChecked:
         self.showPushUpResult(person)
 
-       if 1==1:
+       if "CurlUps" in person.framesChecked:
         self.showCurlUpResult(person)
 
-       if 1==1:
+       if "FrontPlank" in person.framesChecked:
         self.showFrontPlankResult(person)
 
-       if 1==1:
+       if "WallSit" in person.framesChecked:
         self.showWallSitResult(person)
 
-       if 1==1:
+       if "SitReach" in person.framesChecked:
         self.showSitReachResult(person)
 
-       if 1==1:
+       if "SLstance" in person.framesChecked:
         self.showSLStanceResult(person)
 
-       if 1==1:
+       if "DeepSquat" in person.framesChecked:
         self.showDeepSquatAssessResult(person)
 
-       if 1==1:
+       if "WallSlide" in person.framesChecked:
         self.showWallSlideAssessResult(person)
 
-       if 1==1:
+       if "HipHinge" in person.framesChecked:
         self.showHipHingeAssessResult(person)
 
-       if 1==1:
+       if "PlankEnd" in person.framesChecked:
         self.showPlankAssessResult(person)
 
        self.Back = BackButton(self, self.controller)

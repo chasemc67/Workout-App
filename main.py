@@ -48,7 +48,7 @@ class WorkoutApp(tk.Tk):
        container.grid_rowconfigure(0, weight=1)
        container.grid_columnconfigure(0, weight=1)
 
-       self.framesToCycle = list()
+       #self.framesToCycle = list()
        self.currentFrameIndex = 0
 
        self.person = Person()
@@ -85,15 +85,15 @@ class WorkoutApp(tk.Tk):
 
        # to get the results page to show as the last frame, you can
        # do something like:
-       # if !self.frames[self.framesToCycle[self.currentFrameIndex]]:
+       # if !self.frames[self.famesToCycle[self.currentFrameIndex]]:
        # frame = self.frames["resultsFrame"]
        #else:
        # Keep in mind the above code wont just work out of the box, 
        # You'll need to modify and play with it a little bit
-       if (self.currentFrameIndex == len(self.framesToCycle)):
+       if (self.currentFrameIndex == len(self.person.framesChecked)):
         frame = self.frames["Results"]
        else:
-        frame = self.frames[self.framesToCycle[self.currentFrameIndex]]
+        frame = self.frames[self.person.framesChecked[self.currentFrameIndex]]
        print(self.person.armCirc)
        self.currentFrameIndex += 1
        frame.tkraise()
@@ -111,7 +111,7 @@ class WorkoutApp(tk.Tk):
 
 
    def prev_page(self):
-       frame = self.frames[self.framesToCycle[self.currentFrameIndex-1]]
+       frame = self.frames[self.person.framesChecked[self.currentFrameIndex-1]]
        self.currentFrameIndex -= 1
        frame.tkraise()
        # TODO refactor out into one function

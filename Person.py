@@ -69,6 +69,8 @@ class Person():
         self.RMTestExBWeight = ""
         self.ThreeSiteMaleChest = ""
 
+        self.framesChecked = list()
+
 
     # Calculations
     def getBMI(self):

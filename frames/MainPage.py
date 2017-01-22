@@ -195,10 +195,10 @@ class MainPage(tk.Frame):
        self.Quit.grid(row=17, column=2)
 
    def boxChecked(self, text):
-       if text in self.controller.framesToCycle:
-           self.controller.framesToCycle.remove(text)
+       if text in self.controller.person.framesChecked:
+           self.controller.person.framesChecked.remove(text)
        else:
-           self.controller.framesToCycle.append(text)
+           self.controller.person.framesChecked.append(text)
 
 
    def loadData(self, person):
