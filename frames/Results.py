@@ -115,11 +115,11 @@ class Results(tk.Frame):
         self.vertJumpLabel.pack()
 
         self.vertJumpReachLabel = tk.Label(self)
-        self.vertJumpReachLabel['text'] = ("Reach: " + self.person.vertReach)
+        self.vertJumpReachLabel['text'] = ("Reach: " + self.person.vertJumpSR)
         self.vertJumpReachLabel.pack()
 
         self.vertJumpCalcOutputLabel = tk.Label(self)
-        self.vertJumpCalcOutputLabel['text'] = "Calc output: " + str(person.getVertJump())
+        self.vertJumpCalcOutputLabel['text'] = "Calc output: " + str(person.getVertJumpBest())
         self.vertJumpCalcOutputLabel.pack()
 
         self.vertJumpPowerLabel = tk.Label(self)
