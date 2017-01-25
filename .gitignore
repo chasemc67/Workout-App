@@ -5,3 +5,4 @@ frames/__pycache__/*
 .idea/
 .idea/*
 .idea/workspace.xml
+people.db

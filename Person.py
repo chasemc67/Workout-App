@@ -75,7 +75,7 @@ class Person():
         for A in dir(self):
             if not A.startswith('__') and not callable(getattr(self, A)) and not A.startswith('framesChecked'):
                 attrList.append(A)
-        print(attrList)
+        return(attrList)
 
     # todo fix this shit
     def getAge(self):

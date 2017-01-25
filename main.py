@@ -36,10 +36,10 @@ from Database.InsertSampleData import *
 
 TITLE_FONT = ("Helvetica", 18, "bold")
 
-#createDB()
+createDB()
 #insertSampleData()
 #getAllPeople()
-#exit()
+exit()
 
 class WorkoutApp(tk.Tk):
 
