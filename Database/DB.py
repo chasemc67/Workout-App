@@ -38,13 +38,9 @@ def getInsertPersonString(person):
 def createDB():
 	conn = sqlite3.connect('people.db')
 	print("Opened database successfully")
-
 	conn.execute(getCreateTableString())
-
 	print("Table created successfully")
-
 	conn.close()
-
 
 
 def insertPerson(person):
@@ -54,6 +50,24 @@ def insertPerson(person):
 	conn.commit()
 	conn.close()
 
+def getPeople():
+	people = list()
+	conn = sqlite3.connect('people.db')
+	cursor = conn.execute("SELECT * from PEOPLE")
+	
+	for row in cursor:
+		people.append(loadPersonFromDBSelect(row))
+
+	conn.close()
+	return people
+
+def loadPersonFromDBSelect(dbSelect):
+	p = Person()
+	attribList = p.getAttributes()
+	# skip the database ID
+	for i in range(1,len(dbSelect)):
+		setattr(p, attribList[i-1], dbSelect[i])
+	return p
 
 def testDBStuff():
 	p = Person()
@@ -63,3 +77,10 @@ def testDBStuff():
 	p.weight = "5"
 	p.RMPredictEx = "rm stuff"
 	insertPerson(p)
+
+	r = getPeople()[0]
+
+	assert(r.name == p.name)
+	assert(r.armCirc == p.armCirc)
+	assert(r.weight == p.weight)
+	assert(r.height == p.height)
