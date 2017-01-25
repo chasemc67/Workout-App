@@ -30,7 +30,7 @@ class SLstance(tk.Frame):
        self.SLOpenLeftText["height"] = 1
        self.SLOpenLeftText["width"] = 5
        self.SLOpenLeftText.bind("<Tab>", self.focus_next_window)
-       self.SLOpenLeftTextxt.bind("<Shift-Tab>", self.focus_last_window)
+       self.SLOpenLeftText.bind("<Shift-Tab>", self.focus_last_window)
        self.SLOpenLeftText.grid(row=1, column=1)
 
        self.SLOpenRight = tk.Label(self)
@@ -41,7 +41,7 @@ class SLstance(tk.Frame):
        self.SLOpenRightText["height"] = 1
        self.SLOpenRightText["width"] = 5
        self.SLOpenRightText.bind("<Tab>", self.focus_next_window)
-       self.SLOpenRightTextt.bind("<Shift-Tab>", self.focus_last_window)
+       self.SLOpenRightText.bind("<Shift-Tab>", self.focus_last_window)
        self.SLOpenRightText.grid(row=1, column=3)
 
        self.SLCloseLeft = tk.Label(self)
@@ -52,7 +52,7 @@ class SLstance(tk.Frame):
        self.SLCloseLeftText["height"] = 1
        self.SLCloseLeftText["width"] = 5
        self.SLCloseLeftText.bind("<Tab>", self.focus_next_window)
-       self.SLCloseLeftTextt.bind("<Shift-Tab>", self.focus_last_window)
+       self.SLCloseLeftText.bind("<Shift-Tab>", self.focus_last_window)
        self.SLCloseLeftText.grid(row=2, column=1)
 
        self.SLCloseRight = tk.Label(self)
