@@ -16,6 +16,8 @@ def getCreateTableString():
 
 	return "".join(statement)
 
+# Takes a person object and generates a string to insert
+# that person object into the DB
 def getInsertPersonString(person):
 	statement = list()
 	attribList = Person().getAttributes()
@@ -42,7 +44,7 @@ def createDB():
 	print("Table created successfully")
 	conn.close()
 
-
+# Takes a person object and inserts it into the DB
 def insertPerson(person):
 	conn = sqlite3.connect('people.db')
 	#conn.execute("INSERT INTO PEOPLE (ID,NAME,PHONE,DATEOFTEST,GENDER,DOB,HEARTRATE,BLOODPRESSURE,HEIGHT,WEIGHT) VALUES (1, 'Paul', '780-700-1070', testDate, 'male',dob, 100, 200, 300, 400)")
@@ -50,6 +52,7 @@ def insertPerson(person):
 	conn.commit()
 	conn.close()
 
+# Returns a list of all people object in DB
 def getPeople():
 	people = list()
 	conn = sqlite3.connect('people.db')
@@ -61,6 +64,7 @@ def getPeople():
 	conn.close()
 	return people
 
+# Helper function for getPeople function
 def loadPersonFromDBSelect(dbSelect):
 	p = Person()
 	attribList = p.getAttributes()
@@ -69,6 +73,8 @@ def loadPersonFromDBSelect(dbSelect):
 		setattr(p, attribList[i-1], dbSelect[i])
 	return p
 
+
+# Test function for testing DB
 def testDBStuff():
 	p = Person()
 	p.name = "John"
