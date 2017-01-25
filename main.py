@@ -30,13 +30,12 @@ from frames.Results import Results
 
 from Person import Person
 
-from Database.CreateDB import *
-from Database.getAllPeople import *
-from Database.InsertSampleData import *
+from Database.DB import *
 
 TITLE_FONT = ("Helvetica", 18, "bold")
 
 createDB()
+testDBStuff()
 #insertSampleData()
 #getAllPeople()
 exit()
