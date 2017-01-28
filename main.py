@@ -28,6 +28,8 @@ from frames.WallSit import WallSit
 from frames.WallSlide import WallSlide
 from frames.Results import Results
 
+from frames.Entry import Entry
+
 from Person import Person
 
 from Database.DB import *
@@ -56,7 +58,7 @@ class WorkoutApp(tk.Tk):
        self.person = Person()
 
        self.frames = {}
-       for F in (MainPage, Circumference, ThreeSiteSkinfold, SvnSiteSkinfold, ModAst, Ebelling, Rockport, Coopers, MBtoss, VertJump, RMtest, RMpredict, GripStrength, PushUps, CurlUps, PlankEnd, WallSit, FlexTests, SLstance, DeepSquat, WallSlide, HipHinge, FrontPlank, Results):
+       for F in (Entry, MainPage, Circumference, ThreeSiteSkinfold, SvnSiteSkinfold, ModAst, Ebelling, Rockport, Coopers, MBtoss, VertJump, RMtest, RMpredict, GripStrength, PushUps, CurlUps, PlankEnd, WallSit, FlexTests, SLstance, DeepSquat, WallSlide, HipHinge, FrontPlank, Results):
            page_name = F.__name__
            frame = F(parent=container, controller=self)
            self.frames[page_name] = frame
@@ -66,7 +68,7 @@ class WorkoutApp(tk.Tk):
            # will be the one that is visible.
            frame.grid(row=0, column=0, sticky="nsew")
 
-       self.show_frame("MainPage")
+       self.show_frame("Entry")
 
 
    def show_frame(self, page_name):
@@ -78,8 +80,9 @@ class WorkoutApp(tk.Tk):
        try:
         frame.loadData(self.person)
         print("loaded data successfully")
-       except AttributeError:
+       except AttributeError as e:
         print("frame has no loadData function")
+        print(e)
 
    def next_page(self, saveFunction=None):
        if saveFunction:

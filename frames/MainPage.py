@@ -20,12 +20,12 @@ class MainPage(tk.Frame):
        self.labelName["text"] = "Name: "
        self.labelName.grid(row=0, column=0)
 
-       self.Name = tk.Text(self)
-       self.Name["height"] = 1
-       self.Name["width"] = 15
-       self.Name.bind("<Tab>", self.focus_next_window)
-       self.Name.bind("<Shift-Tab>", self.focus_last_window)
-       self.Name.grid(row=0, column=1)
+       self.nameText = tk.Text(self)
+       self.nameText["height"] = 1
+       self.nameText["width"] = 15
+       self.nameText.bind("<Tab>", self.focus_next_window)
+       self.nameText.bind("<Shift-Tab>", self.focus_last_window)
+       self.nameText.grid(row=0, column=1)
 
        self.labelDateOfTest = tk.Label(self)
        self.labelDateOfTest["text"] = "Date of Test: "
@@ -229,7 +229,8 @@ class MainPage(tk.Frame):
 
 
    def loadData(self, person):
-       return
+       self.nameText.delete(1.0, tk.END)
+       self.nameText.insert(tk.END, person.name)
 
    def saveData(self, person):
        person.name = self.nameText.get(1.0, tk.END)
