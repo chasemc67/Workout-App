@@ -3,6 +3,7 @@
 import tkinter as tk
 from buttons.NextButton import NextButton
 from buttons.QuitButton import QuitButton
+from Person import Person
 
 import Database.DB as DB
 
@@ -10,6 +11,10 @@ class Entry(tk.Frame):
 
    def select(self, event):
       self.controller.person = self.people[self.listbox.curselection()[0]]
+
+   def createNewPerson(self):
+      self.controller.person = Person()
+      self.controller.show_frame("MainPage")
 
    def __init__(self, parent, controller):
       tk.Frame.__init__(self, parent)
@@ -29,7 +34,7 @@ class Entry(tk.Frame):
       self.NewPerson = tk.Button(self)
       self.NewPerson['text'] = "New Person"
       self.NewPerson['fg'] = 'black'
-      self.NewPerson['command'] = lambda: controller.show_frame("MainPage")
+      self.NewPerson['command'] = self.createNewPerson
       self.NewPerson.grid(row=1, column=0)
 
       self.EditPerson = tk.Button(self)
