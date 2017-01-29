@@ -37,6 +37,7 @@ from Database.DB import *
 TITLE_FONT = ("Helvetica", 18, "bold")
 
 createDB()
+insertTestPeople()
 #testDBStuff()
 #exit()
 

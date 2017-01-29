@@ -9,9 +9,7 @@ import Database.DB as DB
 class Entry(tk.Frame):
 
    def select(self, event):
-      print("Selected an entry")
-      print(str(id))
-      self.controller.person = self.people[0]
+      self.controller.person = self.people[self.listbox.curselection()[0]]
 
    def __init__(self, parent, controller):
       tk.Frame.__init__(self, parent)

@@ -74,6 +74,31 @@ def loadPersonFromDBSelect(dbSelect):
 	return p
 
 
+def insertTestPeople():
+	p = Person()
+	p.name = "Bill"
+	p.armcirc = "10"
+	p.plantTime = "100"
+	p.weight = "5"
+	p.RMPredictEx = "rm stuff"
+	insertPerson(p)
+
+	p = Person()
+	p.name = "Chase"
+	p.armcirc = "10"
+	p.plantTime = "100"
+	p.weight = "5"
+	p.RMPredictEx = "rm stuff"
+	insertPerson(p)
+
+	p = Person()
+	p.name = "Megan"
+	p.armcirc = "10"
+	p.plantTime = "100"
+	p.weight = "5"
+	p.RMPredictEx = "rm stuff"
+	insertPerson(p)
+
 # Test function for testing DB
 def testDBStuff():
 	p = Person()
