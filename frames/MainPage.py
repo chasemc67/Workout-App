@@ -209,16 +209,10 @@ class MainPage(tk.Frame):
        self.checkPlankAssess = tk.Checkbutton(self, text="Front Plank Assessment", command = lambda: self.boxChecked("FrontPlank"))
        self.checkPlankAssess.grid(row=16, column=4)
 
-       self.Next = NextButton(self, controller)
+       self.Next = NextButton(self, self.controller)
        self.Next.grid(row=17, column=0)
 
-       self.SaveA = tk.Button(self)
-       self.SaveA["text"] = "Save"
-       self.SaveA["fg"] = "black"
-       self.SaveA["command"] = self.SaveA
-       self.SaveA.grid(row=17, column=1)
-
-       self.Quit = QuitButton(self, controller)
+       self.Quit = QuitButton(self, self.controller)
        self.Quit.grid(row=17, column=2)
 
    def boxChecked(self, text):

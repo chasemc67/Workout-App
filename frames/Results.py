@@ -4,7 +4,18 @@ from buttons.NextButton import NextButton
 from buttons.BackButton import BackButton
 from buttons.QuitButton import QuitButton
 
+from Database.DB import insertPerson
+
 class Results(tk.Frame):
+
+   def savePerson(self):
+    try:
+     dbID = getattr(self.controller.person, "dbID")
+     return
+     # update entry instead of adding new person     
+    except:
+     insertPerson(self.controller.person)
+    
 
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
@@ -346,10 +357,16 @@ class Results(tk.Frame):
        if "PlankEnd" in person.framesChecked:
         self.showPlankAssessResult(person)
 
-       self.Back = BackButton(self, self.controller)
-       self.Back.pack()
+       self.BackButton = BackButton(self, self.controller)
+       self.BackButton.pack()
 
-       self.Quit = QuitButton(self, self.controller)
-       self.Quit.pack()
+       self.SaveButton = tk.Button(self)
+       self.SaveButton['text'] = "Save"
+       self.SaveButton['fg'] = "black"
+       self.SaveButton['command'] = self.savePerson
+       self.SaveButton.pack()
+
+       self.QuitButton = QuitButton(self, self.controller)
+       self.QuitButton.pack()
 
    #def saveData(self, person):

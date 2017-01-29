@@ -52,6 +52,8 @@ def insertPerson(person):
 	conn.commit()
 	conn.close()
 
+	print("inserted new person: " + str(person.name))
+
 # Returns a list of all people object in DB
 def getPeople():
 	people = list()
