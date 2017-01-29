@@ -71,11 +71,12 @@ class Person():
         # returns a list of names of attributes
         # Excluding the list of frames checked
     def getAttributes(self):
-        attrList = list()
-        for A in dir(self):
-            if not A.startswith('__') and not callable(getattr(self, A)) and not A.startswith('framesChecked'):
-                attrList.append(A)
-        return(attrList)
+        #attrList = list()
+        #for A in dir(self):
+        #    if not A.startswith('__') and not callable(getattr(self, A)) and not A.startswith('framesChecked'):
+        #        attrList.append(A)
+        #return(attrList)
+        return ['RMPredictEx', 'RMPredictLoad', 'RMPredictReps', 'RMTestExA', 'RMTestExAWeight', 'RMTestExB', 'RMTestExBWeight', 'SLCloseLeft', 'SLCloseRight', 'SLOpenLeft', 'SLOpenRight', 'armCirc', 'birthDate', 'chestCirc', 'cooperDist', 'curlUpNum', 'deepSquatRate', 'ebbelingHR', 'ebbelingWU', 'ebbelingWork', 'frontPlankRate', 'gender', 'gripStrengthLeft', 'gripStrengthRight', 'height', 'hipCirc', 'hipHingeRate', 'modAstAerobic', 'modAstHR', 'modAstLoadA', 'modAstLoadB', 'name', 'phoneNumber', 'plankTime', 'pushUpNum', 'restBP', 'restHR', 'rockportHR', 'rockportTime', 'seatMBDist', 'sitReachDist', 'svnSiteAb', 'svnSiteChest', 'svnSiteMidAx', 'svnSiteScap', 'svnSiteSupra', 'svnSiteThigh', 'svnSiteTri', 'testDate', 'thighCirc', 'threeSiteFemaleSupra', 'threeSiteFemaleThigh', 'threeSiteFemaleTricep', 'threeSiteMaleAb', 'threeSiteMaleChest', 'threeSiteMaleThigh', 'vertJumpBest', 'vertJumpSR', 'waistCirc', 'wallSitTime', 'wallSlideRate', 'weight']
 
     # todo fix this shit
     def getAge(self):

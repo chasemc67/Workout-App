@@ -71,6 +71,7 @@ def loadPersonFromDBSelect(dbSelect):
 	# skip the database ID
 	for i in range(1,len(dbSelect)):
 		setattr(p, attribList[i-1], dbSelect[i])
+	p.dbID = dbSelect[0]
 	return p
 
 
