@@ -31,89 +31,89 @@ class MainPage(tk.Frame):
        self.labelDateOfTest["text"] = "Date of Test: "
        self.labelDateOfTest.grid(row=0, column=2)
 
-       self.DateOfTest = tk.Text(self)
-       self.DateOfTest["height"] = 1
-       self.DateOfTest["width"] = 15
-       self.DateOfTest.bind("<Tab>", self.focus_next_window)
-       self.DateOfTest.bind("<Shift-Tab>", self.focus_last_window)
-       self.DateOfTest.grid(row=0, column=3)
+       self.testDateText = tk.Text(self)
+       self.testDateText["height"] = 1
+       self.testDateText["width"] = 15
+       self.testDateText.bind("<Tab>", self.focus_next_window)
+       self.testDateText.bind("<Shift-Tab>", self.focus_last_window)
+       self.testDateText.grid(row=0, column=3)
 
        self.labelGender = tk.Label(self)
        self.labelGender["text"] = "Gender: "
        self.labelGender.grid(row=0, column=4)
 
-       self.Gender = tk.Text(self)
-       self.Gender["height"] = 1
-       self.Gender["width"] = 15
-       self.Gender.bind("<Tab>", self.focus_next_window)
-       self.Gender.bind("<Shift-Tab>", self.focus_last_window)
-       self.Gender.grid(row=0, column=5)
+       self.genderText = tk.Text(self)
+       self.genderText["height"] = 1
+       self.genderText["width"] = 15
+       self.genderText.bind("<Tab>", self.focus_next_window)
+       self.genderText.bind("<Shift-Tab>", self.focus_last_window)
+       self.genderText.grid(row=0, column=5)
 
        self.labelDOB = tk.Label(self)
        self.labelDOB["text"] = "Date of Birth: "
        self.labelDOB.grid(row=0, column=6)
 
-       self.DateOfBirth = tk.Text(self)
-       self.DateOfBirth["height"] = 1
-       self.DateOfBirth["width"] = 15
-       self.DateOfBirth.bind("<Tab>", self.focus_next_window)
-       self.DateOfBirth.bind("<Shift-Tab>", self.focus_last_window)
-       self.DateOfBirth.grid(row=0, column=7)
+       self.birthDateText = tk.Text(self)
+       self.birthDateText["height"] = 1
+       self.birthDateText["width"] = 15
+       self.birthDateText.bind("<Tab>", self.focus_next_window)
+       self.birthDateText.bind("<Shift-Tab>", self.focus_last_window)
+       self.birthDateText.grid(row=0, column=7)
 
        self.labelPhoneNumber = tk.Label(self)
        self.labelPhoneNumber["text"] = "Phone Number: "
        self.labelPhoneNumber.grid(row=1, column=0)
 
-       self.PhoneNumber = tk.Text(self)
-       self.PhoneNumber["height"] = 1
-       self.PhoneNumber["width"] = 15
-       self.PhoneNumber.bind("<Tab>", self.focus_next_window)
-       self.PhoneNumber.bind("<Shift-Tab>", self.focus_last_window)
-       self.PhoneNumber.grid(row=1, column=1)
+       self.phoneNumberText = tk.Text(self)
+       self.phoneNumberText["height"] = 1
+       self.phoneNumberText["width"] = 15
+       self.phoneNumberText.bind("<Tab>", self.focus_next_window)
+       self.phoneNumberText.bind("<Shift-Tab>", self.focus_last_window)
+       self.phoneNumberText.grid(row=1, column=1)
 
        self.labelRestHR = tk.Label(self)
        self.labelRestHR["text"] = "Heart Rate: "
        self.labelRestHR.grid(row=1, column=2)
 
-       self.RestHR = tk.Text(self)
-       self.RestHR["height"] = 1
-       self.RestHR["width"] = 15
-       self.RestHR.bind("<Tab>", self.focus_next_window)
-       self.RestHR.bind("<Shift-Tab>", self.focus_last_window)
-       self.RestHR.grid(row=1, column=3,padx=0, pady=3)
+       self.restHRText = tk.Text(self)
+       self.restHRText["height"] = 1
+       self.restHRText["width"] = 15
+       self.restHRText.bind("<Tab>", self.focus_next_window)
+       self.restHRText.bind("<Shift-Tab>", self.focus_last_window)
+       self.restHRText.grid(row=1, column=3,padx=0, pady=3)
 
        self.labelRestBP = tk.Label(self)
        self.labelRestBP["text"] = "Blood Pressure "
        self.labelRestBP.grid(row=1, column=4)
 
-       self.RestBP = tk.Text(self)
-       self.RestBP["height"] = 1
-       self.RestBP["width"] = 15
-       self.RestBP.bind("<Tab>", self.focus_next_window)
-       self.RestBP.bind("<Shift-Tab>", self.focus_last_window)
-       self.RestBP.grid(row=1, column=5)
+       self.restBPText = tk.Text(self)
+       self.restBPText["height"] = 1
+       self.restBPText["width"] = 15
+       self.restBPText.bind("<Tab>", self.focus_next_window)
+       self.restBPText.bind("<Shift-Tab>", self.focus_last_window)
+       self.restBPText.grid(row=1, column=5)
 
        self.labelHeight = tk.Label(self)
        self.labelHeight["text"] = "Height (cm): "
        self.labelHeight.grid(row=1, column=6)
 
-       self.Height = tk.Text(self)
-       self.Height["height"] = 1
-       self.Height["width"] = 15
-       self.Height.bind("<Tab>", self.focus_next_window)
-       self.Height.bind("<Shift-Tab>", self.focus_last_window)
-       self.Height.grid(row=1, column=7)
+       self.heightText = tk.Text(self)
+       self.heightText["height"] = 1
+       self.heightText["width"] = 15
+       self.heightText.bind("<Tab>", self.focus_next_window)
+       self.heightText.bind("<Shift-Tab>", self.focus_last_window)
+       self.heightText.grid(row=1, column=7)
 
        self.labelWeight = tk.Label(self)
        self.labelWeight["text"] = "Weight (kg): "
        self.labelWeight.grid(row=2, column=0)
 
-       self.Weight = tk.Text(self)
-       self.Weight["height"] = 1
-       self.Weight["width"] = 15
-       self.Weight.bind("<Tab>", self.focus_next_window)
-       self.Weight.bind("<Shift-Tab>", self.focus_last_window)
-       self.Weight.grid(row=2, column=1)
+       self.weightText = tk.Text(self)
+       self.weightText["height"] = 1
+       self.weightText["width"] = 15
+       self.weightText.bind("<Tab>", self.focus_next_window)
+       self.weightText.bind("<Shift-Tab>", self.focus_last_window)
+       self.weightText.grid(row=2, column=1)
 
        self.labelBodyComp = tk.Label(self)
        self.labelBodyComp["text"] = "Body Composition Assessments: "
@@ -209,7 +209,7 @@ class MainPage(tk.Frame):
        self.checkPlankAssess = tk.Checkbutton(self, text="Front Plank Assessment", command = lambda: self.boxChecked("FrontPlank"))
        self.checkPlankAssess.grid(row=16, column=4)
 
-       self.Next = NextButton(self, self.controller)
+       self.Next = NextButton(self, self.controller, self.saveData)
        self.Next.grid(row=17, column=0)
 
        self.Quit = QuitButton(self, self.controller)
@@ -224,16 +224,43 @@ class MainPage(tk.Frame):
 
    def loadData(self, person):
        self.nameText.delete(1.0, tk.END)
-       self.nameText.insert(tk.END, person.name)
+       self.nameText.insert(tk.END, self.controller.person.name)
+
+       self.testDateText.delete(1.0, tk.END)
+       self.testDateText.insert(tk.END, self.controller.person.testDate)
+
+       self.genderText.delete(1.0, tk.END)
+       self.genderText.insert(tk.END, self.controller.person.gender)
+
+       self.birthDateText.delete(1.0, tk.END)
+       self.birthDateText.insert(tk.END, self.controller.person.birthDate)
+
+       self.phoneNumberText.delete(1.0, tk.END)
+       self.phoneNumberText.insert(tk.END, self.controller.person.phoneNumber)
+
+       self.restHRText.delete(1.0, tk.END)
+       self.restHRText.insert(tk.END, self.controller.person.restHR)
+
+       self.restBPText.delete(1.0, tk.END)
+       self.restBPText.insert(tk.END, self.controller.person.restBP)
+
+       self.heightText.delete(1.0, tk.END)
+       self.heightText.insert(tk.END, self.controller.person.height)
+
+       self.weightText.delete(1.0, tk.END)
+       self.weightText.insert(tk.END, self.controller.person.weight)
+
 
    def saveData(self, person):
-       person.name = self.nameText.get(1.0, tk.END)
-       person.testDate = self.testDateText.get(1.0, tk.END)
-       person.gender = self.genderText.get(1.0, tk.END)
-       person.birthDate = self.birthDateText.get(1.0, tk.END)
-       person.phoneNumber = self.phoneNumberText.get(1.0, tk.END)
-       person.restHR = self.restHRText.get(1.0, tk.END)
-       person.restBP = self.restBPText.get(1.0, tk.END)
-       person.height = self.heightText.get(1.0, tk.END)
-       person.weight = self.weightText.get(1.0, tk.END)
+       print("Saving new user with name " + str(self.nameText.get(1.0, tk.END)))
+
+       self.controller.person.name = self.nameText.get(1.0, tk.END)
+       self.controller.person.testDate = self.testDateText.get(1.0, tk.END)
+       self.controller.person.gender = self.genderText.get(1.0, tk.END)
+       self.controller.person.birthDate = self.birthDateText.get(1.0, tk.END)
+       self.controller.person.phoneNumber = self.phoneNumberText.get(1.0, tk.END)
+       self.controller.person.restHR = self.restHRText.get(1.0, tk.END)
+       self.controller.person.restBP = self.restBPText.get(1.0, tk.END)
+       self.controller.person.height = self.heightText.get(1.0, tk.END)
+       self.controller.person.weight = self.weightText.get(1.0, tk.END)
 

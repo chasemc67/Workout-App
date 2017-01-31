@@ -288,6 +288,8 @@ class Results(tk.Frame):
        self.plankRatingLabel.pack()
 
    def loadData(self, person):
+       print("Person in controller has name: " + str(self.controller.person.name))
+
        if "VertJump" in person.framesChecked:
         self.showVertJumpResult(person)
 
