@@ -47,7 +47,8 @@ def createDB():
 # Takes a person object and inserts it into the DB
 def insertPerson(person):
 	conn = sqlite3.connect('people.db')
-	#conn.execute("INSERT INTO PEOPLE (ID,NAME,PHONE,DATEOFTEST,GENDER,DOB,HEARTRATE,BLOODPRESSURE,HEIGHT,WEIGHT) VALUES (1, 'Paul', '780-700-1070', testDate, 'male',dob, 100, 200, 300, 400)")
+	if person.name.strip() == "":
+		raise Exception("Tried to save person with no name to DB")
 	conn.execute(getInsertPersonString(person))
 	conn.commit()
 	conn.close()

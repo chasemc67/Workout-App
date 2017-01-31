@@ -106,7 +106,6 @@ class WorkoutApp(tk.Tk):
        # TODO refactor out into one function
        try:
         frame.loadData(self.person)
-        print("loaded data successfully")
        # We specify attribute error because we want to skip
        # If frame doesn'r specify a load function, but we 
        # Want to be notified, if the load funciton fails for
@@ -123,7 +122,6 @@ class WorkoutApp(tk.Tk):
        # TODO refactor out into one function
        try:
         frame.loadData(self.person)
-        print("loaded data successfully")
        # We specify attribute error because we want to skip
        # If frame doesn'r specify a load function, but we 
        # Want to be notified, if the load funciton fails for

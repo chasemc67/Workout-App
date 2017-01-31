@@ -5,4 +5,4 @@ class QuitButton(tk.Button):
 		tk.Button.__init__(self,parent, config)
 		self["text"] = "Quit"
 		self["fg"] = "black"
-		self["command"] = lambda: controller.show_frame("MainPage")
+		self["command"] = lambda: controller.show_frame("Entry")

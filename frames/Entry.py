@@ -23,11 +23,6 @@ class Entry(tk.Frame):
       self.listbox = tk.Listbox(self)
       self.listbox.bind('<<ListboxSelect>>', self.select)
 
-      self.people = DB.getPeople()
-
-      for person in self.people:
-            self.listbox.insert(tk.END, person.name)
-
       self.listbox.grid(row=0, column=0)
       #self.listbox.pack(fill=BOTH, expand=1)
 
@@ -45,4 +40,10 @@ class Entry(tk.Frame):
 
       
 
+   def loadData(self, person):
+      self.people = DB.getPeople()
 
+      self.listbox.delete(0, tk.END)
+
+      for person in self.people:
+            self.listbox.insert(tk.END, person.name)
