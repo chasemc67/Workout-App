@@ -8,13 +8,14 @@ class ScrollWindow(Frame):
     * This frame only allows vertical scrolling
     
     """
+
     def __init__(self, parent, *args, **kw):
         Frame.__init__(self, parent, *args, **kw)            
 
         # create a canvas object and a vertical scrollbar for scrolling it
         vscrollbar = Scrollbar(self, orient=VERTICAL)
         vscrollbar.pack(fill=Y, side=RIGHT, expand=FALSE)
-        canvas = Canvas(self, bd=0, highlightthickness=0,
+        canvas = Canvas(self, height=500, bd=0, highlightthickness=0,
                      yscrollcommand=vscrollbar.set)
         canvas.pack(side=LEFT, fill=BOTH, expand=TRUE)
         vscrollbar.config(command=canvas.yview)
