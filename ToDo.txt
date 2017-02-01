@@ -1,21 +1,10 @@
 Challenge:
-
-	[X] Add if statements in results load function to display all the calculations depending on whether the data has been entered or not.
-
-	[ ] Add ability to check which checkboxes are check in results page, and swap the 1 == 1 for checking resepctive boxes
-
-
-	[X] Add units for all labels
-
-	[X] In calculation functions in Person make sure we're typecasting strings to floats (decimal numbers)
-	so for example
-	return (35.97 * self.distanceMiles) - 11.29
-	becomes
-	return (35.97 * float(self.distanceMiles)) - 11.29
-
-	[X] Save data function on main page to save things like name and stuff
-
-	[ ] Look up docs for tkinter pack. and understand how to use it to pack stuff pretty. 
+	[ ] Save and load checked boxes to DB
+	[ ] Try multi-frame data entry page
+	[ ] Make multi-entry frame scrollable : http://stackoverflow.com/questions/16188420/python-tkinter-scrollbar-for-frame
+	[ ] Check for bad data in each entry frame before saving
+	[ ] Results frames
+	[ ] PDF report generator 
 
 features:
 	view results page

@@ -27,6 +27,7 @@ from frames.VertJump import VertJump
 from frames.WallSit import WallSit
 from frames.WallSlide import WallSlide
 from frames.Results import Results
+from frames.DataEntry import DataEntry
 
 from frames.Entry import Entry
 
@@ -59,7 +60,7 @@ class WorkoutApp(tk.Tk):
        self.person = Person()
 
        self.frames = {}
-       for F in (Entry, MainPage, Circumference, ThreeSiteSkinfold, SvnSiteSkinfold, ModAst, Ebelling, Rockport, Coopers, MBtoss, VertJump, RMtest, RMpredict, GripStrength, PushUps, CurlUps, PlankEnd, WallSit, FlexTests, SLstance, DeepSquat, WallSlide, HipHinge, FrontPlank, Results):
+       for F in (DataEntry, Entry, MainPage, Circumference, ThreeSiteSkinfold, SvnSiteSkinfold, ModAst, Ebelling, Rockport, Coopers, MBtoss, VertJump, RMtest, RMpredict, GripStrength, PushUps, CurlUps, PlankEnd, WallSit, FlexTests, SLstance, DeepSquat, WallSlide, HipHinge, FrontPlank, Results):
            page_name = F.__name__
            frame = F(parent=container, controller=self)
            self.frames[page_name] = frame
@@ -88,6 +89,10 @@ class WorkoutApp(tk.Tk):
    def next_page(self, saveFunction=None):
        if saveFunction:
         saveFunction(self.person)
+
+       frame = self.frames["DataEntry"]
+       frame.tkraise()
+       return
 
        # to get the results page to show as the last frame, you can
        # do something like:
