@@ -1,7 +1,9 @@
 Challenge:
-	[ ] Save and load checked boxes to DB
-	[ ] Try multi-frame data entry page
-	[ ] Make multi-entry frame scrollable : http://stackoverflow.com/questions/16188420/python-tkinter-scrollbar-for-frame
+	[+] Save and load checked boxes to DB
+	[+] Try multi-frame data entry page
+	[+] Make multi-entry frame scrollable : http://stackoverflow.com/questions/16188420/python-tkinter-scrollbar-for-frame
+	[ ] Hard code page size (or at least width) so scrolling
+		data entry page doesn't look so weird
 	[ ] Check for bad data in each entry frame before saving
 	[ ] Results frames
 	[ ] PDF report generator 

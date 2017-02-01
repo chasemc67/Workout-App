@@ -76,7 +76,26 @@ class Person():
         #    if not A.startswith('__') and not callable(getattr(self, A)) and not A.startswith('framesChecked'):
         #        attrList.append(A)
         #return(attrList)
-        return ['RMPredictEx', 'RMPredictLoad', 'RMPredictReps', 'RMTestExA', 'RMTestExAWeight', 'RMTestExB', 'RMTestExBWeight', 'SLCloseLeft', 'SLCloseRight', 'SLOpenLeft', 'SLOpenRight', 'armCirc', 'birthDate', 'chestCirc', 'cooperDist', 'curlUpNum', 'deepSquatRate', 'ebbelingHR', 'ebbelingWU', 'ebbelingWork', 'frontPlankRate', 'gender', 'gripStrengthLeft', 'gripStrengthRight', 'height', 'hipCirc', 'hipHingeRate', 'modAstAerobic', 'modAstHR', 'modAstLoadA', 'modAstLoadB', 'name', 'phoneNumber', 'plankTime', 'pushUpNum', 'restBP', 'restHR', 'rockportHR', 'rockportTime', 'seatMBDist', 'sitReachDist', 'svnSiteAb', 'svnSiteChest', 'svnSiteMidAx', 'svnSiteScap', 'svnSiteSupra', 'svnSiteThigh', 'svnSiteTri', 'testDate', 'thighCirc', 'threeSiteFemaleSupra', 'threeSiteFemaleThigh', 'threeSiteFemaleTricep', 'threeSiteMaleAb', 'threeSiteMaleChest', 'threeSiteMaleThigh', 'vertJumpBest', 'vertJumpSR', 'waistCirc', 'wallSitTime', 'wallSlideRate', 'weight']
+        dataFields = ['RMPredictEx', 'RMPredictLoad', 'RMPredictReps', 'RMTestExA', 'RMTestExAWeight', 'RMTestExB', 'RMTestExBWeight', 'SLCloseLeft', 'SLCloseRight', 'SLOpenLeft', 'SLOpenRight', 'armCirc', 'birthDate', 'chestCirc', 'cooperDist', 'curlUpNum', 'deepSquatRate', 'ebbelingHR', 'ebbelingWU', 'ebbelingWork', 'frontPlankRate', 'gender', 'gripStrengthLeft', 'gripStrengthRight', 'height', 'hipCirc', 'hipHingeRate', 'modAstAerobic', 'modAstHR', 'modAstLoadA', 'modAstLoadB', 'name', 'phoneNumber', 'plankTime', 'pushUpNum', 'restBP', 'restHR', 'rockportHR', 'rockportTime', 'seatMBDist', 'sitReachDist', 'svnSiteAb', 'svnSiteChest', 'svnSiteMidAx', 'svnSiteScap', 'svnSiteSupra', 'svnSiteThigh', 'svnSiteTri', 'testDate', 'thighCirc', 'threeSiteFemaleSupra', 'threeSiteFemaleThigh', 'threeSiteFemaleTricep', 'threeSiteMaleAb', 'threeSiteMaleChest', 'threeSiteMaleThigh', 'vertJumpBest', 'vertJumpSR', 'waistCirc', 'wallSitTime', 'wallSlideRate', 'weight']
+        checkBoxes = 'framesChecked'
+
+        allAtribs = dataFields[:]
+        allAtribs.append(checkBoxes)
+        return allAtribs
+
+    # join framesChecked list into a csv string to be saved
+    def getFramesCheckedString(self):
+        framesCheckedString = ""
+        for i in range(len(self.framesChecked)):
+            framesCheckedString += self.framesChecked[i]
+            if i < len(self.framesChecked)-1:
+                framesCheckedString += ","
+
+        return framesCheckedString
+
+    def setFramesCheckedList(self, framesChecked):
+        for i in framesChecked.split(","):
+            self.framesChecked.append(i)
 
     # todo fix this shit
     def getAge(self):

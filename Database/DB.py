@@ -9,7 +9,14 @@ def getCreateTableString():
 
 	attribList = Person().getAttributes()
 	for i in attribList:
-		statement.append(",\n" + i + " CHAR(50)")
+		statement.append(",\n" + i)
+
+		# set db type depending on attrib
+		if i.lower() == "frameschecked":
+			statement.append(" CHAR(1000)")
+		else:
+			statement.append(" CHAR(50)")
+
 		if i.lower() == "name":
 			statement.append(" NOT NULL")
 	statement.append(");")
@@ -29,10 +36,19 @@ def getInsertPersonString(person):
 
 	statement.append(") VALUES (")
 	for i in attribList:
-		statement.append('\'')
-		statement.append(getattr(person, i))
-		statement.append('\'')
-		statement.append(",")
+
+		# get list of framesChecked as a string if 
+		# thats the attribute we're adding
+		if i.lower() == "frameschecked":
+			statement.append('\'')
+			statement.append(person.getFramesCheckedString())
+			statement.append('\'')
+			statement.append(",")
+		else:
+			statement.append('\'')
+			statement.append(getattr(person, i))
+			statement.append('\'')
+			statement.append(",")
 	del statement[len(statement)-1]
 	statement.append(")")
 	return "".join(statement)
@@ -73,7 +89,11 @@ def loadPersonFromDBSelect(dbSelect):
 	attribList = p.getAttributes()
 	# skip the database ID
 	for i in range(1,len(dbSelect)):
-		setattr(p, attribList[i-1], dbSelect[i])
+		# set attriv differently if its the framesChecked string
+		if attribList[i-1].lower() == "frameschecked":
+			p.setFramesCheckedList(dbSelect[i])
+		else: 
+			setattr(p, attribList[i-1], dbSelect[i])
 	p.dbID = dbSelect[0]
 	return p
 

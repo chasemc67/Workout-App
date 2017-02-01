@@ -90,9 +90,10 @@ class WorkoutApp(tk.Tk):
        if saveFunction:
         saveFunction(self.person)
 
-       frame = self.frames["DataEntry"]
-       frame.tkraise()
-       return
+       # Testing aggregate data entry stuff
+       #frame = self.frames["DataEntry"]
+       #frame.tkraise()
+       #return
 
        # to get the results page to show as the last frame, you can
        # do something like:
