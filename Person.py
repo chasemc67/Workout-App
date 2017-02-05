@@ -103,7 +103,7 @@ class Person():
 
     # Calculations
     def getBMI(self):
-        return float(self.weight) / (float(self.height/100) * float(self.height/100))
+        return float(self.weight) / (float(self.height)/100 * float(self.height)/100)
 
     def getSumOfFolds(self):
         if self.gender.lower() == "male" or self.gender.lower() == "m":
