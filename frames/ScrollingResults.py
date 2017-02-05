@@ -34,11 +34,13 @@ class ScrollingResults(tk.Frame):
 		scrollView = ScrollWindow(self)
 		scrollView.pack()
 
-		bmiFrame = BMIResultFrame(scrollView.interior, self.controller)
-		bmiFrame.pack()
+		if "BMIframe" in self.controller.person.framesChecked:
+			bmiFrame = BMIResultFrame(scrollView.interior, self.controller)
+			bmiFrame.pack()
+			spacer = tk.Label(scrollView.interior)
+			spacer.pack()
 
-		spacer = tk.Label(scrollView.interior)
-		spacer.pack()
+		
 
 		self.SaveButton = tk.Button(self)
 		self.SaveButton['text'] = "Save"
