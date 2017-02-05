@@ -12,31 +12,31 @@ class CircumferenceResultFrame(tk.Frame):
         self.circumferenceResult["text"] = ("Circumferences: ")
         self.circumferenceResult.grid(row=0, column=0)
 
-        if person.hipCirc != "\n":
+        if person.hipCirc != "":
             self.hipCircLabel = tk.Label(self)
             self.hipCircLabel["text"] = ("Hip Circumference(cm): " + person.hipCirc)
             self.hipCircLabel.grid(row=self.row, column=0)
             self.row += 1
 
-        if person.waistCirc != "\n":
+        if person.waistCirc != "":
             self.waistCircLabel = tk.Label(self)
             self.waistCircLabel["text"] = ("Waist Circumference(cm): " + person.waistCirc)
             self.waistCircLabel.grid(row=self.row, column=0)
             self.row += 1
 
-        if person.armCirc != "\n":
+        if person.armCirc != "":
             self.armCircLabel = tk.Label(self)
             self.armCircLabel["text"] = ("Arm Circumference(cm): " + person.armCirc)
             self.armCircLabel.grid(row=self.row, column =0)
             self.row += 1
 
-        if person.thighCirc != "\n":
+        if person.thighCirc != "":
             self.thighCircLabel = tk.Label(self)
             self.thighCircLabel["text"] = ("Thigh Circumference(cm): " + person.thighCirc)
             self.thighCircLabel.grid(row=self.row, column=0)
             self.row += 1
 
-        if person.chestCirc != "\n":
+        if person.chestCirc != "":
             self.chestCircLabel = tk.Label(self)
             self.chestCircLabel["text"] = ("Chest Circumference(cm): " + person.chestCirc)
             self.chestCircLabel.grid(row=self.row, column=0)

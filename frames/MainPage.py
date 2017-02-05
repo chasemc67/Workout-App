@@ -253,7 +253,7 @@ class MainPage(tk.Frame):
        self.weightText.insert(tk.END, self.controller.person.weight)
 
        if "Circumference" in self.controller.person.framesChecked:
-            self.checkCircumference.select()\
+            self.checkCircumference.select()
        if "ThreeSiteSkinfold" in self.controller.person.framesChecked:
             self.checkThreeSkinfold.select()
        if "SvnSiteSkinfold" in self.controller.person.framesChecked:

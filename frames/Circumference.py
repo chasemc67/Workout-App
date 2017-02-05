@@ -103,10 +103,10 @@ class Circumference(tk.Frame):
 
 
    def saveData(self, person):
-       person.hipCirc = self.HipCircText.get(1.0, tk.END)
-       person.waistCirc = self.WaistCircText.get(1.0, tk.END)
-       person.armCirc = self.ArmCircText.get(1.0, tk.END)
-       person.thighCirc = self.ThighCircText.get(1.0, tk.END)
-       person.chestCirc = self.ChestCircText.get(1.0, tk.END)
+       person.hipCirc = self.HipCircText.get(1.0, tk.END).strip()
+       person.waistCirc = self.WaistCircText.get(1.0, tk.END).strip()
+       person.armCirc = self.ArmCircText.get(1.0, tk.END).strip()
+       person.thighCirc = self.ThighCircText.get(1.0, tk.END).strip()
+       person.chestCirc = self.ChestCircText.get(1.0, tk.END).strip()
 
 

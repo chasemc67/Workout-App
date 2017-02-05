@@ -40,7 +40,7 @@ class ScrollingResults(tk.Frame):
 			spacer = tk.Label(scrollView.interior)
 			spacer.pack()
 
-		if "Circumferences" in self.controller.person.framesChecked:
+		if "Circumference" in self.controller.person.framesChecked:
 			circFrame = CircumferenceResultFrame(scrollView.interior, self.controller)
 			circFrame.pack()
 			spacer = tk.Label(scrollView.interior)
