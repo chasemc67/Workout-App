@@ -94,7 +94,7 @@ class MainPage(tk.Frame):
        self.restBPText.grid(row=1, column=5)
 
        self.labelHeight = tk.Label(self)
-       self.labelHeight["text"] = "Height (m): "
+       self.labelHeight["text"] = "Height (cm): "
        self.labelHeight.grid(row=1, column=6)
 
        self.heightText = tk.Text(self)
