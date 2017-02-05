@@ -121,9 +121,11 @@ class MainPage(tk.Frame):
 
        self.checkCircumference = tk.Checkbutton(self, text="Circumferences", command = lambda: self.boxChecked("Circumference"))
        self.checkCircumference.grid(row=4, column=0)
+       
 
        self.checkThreeSkinfold = tk.Checkbutton(self, text="3-Site Skinfold", command = lambda: self.boxChecked("ThreeSiteSkinfold"))
        self.checkThreeSkinfold.grid(row=4, column=1)
+       
 
        self.checkSevenSkinfold = tk.Checkbutton(self, text="7-Site Skinfold", command = lambda: self.boxChecked("SvnSiteSkinfold"))
        self.checkSevenSkinfold.grid(row=4, column=2)
@@ -249,6 +251,51 @@ class MainPage(tk.Frame):
 
        self.weightText.delete(1.0, tk.END)
        self.weightText.insert(tk.END, self.controller.person.weight)
+
+       if "Circumference" in self.controller.person.framesChecked:
+            self.checkCircumference.select()\
+       if "ThreeSiteSkinfold" in self.controller.person.framesChecked:
+            self.checkThreeSkinfold.select()
+       if "SvnSiteSkinfold" in self.controller.person.framesChecked:
+            self.checkSevenSkinfold.select()
+       if "ModAst" in self.controller.person.framesChecked:
+            self.checkModAstrand.select()
+       if "Ebelling" in self.controller.person.framesChecked:
+            self.checkEbelling.select()
+       if "Rockport" in self.controller.person.framesChecked:
+            self.checkRockport.select()
+       if "Coopers" in self.controller.person.framesChecked:
+            self.checkCoopers.select()
+       if "MBtoss" in self.controller.person.framesChecked:
+            self.checkMBToss.select()
+       if "VertJump" in self.controller.person.framesChecked:
+            self.checkVertJump.select()
+       if "RMtest" in self.controller.person.framesChecked:
+            self.checkRepMaxTest.select()
+       if "RMpredict" in self.controller.person.framesChecked:
+            self.checkRepMaxPredict.select()
+       if "GripStrength" in self.controller.person.framesChecked:
+            self.checkGripStr.select()
+       if "PushUps" in self.controller.person.framesChecked:
+            self.checkPushUp.select()
+       if "CurlUps" in self.controller.person.framesChecked:
+            self.checkCurlUp.select()
+       if "PlankEnd" in self.controller.person.framesChecked:
+            self.checkPlankTime.select()
+       if "WallSit" in self.controller.person.framesChecked:
+            self.checkWallSit.select()
+       if "FlexTests" in self.controller.person.framesChecked:
+            self.checkSitReach.select()
+       if "SLstance" in self.controller.person.framesChecked:
+            self.checkStance.select()
+       if "DeepSquat" in self.controller.person.framesChecked:
+            self.checkSquat.select()
+       if "WallSlide" in self.controller.person.framesChecked:
+            self.checkWallSlide.select()
+       if "HipHinge" in self.controller.person.framesChecked:
+            self.checkHipHinge.select()
+       if "FrontPlank" in self.controller.person.framesChecked:
+            self.checkPlankAssess.select()
 
 
    def saveData(self, person):
