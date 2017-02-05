@@ -54,6 +54,7 @@ class WorkoutApp(tk.Tk):
        container.pack(side="top", fill="both", expand=True)
        container.grid_rowconfigure(0, weight=1)
        container.grid_columnconfigure(0, weight=1)
+       self.container = container
 
        #self.framesToCycle = list()
        self.currentFrameIndex = 0
@@ -61,7 +62,7 @@ class WorkoutApp(tk.Tk):
        self.person = Person()
 
        self.frames = {}
-       for F in (DataEntry, Entry, MainPage, Circumference, ThreeSiteSkinfold, SvnSiteSkinfold, ModAst, Ebelling, Rockport, Coopers, MBtoss, VertJump, RMtest, RMpredict, GripStrength, PushUps, CurlUps, PlankEnd, WallSit, FlexTests, SLstance, DeepSquat, WallSlide, HipHinge, FrontPlank, Results, ScrollingResults):
+       for F in (DataEntry, Entry, MainPage, Circumference, ThreeSiteSkinfold, SvnSiteSkinfold, ModAst, Ebelling, Rockport, Coopers, MBtoss, VertJump, RMtest, RMpredict, GripStrength, PushUps, CurlUps, PlankEnd, WallSit, FlexTests, SLstance, DeepSquat, WallSlide, HipHinge, FrontPlank, Results):
            page_name = F.__name__
            frame = F(parent=container, controller=self)
            self.frames[page_name] = frame
@@ -105,11 +106,12 @@ class WorkoutApp(tk.Tk):
        # You'll need to modify and play with it a little bit
        if (self.currentFrameIndex == len(self.person.framesChecked)):
         #frame = self.frames["Results"]
-        frame = self.frames["ScrollingResults"]
+        #frame = self.frames["ScrollingResults"]
+        frame = ScrollingResults(parent=self.container, controller=self)
+        frame.grid(row=0, column=0, sticky="nsew")
        else:
         frame = self.frames[self.person.framesChecked[self.currentFrameIndex]]
-       print(self.person.armCirc)
-       self.currentFrameIndex += 1
+        self.currentFrameIndex += 1
        frame.tkraise()
        # TODO refactor out into one function
        try:

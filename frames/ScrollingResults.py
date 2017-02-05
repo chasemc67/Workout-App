@@ -6,9 +6,10 @@
 
 import tkinter as tk
 #from buttons.NextButton import NextButton
-#from buttons.QuitButton import QuitButton
+from buttons.QuitButton import QuitButton
 from Person import Person
 
+from Database.DB import insertPerson
 
 from resultsFrames.BMIResultFrame import BMIResultFrame
 
@@ -16,6 +17,14 @@ from resultsFrames.BMIResultFrame import BMIResultFrame
 from frames.ScrollWindow import ScrollWindow
 
 class ScrollingResults(tk.Frame):
+
+	def savePerson(self):
+		try:
+			dbID = getattr(self.controller.person, "dbID")
+			return
+			# update entry instead of adding new person     
+		except:
+			insertPerson(self.controller.person)
 
 	def __init__(self, parent, controller):
 		tk.Frame.__init__(self, parent)
@@ -30,3 +39,12 @@ class ScrollingResults(tk.Frame):
 
 		spacer = tk.Label(scrollView.interior)
 		spacer.pack()
+
+		self.SaveButton = tk.Button(self)
+		self.SaveButton['text'] = "Save"
+		self.SaveButton['fg'] = "black"
+		self.SaveButton['command'] = self.savePerson
+		self.SaveButton.pack()
+
+		self.QuitButton = QuitButton(self, self.controller)
+		self.QuitButton.pack()
