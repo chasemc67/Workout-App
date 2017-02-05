@@ -21,11 +21,6 @@ class Results(tk.Frame):
        tk.Frame.__init__(self, parent)
        self.controller = controller
 
-       self.Results = tk.Label(self)
-       self.Results["text"] = "Results"
-       self.Results.pack()
-
-
        self.person = self.controller.person
 
    def showBMIresult(self, person):
@@ -288,7 +283,10 @@ class Results(tk.Frame):
        self.plankRatingLabel.pack()
 
    def loadData(self, person):
-       print("Person in controller has name: " + str(self.controller.person.name))
+        
+       self.Results = tk.Label(self)
+       self.Results["text"] = "Results"
+       self.Results.pack()
 
        if "VertJump" in person.framesChecked:
         self.showVertJumpResult(person)

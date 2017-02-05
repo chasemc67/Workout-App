@@ -28,6 +28,7 @@ from frames.WallSit import WallSit
 from frames.WallSlide import WallSlide
 from frames.Results import Results
 from frames.DataEntry import DataEntry
+from frames.ScrollingResults import ScrollingResults
 
 from frames.Entry import Entry
 
@@ -60,7 +61,7 @@ class WorkoutApp(tk.Tk):
        self.person = Person()
 
        self.frames = {}
-       for F in (DataEntry, Entry, MainPage, Circumference, ThreeSiteSkinfold, SvnSiteSkinfold, ModAst, Ebelling, Rockport, Coopers, MBtoss, VertJump, RMtest, RMpredict, GripStrength, PushUps, CurlUps, PlankEnd, WallSit, FlexTests, SLstance, DeepSquat, WallSlide, HipHinge, FrontPlank, Results):
+       for F in (DataEntry, Entry, MainPage, Circumference, ThreeSiteSkinfold, SvnSiteSkinfold, ModAst, Ebelling, Rockport, Coopers, MBtoss, VertJump, RMtest, RMpredict, GripStrength, PushUps, CurlUps, PlankEnd, WallSit, FlexTests, SLstance, DeepSquat, WallSlide, HipHinge, FrontPlank, Results, ScrollingResults):
            page_name = F.__name__
            frame = F(parent=container, controller=self)
            self.frames[page_name] = frame
@@ -91,9 +92,9 @@ class WorkoutApp(tk.Tk):
         saveFunction(self.person)
 
        # Testing aggregate data entry stuff
-       frame = self.frames["DataEntry"]
-       frame.tkraise()
-       return
+       #frame = self.frames["DataEntry"]
+       #frame.tkraise()
+       #return
 
        # to get the results page to show as the last frame, you can
        # do something like:
@@ -103,7 +104,8 @@ class WorkoutApp(tk.Tk):
        # Keep in mind the above code wont just work out of the box, 
        # You'll need to modify and play with it a little bit
        if (self.currentFrameIndex == len(self.person.framesChecked)):
-        frame = self.frames["Results"]
+        #frame = self.frames["Results"]
+        frame = self.frames["ScrollingResults"]
        else:
         frame = self.frames[self.person.framesChecked[self.currentFrameIndex]]
        print(self.person.armCirc)
