@@ -2,6 +2,7 @@ Challenge:
 	[+] Save and load checked boxes to DB
 	[+] Try multi-frame data entry page
 	[+] Make multi-entry frame scrollable : http://stackoverflow.com/questions/16188420/python-tkinter-scrollbar-for-frame
+	[ ] Fix bug with saving checkboxes string
 	[ ] Hard code page size (or at least width) so scrolling
 		data entry page doesn't look so weird
 	[ ] Search by name and by date in DB view
