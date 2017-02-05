@@ -12,7 +12,7 @@ from Person import Person
 from Database.DB import insertPerson
 
 from resultsFrames.BMIResultFrame import BMIResultFrame
-
+from resultsFrames.CircumferenceResultFrame import CircumferenceResultFrame
 
 from frames.ScrollWindow import ScrollWindow
 
@@ -40,7 +40,11 @@ class ScrollingResults(tk.Frame):
 			spacer = tk.Label(scrollView.interior)
 			spacer.pack()
 
-		
+		if "Circumferences" in self.controller.person.framesChecked:
+			circFrame = CircumferenceResultFrame(scrollView.interior, self.controller)
+			circFrame.pack()
+			spacer = tk.Label(scrollView.interior)
+			spacer.pack()
 
 		self.SaveButton = tk.Button(self)
 		self.SaveButton['text'] = "Save"
