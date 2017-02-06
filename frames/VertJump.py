@@ -23,7 +23,7 @@ class VertJump(tk.Frame):
        self.VertJump.grid(row=0, column=0)
 
        self.VertJumpSR = tk.Label(self)
-       self.VertJumpSR["text"] = "Standing Reach(ft/inch): "
+       self.VertJumpSR["text"] = "Standing Reach(ft.inch): "
        self.VertJumpSR.grid(row=1, column=0)
 
        self.VertJumpSRText = tk.Text(self)
@@ -34,7 +34,7 @@ class VertJump(tk.Frame):
        self.VertJumpSRText.grid(row=1, column=1)
 
        self.VertJumpBest = tk.Label(self)
-       self.VertJumpBest["text"] = "Best Attempt(ft/inch): "
+       self.VertJumpBest["text"] = "Best Attempt(ft.inch): "
        self.VertJumpBest.grid(row=2, column=0)
 
        self.VertJumpBestText = tk.Text(self)

@@ -119,7 +119,7 @@ class ThreeSiteSkinfold(tk.Frame):
        self.ThreeSiteFemaleTricepText.insert(tk.END, person.threeSiteFemaleTricep)
 
        self.ThreeSiteFemaleThighText.delete(1.0, tk.END)
-       self.ThreeSiteFemaleThighText.insert(1.0, tk.END)
+       self.ThreeSiteFemaleThighText.insert(tk.END, person.threeSiteFemaleThigh)
 
    def saveData(self, person):
        person.threeSiteMaleChest = self.ThreeSiteMaleChestText.get(1.0, tk.END)
