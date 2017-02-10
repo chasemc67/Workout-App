@@ -35,7 +35,7 @@ class Entry(tk.Frame):
       self.EditPerson = tk.Button(self)
       self.EditPerson['text'] = "Edit Selected"
       self.EditPerson['fg'] = 'black'
-      self.EditPerson['command'] = lambda: controller.show_frame("MainPage")
+      self.EditPerson['command'] = lambda: controller.start_main()
       self.EditPerson.grid(row=1, column=1)
 
       

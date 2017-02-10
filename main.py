@@ -88,6 +88,21 @@ class WorkoutApp(tk.Tk):
         print("frame has no loadData function")
         print(e)
 
+   def start_main(self):
+       '''Show a frame for the given page name'''
+       self.currentFrameIndex = 0
+       frame = MainPage(parent=self.container, controller=self)
+       frame.grid(row=0, column=0, sticky="nsew")
+       frame.tkraise()
+       # TODO refactor out into one function
+       try:
+        frame.loadData(self.person)
+        print("loaded data successfully")
+       except AttributeError as e:
+        print("frame has no loadData function")
+        print(e)
+
+
    def next_page(self, saveFunction=None):
        if saveFunction:
         saveFunction(self.person)

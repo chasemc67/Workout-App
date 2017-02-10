@@ -6,6 +6,8 @@ from buttons.QuitButton import QuitButton
 
 from Database.DB import insertPerson
 
+from pdf.generatePdf import *
+
 class Results(tk.Frame):
 
    def savePerson(self):
@@ -16,6 +18,8 @@ class Results(tk.Frame):
     except:
      insertPerson(self.controller.person)
     
+   def printPerson(self):
+
 
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
@@ -365,6 +369,12 @@ class Results(tk.Frame):
        self.SaveButton['fg'] = "black"
        self.SaveButton['command'] = self.savePerson
        self.SaveButton.pack()
+
+       self.PrintButton = tk.Button(self)
+       self.PrintButton['text'] = "Print"
+       self.PrintButton['fg'] = "black"
+       self.PrintButton['command'] = self.printPerson
+       self.PrintButton.pack()
 
        self.QuitButton = QuitButton(self, self.controller)
        self.QuitButton.pack()

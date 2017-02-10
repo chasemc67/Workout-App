@@ -6,3 +6,4 @@ frames/__pycache__/*
 .idea/*
 .idea/workspace.xml
 people.db
+form.pdf

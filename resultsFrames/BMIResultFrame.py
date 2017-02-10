@@ -8,6 +8,5 @@ class BMIResultFrame(tk.Frame):
 
        self.BMIresult = tk.Label(self)
        self.BMIresult["text"] = ("BMI: " + str(self.controller.person.getBMI()))
-       #self.BMIresult["text"] = ("BMI: " + "100")
        
        self.BMIresult.pack()
