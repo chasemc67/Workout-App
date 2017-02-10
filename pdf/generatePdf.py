@@ -7,7 +7,7 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
 
-def generateForPerson(person):
+def generatePdfForPerson(person):
 	doc = SimpleDocTemplate('form.pdf', rightMarge=72, leftMargin=72, topMargin=72, bottomMargin=18)
 	Story=[]
 	logo = 'pdf/macewan-university-logo.png'		
@@ -67,6 +67,7 @@ def generateForPerson(person):
 
 
 	doc.build(Story)
+	print("PDF created")
 
 
 

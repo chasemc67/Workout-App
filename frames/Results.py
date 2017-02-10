@@ -6,8 +6,6 @@ from buttons.QuitButton import QuitButton
 
 from Database.DB import insertPerson
 
-from pdf.generatePdf import *
-
 class Results(tk.Frame):
 
    def savePerson(self):
@@ -17,9 +15,6 @@ class Results(tk.Frame):
      # update entry instead of adding new person     
     except:
      insertPerson(self.controller.person)
-    
-   def printPerson(self):
-
 
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)

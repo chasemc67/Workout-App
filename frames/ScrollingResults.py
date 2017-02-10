@@ -37,6 +37,8 @@ from resultsFrames.WallSlideResultFrame import WallSlideResultFrame
 
 from frames.ScrollWindow import ScrollWindow
 
+from pdf.generatePdf import *
+
 class ScrollingResults(tk.Frame):
 
 	def savePerson(self):
@@ -46,6 +48,9 @@ class ScrollingResults(tk.Frame):
 			# update entry instead of adding new person     
 		except:
 			insertPerson(self.controller.person)
+
+	def printPerson(self):
+		generatePdfForPerson(self.controller.person)
 
 	def __init__(self, parent, controller):
 		tk.Frame.__init__(self, parent)
@@ -198,6 +203,12 @@ class ScrollingResults(tk.Frame):
 		self.SaveButton['fg'] = "black"
 		self.SaveButton['command'] = self.savePerson
 		self.SaveButton.pack()
+
+		self.PrintButton = tk.Button(self)
+		self.PrintButton['text'] = "Print"
+		self.PrintButton['fg'] = "black"
+		self.PrintButton['command'] = self.printPerson
+		self.PrintButton.pack()
 
 		self.QuitButton = QuitButton(self, self.controller)
 		self.QuitButton.pack()
