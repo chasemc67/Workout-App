@@ -80,8 +80,15 @@ def generatePdfForPerson(person):
 		
 
 	if "GripStrength" in person.framesChecked:
-		ptext = '<font size=12>GripStrength %s:</font>' % str("TODO fill in code")
+		ptext = '<font size=12>GripStrength: </font>'
 		Story.append(Paragraph(ptext, styles["Normal"]))
+
+		ptext = '<font size=12>Left Hand(kg): %s</font>' % str(person.GripStrengthLeft)
+		Story.append(Paragraph(ptext, styles["Normal"]))
+
+		ptext = '<font size=12>Right Hand(kg): %s</font>' % str(person.GripStrengthRight)
+		Story.append(Paragraph(ptext, styles["Normal"]))
+
 		Story.append(Spacer(1, 12))
 		
 
