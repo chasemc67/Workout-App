@@ -9,6 +9,6 @@ class CoopersResultFrame(tk.Frame):
 
         self.row = 1
         self.CoopersCapacityLabel = tk.Label(self)
-        self.CoopersCapacityLabel["text"] = ("Test: Coopers Run Test VO2max(ml/kg/min): " + str(person.getCooperAerobic()))
+        self.CoopersCapacityLabel["text"] = ("Coopers Run Test VO2max(ml/kg/min): " + str(person.getCooperAerobic()))
         self.CoopersCapacityLabel.grid(row=self.row, column=0)
         self.row += 1
