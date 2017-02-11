@@ -42,7 +42,11 @@ class MainPage(tk.Frame):
        self.labelGender["text"] = "Gender: "
        self.labelGender.grid(row=0, column=4)
 
-       self.genderText = tk.Text(self)
+       self.genderVariable = tk.StringVar(self)
+       self.genderVariable.set("Male")
+       if self.controller.person.gender.strip() != "":
+            self.genderVariable.set(self.controller.person.gender)
+       self.genderText = tk.OptionMenu(self, self.genderVariable, "Male", "Female")
        self.genderText["height"] = 1
        self.genderText["width"] = 15
        self.genderText.bind("<Tab>", self.focus_next_window)
@@ -231,9 +235,6 @@ class MainPage(tk.Frame):
        self.testDateText.delete(1.0, tk.END)
        self.testDateText.insert(tk.END, self.controller.person.testDate)
 
-       self.genderText.delete(1.0, tk.END)
-       self.genderText.insert(tk.END, self.controller.person.gender)
-
        self.birthDateText.delete(1.0, tk.END)
        self.birthDateText.insert(tk.END, self.controller.person.birthDate)
 
@@ -303,7 +304,7 @@ class MainPage(tk.Frame):
 
        self.controller.person.name = self.nameText.get(1.0, tk.END)
        self.controller.person.testDate = self.testDateText.get(1.0, tk.END)
-       self.controller.person.gender = self.genderText.get(1.0, tk.END)
+       self.controller.person.gender = str(self.genderVariable.get())
        self.controller.person.birthDate = self.birthDateText.get(1.0, tk.END)
        self.controller.person.phoneNumber = self.phoneNumberText.get(1.0, tk.END)
        self.controller.person.restHR = self.restHRText.get(1.0, tk.END)
