@@ -87,22 +87,22 @@ class Results(tk.Frame):
 
    def showModAstResult(self, person):
        self.ModAstCapacityLabel = tk.Label(self)
-       self.ModAstCapacityLabel["text"] = ("Test: Modified Astrand Cycle Test VO2max(ml/kg/min): " + self.person.modAstAerobic)
+       self.ModAstCapacityLabel["text"] = ("Modified Astrand Cycle Test VO2max(ml/kg/min): " + self.person.modAstAerobic)
        self.ModAstCapacityLabel.pack()
 
    def showEbbelingResult(self, person):
        self.EbbelingCapacityLabel = tk.Label(self)
-       self.EbbelingCapacityLabel["text"] = ("Test: Ebbeling Treadmill Test VO2max(ml/kg/min): " + str(person.getEbellingAerobic()))
+       self.EbbelingCapacityLabel["text"] = ("Ebbeling Treadmill Test VO2max(ml/kg/min): " + str(person.getEbellingAerobic()))
        self.EbbelingCapacityLabel.pack()
 
    def showRockportResult(self, person):
        self.RockportCapacityLabel = tk.Label(self)
-       self.RockportCapacityLabel["text"] = ("Test: Rockport 1 Mile Walk VO2max(ml/kg/min): " + str(person.getRockportAerobic()))
+       self.RockportCapacityLabel["text"] = ("Rockport 1 Mile Walk VO2max(ml/kg/min): " + str(person.getRockportAerobic()))
        self.RockportCapacityLabel.pack()
 
    def showCoopersResult(self, person):
        self.CoopersCapacityLabel = tk.Label(self)
-       self.CoopersCapacityLabel["text"] = ("Test: Coopers Run Test VO2max(ml/kg/min): " + str(person.getCooperAerobic()))
+       self.CoopersCapacityLabel["text"] = ("Coopers Run Test VO2max(ml/kg/min): " + str(person.getCooperAerobic()))
        self.CoopersCapacityLabel.pack()
 
    def showMBTossResult(self, person):

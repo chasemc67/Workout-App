@@ -74,7 +74,7 @@ class RMpredict(tk.Frame):
        self.RMPredictRepsText.insert(tk.END, person.RMPredictReps)
 
        self.RMPredictLoadText.delete(1.0, tk.END)
-       self.RMPredictLoadText.insert(tk.END, personRMPredictLoad)
+       self.RMPredictLoadText.insert(tk.END, person.RMPredictLoad)
 
    def saveData(self, person):
        person.RMPredictEx = self.RMPredictExText.get(1.0, tk.END)
