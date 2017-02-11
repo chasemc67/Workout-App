@@ -26,7 +26,6 @@ from frames.ThreeSiteSkinfold import ThreeSiteSkinfold
 from frames.VertJump import VertJump
 from frames.WallSit import WallSit
 from frames.WallSlide import WallSlide
-from frames.Results import Results
 from frames.DataEntry import DataEntry
 from frames.ScrollingResults import ScrollingResults
 
