@@ -34,8 +34,12 @@ def generatePdfForPerson(person):
 		Story.append(Spacer(1, 12))
 
 	if "Circumference" in person.framesChecked:
-		ptext = '<font size=12>Circumference %s:</font>' % str("TODO fill in code")
+		ptext = '<font size=12>Circumference: %s</font>' % str("TODO fill in code")
 		Story.append(Paragraph(ptext, styles["Normal"]))
+
+		ptext = '<font size=12>arm circ: %s</font>' % str(person.armCirc)
+		Story.append(Paragraph(ptext, styles["Normal"]))
+
 		Story.append(Spacer(1, 12))
 		
 
