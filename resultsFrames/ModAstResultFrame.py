@@ -10,5 +10,5 @@ class ModAstResultFrame(tk.Frame):
         self.row = 1
 
         self.ModAstCapacityLabel = tk.Label(self)
-        self.ModAstCapacityLabel["text"] = ("Test: Modified Astrand Cycle Test VO2max(ml/kg/min): " + person.modAstAerobic)
+        self.ModAstCapacityLabel["text"] = ("Modified Astrand Cycle Test VO2max(ml/kg/min): " + person.modAstAerobic)
         self.ModAstCapacityLabel.grid(row=0, column=0)
