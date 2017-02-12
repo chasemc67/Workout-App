@@ -3,15 +3,16 @@ Challenge:
 	[+] Try multi-frame data entry page
 	[+] Make multi-entry frame scrollable : http://stackoverflow.com/questions/16188420/python-tkinter-scrollbar-for-frame
 	[+] Fix bug with saving checkboxes string
-	[ ] Fix "age" in calculations
-	[ ] Fix "gender" in calculations
+	[+] Fix "age" in calculations
+	[+] Fix "gender" in calculations
+	[ ] Fix "sumOfFolds" stuff
 	[ ] Add BMI checkbox back in
 	[ ] Hard code page size (or at least width) so scrolling
 		data entry page doesn't look so weird
 	[ ] Search by name and by date in DB view
 	[ ] Check for bad data in each entry frame before saving
 	[+] Results frames
-	[ ] PDF report generator 
+	[+] PDF report generator 
 	[ ] Package with pynsist https://github.com/takluyver/pynsist
 
 features:

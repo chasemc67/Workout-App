@@ -145,14 +145,14 @@ class Person():
             genderModifier = 1
         else:
             genderModifier = 0
-        return 15.1 + (21.8 * float(self.ebbelingWork)) - (0.327 * float(self.ebbelingHR)) - (0.263 * float(self.ebbelingWork) * float(self.getAge())) + (0.00504 * float(self.ebbelingHR) * float(self.getAge())) + (5.98 * float(self.genderModifier))
+        return 15.1 + (21.8 * float(self.ebbelingWork)) - (0.327 * float(self.ebbelingHR)) - (0.263 * float(self.ebbelingWork) * float(self.getAge())) + (0.00504 * float(self.ebbelingHR) * float(self.getAge())) + (5.98 * float(genderModifier))
 
     def getRockportAerobic(self):
         if self.gender.lower() == "male" or self.gender.lower() == "m":
             genderModifier = 1
         else:
             genderModifier = 0
-        return 132.853 - (0.0769 * (float(self.weight) * 2.20462)) - (0.3877 * float(self.getAge())) + (6.315 * float(self.genderModifier)) - (0.32649 * float(self.rockportTime)) - (0.1565 * float(self.rockportHR))
+        return 132.853 - (0.0769 * (float(self.weight) * 2.20462)) - (0.3877 * float(self.getAge())) + (6.315 * float(genderModifier)) - (0.32649 * float(self.rockportTime)) - (0.1565 * float(self.rockportHR))
 
     def getCooperAerobic(self):
         return (35.97 * float(self.cooperDist)) - 11.29
