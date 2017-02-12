@@ -16,11 +16,9 @@ class VertJumpResultFrame(tk.Frame):
         self.vertJumpReachLabel.grid(row=1, column=0)
 
         self.vertJumpCalcOutputLabel = tk.Label(self)
-        #self.vertJumpCalcOutputLabel['text'] = ("Best Jump: " + str(person.getVertJumpBest())
-        self.vertJumpCalcOutputLabel["text"] = ("Best Jump: " + "100")
+        self.vertJumpCalcOutputLabel['text'] = ("Best Jump: " + str(person.getVertJumpBest())
         self.vertJumpCalcOutputLabel.grid(row=2, column=0)
 
         self.vertJumpPowerLabel = tk.Label(self)
-        #self.vertJumpPowerLabel["text"] = ("Peak Power(W):" + str(person.getVertJumpPower()))
-        self.vertJumpPowerLabel["text"] = ("Peak Power(W): " + "100")
+        self.vertJumpPowerLabel["text"] = ("Peak Power(W):" + str(person.getVertJumpPower()))
         self.vertJumpPowerLabel.grid(row=3, column=0)

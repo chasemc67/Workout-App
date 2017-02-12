@@ -158,14 +158,14 @@ def generatePdfForPerson(person):
 		ptext = '<font size=12>1 Rep Max (Tested):</font>'
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
-		if (person.RMTestExA != "\n" and person.RMTestExAWeight != "\n"):
+		if (person.RMTestExA.strip() != "" and person.RMTestExAWeight.strip() != ""):
 			ptext = '<font size=12>Exercise %s:</font>' % str(person.RMTestExA)
 			Story.append(Paragraph(ptext, styles["Normal"]))
 
 			ptext = '<font size=12>1 Rep Max Weight %s:</font>' % str(person.RMTestExAWeight)
 			Story.append(Paragraph(ptext, styles["Normal"]))
 
-		if (person.RMTestExB != "\n" and person.RMTestExBWeight != "\n"):
+		if (person.RMTestExB.strip() != "" and person.RMTestExBWeight.strip() != ""):
 			ptext = '<font size=12>Exercise %s:</font>' % str(person.RMTestExB)
 			Story.append(Paragraph(ptext, styles["Normal"]))
 
@@ -218,14 +218,14 @@ def generatePdfForPerson(person):
 		ptext = '<font size=12>Three Site Skinfold:</font>'
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
-		if (person.threeSiteFemaleSupra != "\n" and person.threeSiteFemaleTricep != "\n" and person.threeSiteFemaleThigh != "\n"):
+		if (person.threeSiteFemaleSupra.strip() != "" and person.threeSiteFemaleTricep.strip() != "" and person.threeSiteFemaleThigh.strip() != ""):
 			ptext = '<font size=12>Body Density %s:</font>' % str(person.getThreeSiteMale())
 			Story.append(Paragraph(ptext, styles["Normal"]))
 
 			ptext = '<font size=12>Body Fat \% %s:</font>' % str(person.getBodyFatThreeMale())
 			Story.append(Paragraph(ptext, styles["Normal"]))
 
-		if (person.threeSiteMaleChest != "\n" and person.threeSiteMaleAb != "\n" and person.threeSiteMaleThigh != "\n"):
+		if (person.threeSiteMaleChest.strip() != "" and person.threeSiteMaleAb.strip() != "" and person.threeSiteMaleThigh.strip() != ""):
 			ptext = '<font size=12>Body Density %s:</font>' % str(person.getThreeSiteFemale())
 			Story.append(Paragraph(ptext, styles["Normal"]))
 

@@ -10,7 +10,7 @@ class EbbelingResultFrame(tk.Frame):
         self.row = 1
 
         self.EbbelingCapacityLabel = tk.Label(self)
-        #self.EbbelingCapacityLabel["text"] = ("Test: Ebbeling Treadmill Test VO2max(ml/kg/min): " + str(person.getEbellingAerobic()))
-        self.EbbelingCapacityLabel["text"] = ("Ebbeling Treadmill Test VO2max(ml/kg/min): " + "100")
+        self.EbbelingCapacityLabel["text"] = ("Test: Ebbeling Treadmill Test VO2max(ml/kg/min): " + str(person.getEbellingAerobic()))
+        #self.EbbelingCapacityLabel["text"] = ("Ebbeling Treadmill Test VO2max(ml/kg/min): " + "100")
         self.EbbelingCapacityLabel.grid(row=0, column=0)
         self.row += 1

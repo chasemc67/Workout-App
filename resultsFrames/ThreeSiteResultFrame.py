@@ -9,32 +9,28 @@ class ThreeSiteResultFrame(tk.Frame):
 
         self.row = 1
 
-        if (person.threeSiteFemaleSupra != "\n" and person.threeSiteFemaleTricep != "\n" and person.threeSiteFemaleThigh != "\n"):
+        if (person.threeSiteFemaleSupra.strip() != "" and person.threeSiteFemaleTricep.strip() != "" and person.threeSiteFemaleThigh.strip() != ""):
             self.threeSiteBDMaleLabel = tk.Label(self)
-            #self.threeSiteBDMaleLabel["text"] = ("Body Density: " + str(person.getThreeSiteMale()))
-            self.threeSiteBDMaleLabel["text"] = ("Body Density: " + "100" )
+            self.threeSiteBDMaleLabel["text"] = ("Body Density: " + str(person.getThreeSiteMale()))
             self.threeSiteBDMaleLabel.grid(row=self.row, column=0)
 
             self.row += 1
 
             self.threeSiteBFMaleLabel = tk.Label(self)
-            #self.threeSiteBFMaleLabel["text"] = ("Body Fat %: " + str(person.getBodyFatThreeMale()))
-            self.threeSiteBFMaleLabel["text"] = ("Body Fat %: " + "100")
+            self.threeSiteBFMaleLabel["text"] = ("Body Fat %: " + str(person.getBodyFatThreeMale()))
             self.threeSiteBFMaleLabel.grid(row=self.row, column=0)
 
             self.row += 1
 
-        if (person.threeSiteMaleChest != "\n" and person.threeSiteMaleAb != "\n" and person.threeSiteMaleThigh != "\n"):
+        if (person.threeSiteMaleChest.strip() != "" and person.threeSiteMaleAb.strip() != "" and person.threeSiteMaleThigh.strip() != ""):
             self.threeSiteBDFemaleLabel = tk.Label(self)
-            #self.threeSiteBDFemaleLabel["text"] = ("Body Density: " + str(person.getThreeSiteFemale()))
-            self.threeSiteBDFemaleLabel["text"] = ("Body Density: " + "100")
+            self.threeSiteBDFemaleLabel["text"] = ("Body Density: " + str(person.getThreeSiteFemale()))
             self.threeSiteBDFemaleLabel.grid(row=self.row, column=0)
 
             self.row += 1
 
             self.threeSiteBFFemaleLabel = tk.Label(self)
-            #self.threeSiteBFFemaleLabel["text"] = ("Body Fat %: " + str(person.getBodyFatThreeFemale()))
-            self.threeSiteBFFemaleLabel["text"] = ("Body Fat %: " + "100")
+            self.threeSiteBFFemaleLabel["text"] = ("Body Fat %: " + str(person.getBodyFatThreeFemale()))
             self.threeSiteBFFemaleLabel.grid(row=self.row, column=0)
 
             self.row += 1

@@ -12,7 +12,7 @@ class RMTestResultFrame(tk.Frame):
         self.RMTestResultLabel["text"] = "1RM Test"
         self.RMTestResultLabel.grid(row=0, column=1)
 
-        if (person.RMTestExA != "\n" and person.RMTestExAWeight != "\n"):
+        if (person.RMTestExA.strip() != "" and person.RMTestExAWeight.strip() != ""):
             self.RMTestExALabel = tk.Label(self)
             self.RMTestExALabel["text"] = ("Exercise: " + person.RMTestExA)
             self.RMTestExALabel.grid(row=self.row, column=0)
@@ -23,7 +23,7 @@ class RMTestResultFrame(tk.Frame):
 
             self.row += 1
 
-        if (person.RMTestExB != "\n" and person.RMTestExBWeight != "\n"):
+        if (person.RMTestExB.strip() != "" and person.RMTestExBWeight.strip() != ""):
             self.RMTestExBLabel = tk.Label(self)
             self.RMTestExBLabel["text"] = ("Exercise: " + person.RMTestExB)
             self.RMTestExBLabel.grid(row=self.row, column=0)
