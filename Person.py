@@ -1,3 +1,6 @@
+import datetime
+import math
+
 class Person():
     def __init__(self):
         # person attributes
@@ -99,7 +102,9 @@ class Person():
 
     # todo fix this shit
     def getAge(self):
-        return 20
+        birth_datetime = datetime.datetime.strptime(self.birthDate.strip(), '%m/%d/%Y')
+        now = datetime.datetime.now()
+        return math.floor( (now-birth_datetime).days/365 )
 
     # Calculations
     def getBMI(self):

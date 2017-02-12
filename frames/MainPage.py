@@ -306,9 +306,10 @@ class MainPage(tk.Frame):
        print("Saving new user with name " + str(self.nameText.get(1.0, tk.END)))
 
        self.controller.person.name = self.nameText.get(1.0, tk.END)
-       self.controller.person.testDate = self.testDateText.get(1.0, tk.END)
+       #self.controller.person.testDate = datetime.strptime(self.testDateText.get(1.0, tk.END).strip(), '%m/%d/%Y')
+       self.controller.person.testDate = self.testDateText.get(1.0, tk.END).strip()
        self.controller.person.gender = str(self.genderVariable.get())
-       self.controller.person.birthDate = self.birthDateText.get(1.0, tk.END)
+       self.controller.person.birthDate = self.birthDateText.get(1.0, tk.END).strip()
        self.controller.person.phoneNumber = self.phoneNumberText.get(1.0, tk.END)
        self.controller.person.restHR = self.restHRText.get(1.0, tk.END)
        self.controller.person.restBP = self.restBPText.get(1.0, tk.END)
