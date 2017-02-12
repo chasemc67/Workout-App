@@ -1,6 +1,7 @@
 import tkinter as tk
 from buttons.NextButton import NextButton
 from buttons.QuitButton import QuitButton
+from buttons.PlaceholderTextBox import PlaceholderTextBox
 
 class MainPage(tk.Frame):
 
@@ -31,7 +32,7 @@ class MainPage(tk.Frame):
        self.labelDateOfTest["text"] = "Date of Test: "
        self.labelDateOfTest.grid(row=0, column=2)
 
-       self.testDateText = tk.Text(self)
+       self.testDateText = PlaceholderTextBox(self, placeholder="mm/dd/yyyy")
        self.testDateText["height"] = 1
        self.testDateText["width"] = 15
        self.testDateText.bind("<Tab>", self.focus_next_window)
@@ -57,7 +58,7 @@ class MainPage(tk.Frame):
        self.labelDOB["text"] = "Date of Birth: "
        self.labelDOB.grid(row=0, column=6)
 
-       self.birthDateText = tk.Text(self)
+       self.birthDateText = PlaceholderTextBox(self, placeholder="mm/dd/yyyy")
        self.birthDateText["height"] = 1
        self.birthDateText["width"] = 15
        self.birthDateText.bind("<Tab>", self.focus_next_window)
@@ -232,11 +233,13 @@ class MainPage(tk.Frame):
        self.nameText.delete(1.0, tk.END)
        self.nameText.insert(tk.END, self.controller.person.name)
 
-       self.testDateText.delete(1.0, tk.END)
-       self.testDateText.insert(tk.END, self.controller.person.testDate)
+       if self.controller.person.testDate.strip() != "":
+             self.testDateText.delete(1.0, tk.END)
+             self.testDateText.insert(tk.END, self.controller.person.testDate)
 
-       self.birthDateText.delete(1.0, tk.END)
-       self.birthDateText.insert(tk.END, self.controller.person.birthDate)
+       if self.controller.person.birthDate.strip() != "":
+            self.birthDateText.delete(1.0, tk.END)
+            self.birthDateText.insert(tk.END, self.controller.person.birthDate)
 
        self.phoneNumberText.delete(1.0, tk.END)
        self.phoneNumberText.insert(tk.END, self.controller.person.phoneNumber)
