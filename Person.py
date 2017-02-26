@@ -117,16 +117,16 @@ class Person():
             return float(self.threeSiteFemaleSupra) + float(self.threeSiteFemaleTricep) + (self.threeSiteFemaleThigh)
 
     def getThreeSiteMale(self):
-        return 1.10938 - (0.0008267 * float(self.sumOfFolds)) + (0.0000016 * (float(self.sumOfFolds) * float(self.sumOfFolds))) - (0.0002574 * float(self.age))
+        return 1.10938 - (0.0008267 * float(self.getSumOfFolds())) + (0.0000016 * (float(self.getSumOfFolds()) * float(self.getSumOfFolds()))) - (0.0002574 * float(self.age))
 
     def getThreeSiteFemale(self):
-        return 1.0994921 - (0.0009929 * float(self.sumOfFolds)) + (0.0000023 * (float(self.sumOfFolds) * float(self.sumOfFolds))) - (0.0001392 * float(self.age))
+        return 1.0994921 - (0.0009929 * float(self.getSumOfFolds())) + (0.0000023 * (float(self.getSumOfFolds()) * float(self.getSumOfFolds()))) - (0.0001392 * float(self.age))
 
     def getSevenSiteDensity(self):
         if self.gender.lower() == "male" or self.gender.lower() == "m":
-            return 1.112 - (0.00043499 * float(self.sumOfFolds)) + (0.00000055 * (float(self.sumOfFolds) * float(self.sumOfFolds))) - (0.00028826 * float(self.getAge()))
+            return 1.112 - (0.00043499 * float(self.getSumOfFolds())) + (0.00000055 * (float(self.getSumOfFolds()) * float(self.getSumOfFolds()))) - (0.00028826 * float(self.getAge()))
         else:
-            return 1.097 - (0.00046971 * float(self.sumOfFolds)) + (0.00000056 * (float(self.sumOfFolds) * float(self.sumOfFolds))) - (0.00012828 * float(self.getAge()))
+            return 1.097 - (0.00046971 * float(self.getSumOfFolds())) + (0.00000056 * (float(self.getSumOfFolds()) * float(self.getSumOfFolds()))) - (0.00012828 * float(self.getAge()))
 
     def getBodyFatThreeMale(self):
         return ((495 / float(self.getThreeSiteMale())) - 450)
