@@ -48,4 +48,4 @@ class WallSit(tk.Frame):
        self.WallSitTimeText.insert(tk.END, person.wallSitTime)
 
    def saveData(self, person):
-       person.wallSitTime = self.WallSitTimeText.get(1.0, tk.END)
+       person.wallSitTime = self.WallSitTimeText.get(1.0, tk.END).strip()

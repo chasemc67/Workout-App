@@ -86,11 +86,11 @@ class RMtest(tk.Frame):
        self.RMTestExBText.delete(1.0, tk.END)
        self.RMTestExBText.insert(1.0, person.RMTestExB)
 
-       self.RMTestExBWeight.delete(1.0, tk.END)
-       self.RMTestExBWeight.insert(1.0, person.RMTestExBWeight)
+       self.RMTestExBWeightText.delete(1.0, tk.END)
+       self.RMTestExBWeightText.insert(1.0, person.RMTestExBWeight)
 
    def saveData(self, person):
-       person.RMTestExA = self.RMTestExAText.get(1.0, tk.END)
-       person.RMTestExAWeight = self.RMTestExAWeightText.get(1.0, tk.END)
-       person.RMTestExB = self.RMTestExBText.get(1.0, tk.END)
-       person.RMTestExBWeight = self.RMTestExBWeightText.get(1.0, tk.END)
+       person.RMTestExA = self.RMTestExAText.get(1.0, tk.END).strip()
+       person.RMTestExAWeight = self.RMTestExAWeightText.get(1.0, tk.END).strip()
+       person.RMTestExB = self.RMTestExBText.get(1.0, tk.END).strip()
+       person.RMTestExBWeight = self.RMTestExBWeightText.get(1.0, tk.END).strip()

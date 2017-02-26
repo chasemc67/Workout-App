@@ -49,4 +49,4 @@ class PlankEnd(tk.Frame):
        self.PlankTimeText.insert(tk.END, person.plankTime)
 
    def saveData(self, person):
-       person.plankTime = self.PlankTimeText.get(1.0, tk.END)
+       person.plankTime = self.PlankTimeText.get(1.0, tk.END).strip()

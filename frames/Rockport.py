@@ -62,5 +62,5 @@ class Rockport(tk.Frame):
        self.RockportTimeText.insert(tk.END, person.rockportTime)
 
    def saveData(self, person):
-       person.rockportHR = self.RockportHRText.get(1.0, tk.END)
-       person.rockportTime = self.RockportTimeText.get(1.0, tk.END)
+       person.rockportHR = self.RockportHRText.get(1.0, tk.END).strip()
+       person.rockportTime = self.RockportTimeText.get(1.0, tk.END).strip()

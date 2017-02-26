@@ -46,4 +46,4 @@ class Coopers(tk.Frame):
       self.CooperDistText.insert(tk.END, person.cooperDist)
 
    def saveData(self, person):
-      person.cooperDist = self.CooperDistText.get(1.0, tk.END)
+      person.cooperDist = self.CooperDistText.get(1.0, tk.END).strip()

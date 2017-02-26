@@ -133,10 +133,10 @@ class SvnSiteSkinfold(tk.Frame):
        self.SvnSiteThighText.insert(tk.END, person.svnSiteThigh)
 
    def saveData(self, person):
-       person.svnSiteChest = self.SvnSiteChestText.get(1.0, tk.END)
-       person.svnSiteMidAx = self.SvnSiteMidAxText.get(1.0, tk.END)
-       person.svnSiteTri = self.SvnSiteTriText.get(1.0, tk.END)
-       person.svnSiteScap = self.SvnSiteScapText.get(1.0, tk.END)
-       person.svnSiteSupra = self.SvnSiteSupraText.get(1.0, tk.END)
-       person.svnSiteAb = self.SvnSiteAbText.get(1.0, tk.END)
-       person.svnSiteThigh = self.SvnSiteThighText.get(1.0, tk.END)
+       person.svnSiteChest = self.SvnSiteChestText.get(1.0, tk.END).strip()
+       person.svnSiteMidAx = self.SvnSiteMidAxText.get(1.0, tk.END).strip()
+       person.svnSiteTri = self.SvnSiteTriText.get(1.0, tk.END).strip()
+       person.svnSiteScap = self.SvnSiteScapText.get(1.0, tk.END).strip()
+       person.svnSiteSupra = self.SvnSiteSupraText.get(1.0, tk.END).strip()
+       person.svnSiteAb = self.SvnSiteAbText.get(1.0, tk.END).strip()
+       person.svnSiteThigh = self.SvnSiteThighText.get(1.0, tk.END).strip()

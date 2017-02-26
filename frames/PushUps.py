@@ -49,4 +49,4 @@ class PushUps(tk.Frame):
        self.PushUpNumText.insert(tk.END, person.pushUpNum)
 
    def saveData(self, person):
-       person.pushUpNum = self.PushUpNumText.get(1.0, tk.END)
+       person.pushUpNum = self.PushUpNumText.get(1.0, tk.END).strip()

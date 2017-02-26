@@ -47,4 +47,4 @@ class FlexTests(tk.Frame):
        self.SitReachDistText.insert(tk.END, person.sitReachDist)
 
    def saveData(self, person):
-       person.sitReachDist = self.SitReachDistText.get(1.0, tk.END)
+       person.sitReachDist = self.SitReachDistText.get(1.0, tk.END).strip()

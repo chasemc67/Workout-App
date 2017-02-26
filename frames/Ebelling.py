@@ -74,6 +74,6 @@ class Ebelling(tk.Frame):
        self.EbellingHRText.insert(tk.END, person.ebbelingHR)
 
    def saveData(self, person):
-       person.ebbelingWU = self.EbellingWUText.get(1.0, tk.END)
-       person.ebbelingWork = self.EbellingWorkText.get(1.0, tk.END)
-       person.ebbelingHR = self.EbellingHRText.get(1.0,tk.END)
+       person.ebbelingWU = self.EbellingWUText.get(1.0, tk.END).strip()
+       person.ebbelingWork = self.EbellingWorkText.get(1.0, tk.END).strip()
+       person.ebbelingHR = self.EbellingHRText.get(1.0,tk.END).strip()

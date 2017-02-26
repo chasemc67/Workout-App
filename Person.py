@@ -117,10 +117,10 @@ class Person():
             return float(self.threeSiteFemaleSupra) + float(self.threeSiteFemaleTricep) + (self.threeSiteFemaleThigh)
 
     def getThreeSiteMale(self):
-        return 1.10938 - (0.0008267 * float(self.getSumOfFolds())) + (0.0000016 * (float(self.getSumOfFolds()) * float(self.getSumOfFolds()))) - (0.0002574 * float(self.age))
+        return 1.10938 - (0.0008267 * float(self.getSumOfFolds())) + (0.0000016 * (float(self.getSumOfFolds()) * float(self.getSumOfFolds()))) - (0.0002574 * float(self.getAge()))
 
     def getThreeSiteFemale(self):
-        return 1.0994921 - (0.0009929 * float(self.getSumOfFolds())) + (0.0000023 * (float(self.getSumOfFolds()) * float(self.getSumOfFolds()))) - (0.0001392 * float(self.age))
+        return 1.0994921 - (0.0009929 * float(self.getSumOfFolds())) + (0.0000023 * (float(self.getSumOfFolds()) * float(self.getSumOfFolds()))) - (0.0001392 * float(self.getAge()))
 
     def getSevenSiteDensity(self):
         if self.gender.lower() == "male" or self.gender.lower() == "m":

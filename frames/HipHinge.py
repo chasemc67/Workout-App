@@ -47,4 +47,4 @@ class HipHinge(tk.Frame):
        self.HipHingeRateText.insert(tk.END, person.hipHingeRate)
 
    def saveData(self, person):
-       person.hipHingeRate = self.HipHingeRateText.get(1.0, tk.END)
+       person.hipHingeRate = self.HipHingeRateText.get(1.0, tk.END).strip()

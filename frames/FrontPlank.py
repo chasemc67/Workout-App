@@ -46,4 +46,4 @@ class FrontPlank(tk.Frame):
        self.FrPlankRateText.insert(tk.END, person.frontPlankRate)
 
    def saveData(self, person):
-       person.frontPlankRate = self.FrPlankRateText.get(1.0, tk.END)
+       person.frontPlankRate = self.FrPlankRateText.get(1.0, tk.END).strip()

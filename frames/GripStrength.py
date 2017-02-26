@@ -61,5 +61,5 @@ class GripStrength(tk.Frame):
        self.GripStrRightText.insert(tk.END, person.gripStrengthRight)
 
    def saveData(self, person):
-       person.gripStrengthLeft = self.GripStrLeftText.get(1.0, tk.END)
-       person.gripStrengthRight = self.GripStrRightText.get(1.0, tk.END)
+       person.gripStrengthLeft = self.GripStrLeftText.get(1.0, tk.END).strip()
+       person.gripStrengthRight = self.GripStrRightText.get(1.0, tk.END).strip()

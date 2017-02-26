@@ -90,7 +90,7 @@ class ModAst(tk.Frame):
        self.ModAstCapacityText.insert(tk.END, person.modAstAerobic)
 
    def saveData(self, person):
-       person.modAstLoadA = self.ModAstLoadAText.get(1.0, tk.END)
-       person.modAstLoadB = self.ModAstLoadBText.get(1.0, tk.END)
-       person.modAstHR = self.ModAstHRText.get(1.0, tk.END)
-       person.modAstAerobic = self.ModAstCapacityText.get(1.0, tk.END)
+       person.modAstLoadA = self.ModAstLoadAText.get(1.0, tk.END).strip()
+       person.modAstLoadB = self.ModAstLoadBText.get(1.0, tk.END).strip()
+       person.modAstHR = self.ModAstHRText.get(1.0, tk.END).strip()
+       person.modAstAerobic = self.ModAstCapacityText.get(1.0, tk.END).strip()

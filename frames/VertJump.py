@@ -62,5 +62,5 @@ class VertJump(tk.Frame):
        self.VertJumpBestText.insert(tk.END, person.vertJumpBest)
 
    def saveData(self, person):
-       person.vertJumpSR = self.VertJumpSRText.get(1.0, tk.END)
-       person.vertJumpBest = self.VertJumpBestText.get(1.0, tk.END)
+       person.vertJumpSR = self.VertJumpSRText.get(1.0, tk.END).strip()
+       person.vertJumpBest = self.VertJumpBestText.get(1.0, tk.END).strip()

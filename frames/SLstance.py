@@ -90,7 +90,7 @@ class SLstance(tk.Frame):
        self.SLCloseRightText.insert(tk.END, person.SLCloseRight)
 
    def saveData(self, person):
-       person.SLOpenLeft = self.SLOpenLeftText.get(1.0, tk.END)
-       person.SLOpenRight = self.SLOpenRightText.get(1.0, tk.END)
-       person.SLCloseLeft = self.SLCloseLeftText.get(1.0, tk.END)
-       person.SLCloseRight = self.SLCloseRightText.get(1.0, tk.END)
+       person.SLOpenLeft = self.SLOpenLeftText.get(1.0, tk.END).strip()
+       person.SLOpenRight = self.SLOpenRightText.get(1.0, tk.END).strip()
+       person.SLCloseLeft = self.SLCloseLeftText.get(1.0, tk.END).strip()
+       person.SLCloseRight = self.SLCloseRightText.get(1.0, tk.END).strip()

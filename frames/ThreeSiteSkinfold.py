@@ -122,9 +122,9 @@ class ThreeSiteSkinfold(tk.Frame):
        self.ThreeSiteFemaleThighText.insert(tk.END, person.threeSiteFemaleThigh)
 
    def saveData(self, person):
-       person.threeSiteMaleChest = self.ThreeSiteMaleChestText.get(1.0, tk.END)
-       person.threeSiteMaleAb = self.ThreeSiteMaleAbText.get(1.0, tk.END)
-       person.threeSiteMaleThigh = self.ThreeSiteMaleThighText.get(1.0, tk.END)
-       person.threeSiteFemaleSupra = self.ThreeSiteFemaleSupraText.get(1.0, tk.END)
-       person.threeSiteFemaleTricep = self.ThreeSiteFemaleTricepText.get(1.0, tk.END)
-       person.threeSiteFemaleThigh = self.ThreeSiteFemaleThighText.get(1.0, tk.END)
+       person.threeSiteMaleChest = self.ThreeSiteMaleChestText.get(1.0, tk.END).strip()
+       person.threeSiteMaleAb = self.ThreeSiteMaleAbText.get(1.0, tk.END).strip()
+       person.threeSiteMaleThigh = self.ThreeSiteMaleThighText.get(1.0, tk.END).strip()
+       person.threeSiteFemaleSupra = self.ThreeSiteFemaleSupraText.get(1.0, tk.END).strip()
+       person.threeSiteFemaleTricep = self.ThreeSiteFemaleTricepText.get(1.0, tk.END).strip()
+       person.threeSiteFemaleThigh = self.ThreeSiteFemaleThighText.get(1.0, tk.END).strip()
