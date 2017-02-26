@@ -6,6 +6,7 @@ from reportlab.lib.pagesizes import A4
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
+from reportlab.lib.colors import HexColor
 
 def generatePdfForPerson(person):
 	doc = SimpleDocTemplate('form.pdf', rightMarge=72, leftMargin=72, topMargin=72, bottomMargin=18)
@@ -16,26 +17,26 @@ def generatePdfForPerson(person):
 	Story.append(im)
 
 	styles = getSampleStyleSheet()
-	styles.add(ParagraphStyle(name='Justify', alignment=TA_JUSTIFY))
+	styles.add(ParagraphStyle(name='Justify', alignment=TA_JUSTIFY, borderWidth=3, borderColor=HexColor('#888888')))
 	ptext = '<font size=12>%s</font>' % person.testDate
 
-	Story.append(Paragraph(ptext, styles["Normal"]))
+	Story.append(Paragraph(ptext, styles["Justify"]))
 	Story.append(Spacer(1, 12))
 	 
 	Story.append(Spacer(1, 12))
 	ptext = '<font size=12>Name: %s</font>' % person.name
-	Story.append(Paragraph(ptext, styles["Normal"]))
+	Story.append(Paragraph(ptext, styles["Justify"]))
 	Story.append(Spacer(1, 12))
 	 
 
 	if "BMIframe" in person.framesChecked: 
 		ptext = '<font size=12>BMI: %s</font>' % str(person.getBMI())
-		Story.append(Paragraph(ptext, styles["Normal"]))
+		Story.append(Paragraph(ptext, styles["Justify"]))
 		Story.append(Spacer(1, 12))
 
 	if "Circumference" in person.framesChecked:
 		ptext = '<font size=12>Circumference:</font>'
-		Story.append(Paragraph(ptext, styles["Normal"]))
+		Story.append(Paragraph(ptext, styles["Justify"]))
 
 		ptext = '<font size=12>Hip Circ (cm):%s</font>' % str(person.hipCirc)
 		Story.append(Paragraph(ptext, styles["Normal"]))
