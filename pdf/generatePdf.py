@@ -222,14 +222,14 @@ def generatePdfForPerson(person):
 			ptext = '<font size=12>Body Density %s:</font>' % str(person.getThreeSiteMale())
 			Story.append(Paragraph(ptext, styles["Normal"]))
 
-			ptext = '<font size=12>Body Fat \% %s:</font>' % str(person.getBodyFatThreeMale())
+			ptext = '<font size=12>Body Fat %% %s:</font>' % str(person.getBodyFatThreeMale())
 			Story.append(Paragraph(ptext, styles["Normal"]))
 
 		if (person.threeSiteMaleChest.strip() != "" and person.threeSiteMaleAb.strip() != "" and person.threeSiteMaleThigh.strip() != ""):
 			ptext = '<font size=12>Body Density %s:</font>' % str(person.getThreeSiteFemale())
 			Story.append(Paragraph(ptext, styles["Normal"]))
 
-			ptext = '<font size=12>Body Fat \% %s:</font>' % str(person.getBodyFatThreeFemale())
+			ptext = '<font size=12>Body Fat %% %s:</font>' % str(person.getBodyFatThreeFemale())
 			Story.append(Paragraph(ptext, styles["Normal"]))
 
 		Story.append(Spacer(1, 12))
