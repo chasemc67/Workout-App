@@ -23,13 +23,13 @@ def generatePdfForPerson(person):
 	Story.append(Spacer(1, 12))
 	 
 	Story.append(Spacer(1, 12))
-	ptext = '<font size=12>Name %s:</font>' % person.name
+	ptext = '<font size=12>Name: %s</font>' % person.name
 	Story.append(Paragraph(ptext, styles["Normal"]))
 	Story.append(Spacer(1, 12))
 	 
 
 	if "BMIframe" in person.framesChecked: 
-		ptext = '<font size=12>BMI %s:</font>' % str(person.getBMI())
+		ptext = '<font size=12>BMI: %s</font>' % str(person.getBMI())
 		Story.append(Paragraph(ptext, styles["Normal"]))
 		Story.append(Spacer(1, 12))
 
@@ -37,16 +37,16 @@ def generatePdfForPerson(person):
 		ptext = '<font size=12>Circumference:</font>'
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
-		ptext = '<font size=12>Hip Circ (cm)%s:</font>' % str(person.hipCirc)
+		ptext = '<font size=12>Hip Circ (cm):%s</font>' % str(person.hipCirc)
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
-		ptext = '<font size=12>Waist Circ (cm)%s:</font>' % str(person.waistCirc)
+		ptext = '<font size=12>Waist Circ (cm):%s</font>' % str(person.waistCirc)
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
-		ptext = '<font size=12>Arm Circ (cm)%s:</font>' % str(person.armCirc)
+		ptext = '<font size=12>Arm Circ (cm):%s</font>' % str(person.armCirc)
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
-		ptext = '<font size=12>Thigh Circ (cm)%s:</font>' % str(person.thighCirc)
+		ptext = '<font size=12>Thigh Circ (cm):%s</font>' % str(person.thighCirc)
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
 		Story.append(Spacer(1, 12))
@@ -56,20 +56,20 @@ def generatePdfForPerson(person):
 		ptext = '<font size=12>Coopers Run Test:</font>'
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
-		ptext = '<font size=12>VO2max (ml/kg/min)%s:</font>' % str(person.getCooperAerobic())
+		ptext = '<font size=12>VO2max (ml/kg/min):%s</font>' % str(person.getCooperAerobic())
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
 		Story.append(Spacer(1, 12))
 		
 
 	if "CurlUps" in person.framesChecked:
-		ptext = '<font size=12>Curl Ups %s:</font>' % str(person.curlUpNum)
+		ptext = '<font size=12>Curl Ups: %s</font>' % str(person.curlUpNum)
 		Story.append(Paragraph(ptext, styles["Normal"]))
 		Story.append(Spacer(1, 12))
 		
 
 	if "DeepSquat" in person.framesChecked:
-		ptext = '<font size=12>Deep Squat Assessment Rating(0-3) %s:</font>' % str(person.deepSquatRate)
+		ptext = '<font size=12>Deep Squat Assessment Rating(0-3): %s</font>' % str(person.deepSquatRate)
 		Story.append(Paragraph(ptext, styles["Normal"]))
 		Story.append(Spacer(1, 12))
 		
@@ -78,18 +78,18 @@ def generatePdfForPerson(person):
 		ptext = '<font size=12>Ebelling Treadmill Test:</font>'
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
-		ptext = '<font size=12>VO2max %s(ml/kg/min):</font>' % str(person.getEbellingAerobic())
+		ptext = '<font size=12>VO2max (ml/kg/min): %s</font>' % str(person.getEbellingAerobic())
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
 		Story.append(Spacer(1, 12))
 
 	if "FlexTests" in person.framesChecked:
-		ptext = '<font size=12>Sit & Reach Distance(cm) %s:</font>' % str(person.sitReachDist)
+		ptext = '<font size=12>Sit & Reach Distance(cm): %s</font>' % str(person.sitReachDist)
 		Story.append(Paragraph(ptext, styles["Normal"]))
 		Story.append(Spacer(1, 12))
 
 	if "FrontPlank" in person.framesChecked:
-		ptext = '<font size=12>Front Plank Assessment Rating(0-3) %s:</font>' % str(person.frontPlankRate)
+		ptext = '<font size=12>Front Plank Assessment Rating(0-3): %s</font>' % str(person.frontPlankRate)
 		Story.append(Paragraph(ptext, styles["Normal"]))
 		Story.append(Spacer(1, 12))
 		
@@ -108,13 +108,13 @@ def generatePdfForPerson(person):
 		
 
 	if "HipHinge" in person.framesChecked:
-		ptext = '<font size=12>Hip Hinge Assessment Rating(0-3) %s:</font>' % str(person.hipHingeRate)
+		ptext = '<font size=12>Hip Hinge Assessment Rating(0-3): %s</font>' % str(person.hipHingeRate)
 		Story.append(Paragraph(ptext, styles["Normal"]))
 		Story.append(Spacer(1, 12))
 		
 
 	if "MBtoss" in person.framesChecked:
-		ptext = '<font size=12>Med. Ball Toss Distance(cm) %s:</font>' % str(person.seatMBDist)
+		ptext = '<font size=12>Med. Ball Toss Distance(cm): %s</font>' % str(person.seatMBDist)
 		Story.append(Paragraph(ptext, styles["Normal"]))
 		Story.append(Spacer(1, 12))
 		
@@ -123,20 +123,20 @@ def generatePdfForPerson(person):
 		ptext = '<font size=12>Modified Astrand Cycle Test:</font>'
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
-		ptext = '<font size=12>VO2max(ml/kg/min) %s: </font>' % str(person.modAstAerobic)
+		ptext = '<font size=12>VO2max(ml/kg/min): %s </font>' % str(person.modAstAerobic)
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
 		Story.append(Spacer(1, 12))
 		
 
 	if "PlankEnd" in person.framesChecked:
-		ptext = '<font size=12>Front Plank Time(sec.) %s:</font>' % str(person.plankTime)
+		ptext = '<font size=12>Front Plank Time(sec.): %s</font>' % str(person.plankTime)
 		Story.append(Paragraph(ptext, styles["Normal"]))
 		Story.append(Spacer(1, 12))
 		
 
 	if "PushUps" in person.framesChecked:
-		ptext = '<font size=12>Push Ups %s:</font>' % str(person.pushUpNum)
+		ptext = '<font size=12>Push Ups: %s</font>' % str(person.pushUpNum)
 		Story.append(Paragraph(ptext, styles["Normal"]))
 		Story.append(Spacer(1, 12))
 		
@@ -145,10 +145,10 @@ def generatePdfForPerson(person):
 		ptext = '<font size=12>1 Rep Max (Predicted) </font>'
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
-		ptext = '<font size=12>Exercise %s: </font>' % str(person.RMPredictEx)
+		ptext = '<font size=12>Exercise: %s </font>' % str(person.RMPredictEx)
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
-		ptext = '<font size=12>1 Rep Max Weight %s: </font>' % str(person.getRepMaxPredict())
+		ptext = '<font size=12>1 Rep Max Weight: %s </font>' % str(person.getRepMaxPredict())
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
 		Story.append(Spacer(1, 12))
@@ -159,17 +159,17 @@ def generatePdfForPerson(person):
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
 		if (person.RMTestExA.strip() != "" and person.RMTestExAWeight.strip() != ""):
-			ptext = '<font size=12>Exercise %s:</font>' % str(person.RMTestExA)
+			ptext = '<font size=12>Exercise: %s</font>' % str(person.RMTestExA)
 			Story.append(Paragraph(ptext, styles["Normal"]))
 
-			ptext = '<font size=12>1 Rep Max Weight %s:</font>' % str(person.RMTestExAWeight)
+			ptext = '<font size=12>1 Rep Max Weight: %s</font>' % str(person.RMTestExAWeight)
 			Story.append(Paragraph(ptext, styles["Normal"]))
 
 		if (person.RMTestExB.strip() != "" and person.RMTestExBWeight.strip() != ""):
-			ptext = '<font size=12>Exercise %s:</font>' % str(person.RMTestExB)
+			ptext = '<font size=12>Exercise: %s</font>' % str(person.RMTestExB)
 			Story.append(Paragraph(ptext, styles["Normal"]))
 
-			ptext = '<font size=12>1 Rep Max Weight %s:</font>' % str(person.RMTestExBWeight)
+			ptext = '<font size=12>1 Rep Max Weight: %s</font>' % str(person.RMTestExBWeight)
 			Story.append(Paragraph(ptext, styles["Normal"]))
 
 		Story.append(Spacer(1, 12))
@@ -178,7 +178,7 @@ def generatePdfForPerson(person):
 		ptext = '<font size=12>Rockport 1 Mile Walk Test:</font>'
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
-		ptext = '<font size=12>VO2max(ml/kg/min) %s:</font>' % str(person.getRockportAerobic())
+		ptext = '<font size=12>VO2max(ml/kg/min): %s</font>' % str(person.getRockportAerobic())
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
 		Story.append(Spacer(1, 12))
@@ -188,16 +188,16 @@ def generatePdfForPerson(person):
 		ptext = '<font size=12>Single Leg Stance Test:</font>'
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
-		ptext = '<font size=12>Left Leg Eyes Open Time(sec.) %s:</font>' % str(person.SLOpenLeft)
+		ptext = '<font size=12>Left Leg Eyes Open Time(sec.): %s</font>' % str(person.SLOpenLeft)
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
-		ptext = '<font size=12>Right Leg Eyes Open Time(sec.) %s:</font>' % str(person.SLOpenRight)
+		ptext = '<font size=12>Right Leg Eyes Open Time(sec.): %s</font>' % str(person.SLOpenRight)
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
-		ptext = '<font size=12>Left Leg Eyes Closed Time(sec.) %s:</font>' % str(person.SLCloseLeft)
+		ptext = '<font size=12>Left Leg Eyes Closed Time(sec.): %s</font>' % str(person.SLCloseLeft)
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
-		ptext = '<font size=12>Right Leg Eyes Closed Time(sec.) %s:</font>' % str(person.SLCloseRight)
+		ptext = '<font size=12>Right Leg Eyes Closed Time(sec.): %s</font>' % str(person.SLCloseRight)
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
 		Story.append(Spacer(1, 12))
@@ -206,10 +206,10 @@ def generatePdfForPerson(person):
 		ptext = '<font size=12>Seven Site Skinfold:</font>'
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
-		ptext = '<font size=12>Body Density %s:</font>' % str(person.getSevenSiteDensity())
+		ptext = '<font size=12>Body Density: %s</font>' % str(person.getSevenSiteDensity())
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
-		ptext = '<font size=12>Body Fat \% %s:</font>' % str(person.getBodyFatSeven())
+		ptext = '<font size=12>Body Fat %%: %s</font>' % str(person.getBodyFatSeven())
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
 		Story.append(Spacer(1, 12))
@@ -219,17 +219,17 @@ def generatePdfForPerson(person):
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
 		if (person.threeSiteFemaleSupra.strip() != "" and person.threeSiteFemaleTricep.strip() != "" and person.threeSiteFemaleThigh.strip() != ""):
-			ptext = '<font size=12>Body Density %s:</font>' % str(person.getThreeSiteMale())
+			ptext = '<font size=12>Body Density: %s</font>' % str(person.getThreeSiteMale())
 			Story.append(Paragraph(ptext, styles["Normal"]))
 
-			ptext = '<font size=12>Body Fat %% %s:</font>' % str(person.getBodyFatThreeMale())
+			ptext = '<font size=12>Body Fat %%: %s</font>' % str(person.getBodyFatThreeMale())
 			Story.append(Paragraph(ptext, styles["Normal"]))
 
 		if (person.threeSiteMaleChest.strip() != "" and person.threeSiteMaleAb.strip() != "" and person.threeSiteMaleThigh.strip() != ""):
-			ptext = '<font size=12>Body Density %s:</font>' % str(person.getThreeSiteFemale())
+			ptext = '<font size=12>Body Density: %s</font>' % str(person.getThreeSiteFemale())
 			Story.append(Paragraph(ptext, styles["Normal"]))
 
-			ptext = '<font size=12>Body Fat %% %s:</font>' % str(person.getBodyFatThreeFemale())
+			ptext = '<font size=12>Body Fat %%: %s</font>' % str(person.getBodyFatThreeFemale())
 			Story.append(Paragraph(ptext, styles["Normal"]))
 
 		Story.append(Spacer(1, 12))
@@ -238,26 +238,26 @@ def generatePdfForPerson(person):
 		ptext = '<font size=12>Vertical Jump Test:</font>'
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
-		ptext = '<font size=12>Stand and Reach(cm) %s:</font>' % str(person.vertJumpSR)
+		ptext = '<font size=12>Stand and Reach(cm): %s</font>' % str(person.vertJumpSR)
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
-		ptext = '<font size=12>Best Jump(cm) %s:</font>' % str(person.getVertJumpBest())
+		ptext = '<font size=12>Best Jump(cm): %s</font>' % str(person.getVertJumpBest())
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
-		ptext = '<font size=12>Peak Power(W) %s:</font>' % str(person.getVertJumpPower())
+		ptext = '<font size=12>Peak Power(W): %s</font>' % str(person.getVertJumpPower())
 		Story.append(Paragraph(ptext, styles["Normal"]))
 
 		Story.append(Spacer(1, 12))
 		
 
 	if "WallSit" in person.framesChecked:
-		ptext = '<font size=12>Wall Sit Time(sec.) %s:</font>' % str(person.wallSitTime)
+		ptext = '<font size=12>Wall Sit Time(sec.): %s</font>' % str(person.wallSitTime)
 		Story.append(Paragraph(ptext, styles["Normal"]))
 		Story.append(Spacer(1, 12))
 		
 
 	if "WallSlide" in person.framesChecked:
-		ptext = '<font size=12> Wall Slide Assessment Rating(0-3)%s:</font>' % str(person.wallSlideRate)
+		ptext = '<font size=12> Wall Slide Assessment Rating(0-3):%s</font>' % str(person.wallSlideRate)
 		Story.append(Paragraph(ptext, styles["Normal"]))
 		Story.append(Spacer(1, 12))
 

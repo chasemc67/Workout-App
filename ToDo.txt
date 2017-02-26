@@ -17,6 +17,7 @@ Challenge:
 	[ ] Check for bad data in each entry frame before saving
 	[+] Results frames
 	[+] PDF report generator 
+	[ ] Make PDF Prettier
 	[ ] Package with pynsist https://github.com/takluyver/pynsist
 
 features:
