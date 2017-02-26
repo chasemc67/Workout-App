@@ -10,7 +10,7 @@ Challenge:
 	[ ] Checkboxes not refreshing properly when quit making a new person and start creating a second one. Other boxes also not refreshing sometimes
 	[ ] Remove male/female from three site
 	[ ] Fix seven site skin fold stuff
-	[ ] Enlarge text boxes in 1 rep max
+	[+] Enlarge text boxes in 1 rep max
 	[ ] Hard code page size (or at least width) so scrolling
 		data entry page doesn't look so weird
 	[ ] Search by name and by date in DB view
