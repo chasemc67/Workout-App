@@ -13,6 +13,10 @@ class Circumference(tk.Frame):
       event.widget.tk_focusPrev().focus()
       return("break")
 
+   def validateInput(self):
+      self.ThighCircText.config(highlightbackground = "red")
+      return False
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self,parent)
        self.controller = controller
@@ -76,7 +80,7 @@ class Circumference(tk.Frame):
        self.ChestCircText.bind("<Shift-Tab>", self.focus_last_window)
        self.ChestCircText.grid(row=5, column=1)
 
-       self.Next = NextButton(self, controller, self.saveData)
+       self.Next = NextButton(self, controller, self.saveData, self.validateInput)
        self.Next.grid(row=6, column=0)
 
        self.Back = BackButton(self, controller)
