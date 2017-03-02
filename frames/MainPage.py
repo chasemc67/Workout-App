@@ -16,10 +16,9 @@ class MainPage(tk.Frame):
    def validateInput(self):
       validationSuccess = True
 
-      try:
-            self.nameText.get(1.0, tk.END).strip() != ""
+      if self.nameText.get(1.0, tk.END).strip() != "":
             self.nameText.config(highlightbackground="white")
-      except:
+      else:
             self.nameText.config(highlightbackground="red")
             validationSuccess = False
 
@@ -39,30 +38,30 @@ class MainPage(tk.Frame):
       
       try:
             float(self.restHRText.get(1.0, tk.END).strip())
-            self.config(highlightbackground="white")
+            self.restHRText.config(highlightbackground="white")
       except:
-            self.config(highlightbackground="red")
+            self.restHRText.config(highlightbackground="red")
             validationSuccess = False
       
       try:
             float(self.restBPText.get(1.0, tk.END).strip())
-            self.config(highlightbackground="white")
+            self.restBPText.config(highlightbackground="white")
       except:
-            self.config(highlightbackground="red")
+            self.restBPText.config(highlightbackground="red")
             validationSuccess = False
       
       try:
             float(self.heightText.get(1.0, tk.END).strip())
-            self.config(highlightbackground="white")
+            self.heightText.config(highlightbackground="white")
       except:
-            self.config(highlightbackground="red")
+            self.heightText.config(highlightbackground="red")
             validationSuccess = False
       
       try:
             float(self.weightText.get(1.0, tk.END).strip())
-            self.config(highlightbackground="white")
+            self.weightText.config(highlightbackground="white")
       except:
-            self.config(highlightbackground="red")
+            self.weightText.config(highlightbackground="red")
             validationSuccess = False
 
       return validationSuccess

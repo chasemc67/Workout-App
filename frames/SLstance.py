@@ -14,6 +14,38 @@ class SLstance(tk.Frame):
        event.widget.tk_focusPrev().focus()
        return("break")
 
+   def validateInput(self):
+       validationSuccess = True
+       try:
+          float(self.SLOpenLeftText.get(1.0, tk.END).strip())
+          self.SLOpenLeftText.config(highlightbackground="white")
+       except:
+          self.SLOpenLeftText.config(highlightbackground="red")
+          validationSuccess = False
+
+       try:
+          float(self.SLOpenRightText.get(1.0, tk.END).strip())
+          self.SLOpenRightText.config(highlightbackground="white")
+       except:
+          self.SLOpenRightText.config(highlightbackground="red")
+          validationSuccess = False
+
+       try:
+          float(self.SLCloseLeftText.get(1.0, tk.END).strip())
+          self.SLCloseLeftText.config(highlightbackground="white")
+       except:
+          self.SLCloseLeftText.config(highlightbackground="red")
+          validationSuccess = False
+
+       try:
+          float(self.SLCloseRightText.get(1.0, tk.END).strip())
+          self.SLCloseRightText.config(highlightbackground="white")
+       except:
+          self.SLCloseRightText.config(highlightbackground="red")
+          validationSuccess = False
+          
+       return validationSuccess
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller

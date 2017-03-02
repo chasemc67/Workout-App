@@ -13,6 +13,16 @@ class DeepSquat(tk.Frame):
        event.widget.tk_focusPrev().focus()
        return("break")
 
+   def validateInput(self):
+       validationSuccess = True
+       try:
+          float(self.DeepSquatRateText.get(1.0, tk.END).strip())
+          self.DeepSquatRateText.config(highlightbackground="white")
+       except:
+          self.DeepSquatRateText.config(highlightbackground="red")
+          validationSuccess = False
+       return validationSuccess
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller

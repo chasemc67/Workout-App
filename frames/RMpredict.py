@@ -15,6 +15,30 @@ class RMpredict(tk.Frame):
        event.widget.tk_focusPrev().focus()
        return("break")
 
+   def validateInput(self):
+       validationSuccess = True
+       try:
+          float(self.RMPredictExText.get(1.0, tk.END).strip())
+          self.RMPredictExText.config(highlightbackground="white")
+       except:
+          self.RMPredictExText.config(highlightbackground="red")
+          validationSuccess = False
+
+       try:
+          float(self.RMPredictRepsText.get(1.0, tk.END).strip())
+          self.RMPredictRepsText.config(highlightbackground="white")
+       except:
+          self.RMPredictRepsText.config(highlightbackground="red")
+          validationSuccess = False
+
+       try:
+          float(self.RMPredictLoadText.get(1.0, tk.END).strip())
+          self.RMPredictLoadText.config(highlightbackground="white")
+       except:
+          self.RMPredictLoadText.config(highlightbackground="red")
+          validationSuccess = False
+       return validationSuccess
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller

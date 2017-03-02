@@ -14,6 +14,52 @@ class ThreeSiteSkinfold(tk.Frame):
        event.widget.tk_focusPrev().focus()
        return("break")
 
+   def validateInput(self):
+       validationSuccess = True
+       try:
+          float(self.ThreeSiteMaleChestText.get(1.0, tk.END).strip())
+          self.ThreeSiteMaleChestText.config(highlightbackground="white")
+       except:
+          self.ThreeSiteMaleChestText.config(highlightbackground="red")
+          validationSuccess = False
+
+       try:
+          float(self.ThreeSiteMaleAbText.get(1.0, tk.END).strip())
+          self.ThreeSiteMaleAbText.config(highlightbackground="white")
+       except:
+          self.ThreeSiteMaleAbText.config(highlightbackground="red")
+          validationSuccess = False
+
+       try:
+          float(self.ThreeSiteMaleThighText.get(1.0, tk.END).strip())
+          self.ThreeSiteMaleThighText.config(highlightbackground="white")
+       except:
+          self.ThreeSiteMaleThighText.config(highlightbackground="red")
+          validationSuccess = False
+
+       try:
+          float(self.ThreeSiteFemaleSupraText.get(1.0, tk.END).strip())
+          self.ThreeSiteFemaleSupraText.config(highlightbackground="white")
+       except:
+          self.ThreeSiteFemaleSupraText.config(highlightbackground="red")
+          validationSuccess = False
+
+       try:
+          float(self.ThreeSiteFemaleTricepText.get(1.0, tk.END).strip())
+          self.ThreeSiteFemaleTricepText.config(highlightbackground="white")
+       except:
+          self.ThreeSiteFemaleTricepText.config(highlightbackground="red")
+          validationSuccess = False
+
+       try:
+          float(self.ThreeSiteFemaleThighText.get(1.0, tk.END).strip())
+          self.ThreeSiteFemaleThighText.config(highlightbackground="white")
+       except:
+          self.ThreeSiteFemaleThighText.config(highlightbackground="red")
+          validationSuccess = False
+          
+       return validationSuccess
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller

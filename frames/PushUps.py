@@ -15,6 +15,16 @@ class PushUps(tk.Frame):
        event.widget.tk_focusPrev().focus()
        return("break")
 
+   def validateInput(self):
+       validationSuccess = True
+       try:
+          float(self.PushUpNumText.get(1.0, tk.END).strip())
+          self.PushUpNumText.config(highlightbackground="white")
+       except:
+          self.PushUpNumText.config(highlightbackground="red")
+          validationSuccess = False
+       return validationSuccess
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller

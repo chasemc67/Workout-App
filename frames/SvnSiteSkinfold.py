@@ -15,6 +15,59 @@ class SvnSiteSkinfold(tk.Frame):
        event.widget.tk_focusPrev().focus()
        return("break")
 
+   def validateInput(self):
+       validationSuccess = True
+       try:
+          float(self.SvnSiteChestText.get(1.0, tk.END).strip())
+          self.SvnSiteChestText.config(highlightbackground="white")
+       except:
+          self.SvnSiteChestText.config(highlightbackground="red")
+          validationSuccess = False
+
+       try:
+          float(self.SvnSiteMidAxText.get(1.0, tk.END).strip())
+          self.SvnSiteMidAxText.config(highlightbackground="white")
+       except:
+          self.SvnSiteMidAxText.config(highlightbackground="red")
+          validationSuccess = False
+
+       try:
+          float(self.SvnSiteTriText.get(1.0, tk.END).strip())
+          self.SvnSiteTriText.config(highlightbackground="white")
+       except:
+          self.SvnSiteTriText.config(highlightbackground="red")
+          validationSuccess = False
+
+       try:
+          float(self.SvnSiteScapText.get(1.0, tk.END).strip())
+          self.SvnSiteScapText.config(highlightbackground="white")
+       except:
+          self.SvnSiteScapText.config(highlightbackground="red")
+          validationSuccess = False
+
+       try:
+          float(self.SvnSiteSupraText.get(1.0, tk.END).strip())
+          self.SvnSiteSupraText.config(highlightbackground="white")
+       except:
+          self.SvnSiteSupraText.config(highlightbackground="red")
+          validationSuccess = False
+
+       try:
+          float(self.SvnSiteAbText.get(1.0, tk.END).strip())
+          self.SvnSiteAbText.config(highlightbackground="white")
+       except:
+          self.SvnSiteAbText.config(highlightbackground="red")
+          validationSuccess = False
+
+       try:
+          float(self.SvnSiteThighText.get(1.0, tk.END).strip())
+          self.SvnSiteThighText.config(highlightbackground="white")
+       except:
+          self.SvnSiteThighText.config(highlightbackground="red")
+          validationSuccess = False
+          
+       return validationSuccess
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller

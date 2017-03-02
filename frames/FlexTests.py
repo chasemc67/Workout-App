@@ -12,6 +12,16 @@ class FlexTests(tk.Frame):
    def focus_last_window(self, event):
        event.widget.tk_focusPrev().focus()
        return("break")
+       
+   def validateInput(self):
+       validationSuccess = True
+       try:
+          float(self.SitReachDistText.get(1.0, tk.END).strip())
+          self.SitReachDistText.config(highlightbackground="white")
+       except:
+          self.SitReachDistText.config(highlightbackground="red")
+          validationSuccess = False
+       return validationSuccess
 
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)

@@ -14,6 +14,37 @@ class RMtest(tk.Frame):
        event.widget.tk_focusPrev().focus()
        return("break")
 
+   def validateInput(self):
+       validationSuccess = True
+       try:
+          float(self.RMTestExAText.get(1.0, tk.END).strip())
+          self.RMTestExAText.config(highlightbackground="white")
+       except:
+          self.RMTestExAText.config(highlightbackground="red")
+          validationSuccess = False
+
+       try:
+          float(self.RMTestExAWeightText.get(1.0, tk.END).strip())
+          self.RMTestExAWeightText.config(highlightbackground="white")
+       except:
+          self.RMTestExAWeightText.config(highlightbackground="red")
+          validationSuccess = False
+
+       try:
+          float(self.RMTestExBText.get(1.0, tk.END).strip())
+          self.RMTestExBText.config(highlightbackground="white")
+       except:
+          self.RMTestExBText.config(highlightbackground="red")
+          validationSuccess = False
+
+       try:
+          float(self.RMTestExBWeightText.get(1.0, tk.END).strip())
+          self.RMTestExBWeightText.config(highlightbackground="white")
+       except:
+          self.RMTestExBWeightText.config(highlightbackground="red")
+          validationSuccess = False
+       return validationSuccess
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller

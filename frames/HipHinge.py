@@ -13,6 +13,16 @@ class HipHinge(tk.Frame):
        event.widget.tk_focusPrev().focus()
        return("break")
 
+   def validateInput(self):
+       validationSuccess = True
+       try:
+          float(self.HipHingeRateText.get(1.0, tk.END).strip())
+          self.HipHingeRateText.config(highlightbackground="white")
+       except:
+          self.HipHingeRateText.config(highlightbackground="red")
+          validationSuccess = False
+       return validationSuccess
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller

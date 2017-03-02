@@ -12,6 +12,30 @@ class Ebelling(tk.Frame):
        event.widget.tk_focusPrev().focus()
        return("break")
 
+   def validateInput(self):
+       validationSuccess = True
+       try:
+          float(self.EbellingWUText.get(1.0, tk.END).strip())
+          self.EbellingWUText.config(highlightbackground="white")
+       except:
+          self.EbellingWUText.config(highlightbackground="red")
+          validationSuccess = False
+       
+       try:
+          float(self.EbellingWorkText.get(1.0, tk.END).strip())
+          self.EbellingWorkText.config(highlightbackground="white")
+       except:
+          self.EbellingWorkText.config(highlightbackground="red")
+          validationSuccess = False
+
+       try:
+          float(self.EbellingHRText.get(1.0, tk.END).strip())
+          self.EbellingHRText.config(highlightbackground="white")
+       except:
+          self.EbellingHRText.config(highlightbackground="red")
+          validationSuccess = False
+       return validationSuccess
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller

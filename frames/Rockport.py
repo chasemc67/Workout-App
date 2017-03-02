@@ -14,6 +14,24 @@ class Rockport(tk.Frame):
        event.widget.tk_focusPrev().focus()
        return("break")
 
+   def validateInput(self):
+       validationSuccess = True
+       try:
+          float(self.RockportHRText.get(1.0, tk.END).strip())
+          self.RockportHRText.config(highlightbackground="white")
+       except:
+          self.RockportHRText.config(highlightbackground="red")
+          validationSuccess = False
+
+       try:
+          float(self.RockportTimeText.get(1.0, tk.END).strip())
+          self.RockportTimeText.config(highlightbackground="white")
+       except:
+          self.RockportTimeText.config(highlightbackground="red")
+          validationSuccess = False
+
+       return validationSuccess
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller

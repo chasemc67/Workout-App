@@ -15,6 +15,16 @@ class PlankEnd(tk.Frame):
        event.widget.tk_focusPrev().focus()
        return("break")
 
+   def validateInput(self):
+       validationSuccess = True
+       try:
+          float(self.PlankTimeText.get(1.0, tk.END).strip())
+          self.PlankTimeText.config(highlightbackground="white")
+       except:
+          self.PlankTimeText.config(highlightbackground="red")
+          validationSuccess = False
+       return validationSuccess
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller

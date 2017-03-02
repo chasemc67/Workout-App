@@ -13,6 +13,16 @@ class WallSlide(tk.Frame):
        event.widget.tk_focusPrev().focus()
        return("break")
 
+   def validateInput(self):
+       validationSuccess = True
+       try:
+          float(self.WallSlideRateText.get(1.0, tk.END).strip())
+          self.WallSlideRateText.config(highlightbackground="white")
+       except:
+          self.WallSlideRateText.config(highlightbackground="red")
+          validationSuccess = False
+       return validationSuccess
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller

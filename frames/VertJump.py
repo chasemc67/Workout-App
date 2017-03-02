@@ -14,6 +14,23 @@ class VertJump(tk.Frame):
        event.widget.tk_focusPrev().focus()
        return("break")
 
+   def validateInput(self):
+       validationSuccess = True
+       try:
+          float(self.VertJumpSRText.get(1.0, tk.END).strip())
+          self.VertJumpSRText.config(highlightbackground="white")
+       except:
+          self.VertJumpSRText.config(highlightbackground="red")
+          validationSuccess = False
+
+       try:
+          float(self.VertJumpBestText.get(1.0, tk.END).strip())
+          self.VertJumpBestText.config(highlightbackground="white")
+       except:
+          self.VertJumpBestText.config(highlightbackground="red")
+          validationSuccess = False
+       return validationSuccess
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller

@@ -13,6 +13,16 @@ class CurlUps(tk.Frame):
        event.widget.tk_focusPrev().focus()
        return("break")
 
+   def validateInput(self):
+       validationSuccess = True
+       try:
+          float(self.CurlUpNumText.get(1.0, tk.END).strip())
+          self.CurlUpNumText.config(highlightbackground="white")
+       except:
+          self.CurlUpNumText.config(highlightbackground="red")
+          validationSuccess = False
+       return validationSuccess
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller
