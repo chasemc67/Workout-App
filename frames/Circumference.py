@@ -14,8 +14,39 @@ class Circumference(tk.Frame):
       return("break")
 
    def validateInput(self):
-      self.ThighCircText.config(highlightbackground = "red")
-      return False
+      validationSuccess = True
+      try:
+            float(self.HipCircText.get(1.0, tk.END).strip())
+            self.HipCircText.config(highlightbackground="white")
+      except:
+            self.HipCircText.config(highlightbackground="red")
+            validationSuccess = False
+      try:
+            float(self.WaistCircText.get(1.0, tk.END).strip())
+            self.WaistCircText.config(highlightbackground="white")
+      except:
+            self.WaistCircText.config(highlightbackground="red")
+            validationSuccess = False
+      try:
+            float(self.ArmCircText.get(1.0, tk.END).strip())
+            self.ArmCircText.config(highlightbackground="white")
+      except:
+            self.ArmCircText.config(highlightbackground="red")
+            validationSuccess = False
+      try:
+            float(self.ThighCircText.get(1.0, tk.END).strip())
+            self.ThighCircText.config(highlightbackground="white")
+      except:
+            self.ThighCircText.config(highlightbackground="red")
+            validationSuccess = False
+      try:
+            float(self.ChestCircText.get(1.0, tk.END).strip())
+            self.ChestCircText.config(highlightbackground="white")
+      except:
+            self.ChestCircText.config(highlightbackground="red")
+            validationSuccess = False
+
+      return validationSuccess
 
    def __init__(self, parent, controller):
        tk.Frame.__init__(self,parent)
