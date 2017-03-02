@@ -14,7 +14,7 @@ Challenge:
 	[ ] Hard code page size (or at least width) so scrolling
 		data entry page doesn't look so weird
 	[ ] Search by name and by date in DB view
-	[ ] Check for bad data in each entry frame before saving
+	[+] Check for bad data in each entry frame before saving
 	[ ] Should back button save data?
 	[+] Results frames
 	[+] PDF report generator 

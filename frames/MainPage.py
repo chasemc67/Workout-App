@@ -2,6 +2,7 @@ import tkinter as tk
 from buttons.NextButton import NextButton
 from buttons.QuitButton import QuitButton
 from buttons.PlaceholderTextBox import PlaceholderTextBox
+import datetime
 
 class MainPage(tk.Frame):
 
@@ -25,7 +26,8 @@ class MainPage(tk.Frame):
       try:
             datetime.datetime.strptime(self.testDateText.get(1.0, tk.END).strip(), '%m/%d/%Y')
             self.testDateText.config(highlightbackground="white")
-      except:
+      except Exception as e:
+            print(e)
             self.testDateText.config(highlightbackground="red")
             validationSuccess = False
       

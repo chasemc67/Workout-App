@@ -52,7 +52,7 @@ class Person():
         self.svnSiteSupra = ""
         self.svnSiteAb = ""
         self.svnSiteThigh = ""
-        self.testDate = ""
+        self.testDate = datetime.datetime.strftime(datetime.datetime.now(), '%m/%d/%Y')
         self.thighCirc = ""
         self.threeSiteMaleChest = ""
         self.threeSiteMaleAb = ""
@@ -66,6 +66,8 @@ class Person():
         self.wallSitTime = ""
         self.wallSlideRate = ""
         self.weight = ""
+
+
 
         self.framesChecked = list()
 
