@@ -13,6 +13,62 @@ class MainPage(tk.Frame):
       event.widget.tk_focusPrev().focus()
       return("break")
 
+   def validateInput(self):
+      validationSuccess = True
+
+      try:
+            self.nameText.get(1.0, tk.END).strip() != ""
+            self.nameText.config(highlightbackground="white")
+      except:
+            self.nameText.config(highlightbackground="red")
+            validationSuccess = False
+
+      try:
+            datetime.datetime.strptime(self.testDateText.get(1.0, tk.END).strip(), '%m/%d/%Y')
+            self.testDateText.config(highlightbackground="white")
+      except:
+            self.testDateText.config(highlightbackground="red")
+            validationSuccess = False
+      
+      try:
+            datetime.datetime.strptime(self.birthDateText.get(1.0, tk.END).strip(), '%m/%d/%Y')
+            self.birthDateText.config(highlightbackground="white")
+      except:
+            self.birthDateText.config(highlightbackground="red")
+            validationSuccess = False
+      
+      try:
+            float(self.restHRText.get(1.0, tk.END).strip())
+            self.config(highlightbackground="white")
+      except:
+            self.config(highlightbackground="red")
+            validationSuccess = False
+      
+      try:
+            float(self.restBPText.get(1.0, tk.END).strip())
+            self.config(highlightbackground="white")
+      except:
+            self.config(highlightbackground="red")
+            validationSuccess = False
+      
+      try:
+            float(self.heightText.get(1.0, tk.END).strip())
+            self.config(highlightbackground="white")
+      except:
+            self.config(highlightbackground="red")
+            validationSuccess = False
+      
+      try:
+            float(self.weightText.get(1.0, tk.END).strip())
+            self.config(highlightbackground="white")
+      except:
+            self.config(highlightbackground="red")
+            validationSuccess = False
+
+      return validationSuccess
+
+
+
    def __init__(self, parent, controller):
        tk.Frame.__init__(self, parent)
        self.controller = controller
@@ -216,7 +272,7 @@ class MainPage(tk.Frame):
        self.checkPlankAssess = tk.Checkbutton(self, text="Front Plank Assessment", command = lambda: self.boxChecked("FrontPlank"))
        self.checkPlankAssess.grid(row=16, column=4)
 
-       self.Next = NextButton(self, self.controller, self.saveData)
+       self.Next = NextButton(self, self.controller, self.saveData, self.validateInput)
        self.Next.grid(row=17, column=0)
 
        self.Quit = QuitButton(self, self.controller)
@@ -305,14 +361,14 @@ class MainPage(tk.Frame):
    def saveData(self, person):
        print("Saving new user with name " + str(self.nameText.get(1.0, tk.END)))
 
-       self.controller.person.name = self.nameText.get(1.0, tk.END)
+       self.controller.person.name = self.nameText.get(1.0, tk.END).strip()
        #self.controller.person.testDate = datetime.strptime(self.testDateText.get(1.0, tk.END).strip(), '%m/%d/%Y')
        self.controller.person.testDate = self.testDateText.get(1.0, tk.END).strip()
        self.controller.person.gender = str(self.genderVariable.get())
        self.controller.person.birthDate = self.birthDateText.get(1.0, tk.END).strip()
-       self.controller.person.phoneNumber = self.phoneNumberText.get(1.0, tk.END)
-       self.controller.person.restHR = self.restHRText.get(1.0, tk.END)
-       self.controller.person.restBP = self.restBPText.get(1.0, tk.END)
-       self.controller.person.height = self.heightText.get(1.0, tk.END)
-       self.controller.person.weight = self.weightText.get(1.0, tk.END)
+       self.controller.person.phoneNumber = self.phoneNumberText.get(1.0, tk.END).strip()
+       self.controller.person.restHR = self.restHRText.get(1.0, tk.END).strip()
+       self.controller.person.restBP = self.restBPText.get(1.0, tk.END).strip()
+       self.controller.person.height = self.heightText.get(1.0, tk.END).strip()
+       self.controller.person.weight = self.weightText.get(1.0, tk.END).strip()
 
