@@ -19,7 +19,7 @@ Challenge:
 	[+] Results frames
 	[+] PDF report generator 
 	[ ] Make PDF Prettier
-	[ ] Put todays date in test date
+	[+] Put todays date in test date
 	[ ] Package with pynsist https://github.com/takluyver/pynsist
 
 features:
