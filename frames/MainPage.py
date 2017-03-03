@@ -316,50 +316,119 @@ class MainPage(tk.Frame):
 
        if "BMIframe" in self.controller.person.framesChecked:
             self.checkBmi.select()
+       else:
+            self.checkBmi.deselect()
+            
        if "Circumference" in self.controller.person.framesChecked:
             self.checkCircumference.select()
+       else:
+            self.checkCircumference.deselect()
+            
        if "ThreeSiteSkinfold" in self.controller.person.framesChecked:
             self.checkThreeSkinfold.select()
+       else:
+            self.checkThreeSkinfold.deselect()
+            
        if "SvnSiteSkinfold" in self.controller.person.framesChecked:
             self.checkSevenSkinfold.select()
+       else:
+            self.checkSevenSkinfold.deselect()
+            
        if "ModAst" in self.controller.person.framesChecked:
             self.checkModAstrand.select()
+       else:
+            self.checkModAstrand.deselect()
+            
        if "Ebelling" in self.controller.person.framesChecked:
             self.checkEbelling.select()
+       else:
+            self.checkEbelling.deselect()
+            
        if "Rockport" in self.controller.person.framesChecked:
             self.checkRockport.select()
+       else:
+            self.checkRockport.deselect()
+            
        if "Coopers" in self.controller.person.framesChecked:
             self.checkCoopers.select()
+       else:
+            self.checkCoopers.deselect()
+            
        if "MBtoss" in self.controller.person.framesChecked:
             self.checkMBToss.select()
+       else:
+            self.checkMBToss.deselect()
+            
        if "VertJump" in self.controller.person.framesChecked:
             self.checkVertJump.select()
+       else:
+            self.checkVertJump.deselect()
+            
        if "RMtest" in self.controller.person.framesChecked:
             self.checkRepMaxTest.select()
+       else:
+            self.checkRepMaxTest.deselect()
+            
        if "RMpredict" in self.controller.person.framesChecked:
             self.checkRepMaxPredict.select()
+       else:
+            self.checkRepMaxPredict.deselect()
+            
        if "GripStrength" in self.controller.person.framesChecked:
             self.checkGripStr.select()
+       else:
+            self.checkGripStr.deselect()
+            
        if "PushUps" in self.controller.person.framesChecked:
             self.checkPushUp.select()
+       else:
+            self.checkPushUp.deselect()
+            
        if "CurlUps" in self.controller.person.framesChecked:
             self.checkCurlUp.select()
+       else:
+            self.checkCurlUp.deselect()
+            
        if "PlankEnd" in self.controller.person.framesChecked:
             self.checkPlankTime.select()
+       else:
+            self.checkPlankTime.deselect()
+            
        if "WallSit" in self.controller.person.framesChecked:
             self.checkWallSit.select()
+       else:
+            self.checkWallSit.deselect()
+            
        if "FlexTests" in self.controller.person.framesChecked:
             self.checkSitReach.select()
+       else:
+            self.checkSitReach.deselect()
+            
        if "SLstance" in self.controller.person.framesChecked:
             self.checkStance.select()
+       else:
+            self.checkStance.deselect()
+            
        if "DeepSquat" in self.controller.person.framesChecked:
             self.checkSquat.select()
+       else:
+            self.checkSquat.deselect()
+            
        if "WallSlide" in self.controller.person.framesChecked:
             self.checkWallSlide.select()
+       else:
+            self.checkWallSlide.deselect()
+            
        if "HipHinge" in self.controller.person.framesChecked:
             self.checkHipHinge.select()
+       else:
+            self.checkHipHinge.deselect()
+            
        if "FrontPlank" in self.controller.person.framesChecked:
             self.checkPlankAssess.select()
+       else:
+            self.checkPlankAssess.deselect()
+            
 
 
    def saveData(self, person):
