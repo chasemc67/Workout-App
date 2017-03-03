@@ -116,7 +116,7 @@ class Person():
         if self.gender.lower() == "male" or self.gender.lower() == "m":
             return float(self.threeSiteMaleChest) + float(self.threeSiteMaleAb) + float(self.threeSiteMaleThigh)
         else:
-            return float(self.threeSiteFemaleSupra) + float(self.threeSiteFemaleTricep) + (self.threeSiteFemaleThigh)
+            return float(self.threeSiteFemaleSupra) + float(self.threeSiteFemaleTricep) + float(self.threeSiteFemaleThigh)
 
     def getThreeSiteMale(self):
         return 1.10938 - (0.0008267 * float(self.getSumOfFolds())) + (0.0000016 * (float(self.getSumOfFolds()) * float(self.getSumOfFolds()))) - (0.0002574 * float(self.getAge()))

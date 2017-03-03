@@ -12,8 +12,8 @@ Challenge:
 	[+] PDF report generator 
 	[+] Put todays date in test date
 	[+] Add BMI checkbox back in
-	[ ] Checkboxes not refreshing properly when quit making a new person and start creating a second one. Other boxes also not refreshing sometimes
-	[ ] Remove male/female from three site
+	[+] Checkboxes not refreshing properly when quit making a new person and start creating a second one. Other boxes also not refreshing sometimes
+	[+] Remove male/female from three site
 	[ ] Fix seven site skin fold stuff
 	[ ] Hard code page size (or at least width) so scrolling
 		data entry page doesn't look so weird

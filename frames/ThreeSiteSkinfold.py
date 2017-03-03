@@ -17,45 +17,24 @@ class ThreeSiteSkinfold(tk.Frame):
    def validateInput(self):
        validationSuccess = True
        try:
-          float(self.ThreeSiteMaleChestText.get(1.0, tk.END).strip())
-          self.ThreeSiteMaleChestText.config(highlightbackground="white")
+          float(self.ThreeSiteOneText.get(1.0, tk.END).strip())
+          self.ThreeSiteOneText.config(highlightbackground="white")
        except:
-          self.ThreeSiteMaleChestText.config(highlightbackground="red")
+          self.ThreeSiteOneText.config(highlightbackground="red")
           validationSuccess = False
 
        try:
-          float(self.ThreeSiteMaleAbText.get(1.0, tk.END).strip())
-          self.ThreeSiteMaleAbText.config(highlightbackground="white")
+          float(self.ThreeSiteTwoText.get(1.0, tk.END).strip())
+          self.ThreeSiteTwoText.config(highlightbackground="white")
        except:
-          self.ThreeSiteMaleAbText.config(highlightbackground="red")
+          self.ThreeSiteTwoText.config(highlightbackground="red")
           validationSuccess = False
 
        try:
-          float(self.ThreeSiteMaleThighText.get(1.0, tk.END).strip())
-          self.ThreeSiteMaleThighText.config(highlightbackground="white")
+          float(self.ThreeSiteThreeText.get(1.0, tk.END).strip())
+          self.ThreeSiteThreeText.config(highlightbackground="white")
        except:
-          self.ThreeSiteMaleThighText.config(highlightbackground="red")
-          validationSuccess = False
-
-       try:
-          float(self.ThreeSiteFemaleSupraText.get(1.0, tk.END).strip())
-          self.ThreeSiteFemaleSupraText.config(highlightbackground="white")
-       except:
-          self.ThreeSiteFemaleSupraText.config(highlightbackground="red")
-          validationSuccess = False
-
-       try:
-          float(self.ThreeSiteFemaleTricepText.get(1.0, tk.END).strip())
-          self.ThreeSiteFemaleTricepText.config(highlightbackground="white")
-       except:
-          self.ThreeSiteFemaleTricepText.config(highlightbackground="red")
-          validationSuccess = False
-
-       try:
-          float(self.ThreeSiteFemaleThighText.get(1.0, tk.END).strip())
-          self.ThreeSiteFemaleThighText.config(highlightbackground="white")
-       except:
-          self.ThreeSiteFemaleThighText.config(highlightbackground="red")
+          self.ThreeSiteThreeText.config(highlightbackground="red")
           validationSuccess = False
           
        return validationSuccess
@@ -64,113 +43,89 @@ class ThreeSiteSkinfold(tk.Frame):
        tk.Frame.__init__(self, parent)
        self.controller = controller
 
-       self.ThreeSiteMaleCalc = tk.Label(self)
-       self.ThreeSiteMaleCalc["text"] = "3-Site Skinfold (Male)"
-       self.ThreeSiteMaleCalc.grid(row=2, column=0)
+       self.ThreeSiteCalc = tk.Label(self)
+       self.ThreeSiteCalc.grid(row=2, column=0)
 
-       self.ThreeSiteMaleChest = tk.Label(self)
-       self.ThreeSiteMaleChest["text"] = "Chest(mm): "
-       self.ThreeSiteMaleChest.grid(row=2, column=1)
+       self.ThreeSiteOne = tk.Label(self)
+       self.ThreeSiteOne.grid(row=2, column=1)
 
-       self.ThreeSiteMaleChestText = tk.Text(self)
-       self.ThreeSiteMaleChestText["height"] = 1
-       self.ThreeSiteMaleChestText["width"] = 5
-       self.ThreeSiteMaleChestText.bind("<Tab>", self.focus_next_window)
-       self.ThreeSiteMaleChestText.bind("<Shift-Tab>", self.focus_last_window)
-       self.ThreeSiteMaleChestText.grid(row=2, column=2)
+       self.ThreeSiteOneText = tk.Text(self)
+       self.ThreeSiteOneText["height"] = 1
+       self.ThreeSiteOneText["width"] = 5
+       self.ThreeSiteOneText.bind("<Tab>", self.focus_next_window)
+       self.ThreeSiteOneText.bind("<Shift-Tab>", self.focus_last_window)
+       self.ThreeSiteOneText.grid(row=2, column=2)
 
-       self.ThreeSiteMaleAb = tk.Label(self)
-       self.ThreeSiteMaleAb["text"] = "Abdomen(mm): "
-       self.ThreeSiteMaleAb.grid(row=2, column=3)
+       self.ThreeSiteTwo = tk.Label(self)
+       self.ThreeSiteTwo.grid(row=2, column=3)
 
-       self.ThreeSiteMaleAbText = tk.Text(self)
-       self.ThreeSiteMaleAbText["height"] = 1
-       self.ThreeSiteMaleAbText["width"] = 5
-       self.ThreeSiteMaleAbText.bind("<Tab>", self.focus_next_window)
-       self.ThreeSiteMaleAbText.bind("<Shift-Tab>", self.focus_last_window)
-       self.ThreeSiteMaleAbText.grid(row=2, column=4)
+       self.ThreeSiteTwoText = tk.Text(self)
+       self.ThreeSiteTwoText["height"] = 1
+       self.ThreeSiteTwoText["width"] = 5
+       self.ThreeSiteTwoText.bind("<Tab>", self.focus_next_window)
+       self.ThreeSiteTwoText.bind("<Shift-Tab>", self.focus_last_window)
+       self.ThreeSiteTwoText.grid(row=2, column=4)
 
-       self.ThreeSiteMaleThigh = tk.Label(self)
-       self.ThreeSiteMaleThigh["text"] = "Thigh(mm): "
-       self.ThreeSiteMaleThigh.grid(row=2, column=5)
+       self.ThreeSiteThree = tk.Label(self)
+       self.ThreeSiteThree.grid(row=2, column=5)
 
-       self.ThreeSiteMaleThighText = tk.Text(self)
-       self.ThreeSiteMaleThighText["height"] = 1
-       self.ThreeSiteMaleThighText["width"] = 5
-       self.ThreeSiteMaleThighText.bind("<Tab>", self.focus_next_window)
-       self.ThreeSiteMaleThighText.bind("<Shift-Tab>", self.focus_last_window)
-       self.ThreeSiteMaleThighText.grid(row=2, column=6)
-
-       self.ThreeSiteFemaleCalc = tk.Label(self)
-       self.ThreeSiteFemaleCalc["text"] = "3-Site Skinfold (Female)"
-       self.ThreeSiteFemaleCalc.grid(row=3, column=0)
-
-       self.ThreeSiteFemaleSupra = tk.Label(self)
-       self.ThreeSiteFemaleSupra["text"] = "Suprailiac(mm): "
-       self.ThreeSiteFemaleSupra.grid(row=3, column=1)
-
-       self.ThreeSiteFemaleSupraText = tk.Text(self)
-       self.ThreeSiteFemaleSupraText["height"] = 1
-       self.ThreeSiteFemaleSupraText["width"] = 5
-       self.ThreeSiteFemaleSupraText.bind("<Tab>", self.focus_next_window)
-       self.ThreeSiteFemaleSupraText.bind("<Shift-Tab>", self.focus_last_window)
-       self.ThreeSiteFemaleSupraText.grid(row=3, column=2)
-
-       self.ThreeSiteFemaleTricep = tk.Label(self)
-       self.ThreeSiteFemaleTricep["text"] = "Tricep(mm): "
-       self.ThreeSiteFemaleTricep.grid(row=3, column=3)
-
-       self.ThreeSiteFemaleTricepText = tk.Text(self)
-       self.ThreeSiteFemaleTricepText["height"] = 1
-       self.ThreeSiteFemaleTricepText["width"] = 5
-       self.ThreeSiteFemaleTricepText.bind("<Tab>", self.focus_next_window)
-       self.ThreeSiteFemaleTricepText.bind("<Shift-Tab>", self.focus_last_window)
-       self.ThreeSiteFemaleTricepText.grid(row=3, column=4)
-
-       self.ThreeSiteFemaleThigh = tk.Label(self)
-       self.ThreeSiteFemaleThigh["text"] = "Thigh(mm): "
-       self.ThreeSiteFemaleThigh.grid(row=3, column=5)
-
-       self.ThreeSiteFemaleThighText = tk.Text(self)
-       self.ThreeSiteFemaleThighText["height"] = 1
-       self.ThreeSiteFemaleThighText["width"] = 5
-       self.ThreeSiteFemaleThighText.bind("<Tab>", self.focus_next_window)
-       self.ThreeSiteFemaleThighText.bind("<Shift-Tab>", self.focus_last_window)
-       self.ThreeSiteFemaleThighText.grid(row=3, column=6)
+       self.ThreeSiteThreeText = tk.Text(self)
+       self.ThreeSiteThreeText["height"] = 1
+       self.ThreeSiteThreeText["width"] = 5
+       self.ThreeSiteThreeText.bind("<Tab>", self.focus_next_window)
+       self.ThreeSiteThreeText.bind("<Shift-Tab>", self.focus_last_window)
+       self.ThreeSiteThreeText.grid(row=2, column=6)
 
        self.Next = NextButton(self, controller, self.saveData)
-       self.Next.grid(row=4, column=0)
+       self.Next.grid(row=3, column=0)
 
        self.Back = BackButton(self, controller)
-       self.Back.grid(row=4, column=1)
+       self.Back.grid(row=3, column=1)
 
        self.Quit = QuitButton(self, controller)
-       self.Quit.grid(row=4, column=2)
+       self.Quit.grid(row=3, column=2)
 
    def loadData(self, person):
 
-       self.ThreeSiteMaleChestText.delete(1.0, tk.END)
-       self.ThreeSiteMaleChestText.insert(tk.END, person.threeSiteMaleChest)
+       if person.gender.lower() == "male":
+        self.ThreeSiteCalc["text"] = "3-Site Skinfold (Male)"
+        self.ThreeSiteOne["text"] = "Chest(mm): "
+        self.ThreeSiteTwo["text"] = "Abdomen(mm): "
+        self.ThreeSiteThree["text"] = "Thigh(mm): "
 
-       self.ThreeSiteMaleAbText.delete(1.0, tk.END)
-       self.ThreeSiteMaleAbText.insert(tk.END, person.threeSiteMaleAb)
+        self.ThreeSiteOneText.delete(1.0, tk.END)
+        self.ThreeSiteOneText.insert(tk.END, person.threeSiteMaleChest)
 
-       self.ThreeSiteMaleThighText.delete(1.0, tk.END)
-       self.ThreeSiteMaleThighText.insert(tk.END, person.threeSiteMaleThigh)
+        self.ThreeSiteTwoText.delete(1.0, tk.END)
+        self.ThreeSiteTwoText.insert(tk.END, person.threeSiteMaleAb)
 
-       self.ThreeSiteFemaleSupraText.delete(1.0, tk.END)
-       self.ThreeSiteFemaleSupraText.insert(tk.END, person.threeSiteFemaleSupra)
+        self.ThreeSiteThreeText.delete(1.0, tk.END)
+        self.ThreeSiteThreeText.insert(tk.END, person.threeSiteMaleThigh)
+       
+       else:
+        self.ThreeSiteCalc["text"] = "3-Site Skinfold (Female)"
+        self.ThreeSiteOne["text"] = "Suprailiac(mm): "
+        self.ThreeSiteTwo["text"] = "Tricep(mm): "
+        self.ThreeSiteThree["text"] = "Thigh(mm): "
 
-       self.ThreeSiteFemaleTricepText.delete(1.0, tk.END)
-       self.ThreeSiteFemaleTricepText.insert(tk.END, person.threeSiteFemaleTricep)
+        self.ThreeSiteOneText.delete(1.0, tk.END)
+        self.ThreeSiteOneText.insert(tk.END, person.threeSiteFemaleSupra)
 
-       self.ThreeSiteFemaleThighText.delete(1.0, tk.END)
-       self.ThreeSiteFemaleThighText.insert(tk.END, person.threeSiteFemaleThigh)
+        self.ThreeSiteTwoText.delete(1.0, tk.END)
+        self.ThreeSiteTwoText.insert(tk.END, person.threeSiteFemaleTricep)
+
+        self.ThreeSiteThreeText.delete(1.0, tk.END)
+        self.ThreeSiteThreeText.insert(tk.END, person.threeSiteFemaleThigh)
+       
 
    def saveData(self, person):
-       person.threeSiteMaleChest = self.ThreeSiteMaleChestText.get(1.0, tk.END).strip()
-       person.threeSiteMaleAb = self.ThreeSiteMaleAbText.get(1.0, tk.END).strip()
-       person.threeSiteMaleThigh = self.ThreeSiteMaleThighText.get(1.0, tk.END).strip()
-       person.threeSiteFemaleSupra = self.ThreeSiteFemaleSupraText.get(1.0, tk.END).strip()
-       person.threeSiteFemaleTricep = self.ThreeSiteFemaleTricepText.get(1.0, tk.END).strip()
-       person.threeSiteFemaleThigh = self.ThreeSiteFemaleThighText.get(1.0, tk.END).strip()
+       if person.gender.lower() == "male":
+         person.threeSiteMaleChest = self.ThreeSiteOneText.get(1.0, tk.END).strip()
+         person.threeSiteMaleAb = self.ThreeSiteTwoText.get(1.0, tk.END).strip()
+         person.threeSiteMaleThigh = self.ThreeSiteThreeText.get(1.0, tk.END).strip()
+       
+       else:
+         person.threeSiteFemaleSupra = self.ThreeSiteOneText.get(1.0, tk.END).strip()
+         person.threeSiteFemaleTricep = self.ThreeSiteTwoText.get(1.0, tk.END).strip()
+         person.threeSiteFemaleThigh = self.ThreeSiteThreeText.get(1.0, tk.END).strip()
+
