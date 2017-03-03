@@ -181,16 +181,17 @@ class MainPage(tk.Frame):
        self.labelBodyComp["text"] = "Body Composition Assessments: "
        self.labelBodyComp.grid(row=3, column=0)
 
+       self.checkBmi = tk.Checkbutton(self, text="Bmi", command = lambda: self.boxChecked("BMIframe"))
+       self.checkBmi.grid(row=4, column=0)
+
        self.checkCircumference = tk.Checkbutton(self, text="Circumferences", command = lambda: self.boxChecked("Circumference"))
-       self.checkCircumference.grid(row=4, column=0)
-       
+       self.checkCircumference.grid(row=4, column=1)
 
        self.checkThreeSkinfold = tk.Checkbutton(self, text="3-Site Skinfold", command = lambda: self.boxChecked("ThreeSiteSkinfold"))
-       self.checkThreeSkinfold.grid(row=4, column=1)
-       
+       self.checkThreeSkinfold.grid(row=4, column=2)
 
        self.checkSevenSkinfold = tk.Checkbutton(self, text="7-Site Skinfold", command = lambda: self.boxChecked("SvnSiteSkinfold"))
-       self.checkSevenSkinfold.grid(row=4, column=2)
+       self.checkSevenSkinfold.grid(row=4, column=3)
 
        self.labelAerobicTest = tk.Label(self)
        self.labelAerobicTest["text"] = "Maximal/Submaximal VO2 Max Assessments: "
@@ -313,6 +314,8 @@ class MainPage(tk.Frame):
        self.weightText.delete(1.0, tk.END)
        self.weightText.insert(tk.END, self.controller.person.weight)
 
+       if "BMIframe" in self.controller.person.framesChecked:
+            self.checkBmi.select()
        if "Circumference" in self.controller.person.framesChecked:
             self.checkCircumference.select()
        if "ThreeSiteSkinfold" in self.controller.person.framesChecked:

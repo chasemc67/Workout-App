@@ -118,6 +118,10 @@ class WorkoutApp(tk.Tk):
        #else:
        # Keep in mind the above code wont just work out of the box, 
        # You'll need to modify and play with it a little bit
+
+       if (self.currentFrameIndex < len(self.person.framesChecked)) and (self.person.framesChecked[self.currentFrameIndex] == "BMIframe"):
+        self.currentFrameIndex += 1
+
        if (self.currentFrameIndex == len(self.person.framesChecked)):
         #frame = self.frames["Results"]
         #frame = self.frames["ScrollingResults"]
