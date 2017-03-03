@@ -18,6 +18,7 @@ Challenge:
 	[ ] Hard code page size (or at least width) so scrolling
 		data entry page doesn't look so weird
 	[ ] Search by name and by date in DB view
+	[ ] Noticed a validation failure in ebelling. recheck all validations
 	[ ] Should back button save data?
 	[ ] Make PDF Prettier	
 	[ ] Package with pynsist https://github.com/takluyver/pynsist
