@@ -14,11 +14,13 @@ Challenge:
 	[+] Add BMI checkbox back in
 	[+] Checkboxes not refreshing properly when quit making a new person and start creating a second one. Other boxes also not refreshing sometimes
 	[+] Remove male/female from three site
+	[+] Noticed a validation failure in ebelling. recheck all
+	[+] Fixed bp data entry stuff
 	[ ] Fix seven site skin fold stuff
 	[ ] Hard code page size (or at least width) so scrolling
 		data entry page doesn't look so weird
 	[ ] Search by name and by date in DB view
-	[ ] Noticed a validation failure in ebelling. recheck all validations
+	 validations
 	[ ] Should back button save data?
 	[ ] Make PDF Prettier	
 	[ ] Package with pynsist https://github.com/takluyver/pynsist

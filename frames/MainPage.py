@@ -46,7 +46,8 @@ class MainPage(tk.Frame):
             validationSuccess = False
       
       try:
-            float(self.restBPText.get(1.0, tk.END).strip())
+            float(self.restBPText.get(1.0, tk.END).strip().split("/")[0])
+            float(self.restBPText.get(1.0, tk.END).strip().split("/")[1])
             self.restBPText.config(bg="white")
       except:
             self.restBPText.config(bg="red")
@@ -148,7 +149,7 @@ class MainPage(tk.Frame):
        self.labelRestBP["text"] = "Blood Pressure "
        self.labelRestBP.grid(row=1, column=4)
 
-       self.restBPText = tk.Text(self)
+       self.restBPText = PlaceholderTextBox(self, placeholder="syst/diast")
        self.restBPText["height"] = 1
        self.restBPText["width"] = 15
        self.restBPText.bind("<Tab>", self.focus_next_window)
@@ -291,6 +292,7 @@ class MainPage(tk.Frame):
        self.nameText.delete(1.0, tk.END)
        self.nameText.insert(tk.END, self.controller.person.name)
 
+       # Boxes with placeholders shouldn't overrite default strings
        if self.controller.person.testDate.strip() != "":
              self.testDateText.delete(1.0, tk.END)
              self.testDateText.insert(tk.END, self.controller.person.testDate)
@@ -299,14 +301,15 @@ class MainPage(tk.Frame):
             self.birthDateText.delete(1.0, tk.END)
             self.birthDateText.insert(tk.END, self.controller.person.birthDate)
 
+       if self.controller.person.restBP.strip() != "":
+            self.restBPText.delete(1.0, tk.END)
+            self.restBPText.insert(tk.END, self.controller.person.restBP)
+
        self.phoneNumberText.delete(1.0, tk.END)
        self.phoneNumberText.insert(tk.END, self.controller.person.phoneNumber)
 
        self.restHRText.delete(1.0, tk.END)
        self.restHRText.insert(tk.END, self.controller.person.restHR)
-
-       self.restBPText.delete(1.0, tk.END)
-       self.restBPText.insert(tk.END, self.controller.person.restBP)
 
        self.heightText.delete(1.0, tk.END)
        self.heightText.insert(tk.END, self.controller.person.height)
