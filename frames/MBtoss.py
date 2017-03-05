@@ -18,9 +18,9 @@ class MBtoss(tk.Frame):
        validationSuccess = True
        try:
           float(self.SeatMBDistText.get(1.0, tk.END).strip())
-          self.SeatMBDistText.config(highlightbackground="white")
+          self.SeatMBDistText.config(bg="white")
        except:
-          self.SeatMBDistText.config(highlightbackground="red")
+          self.SeatMBDistText.config(bg="red")
           validationSuccess = False
        return validationSuccess
 

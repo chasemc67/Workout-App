@@ -19,51 +19,51 @@ class SvnSiteSkinfold(tk.Frame):
        validationSuccess = True
        try:
           float(self.SvnSiteChestText.get(1.0, tk.END).strip())
-          self.SvnSiteChestText.config(highlightbackground="white")
+          self.SvnSiteChestText.config(bg="white")
        except:
-          self.SvnSiteChestText.config(highlightbackground="red")
+          self.SvnSiteChestText.config(bg="red")
           validationSuccess = False
 
        try:
           float(self.SvnSiteMidAxText.get(1.0, tk.END).strip())
-          self.SvnSiteMidAxText.config(highlightbackground="white")
+          self.SvnSiteMidAxText.config(bg="white")
        except:
-          self.SvnSiteMidAxText.config(highlightbackground="red")
+          self.SvnSiteMidAxText.config(bg="red")
           validationSuccess = False
 
        try:
           float(self.SvnSiteTriText.get(1.0, tk.END).strip())
-          self.SvnSiteTriText.config(highlightbackground="white")
+          self.SvnSiteTriText.config(bg="white")
        except:
-          self.SvnSiteTriText.config(highlightbackground="red")
+          self.SvnSiteTriText.config(bg="red")
           validationSuccess = False
 
        try:
           float(self.SvnSiteScapText.get(1.0, tk.END).strip())
-          self.SvnSiteScapText.config(highlightbackground="white")
+          self.SvnSiteScapText.config(bg="white")
        except:
-          self.SvnSiteScapText.config(highlightbackground="red")
+          self.SvnSiteScapText.config(bg="red")
           validationSuccess = False
 
        try:
           float(self.SvnSiteSupraText.get(1.0, tk.END).strip())
-          self.SvnSiteSupraText.config(highlightbackground="white")
+          self.SvnSiteSupraText.config(bg="white")
        except:
-          self.SvnSiteSupraText.config(highlightbackground="red")
+          self.SvnSiteSupraText.config(bg="red")
           validationSuccess = False
 
        try:
           float(self.SvnSiteAbText.get(1.0, tk.END).strip())
-          self.SvnSiteAbText.config(highlightbackground="white")
+          self.SvnSiteAbText.config(bg="white")
        except:
-          self.SvnSiteAbText.config(highlightbackground="red")
+          self.SvnSiteAbText.config(bg="red")
           validationSuccess = False
 
        try:
           float(self.SvnSiteThighText.get(1.0, tk.END).strip())
-          self.SvnSiteThighText.config(highlightbackground="white")
+          self.SvnSiteThighText.config(bg="white")
        except:
-          self.SvnSiteThighText.config(highlightbackground="red")
+          self.SvnSiteThighText.config(bg="red")
           validationSuccess = False
           
        return validationSuccess

@@ -17,9 +17,9 @@ class HipHinge(tk.Frame):
        validationSuccess = True
        try:
           float(self.HipHingeRateText.get(1.0, tk.END).strip())
-          self.HipHingeRateText.config(highlightbackground="white")
+          self.HipHingeRateText.config(bg="white")
        except:
-          self.HipHingeRateText.config(highlightbackground="red")
+          self.HipHingeRateText.config(bg="red")
           validationSuccess = False
        return validationSuccess
 

@@ -18,30 +18,30 @@ class SLstance(tk.Frame):
        validationSuccess = True
        try:
           float(self.SLOpenLeftText.get(1.0, tk.END).strip())
-          self.SLOpenLeftText.config(highlightbackground="white")
+          self.SLOpenLeftText.config(bg="white")
        except:
-          self.SLOpenLeftText.config(highlightbackground="red")
+          self.SLOpenLeftText.config(bg="red")
           validationSuccess = False
 
        try:
           float(self.SLOpenRightText.get(1.0, tk.END).strip())
-          self.SLOpenRightText.config(highlightbackground="white")
+          self.SLOpenRightText.config(bg="white")
        except:
-          self.SLOpenRightText.config(highlightbackground="red")
+          self.SLOpenRightText.config(bg="red")
           validationSuccess = False
 
        try:
           float(self.SLCloseLeftText.get(1.0, tk.END).strip())
-          self.SLCloseLeftText.config(highlightbackground="white")
+          self.SLCloseLeftText.config(bg="white")
        except:
-          self.SLCloseLeftText.config(highlightbackground="red")
+          self.SLCloseLeftText.config(bg="red")
           validationSuccess = False
 
        try:
           float(self.SLCloseRightText.get(1.0, tk.END).strip())
-          self.SLCloseRightText.config(highlightbackground="white")
+          self.SLCloseRightText.config(bg="white")
        except:
-          self.SLCloseRightText.config(highlightbackground="red")
+          self.SLCloseRightText.config(bg="red")
           validationSuccess = False
           
        return validationSuccess

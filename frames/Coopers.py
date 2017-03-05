@@ -17,9 +17,9 @@ class Coopers(tk.Frame):
        validationSuccess = True
        try:
           float(self.CooperDistText.get(1.0, tk.END).strip())
-          self.CooperDistText.config(highlightbackground="white")
+          self.CooperDistText.config(bg="white")
        except:
-          self.CooperDistText.config(highlightbackground="red")
+          self.CooperDistText.config(bg="red")
           validationSuccess = False
        return validationSuccess
 

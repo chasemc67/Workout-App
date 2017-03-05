@@ -18,30 +18,30 @@ class RMtest(tk.Frame):
        validationSuccess = True
        try:
           float(self.RMTestExAText.get(1.0, tk.END).strip())
-          self.RMTestExAText.config(highlightbackground="white")
+          self.RMTestExAText.config(bg="white")
        except:
-          self.RMTestExAText.config(highlightbackground="red")
+          self.RMTestExAText.config(bg="red")
           validationSuccess = False
 
        try:
           float(self.RMTestExAWeightText.get(1.0, tk.END).strip())
-          self.RMTestExAWeightText.config(highlightbackground="white")
+          self.RMTestExAWeightText.config(bg="white")
        except:
-          self.RMTestExAWeightText.config(highlightbackground="red")
+          self.RMTestExAWeightText.config(bg="red")
           validationSuccess = False
 
        try:
           float(self.RMTestExBText.get(1.0, tk.END).strip())
-          self.RMTestExBText.config(highlightbackground="white")
+          self.RMTestExBText.config(bg="white")
        except:
-          self.RMTestExBText.config(highlightbackground="red")
+          self.RMTestExBText.config(bg="red")
           validationSuccess = False
 
        try:
           float(self.RMTestExBWeightText.get(1.0, tk.END).strip())
-          self.RMTestExBWeightText.config(highlightbackground="white")
+          self.RMTestExBWeightText.config(bg="white")
        except:
-          self.RMTestExBWeightText.config(highlightbackground="red")
+          self.RMTestExBWeightText.config(bg="red")
           validationSuccess = False
        return validationSuccess
 

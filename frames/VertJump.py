@@ -18,16 +18,16 @@ class VertJump(tk.Frame):
        validationSuccess = True
        try:
           float(self.VertJumpSRText.get(1.0, tk.END).strip())
-          self.VertJumpSRText.config(highlightbackground="white")
+          self.VertJumpSRText.config(bg="white")
        except:
-          self.VertJumpSRText.config(highlightbackground="red")
+          self.VertJumpSRText.config(bg="red")
           validationSuccess = False
 
        try:
           float(self.VertJumpBestText.get(1.0, tk.END).strip())
-          self.VertJumpBestText.config(highlightbackground="white")
+          self.VertJumpBestText.config(bg="white")
        except:
-          self.VertJumpBestText.config(highlightbackground="red")
+          self.VertJumpBestText.config(bg="red")
           validationSuccess = False
        return validationSuccess
 

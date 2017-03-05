@@ -17,37 +17,37 @@ class Circumference(tk.Frame):
       validationSuccess = True
       try:
             float(self.HipCircText.get(1.0, tk.END).strip())
-            self.HipCircText.config(highlightbackground="white")
+            self.HipCircText.config(bg="white")
       except:
-            self.HipCircText.config(highlightbackground="red")
+            self.HipCircText.config(bg="red")
             validationSuccess = False
       
       try:
             float(self.WaistCircText.get(1.0, tk.END).strip())
-            self.WaistCircText.config(highlightbackground="white")
+            self.WaistCircText.config(bg="white")
       except:
-            self.WaistCircText.config(highlightbackground="red")
+            self.WaistCircText.config(bg="red")
             validationSuccess = False
       
       try:
             float(self.ArmCircText.get(1.0, tk.END).strip())
-            self.ArmCircText.config(highlightbackground="white")
+            self.ArmCircText.config(bg="white")
       except:
-            self.ArmCircText.config(highlightbackground="red")
+            self.ArmCircText.config(bg="red")
             validationSuccess = False
       
       try:
             float(self.ThighCircText.get(1.0, tk.END).strip())
-            self.ThighCircText.config(highlightbackground="white")
+            self.ThighCircText.config(bg="white")
       except:
-            self.ThighCircText.config(highlightbackground="red")
+            self.ThighCircText.config(bg="red")
             validationSuccess = False
       
       try:
             float(self.ChestCircText.get(1.0, tk.END).strip())
-            self.ChestCircText.config(highlightbackground="white")
+            self.ChestCircText.config(bg="white")
       except:
-            self.ChestCircText.config(highlightbackground="red")
+            self.ChestCircText.config(bg="red")
             validationSuccess = False
 
       return validationSuccess

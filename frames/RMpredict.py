@@ -19,23 +19,23 @@ class RMpredict(tk.Frame):
        validationSuccess = True
        try:
           float(self.RMPredictExText.get(1.0, tk.END).strip())
-          self.RMPredictExText.config(highlightbackground="white")
+          self.RMPredictExText.config(bg="white")
        except:
-          self.RMPredictExText.config(highlightbackground="red")
+          self.RMPredictExText.config(bg="red")
           validationSuccess = False
 
        try:
           float(self.RMPredictRepsText.get(1.0, tk.END).strip())
-          self.RMPredictRepsText.config(highlightbackground="white")
+          self.RMPredictRepsText.config(bg="white")
        except:
-          self.RMPredictRepsText.config(highlightbackground="red")
+          self.RMPredictRepsText.config(bg="red")
           validationSuccess = False
 
        try:
           float(self.RMPredictLoadText.get(1.0, tk.END).strip())
-          self.RMPredictLoadText.config(highlightbackground="white")
+          self.RMPredictLoadText.config(bg="white")
        except:
-          self.RMPredictLoadText.config(highlightbackground="red")
+          self.RMPredictLoadText.config(bg="red")
           validationSuccess = False
        return validationSuccess
 

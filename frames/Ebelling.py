@@ -16,23 +16,23 @@ class Ebelling(tk.Frame):
        validationSuccess = True
        try:
           float(self.EbellingWUText.get(1.0, tk.END).strip())
-          self.EbellingWUText.config(highlightbackground="white")
+          self.EbellingWUText.config(bg="white")
        except:
-          self.EbellingWUText.config(highlightbackground="red")
+          self.EbellingWUText.config(bg="red")
           validationSuccess = False
        
        try:
           float(self.EbellingWorkText.get(1.0, tk.END).strip())
-          self.EbellingWorkText.config(highlightbackground="white")
+          self.EbellingWorkText.config(bg="white")
        except:
-          self.EbellingWorkText.config(highlightbackground="red")
+          self.EbellingWorkText.config(bg="red")
           validationSuccess = False
 
        try:
           float(self.EbellingHRText.get(1.0, tk.END).strip())
-          self.EbellingHRText.config(highlightbackground="white")
+          self.EbellingHRText.config(bg="white")
        except:
-          self.EbellingHRText.config(highlightbackground="red")
+          self.EbellingHRText.config(bg="red")
           validationSuccess = False
        return validationSuccess
 

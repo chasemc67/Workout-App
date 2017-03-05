@@ -17,16 +17,16 @@ class GripStrength(tk.Frame):
        validationSuccess = True
        try:
           float(self.GripStrLeftText.get(1.0, tk.END).strip())
-          self.GripStrLeftText.config(highlightbackground="white")
+          self.GripStrLeftText.config(bg="white")
        except:
-          self.GripStrLeftText.config(highlightbackground="red")
+          self.GripStrLeftText.config(bg="red")
           validationSuccess = False
 
        try:
           float(self.GripStrRightText.get(1.0, tk.END).strip())
-          self.GripStrRightText.config(highlightbackground="white")
+          self.GripStrRightText.config(bg="white")
        except:
-          self.GripStrRightText.config(highlightbackground="red")
+          self.GripStrRightText.config(bg="red")
           validationSuccess = False
           
        return validationSuccess

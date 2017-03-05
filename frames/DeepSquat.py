@@ -17,9 +17,9 @@ class DeepSquat(tk.Frame):
        validationSuccess = True
        try:
           float(self.DeepSquatRateText.get(1.0, tk.END).strip())
-          self.DeepSquatRateText.config(highlightbackground="white")
+          self.DeepSquatRateText.config(bg="white")
        except:
-          self.DeepSquatRateText.config(highlightbackground="red")
+          self.DeepSquatRateText.config(bg="red")
           validationSuccess = False
        return validationSuccess
 

@@ -19,9 +19,9 @@ class PlankEnd(tk.Frame):
        validationSuccess = True
        try:
           float(self.PlankTimeText.get(1.0, tk.END).strip())
-          self.PlankTimeText.config(highlightbackground="white")
+          self.PlankTimeText.config(bg="white")
        except:
-          self.PlankTimeText.config(highlightbackground="red")
+          self.PlankTimeText.config(bg="red")
           validationSuccess = False
        return validationSuccess
 

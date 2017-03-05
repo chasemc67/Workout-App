@@ -17,9 +17,9 @@ class CurlUps(tk.Frame):
        validationSuccess = True
        try:
           float(self.CurlUpNumText.get(1.0, tk.END).strip())
-          self.CurlUpNumText.config(highlightbackground="white")
+          self.CurlUpNumText.config(bg="white")
        except:
-          self.CurlUpNumText.config(highlightbackground="red")
+          self.CurlUpNumText.config(bg="red")
           validationSuccess = False
        return validationSuccess
 

@@ -18,9 +18,9 @@ class WallSit(tk.Frame):
        validationSuccess = True
        try:
           float(self.WallSitTimeText.get(1.0, tk.END).strip())
-          self.WallSitTimeText.config(highlightbackground="white")
+          self.WallSitTimeText.config(bg="white")
        except:
-          self.WallSitTimeText.config(highlightbackground="red")
+          self.WallSitTimeText.config(bg="red")
           validationSuccess = False
        return validationSuccess
 

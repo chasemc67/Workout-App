@@ -17,9 +17,9 @@ class WallSlide(tk.Frame):
        validationSuccess = True
        try:
           float(self.WallSlideRateText.get(1.0, tk.END).strip())
-          self.WallSlideRateText.config(highlightbackground="white")
+          self.WallSlideRateText.config(bg="white")
        except:
-          self.WallSlideRateText.config(highlightbackground="red")
+          self.WallSlideRateText.config(bg="red")
           validationSuccess = False
        return validationSuccess
 

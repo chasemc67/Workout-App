@@ -18,30 +18,30 @@ class ModAst(tk.Frame):
        validationSuccess = True
        try:
           float(self.ModAstLoadAText.get(1.0, tk.END).strip())
-          self.ModAstLoadAText.config(highlightbackground="white")
+          self.ModAstLoadAText.config(bg="white")
        except:
-          self.ModAstLoadAText.config(highlightbackground="red")
+          self.ModAstLoadAText.config(bg="red")
           validationSuccess = False
 
        try:
           float(self.ModAstLoadBText.get(1.0, tk.END).strip())
-          self.ModAstLoadBText.config(highlightbackground="white")
+          self.ModAstLoadBText.config(bg="white")
        except:
-          self.ModAstLoadBText.config(highlightbackground="red")
+          self.ModAstLoadBText.config(bg="red")
           validationSuccess = False
 
        try:
           float(self.ModAstHRText.get(1.0, tk.END).strip())
-          self.ModAstHRText.config(highlightbackground="white")
+          self.ModAstHRText.config(bg="white")
        except:
-          self.ModAstHRText.config(highlightbackground="red")
+          self.ModAstHRText.config(bg="red")
           validationSuccess = False
 
        try:
           float(self.ModAstCapacityText.get(1.0, tk.END).strip())
-          self.ModAstCapacityText.config(highlightbackground="white")
+          self.ModAstCapacityText.config(bg="white")
        except:
-          self.ModAstCapacityText.config(highlightbackground="red")
+          self.ModAstCapacityText.config(bg="red")
           validationSuccess = False
           
        return validationSuccess

@@ -18,16 +18,16 @@ class Rockport(tk.Frame):
        validationSuccess = True
        try:
           float(self.RockportHRText.get(1.0, tk.END).strip())
-          self.RockportHRText.config(highlightbackground="white")
+          self.RockportHRText.config(bg="white")
        except:
-          self.RockportHRText.config(highlightbackground="red")
+          self.RockportHRText.config(bg="red")
           validationSuccess = False
 
        try:
           float(self.RockportTimeText.get(1.0, tk.END).strip())
-          self.RockportTimeText.config(highlightbackground="white")
+          self.RockportTimeText.config(bg="white")
        except:
-          self.RockportTimeText.config(highlightbackground="red")
+          self.RockportTimeText.config(bg="red")
           validationSuccess = False
 
        return validationSuccess

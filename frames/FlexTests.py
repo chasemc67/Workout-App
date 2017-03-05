@@ -17,9 +17,9 @@ class FlexTests(tk.Frame):
        validationSuccess = True
        try:
           float(self.SitReachDistText.get(1.0, tk.END).strip())
-          self.SitReachDistText.config(highlightbackground="white")
+          self.SitReachDistText.config(bg="white")
        except:
-          self.SitReachDistText.config(highlightbackground="red")
+          self.SitReachDistText.config(bg="red")
           validationSuccess = False
        return validationSuccess
 

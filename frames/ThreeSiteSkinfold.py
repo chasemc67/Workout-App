@@ -18,23 +18,23 @@ class ThreeSiteSkinfold(tk.Frame):
        validationSuccess = True
        try:
           float(self.ThreeSiteOneText.get(1.0, tk.END).strip())
-          self.ThreeSiteOneText.config(highlightbackground="white")
+          self.ThreeSiteOneText.config(bg="white")
        except:
-          self.ThreeSiteOneText.config(highlightbackground="red")
+          self.ThreeSiteOneText.config(bg="red")
           validationSuccess = False
 
        try:
           float(self.ThreeSiteTwoText.get(1.0, tk.END).strip())
-          self.ThreeSiteTwoText.config(highlightbackground="white")
+          self.ThreeSiteTwoText.config(bg="white")
        except:
-          self.ThreeSiteTwoText.config(highlightbackground="red")
+          self.ThreeSiteTwoText.config(bg="red")
           validationSuccess = False
 
        try:
           float(self.ThreeSiteThreeText.get(1.0, tk.END).strip())
-          self.ThreeSiteThreeText.config(highlightbackground="white")
+          self.ThreeSiteThreeText.config(bg="white")
        except:
-          self.ThreeSiteThreeText.config(highlightbackground="red")
+          self.ThreeSiteThreeText.config(bg="red")
           validationSuccess = False
           
        return validationSuccess

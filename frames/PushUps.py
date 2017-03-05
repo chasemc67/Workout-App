@@ -19,9 +19,9 @@ class PushUps(tk.Frame):
        validationSuccess = True
        try:
           float(self.PushUpNumText.get(1.0, tk.END).strip())
-          self.PushUpNumText.config(highlightbackground="white")
+          self.PushUpNumText.config(bg="white")
        except:
-          self.PushUpNumText.config(highlightbackground="red")
+          self.PushUpNumText.config(bg="red")
           validationSuccess = False
        return validationSuccess
 

@@ -16,9 +16,9 @@ class FrontPlank(tk.Frame):
        validationSuccess = True
        try:
           float(self.FrPlankRateText.get(1.0, tk.END).strip())
-          self.FrPlankRateText.config(highlightbackground="white")
+          self.FrPlankRateText.config(bg="white")
        except:
-          self.FrPlankRateText.config(highlightbackground="red")
+          self.FrPlankRateText.config(bg="red")
           validationSuccess = False
        return validationSuccess
 
