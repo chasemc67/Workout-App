@@ -18,52 +18,52 @@ class MainPage(tk.Frame):
       validationSuccess = True
 
       if self.nameText.get(1.0, tk.END).strip() != "":
-            self.nameText.config(highlightbackground="white")
+            self.nameText.config(bg="white")
       else:
-            self.nameText.config(highlightbackground="red")
+            self.nameText.config(bg="red")
             validationSuccess = False
 
       try:
             datetime.datetime.strptime(self.testDateText.get(1.0, tk.END).strip(), '%m/%d/%Y')
-            self.testDateText.config(highlightbackground="white")
+            self.testDateText.config(bg="white")
       except Exception as e:
             print(e)
-            self.testDateText.config(highlightbackground="red")
+            self.testDateText.config(bg="red")
             validationSuccess = False
       
       try:
             datetime.datetime.strptime(self.birthDateText.get(1.0, tk.END).strip(), '%m/%d/%Y')
-            self.birthDateText.config(highlightbackground="white")
+            self.birthDateText.config(bg="white")
       except:
-            self.birthDateText.config(highlightbackground="red")
+            self.birthDateText.config(bg="red")
             validationSuccess = False
       
       try:
             float(self.restHRText.get(1.0, tk.END).strip())
-            self.restHRText.config(highlightbackground="white")
+            self.restHRText.config(bg="white")
       except:
-            self.restHRText.config(highlightbackground="red")
+            self.restHRText.config(bg="red")
             validationSuccess = False
       
       try:
             float(self.restBPText.get(1.0, tk.END).strip())
-            self.restBPText.config(highlightbackground="white")
+            self.restBPText.config(bg="white")
       except:
-            self.restBPText.config(highlightbackground="red")
+            self.restBPText.config(bg="red")
             validationSuccess = False
       
       try:
             float(self.heightText.get(1.0, tk.END).strip())
-            self.heightText.config(highlightbackground="white")
+            self.heightText.config(bg="white")
       except:
-            self.heightText.config(highlightbackground="red")
+            self.heightText.config(bg="red")
             validationSuccess = False
       
       try:
             float(self.weightText.get(1.0, tk.END).strip())
-            self.weightText.config(highlightbackground="white")
+            self.weightText.config(bg="white")
       except:
-            self.weightText.config(highlightbackground="red")
+            self.weightText.config(bg="red")
             validationSuccess = False
 
       return validationSuccess
