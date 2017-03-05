@@ -182,7 +182,7 @@ class MainPage(tk.Frame):
        self.labelBodyComp["text"] = "Body Composition Assessments: "
        self.labelBodyComp.grid(row=3, column=0)
 
-       self.checkBmi = tk.Checkbutton(self, text="Bmi", command = lambda: self.boxChecked("BMIframe"))
+       self.checkBmi = tk.Checkbutton(self, text="BMI", command = lambda: self.boxChecked("BMIframe"))
        self.checkBmi.grid(row=4, column=0)
 
        self.checkCircumference = tk.Checkbutton(self, text="Circumferences", command = lambda: self.boxChecked("Circumference"))
