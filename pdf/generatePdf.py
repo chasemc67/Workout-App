@@ -13,11 +13,11 @@ def generatePdfForPerson(person):
 	Story=[]
 	logo = 'pdf/macewan-university-logo.png'		
 
-	im = Image(logo, 4*inch, 2*inch)
+	im = Image(logo, 3*inch, 1*inch)
 	Story.append(im)
 
 	styles = getSampleStyleSheet()
-	styles.add(ParagraphStyle(name='Justify', alignment=TA_JUSTIFY, borderWidth=3, borderColor=HexColor('#888888')))
+	styles.add(ParagraphStyle(name='Justify', alignment=TA_JUSTIFY, borderWidth=1, borderColor=HexColor('#800020'), borderPadding=3))
 	ptext = '<font size=12>%s</font>' % person.testDate
 
 	Story.append(Paragraph(ptext, styles["Justify"]))
@@ -99,14 +99,13 @@ def generatePdfForPerson(person):
 		ptext = '<font size=12>GripStrength: </font>'
 		Story.append(Paragraph(ptext, styles["Justify"]))
 
-		ptext = '<font size=12>Left Hand(kg): %s</font>' % str(person.GripStrengthLeft)
+		ptext = '<font size=12>Left Hand(kg): %s</font>' % str(person.gripStrengthLeft)
 		Story.append(Paragraph(ptext, styles["Justify"]))
 
-		ptext = '<font size=12>Right Hand(kg): %s</font>' % str(person.GripStrengthRight)
+		ptext = '<font size=12>Right Hand(kg): %s</font>' % str(person.gripStrengthRight)
 		Story.append(Paragraph(ptext, styles["Justify"]))
 
 		Story.append(Spacer(1, 12))
-		
 
 	if "HipHinge" in person.framesChecked:
 		ptext = '<font size=12>Hip Hinge Assessment Rating(0-3): %s</font>' % str(person.hipHingeRate)
