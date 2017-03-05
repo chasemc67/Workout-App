@@ -138,9 +138,9 @@ class Person():
 
     def getBodyFatSeven(self):
         if self.gender.lower() == "male" or self.gender.lower() == "m":
-            return ((495 / float(self.getSevenSiteMale())) - 450)
+            return ((495 / float(self.getSevenSiteDensity())) - 450)
         else:
-            return ((495 / float(self.getSevenSiteFemale())) - 450)
+            return ((495 / float(self.getSevenSiteDensity())) - 450)
 
     def getEbellingAerobic(self):
         if self.gender.lower() == "male" or self.gender.lower() == 'm':
