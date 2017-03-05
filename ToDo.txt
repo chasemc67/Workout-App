@@ -34,3 +34,8 @@ features:
 bugs:
 	get tabbing between fields working
 	Add safety so next button works when there arent any more frames
+
+
+Meg:
+[ ] in generatePDF, try to make the boxes pretter
+[ ] change styles to Justify
