@@ -77,7 +77,7 @@ class Ebelling(tk.Frame):
        self.EbellingHRText.bind("<Shift-Tab>", self.focus_last_window)
        self.EbellingHRText.grid(row=3, column=1)
 
-       self.Next = NextButton(self, controller, self.saveData)
+       self.Next = NextButton(self, controller, self.saveData, self.validateInput)
        self.Next.grid(row=4, column=0)
 
        self.Back = BackButton(self, controller)

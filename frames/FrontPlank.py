@@ -41,7 +41,7 @@ class FrontPlank(tk.Frame):
        self.FrPlankRateText.bind("<Shift-Tab>", self.focus_last_window)
        self.FrPlankRateText.grid(row=1, column=1)
 
-       self.Next = NextButton(self, controller, self.saveData)
+       self.Next = NextButton(self, controller, self.saveData, self.validateInput)
        self.Next.grid(row=2, column=0)
 
        self.Back = BackButton(self, controller)

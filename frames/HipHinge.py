@@ -42,7 +42,7 @@ class HipHinge(tk.Frame):
        self.HipHingeRateText.bind("<Shift-Tab>", self.focus_last_window)
        self.HipHingeRateText.grid(row=1, column=1)
 
-       self.Next = NextButton(self, controller, self.saveData)
+       self.Next = NextButton(self, controller, self.saveData, self.validateInput)
        self.Next.grid(row=2, column=0)
 
        self.Back = BackButton(self, controller)
