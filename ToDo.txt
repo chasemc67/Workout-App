@@ -1,4 +1,4 @@
-Challenge:
+ToDO:
 	[+] Save and load checked boxes to DB
 	[+] Try multi-frame data entry page
 	[+] Make multi-entry frame scrollable : http://stackoverflow.com/questions/16188420/python-tkinter-scrollbar-for-frame
@@ -16,26 +16,18 @@ Challenge:
 	[+] Remove male/female from three site
 	[+] Noticed a validation failure in ebelling. recheck all
 	[+] Fixed bp data entry stuff
-	[ ] Fix seven site skin fold stuff
-	[ ] Hard code page size (or at least width) so scrolling
-		data entry page doesn't look so weird
+	[+] Fix seven site skin fold stuff
+	[+] Toasts on save and print button presses
 	[ ] Search by name and by date in DB view
 	 validations
+	[ ] Update existing users when saving  
+	[ ] Hard code page size (or at least width) so scrolling
+		data entry page doesn't look so weird
+	
 	[ ] Should back button save data?
+	[ ] OS hooks for form printing
 	[ ] Make PDF Prettier	
 	[ ] Package with pynsist https://github.com/takluyver/pynsist
-
-features:
-	view results page
-	edit fields from results page
-	save to csv
-	print to paper
-	view existing people in list view
-
-
-bugs:
-	get tabbing between fields working
-	Add safety so next button works when there arent any more frames
 
 
 Meg:

@@ -41,13 +41,15 @@ from pdf.generatePdf import *
 
 class ScrollingResults(tk.Frame):
 
-	def savePerson(self):
+	def savePerson(self, alertObject):
 		try:
 			dbID = getattr(self.controller.person, "dbID")
+			alertObject["text"] = "Unable to save edited person"
 			return
 			# update entry instead of adding new person     
 		except:
 			insertPerson(self.controller.person)
+			alertObject["text"] = "Saved person successfully"
 
 	def printPerson(self):
 		generatePdfForPerson(self.controller.person)
@@ -198,17 +200,28 @@ class ScrollingResults(tk.Frame):
 			spacer = tk.Label(scrollView.interior)
 			spacer.pack()
 
-		self.SaveButton = tk.Button(self)
+		spacer = tk.Label(self)
+
+		spacer.pack()
+		self.saveAlert = tk.Label(self)
+		self.saveAlert['text'] = ""
+		self.saveAlert.pack()
+		spacer.pack()
+
+		self.buttonFrame = tk.Frame(self)
+		self.buttonFrame.pack()
+
+		self.SaveButton = tk.Button(self.buttonFrame)
 		self.SaveButton['text'] = "Save"
 		self.SaveButton['fg'] = "black"
-		self.SaveButton['command'] = self.savePerson
-		self.SaveButton.pack()
+		self.SaveButton['command'] = lambda: self.savePerson(self.saveAlert)
+		self.SaveButton.grid(row=1, column=0)
 
-		self.PrintButton = tk.Button(self)
+		self.PrintButton = tk.Button(self.buttonFrame)
 		self.PrintButton['text'] = "Print"
 		self.PrintButton['fg'] = "black"
 		self.PrintButton['command'] = self.printPerson
-		self.PrintButton.pack()
+		self.PrintButton.grid(row=1, column=1)
 
-		self.QuitButton = QuitButton(self, self.controller)
-		self.QuitButton.pack()
+		self.QuitButton = QuitButton(self.buttonFrame, self.controller)
+		self.QuitButton.grid(row=1, column=2)

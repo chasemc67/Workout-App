@@ -36,13 +36,9 @@ def generatePdfForPerson(person):
 
 	if "Circumference" in person.framesChecked:
 		ptext = '<font size=12>Circumference: <br /></font>'
-
 		ptext = ptext + '<font size=12>Hip Circ (cm):%s <br /></font>' % str(person.hipCirc)
-
 		ptext = ptext + '<font size=12>Waist Circ (cm):%s <br /></font>' % str(person.waistCirc)
-
 		ptext = ptext + '<font size=12>Arm Circ (cm):%s <br /></font>' % str(person.armCirc)
-
 		ptext = ptext + '<font size=12>Thigh Circ (cm):%s <br /></font>' % str(person.thighCirc)
 		Story.append(Paragraph(ptext, styles["Justify"]))
 
