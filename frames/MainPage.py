@@ -435,8 +435,6 @@ class MainPage(tk.Frame):
 
 
    def saveData(self, person):
-       print("Saving new user with name " + str(self.nameText.get(1.0, tk.END)))
-
        self.controller.person.name = self.nameText.get(1.0, tk.END).strip()
        #self.controller.person.testDate = datetime.strptime(self.testDateText.get(1.0, tk.END).strip(), '%m/%d/%Y')
        self.controller.person.testDate = self.testDateText.get(1.0, tk.END).strip()

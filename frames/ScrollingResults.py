@@ -10,6 +10,7 @@ from buttons.QuitButton import QuitButton
 from Person import Person
 
 from Database.DB import insertPerson
+from Database.DB import updatePerson
 
 from resultsFrames.BMIResultFrame import BMIResultFrame
 from resultsFrames.CircumferenceResultFrame import CircumferenceResultFrame
@@ -43,11 +44,15 @@ class ScrollingResults(tk.Frame):
 
 	def savePerson(self, alertObject):
 		try:
+		#if getattr(self.controller.person, "dbID") != "":
+			print("ID: " + str(self.controller.person.dbID))
 			dbID = getattr(self.controller.person, "dbID")
-			alertObject["text"] = "Unable to save edited person"
+			updatePerson(self.controller.person)
+			alertObject["text"] = "Updated person successfully"
 			return
 			# update entry instead of adding new person     
 		except:
+		#else:
 			insertPerson(self.controller.person)
 			alertObject["text"] = "Saved person successfully"
 

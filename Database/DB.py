@@ -53,6 +53,32 @@ def getInsertPersonString(person):
 	statement.append(")")
 	return "".join(statement)
 
+def getUpdatePersonString(person):
+	statement = list()
+	attribList = Person().getAttributes()
+	statement.append("UPDATE PEOPLE")
+	statement.append(" set ")
+	for i in attribList:
+		# get list of framesChecked as a string if 
+		# thats the attribute we're adding
+		statement.append(i)
+		statement.append(" = ")
+		if i.lower() == "frameschecked":
+			statement.append('\'')
+			statement.append(person.getFramesCheckedString())
+			statement.append('\'')
+			statement.append(",")
+		else:
+			statement.append('\'')
+			statement.append(getattr(person, i))
+			statement.append('\'')
+			statement.append(",")
+	del statement[len(statement)-1]
+
+	statement.append(" where ID=")
+	statement.append(str(person.dbID))
+	return "".join(statement)
+
 def createDB():
 	conn = sqlite3.connect('people.db')
 	print("Opened database successfully")
@@ -70,6 +96,15 @@ def insertPerson(person):
 	conn.close()
 
 	print("inserted new person: " + str(person.name))
+
+def updatePerson(person):
+	conn = sqlite3.connect('people.db')
+	if person.name.strip() == "":
+		raise Exception("Tried to save person with no name to DB")
+	conn.execute(getUpdatePersonString(person))
+	conn.commit()
+	conn.close()
+
 
 # Returns a list of all people object in DB
 def getPeople():

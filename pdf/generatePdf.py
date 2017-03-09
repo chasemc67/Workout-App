@@ -60,7 +60,7 @@ def generatePdfForPerson(person):
 		Story.append(Paragraph(ptext, styles["Justify"]))
 		Story.append(Spacer(1, 12))
 
-    if "SvnSiteSkinfold" in person.framesChecked:
+	if "SvnSiteSkinfold" in person.framesChecked:
 		ptext = '<font size=12>Seven Site Skinfold: <br /></font>'
 
 		ptext = ptext + '<font size=12>Body Density: %s <br /></font>' % str(person.getSevenSiteDensity())
@@ -77,8 +77,8 @@ def generatePdfForPerson(person):
 		Story.append(Paragraph(ptext, styles["Justify"]))
 
 		Story.append(Spacer(1, 12))
-		
-    if "ModAst" in person.framesChecked:
+
+	if "ModAst" in person.framesChecked:
 		ptext = '<font size=12>Modified Astrand Cycle Test: <br /></font>'
 
 		ptext = ptext + '<font size=12>VO2max(ml/kg/min): %s <br /></font>' % str(person.modAstAerobic)
@@ -86,7 +86,7 @@ def generatePdfForPerson(person):
 
 		Story.append(Spacer(1, 12))
 
-    if "Ebelling" in person.framesChecked:
+	if "Ebelling" in person.framesChecked:
 		ptext = '<font size=12>Ebelling Treadmill Test: <br /></font>'
 
 		ptext = ptext + '<font size=12>VO2max (ml/kg/min): %s <br /></font>' % str(person.getEbellingAerobic())
@@ -102,7 +102,7 @@ def generatePdfForPerson(person):
 
 		Story.append(Spacer(1, 12))
 
-    if "MBtoss" in person.framesChecked:
+	if "MBtoss" in person.framesChecked:
 		ptext = '<font size=12>Med. Ball Toss Distance(cm): %s</font>' % str(person.seatMBDist)
 		Story.append(Paragraph(ptext, styles["Justify"]))
 		Story.append(Spacer(1, 12))
@@ -119,7 +119,7 @@ def generatePdfForPerson(person):
 
 		Story.append(Spacer(1, 12))
 
-    if "RMtest" in person.framesChecked:
+	if "RMtest" in person.framesChecked:
 		ptext = '<font size=12>1 Rep Max (Tested): <br /></font>'
 
 		if (person.RMTestExA.strip() != "" and person.RMTestExAWeight.strip() != ""):
@@ -177,7 +177,7 @@ def generatePdfForPerson(person):
 		Story.append(Paragraph(ptext, styles["Justify"]))
 		Story.append(Spacer(1, 12))
 
-    if "FlexTests" in person.framesChecked:
+	if "FlexTests" in person.framesChecked:
 		ptext = '<font size=12>Sit & Reach Distance(cm): %s</font>' % str(person.sitReachDist)
 		Story.append(Paragraph(ptext, styles["Justify"]))
 		Story.append(Spacer(1, 12))
@@ -201,12 +201,12 @@ def generatePdfForPerson(person):
 		Story.append(Paragraph(ptext, styles["Justify"]))
 		Story.append(Spacer(1, 12))
 
-    if "WallSlide" in person.framesChecked:
+	if "WallSlide" in person.framesChecked:
 		ptext = '<font size=12> Wall Slide Assessment Rating(0-3):%s</font>' % str(person.wallSlideRate)
 		Story.append(Paragraph(ptext, styles["Justify"]))
 		Story.append(Spacer(1, 12))
 
-    if "HipHinge" in person.framesChecked:
+	if "HipHinge" in person.framesChecked:
 		ptext = '<font size=12>Hip Hinge Assessment Rating(0-3): %s</font>' % str(person.hipHingeRate)
 		Story.append(Paragraph(ptext, styles["Justify"]))
 		Story.append(Spacer(1, 12))
