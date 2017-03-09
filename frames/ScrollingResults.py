@@ -45,7 +45,6 @@ class ScrollingResults(tk.Frame):
 	def savePerson(self, alertObject):
 		try:
 		#if getattr(self.controller.person, "dbID") != "":
-			print("ID: " + str(self.controller.person.dbID))
 			dbID = getattr(self.controller.person, "dbID")
 			updatePerson(self.controller.person)
 			alertObject["text"] = "Updated person successfully"
