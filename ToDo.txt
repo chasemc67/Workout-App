@@ -18,12 +18,11 @@ ToDO:
 	[+] Fixed bp data entry stuff
 	[+] Fix seven site skin fold stuff
 	[+] Toasts on save and print button presses
+	[+] Update existing users when saving  
 	[ ] Search by name and by date in DB view
 	 validations
-	[ ] Update existing users when saving  
 	[ ] Hard code page size (or at least width) so scrolling
 		data entry page doesn't look so weird
-	
 	[ ] Should back button save data?
 	[ ] OS hooks for form printing
 	[ ] Make PDF Prettier	
