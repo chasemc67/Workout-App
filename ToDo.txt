@@ -29,7 +29,6 @@ ToDO:
 	[ ] Make PDF Prettier	
 	[ ] Package with pynsist https://github.com/takluyver/pynsist
 
-
 Meg:
-[ ] in generatePDF, try to make the boxes pretter
-[ ] change styles to Justify
+[+] in generatePDF, try to make the boxes pretter
+[+] change styles to Justify
