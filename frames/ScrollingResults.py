@@ -40,6 +40,9 @@ from frames.ScrollWindow import ScrollWindow
 
 from pdf.generatePdf import *
 
+import os as os
+import sys, subprocess
+
 class ScrollingResults(tk.Frame):
 
 	def savePerson(self, alertObject):
@@ -57,6 +60,10 @@ class ScrollingResults(tk.Frame):
 
 	def printPerson(self):
 		generatePdfForPerson(self.controller.person)
+		if sys.platform == "darwin":
+			subprocess.call(['open', 'form.pdf'])
+		else:
+			os.startfile('form.pdf', 'open')
 
 	def __init__(self, parent, controller):
 		tk.Frame.__init__(self, parent)
