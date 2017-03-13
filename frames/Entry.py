@@ -41,7 +41,8 @@ class Entry(tk.Frame):
       
 
    def loadData(self, person):
-      self.people = DB.getPeople()
+      self.people = DB.getPeople(2)
+      self.people.sort(key=lambda x: x.dbID, reverse=True)
 
       self.listbox.delete(0, tk.END)
 

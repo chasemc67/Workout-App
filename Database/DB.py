@@ -107,10 +107,14 @@ def updatePerson(person):
 
 
 # Returns a list of all people object in DB
-def getPeople():
+# Limit of 0 returns all entries
+def getPeople(limit=0):
 	people = list()
 	conn = sqlite3.connect('people.db')
-	cursor = conn.execute("SELECT * from PEOPLE")
+	if limit > 0:
+		cursor = conn.execute("SELECT * from ( SELECT * FROM PEOPLE ORDER BY id DESC LIMIT %i ) sub ORDER BY id ASC" % limit)
+	else:
+		cursor = conn.execute("SELECT * from PEOPLE")
 	
 	for row in cursor:
 		people.append(loadPersonFromDBSelect(row))
