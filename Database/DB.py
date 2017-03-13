@@ -92,6 +92,10 @@ def insertPerson(person):
 	if person.name.strip() == "":
 		raise Exception("Tried to save person with no name to DB")
 	conn.execute(getInsertPersonString(person))
+	# Uncomment this to get out a sample DB insert statement printed to console
+	#print("======")
+	#print(getInsertPersonString(person))
+	#print("======")
 	conn.commit()
 	conn.close()
 

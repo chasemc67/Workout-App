@@ -1,5 +1,8 @@
 #http://stackoverflow.com/questions/15672552/python-tkinter-listbox-get-active-method
 
+# Entry page to the application
+# This is the window with the DB view, and the New/Edit person buttons
+
 import tkinter as tk
 from buttons.NextButton import NextButton
 from buttons.QuitButton import QuitButton
@@ -20,19 +23,28 @@ class Entry(tk.Frame):
       tk.Frame.__init__(self, parent)
       self.controller = controller
 
-      self.listbox = tk.Listbox(self)
+      self.listFrame = tk.Frame(self)
+      self.scrollBar = tk.Scrollbar(self.listFrame, orient=tk.VERTICAL)
+      self.listbox = tk.Listbox(self.listFrame, yscrollcommand=self.scrollBar.set)
+      self.scrollBar.config(command=self.listbox.yview)
+      self.scrollBar.pack(side=tk.RIGHT, fill=tk.Y)
+      self.listbox['width'] = 30
       self.listbox.bind('<<ListboxSelect>>', self.select)
-
-      self.listbox.grid(row=0, column=0)
+      #self.listbox.grid(row=0, column=0)
+      self.listbox.pack()
       #self.listbox.pack(fill=BOTH, expand=1)
+      self.listFrame.pack()
 
-      self.NewPerson = tk.Button(self)
+      self.buttonFrame = tk.Frame(self)
+      self.buttonFrame.pack()
+
+      self.NewPerson = tk.Button(self.buttonFrame)
       self.NewPerson['text'] = "New Person"
       self.NewPerson['fg'] = 'black'
       self.NewPerson['command'] = self.createNewPerson
       self.NewPerson.grid(row=1, column=0)
 
-      self.EditPerson = tk.Button(self)
+      self.EditPerson = tk.Button(self.buttonFrame)
       self.EditPerson['text'] = "Edit Selected"
       self.EditPerson['fg'] = 'black'
       self.EditPerson['command'] = lambda: controller.start_main()
@@ -47,4 +59,4 @@ class Entry(tk.Frame):
       self.listbox.delete(0, tk.END)
 
       for person in self.people:
-            self.listbox.insert(tk.END, person.name)
+            self.listbox.insert(tk.END, (person.testDate + "          " + person.name))
