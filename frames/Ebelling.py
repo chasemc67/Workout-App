@@ -1,7 +1,7 @@
 import tkinter as tk
-from buttons.NextButton import NextButton
-from buttons.BackButton import BackButton
-from buttons.QuitButton import QuitButton
+from customWidgets.NextButton import NextButton
+from customWidgets.BackButton import BackButton
+from customWidgets.QuitButton import QuitButton
 
 class Ebelling(tk.Frame):
    def focus_next_window(self, event):
@@ -40,51 +40,57 @@ class Ebelling(tk.Frame):
        tk.Frame.__init__(self, parent)
        self.controller = controller
 
-       self.Ebelling = tk.Label(self)
+       self.centerFrame = tk.Frame(self)
+
+       self.Ebelling = tk.Label(self.centerFrame)
        self.Ebelling["text"] = "Ebbeling Treadmill Test"
        self.Ebelling.grid(row=0, column=0)
 
-       self.EbellingWU = tk.Label(self)
+       self.EbellingWU = tk.Label(self.centerFrame)
        self.EbellingWU["text"] = "Warm Up Speed"
        self.EbellingWU.grid(row=1, column=0)
 
-       self.EbellingWUText = tk.Text(self)
+       self.EbellingWUText = tk.Text(self.centerFrame)
        self.EbellingWUText["height"] = 1
        self.EbellingWUText["width"] = 5
        self.EbellingWUText.bind("<Tab>", self.focus_next_window)
        self.EbellingWUText.bind("<Shift-Tab>", self.focus_last_window)
        self.EbellingWUText.grid(row=1, column=1)
 
-       self.EbellingWork = tk.Label(self)
+       self.EbellingWork = tk.Label(self.centerFrame)
        self.EbellingWork["text"] = "Workload Speed"
        self.EbellingWork.grid(row=2, column=0)
 
-       self.EbellingWorkText = tk.Text(self)
+       self.EbellingWorkText = tk.Text(self.centerFrame)
        self.EbellingWorkText["height"] = 1
        self.EbellingWorkText["width"] = 5
        self.EbellingWorkText.bind("<Tab>", self.focus_next_window)
        self.EbellingWorkText.bind("<Shift-Tab>", self.focus_last_window)
        self.EbellingWorkText.grid(row=2, column=1)
 
-       self.EbellingHR = tk.Label(self)
+       self.EbellingHR = tk.Label(self.centerFrame)
        self.EbellingHR["text"] = "Average HR"
        self.EbellingHR.grid(row=3, column=0)
 
-       self.EbellingHRText = tk.Text(self)
+       self.EbellingHRText = tk.Text(self.centerFrame)
        self.EbellingHRText["height"] = 1
        self.EbellingHRText["width"] = 5
        self.EbellingHRText.bind("<Tab>", self.focus_next_window)
        self.EbellingHRText.bind("<Shift-Tab>", self.focus_last_window)
        self.EbellingHRText.grid(row=3, column=1)
 
-       self.Next = NextButton(self, controller, self.saveData, self.validateInput)
-       self.Next.grid(row=4, column=0)
+       self.centerFrame.pack()
 
-       self.Back = BackButton(self, controller)
-       self.Back.grid(row=4, column=1)
+       self.buttonFrame = tk.Frame(self)
+       self.Next = NextButton(self.buttonFrame, controller, self.saveData, self.validateInput)
+       self.Next.grid(row=0, column=0)
 
-       self.Quit = QuitButton(self, controller)
-       self.Quit.grid(row=4, column=2)
+       self.Back = BackButton(self.buttonFrame, controller)
+       self.Back.grid(row=0, column=1)
+
+       self.Quit = QuitButton(self.buttonFrame, controller)
+       self.Quit.grid(row=0, column=2)
+       self.buttonFrame.pack()
 
    def loadData(self, person):
 

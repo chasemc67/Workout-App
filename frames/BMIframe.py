@@ -1,7 +1,7 @@
 import tkinter as tk
-from buttons.NextButton import NextButton
-from buttons.BackButton import BackButton
-from buttons.QuitButton import QuitButton
+from customWidgets.NextButton import NextButton
+from customWidgets.BackButton import BackButton
+from customWidgets.QuitButton import QuitButton
 
 class BMIframe(tk.Frame):
 

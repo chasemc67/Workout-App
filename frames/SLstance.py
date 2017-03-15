@@ -1,8 +1,8 @@
 import tkinter as tk
 
-from buttons.NextButton import NextButton
-from buttons.BackButton import BackButton
-from buttons.QuitButton import QuitButton
+from customWidgets.NextButton import NextButton
+from customWidgets.BackButton import BackButton
+from customWidgets.QuitButton import QuitButton
 
 class SLstance(tk.Frame):
 
@@ -50,62 +50,68 @@ class SLstance(tk.Frame):
        tk.Frame.__init__(self, parent)
        self.controller = controller
 
-       self.SLStance = tk.Label(self)
+       self.centerFrame = tk.Frame(self)
+
+       self.SLStance = tk.Label(self.centerFrame)
        self.SLStance["text"] = "Single Leg Stance Test"
        self.SLStance.grid(row=0, column=0)
 
-       self.SLOpenLeft = tk.Label(self)
+       self.SLOpenLeft = tk.Label(self.centerFrame)
        self.SLOpenLeft["text"] = "Eyes Open Left(sec.): "
        self.SLOpenLeft.grid(row=1, column=0)
 
-       self.SLOpenLeftText = tk.Text(self)
+       self.SLOpenLeftText = tk.Text(self.centerFrame)
        self.SLOpenLeftText["height"] = 1
        self.SLOpenLeftText["width"] = 5
        self.SLOpenLeftText.bind("<Tab>", self.focus_next_window)
        self.SLOpenLeftText.bind("<Shift-Tab>", self.focus_last_window)
        self.SLOpenLeftText.grid(row=1, column=1)
 
-       self.SLOpenRight = tk.Label(self)
+       self.SLOpenRight = tk.Label(self.centerFrame)
        self.SLOpenRight["text"] = "Eyes Open Right(sec.): "
        self.SLOpenRight.grid(row=1, column=2)
 
-       self.SLOpenRightText = tk.Text(self)
+       self.SLOpenRightText = tk.Text(self.centerFrame)
        self.SLOpenRightText["height"] = 1
        self.SLOpenRightText["width"] = 5
        self.SLOpenRightText.bind("<Tab>", self.focus_next_window)
        self.SLOpenRightText.bind("<Shift-Tab>", self.focus_last_window)
        self.SLOpenRightText.grid(row=1, column=3)
 
-       self.SLCloseLeft = tk.Label(self)
+       self.SLCloseLeft = tk.Label(self.centerFrame)
        self.SLCloseLeft["text"] = "Eyes Closed Left(sec.): "
        self.SLCloseLeft.grid(row=2, column=0)
 
-       self.SLCloseLeftText = tk.Text(self)
+       self.SLCloseLeftText = tk.Text(self.centerFrame)
        self.SLCloseLeftText["height"] = 1
        self.SLCloseLeftText["width"] = 5
        self.SLCloseLeftText.bind("<Tab>", self.focus_next_window)
        self.SLCloseLeftText.bind("<Shift-Tab>", self.focus_last_window)
        self.SLCloseLeftText.grid(row=2, column=1)
 
-       self.SLCloseRight = tk.Label(self)
+       self.SLCloseRight = tk.Label(self.centerFrame)
        self.SLCloseRight["text"] = "Eyes Closed Right(sec.): "
        self.SLCloseRight.grid(row=2, column=2)
 
-       self.SLCloseRightText = tk.Text(self)
+       self.SLCloseRightText = tk.Text(self.centerFrame)
        self.SLCloseRightText["height"] = 1
        self.SLCloseRightText["width"] = 5
        self.SLCloseRightText.bind("<Tab>", self.focus_next_window)
        self.SLCloseRightText.bind("<Shift-Tab>", self.focus_last_window)
        self.SLCloseRightText.grid(row=2, column=3)
 
-       self.Next = NextButton(self, controller, self.saveData, self.validateInput)
-       self.Next.grid(row=3, column=0)
+       self.centerFrame.pack()
 
-       self.Back = BackButton(self, controller)
-       self.Back.grid(row=3, column=1)
+       self.buttonFrame = tk.Frame(self)
+       self.Next = NextButton(self.buttonFrame, controller, self.saveData, self.validateInput)
+       self.Next.grid(row=0, column=0)
 
-       self.Quit = QuitButton(self, controller)
-       self.Quit.grid(row=3, column=2)
+       self.Back = BackButton(self.buttonFrame, controller)
+       self.Back.grid(row=0, column=1)
+
+       self.Quit = QuitButton(self.buttonFrame, controller)
+       self.Quit.grid(row=0, column=2)
+       self.buttonFrame.pack()
 
    def loadData(self, person):
 

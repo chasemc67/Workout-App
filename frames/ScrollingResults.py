@@ -5,8 +5,6 @@
 # to checked boxes. 
 
 import tkinter as tk
-#from buttons.NextButton import NextButton
-from buttons.QuitButton import QuitButton
 from Person import Person
 
 from Database.DB import insertPerson
@@ -36,7 +34,8 @@ from resultsFrames.VertJumpResultFrame import VertJumpResultFrame
 from resultsFrames.WallSitResultFrame import WallSitResultFrame
 from resultsFrames.WallSlideResultFrame import WallSlideResultFrame
 
-from frames.ScrollWindow import ScrollWindow
+from customWidgets.ScrollWindow import ScrollWindow
+from customWidgets.QuitButton import QuitButton
 
 from pdf.generatePdf import *
 

@@ -1,8 +1,8 @@
 import tkinter as tk
 
-from buttons.NextButton import NextButton
-from buttons.BackButton import BackButton
-from buttons.QuitButton import QuitButton
+from customWidgets.NextButton import NextButton
+from customWidgets.BackButton import BackButton
+from customWidgets.QuitButton import QuitButton
 
 class MBtoss(tk.Frame):
 
@@ -28,29 +28,35 @@ class MBtoss(tk.Frame):
        tk.Frame.__init__(self, parent)
        self.controller = controller
 
-       self.SeatMB = tk.Label(self)
+       self.centerFrame = tk.Frame(self)
+
+       self.SeatMB = tk.Label(self.centerFrame)
        self.SeatMB["text"] = "Seated Med. Ball Toss"
        self.SeatMB.grid(row=0, column=0)
 
-       self.SeatMBDist = tk.Label(self)
+       self.SeatMBDist = tk.Label(self.centerFrame)
        self.SeatMBDist["text"] = "Max. Distance(cm): "
        self.SeatMBDist.grid(row=1, column=0)
 
-       self.SeatMBDistText = tk.Text(self)
+       self.SeatMBDistText = tk.Text(self.centerFrame)
        self.SeatMBDistText["height"] = 1
        self.SeatMBDistText["width"] = 5
        self.SeatMBDistText.bind("<Tab>", self.focus_next_window)
        self.SeatMBDistText.bind("<Shift-Tab>", self.focus_last_window)
        self.SeatMBDistText.grid(row=1, column=1)
 
-       self.Next = NextButton(self, controller, self.saveData, self.validateInput)
-       self.Next.grid(row=2, column=0)
+       self.centerFrame.pack()
 
-       self.Back = BackButton(self, controller)
-       self.Back.grid(row=2, column=1)
+       self.buttonFrame = tk.Frame(self)
+       self.Next = NextButton(self.buttonFrame, controller, self.saveData, self.validateInput)
+       self.Next.grid(row=0, column=0)
 
-       self.Quit = QuitButton(self, controller)
-       self.Quit.grid(row=2, column=2)
+       self.Back = BackButton(self.buttonFrame, controller)
+       self.Back.grid(row=0, column=1)
+
+       self.Quit = QuitButton(self.buttonFrame, controller)
+       self.Quit.grid(row=0, column=2)
+       self.buttonFrame.pack()
 
    def loadData(self, person):
 

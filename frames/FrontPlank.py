@@ -1,7 +1,7 @@
 import tkinter as tk
-from buttons.NextButton import NextButton
-from buttons.BackButton import BackButton
-from buttons.QuitButton import QuitButton
+from customWidgets.NextButton import NextButton
+from customWidgets.BackButton import BackButton
+from customWidgets.QuitButton import QuitButton
 
 class FrontPlank(tk.Frame):
    def focus_next_window(self, event):
@@ -26,29 +26,35 @@ class FrontPlank(tk.Frame):
        tk.Frame.__init__(self, parent)
        self.controller = controller
 
-       self.FrPlank = tk.Label(self)
+       self.centerFrame = tk.Frame(self)
+
+       self.FrPlank = tk.Label(self.centerFrame)
        self.FrPlank["text"] = "Front Plank"
        self.FrPlank.grid(row=0, column=0)
 
-       self.FrPlankRate = tk.Label(self)
+       self.FrPlankRate = tk.Label(self.centerFrame)
        self.FrPlankRate["text"] = "Rating(0-3): "
        self.FrPlankRate.grid(row=1, column=0)
 
-       self.FrPlankRateText = tk.Text(self)
+       self.FrPlankRateText = tk.Text(self.centerFrame)
        self.FrPlankRateText["height"] = 1
        self.FrPlankRateText["width"] = 5
        self.FrPlankRateText.bind("<Tab>", self.focus_next_window)
        self.FrPlankRateText.bind("<Shift-Tab>", self.focus_last_window)
        self.FrPlankRateText.grid(row=1, column=1)
 
-       self.Next = NextButton(self, controller, self.saveData, self.validateInput)
-       self.Next.grid(row=2, column=0)
+       self.centerFrame.pack()
 
-       self.Back = BackButton(self, controller)
-       self.Back.grid(row=2, column=1)
+       self.buttonFrame = tk.Frame(self)
+       self.Next = NextButton(self.buttonFrame, controller, self.saveData, self.validateInput)
+       self.Next.grid(row=0, column=0)
 
-       self.Quit = QuitButton(self, controller)
-       self.Quit.grid(row=2, column=2)
+       self.Back = BackButton(self.buttonFrame, controller)
+       self.Back.grid(row=0, column=1)
+
+       self.Quit = QuitButton(self.buttonFrame, controller)
+       self.Quit.grid(row=0, column=2)
+       self.buttonFrame.pack()
 
    def loadData(self, person):
 

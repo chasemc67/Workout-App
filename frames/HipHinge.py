@@ -1,7 +1,7 @@
 import tkinter as tk
-from buttons.NextButton import NextButton
-from buttons.BackButton import BackButton
-from buttons.QuitButton import QuitButton
+from customWidgets.NextButton import NextButton
+from customWidgets.BackButton import BackButton
+from customWidgets.QuitButton import QuitButton
 
 class HipHinge(tk.Frame):
 
@@ -27,29 +27,35 @@ class HipHinge(tk.Frame):
        tk.Frame.__init__(self, parent)
        self.controller = controller
 
-       self.HipHinge = tk.Label(self)
+       self.centerFrame = tk.Frame(self)
+
+       self.HipHinge = tk.Label(self.centerFrame)
        self.HipHinge["text"] = "Hip Hinge"
        self.HipHinge.grid(row=0, column=0)
 
-       self.HipHingeRate = tk.Label(self)
+       self.HipHingeRate = tk.Label(self.centerFrame)
        self.HipHingeRate["text"] = "Rating(0-3): "
        self.HipHingeRate.grid(row=1, column=0)
 
-       self.HipHingeRateText = tk.Text(self)
+       self.HipHingeRateText = tk.Text(self.centerFrame)
        self.HipHingeRateText["height"] = 1
        self.HipHingeRateText["width"] = 5
        self.HipHingeRateText.bind("<Tab>", self.focus_next_window)
        self.HipHingeRateText.bind("<Shift-Tab>", self.focus_last_window)
        self.HipHingeRateText.grid(row=1, column=1)
 
-       self.Next = NextButton(self, controller, self.saveData, self.validateInput)
-       self.Next.grid(row=2, column=0)
+       self.centerFrame.pack()
 
-       self.Back = BackButton(self, controller)
-       self.Back.grid(row=2, column=1)
+       self.buttonFrame = tk.Frame(self)
+       self.Next = NextButton(self.buttonFrame, controller, self.saveData, self.validateInput)
+       self.Next.grid(row=0, column=0)
 
-       self.Quit = QuitButton(self, controller)
-       self.Quit.grid(row=2, column=2)
+       self.Back = BackButton(self.buttonFrame, controller)
+       self.Back.grid(row=0, column=1)
+
+       self.Quit = QuitButton(self.buttonFrame, controller)
+       self.Quit.grid(row=0, column=2)
+       self.buttonFrame.pack()
 
    def loadData(self, person):
 

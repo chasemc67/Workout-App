@@ -4,8 +4,9 @@
 # This is the window with the DB view, and the New/Edit person buttons
 
 import tkinter as tk
-from buttons.NextButton import NextButton
-from buttons.QuitButton import QuitButton
+from customWidgets.NextButton import NextButton
+from customWidgets.BackButton import BackButton
+from customWidgets.QuitButton import QuitButton
 from Person import Person
 
 import Database.DB as DB
@@ -23,6 +24,8 @@ class Entry(tk.Frame):
       tk.Frame.__init__(self, parent)
       self.controller = controller
 
+      self.centerFrame = tk.Frame(self)
+
       self.listFrame = tk.Frame(self)
       self.scrollBar = tk.Scrollbar(self.listFrame, orient=tk.VERTICAL)
       self.listbox = tk.Listbox(self.listFrame, yscrollcommand=self.scrollBar.set)
@@ -37,6 +40,8 @@ class Entry(tk.Frame):
 
       self.buttonFrame = tk.Frame(self)
       self.buttonFrame.pack()
+
+      self.centerFrame.pack()
 
       self.NewPerson = tk.Button(self.buttonFrame)
       self.NewPerson['text'] = "New Person"

@@ -1,8 +1,8 @@
 import tkinter as tk
 
-from buttons.NextButton import NextButton
-from buttons.BackButton import BackButton
-from buttons.QuitButton import QuitButton
+from customWidgets.NextButton import NextButton
+from customWidgets.BackButton import BackButton
+from customWidgets.QuitButton import QuitButton
 
 class SvnSiteSkinfold(tk.Frame):
 
@@ -72,95 +72,101 @@ class SvnSiteSkinfold(tk.Frame):
        tk.Frame.__init__(self, parent)
        self.controller = controller
 
-       self.SvnSiteSkFold = tk.Label(self)
+       self.centerFrame = tk.Frame(self)
+
+       self.SvnSiteSkFold = tk.Label(self.centerFrame)
        self.SvnSiteSkFold["text"] = "7-Site Skin Folds"
        self.SvnSiteSkFold.grid(row=0, column=0)
 
-       self.SvnSiteChest = tk.Label(self)
+       self.SvnSiteChest = tk.Label(self.centerFrame)
        self.SvnSiteChest["text"] = "Chest(mm): "
        self.SvnSiteChest.grid(row=1, column=0)
 
-       self.SvnSiteChestText = tk.Text(self)
+       self.SvnSiteChestText = tk.Text(self.centerFrame)
        self.SvnSiteChestText["height"] = 1
        self.SvnSiteChestText["width"] = 5
        self.SvnSiteChestText.bind("<Tab>", self.focus_next_window)
        self.SvnSiteChestText.bind("<Shift-Tab>", self.focus_last_window)
        self.SvnSiteChestText.grid(row=1, column=1)
 
-       self.SvnSiteMidAx = tk.Label(self)
+       self.SvnSiteMidAx = tk.Label(self.centerFrame)
        self.SvnSiteMidAx["text"] = "Mid-Axillary(mm): "
        self.SvnSiteMidAx.grid(row=1, column=2)
 
-       self.SvnSiteMidAxText = tk.Text(self)
+       self.SvnSiteMidAxText = tk.Text(self.centerFrame)
        self.SvnSiteMidAxText["height"] = 1
        self.SvnSiteMidAxText["width"] = 5
        self.SvnSiteMidAxText.bind("<Tab>", self.focus_next_window)
        self.SvnSiteMidAxText.bind("<Shift-Tab>", self.focus_last_window)
        self.SvnSiteMidAxText.grid(row=1, column=3)
 
-       self.SvnSiteTri = tk.Label(self)
+       self.SvnSiteTri = tk.Label(self.centerFrame)
        self.SvnSiteTri["text"] = "Triceps(mm): "
        self.SvnSiteTri.grid(row=1, column=4)
 
-       self.SvnSiteTriText = tk.Text(self)
+       self.SvnSiteTriText = tk.Text(self.centerFrame)
        self.SvnSiteTriText["height"] = 1
        self.SvnSiteTriText["width"] = 5
        self.SvnSiteTriText.bind("<Tab>", self.focus_next_window)
        self.SvnSiteTriText.bind("<Shift-Tab>", self.focus_last_window)
        self.SvnSiteTriText.grid(row=1, column=5)
 
-       self.SvnSiteScap = tk.Label(self)
+       self.SvnSiteScap = tk.Label(self.centerFrame)
        self.SvnSiteScap["text"] = "Subscapular(mm): "
        self.SvnSiteScap.grid(row=1, column=6)
 
-       self.SvnSiteScapText = tk.Text(self)
+       self.SvnSiteScapText = tk.Text(self.centerFrame)
        self.SvnSiteScapText["height"] = 1
        self.SvnSiteScapText["width"] = 5
        self.SvnSiteScapText.bind("<Tab>", self.focus_next_window)
        self.SvnSiteScapText.bind("<Shift-Tab>", self.focus_last_window)
        self.SvnSiteScapText.grid(row=1, column=7)
 
-       self.SvnSiteSupra = tk.Label(self)
+       self.SvnSiteSupra = tk.Label(self.centerFrame)
        self.SvnSiteSupra["text"] = "Suprailiac(mm): "
        self.SvnSiteSupra.grid(row=1, column=8)
 
-       self.SvnSiteSupraText = tk.Text(self)
+       self.SvnSiteSupraText = tk.Text(self.centerFrame)
        self.SvnSiteSupraText["height"] = 1
        self.SvnSiteSupraText["width"] = 5
        self.SvnSiteSupraText.bind("<Tab>", self.focus_next_window)
        self.SvnSiteSupraText.bind("<Shift-Tab>", self.focus_last_window)
        self.SvnSiteSupraText.grid(row=1, column=9)
 
-       self.SvnSiteAb = tk.Label(self)
+       self.SvnSiteAb = tk.Label(self.centerFrame)
        self.SvnSiteAb["text"] = "Abdomen(mm): "
        self.SvnSiteAb.grid(row=1, column=10)
 
-       self.SvnSiteAbText = tk.Text(self)
+       self.SvnSiteAbText = tk.Text(self.centerFrame)
        self.SvnSiteAbText["height"] = 1
        self.SvnSiteAbText["width"] = 5
        self.SvnSiteAbText.bind("<Tab>", self.focus_next_window)
        self.SvnSiteAbText.bind("<Shift-Tab>", self.focus_last_window)
        self.SvnSiteAbText.grid(row=1, column=11)
 
-       self.SvnSiteThigh = tk.Label(self)
+       self.SvnSiteThigh = tk.Label(self.centerFrame)
        self.SvnSiteThigh["text"] = "Thigh(mm): "
        self.SvnSiteThigh.grid(row=1, column=12)
 
-       self.SvnSiteThighText = tk.Text(self)
+       self.SvnSiteThighText = tk.Text(self.centerFrame)
        self.SvnSiteThighText["height"] = 1
        self.SvnSiteThighText["width"] = 5
        self.SvnSiteThighText.bind("<Tab>", self.focus_next_window)
        self.SvnSiteThighText.bind("<Shift-Tab>", self.focus_last_window)
        self.SvnSiteThighText.grid(row=1, column=13)
 
-       self.Next = NextButton(self, controller, self.saveData, self.validateInput)
-       self.Next.grid(row=2, column=0)
+       self.centerFrame.pack()
 
-       self.Back = BackButton(self, controller)
-       self.Back.grid(row=2, column=1)
+       self.buttonFrame = tk.Frame(self)
+       self.Next = NextButton(self.buttonFrame, controller, self.saveData, self.validateInput)
+       self.Next.grid(row=0, column=0)
 
-       self.Quit = QuitButton(self, controller)
-       self.Quit.grid(row=2, column=2)
+       self.Back = BackButton(self.buttonFrame, controller)
+       self.Back.grid(row=0, column=1)
+
+       self.Quit = QuitButton(self.buttonFrame, controller)
+       self.Quit.grid(row=0, column=2)
+       self.buttonFrame.pack()
 
    def loadData(self, person):
 

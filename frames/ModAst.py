@@ -1,8 +1,8 @@
 import tkinter as tk
 
-from buttons.NextButton import NextButton
-from buttons.BackButton import BackButton
-from buttons.QuitButton import QuitButton
+from customWidgets.NextButton import NextButton
+from customWidgets.BackButton import BackButton
+from customWidgets.QuitButton import QuitButton
 
 class ModAst(tk.Frame):
 
@@ -50,62 +50,68 @@ class ModAst(tk.Frame):
        tk.Frame.__init__(self, parent)
        self.controller = controller
 
-       self.ModAst = tk.Label(self)
+       self.centerFrame = tk.Frame(self)
+
+       self.ModAst = tk.Label(self.centerFrame)
        self.ModAst["text"] = "Modified Astrand"
        self.ModAst.grid(row=1, column=0)
 
-       self.ModAstLoadA = tk.Label(self)
+       self.ModAstLoadA = tk.Label(self.centerFrame)
        self.ModAstLoadA["text"] = "Warm-Up Load(kp): "
        self.ModAstLoadA.grid(row=2, column=0)
 
-       self.ModAstLoadAText = tk.Text(self)
+       self.ModAstLoadAText = tk.Text(self.centerFrame)
        self.ModAstLoadAText["height"] = 1
        self.ModAstLoadAText["width"] = 5
        self.ModAstLoadAText.bind("<Tab>", self.focus_next_window)
        self.ModAstLoadAText.bind("<Shift-Tab>", self.focus_last_window)
        self.ModAstLoadAText.grid(row=2, column =1)
 
-       self.ModAstLoadB = tk.Label(self)
+       self.ModAstLoadB = tk.Label(self.centerFrame)
        self.ModAstLoadB["text"] = "Work Load(kp): "
        self.ModAstLoadB.grid(row=3, column=0)
 
-       self.ModAstLoadBText = tk.Text(self)
+       self.ModAstLoadBText = tk.Text(self.centerFrame)
        self.ModAstLoadBText["height"] = 1
        self.ModAstLoadBText["width"] = 5
        self.ModAstLoadBText.bind("<Tab>", self.focus_next_window)
        self.ModAstLoadBText.bind("<Shift-Tab>", self.focus_last_window)
        self.ModAstLoadBText.grid(row=3, column=1)
 
-       self.ModAstHR = tk.Label(self)
+       self.ModAstHR = tk.Label(self.centerFrame)
        self.ModAstHR["text"] = "Average HR(bpm): "
        self.ModAstHR.grid(row=3, column=2)
 
-       self.ModAstHRText = tk.Text(self)
+       self.ModAstHRText = tk.Text(self.centerFrame)
        self.ModAstHRText["height"] = 1
        self.ModAstHRText["width"] = 5
        self.ModAstHRText.bind("<Tab>", self.focus_next_window)
        self.ModAstHRText.bind("<Shift-Tab>", self.focus_last_window)
        self.ModAstHRText.grid(row=3, column=3)
 
-       self.ModAstCapacity = tk.Label(self)
+       self.ModAstCapacity = tk.Label(self.centerFrame)
        self.ModAstCapacity["text"] = "Est. VO2max(kg/ml/min): "
        self.ModAstCapacity.grid(row=4, column=0)
 
-       self.ModAstCapacityText = tk.Text(self)
+       self.ModAstCapacityText = tk.Text(self.centerFrame)
        self.ModAstCapacityText["height"] = 1
        self.ModAstCapacityText["width"] = 5
        self.ModAstCapacityText.bind("<Tab>", self.focus_next_window)
        self.ModAstCapacityText.bind("<Shift-Tab>", self.focus_last_window)
        self.ModAstCapacityText.grid(row=4, column=1)
 
-       self.Next = NextButton(self, controller, self.saveData, self.validateInput)
-       self.Next.grid(row=5, column=0)
+       self.centerFrame.pack()
 
-       self.Back = BackButton(self, controller)
-       self.Back.grid(row=5, column=1)
+       self.buttonFrame = tk.Frame(self)
+       self.Next = NextButton(self.buttonFrame, controller, self.saveData, self.validateInput)
+       self.Next.grid(row=0, column=0)
 
-       self.Quit = QuitButton(self, controller)
-       self.Quit.grid(row=5, column=2)
+       self.Back = BackButton(self.buttonFrame, controller)
+       self.Back.grid(row=0, column=1)
+
+       self.Quit = QuitButton(self.buttonFrame, controller)
+       self.Quit.grid(row=0, column=2)
+       self.buttonFrame.pack()
 
    def loadData(self, person):
 

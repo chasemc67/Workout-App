@@ -20,16 +20,28 @@ ToDO:
 	[+] Toasts on save and print button presses
 	[+] Update existing users when saving  
 	[+] OS hooks for form printing
-	[ ] Search by name and by date in DB view
+	[-] Search by name and by date in DB view
 	 validations
-	[ ] Add date to db view
-	[ ] Sort DB view by date
-	[ ] Grab only 100 newest entries to db (newest by entry time rather than actually sorting by test date?)
-	[ ] Hard code page size (or at least width) so scrolling
+	[+] Add date to db view
+	[+] Sort DB view by date
+	[+] Grab only 100 newest entries to db (newest by entry time rather than actually sorting by test date?)
+	[+] Hard code page size (or at least width) so scrolling
 		data entry page doesn't look so weird
-	[ ] Should back button save data?
+	[+] Center all test pages
+	[ ] Set min window size based on first page
+	
+	[ ] Back button a little jankey in general
+	[ ] FIx long decimals
+	[ ] Make back button save data?
 	[ ] Make PDF Prettier	
+	[ ] Add a little padding and logo to first page
+	[ ] Add a little padding and titles to pages
 	[ ] Package with pynsist https://github.com/takluyver/pynsist
+
+	Bugs
+	[ ] Back button breaks on first page
+	[ ] Create person with no checkboxes. Save them. edit them. next buttons doesnt work (should go straight to save screen)
+	[ ] Date of birth, height and blood pressure not clearing properly
 
 Meg:
 [+] in generatePDF, try to make the boxes pretter
@@ -37,9 +49,3 @@ Meg:
 
 
 
-Bugs
-[] Create person with no checkboxes. Save them. edit them. next buttons doesnt work (should go straight to save screen)
-
-[] Date of beirth, height and blood pressure not clearing properly
-
-[] Add delete button?

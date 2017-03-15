@@ -1,7 +1,7 @@
 import tkinter as tk
-from buttons.NextButton import NextButton
-from buttons.BackButton import BackButton
-from buttons.QuitButton import QuitButton
+from customWidgets.NextButton import NextButton
+from customWidgets.BackButton import BackButton
+from customWidgets.QuitButton import QuitButton
 
 class DeepSquat(tk.Frame):
 
@@ -27,29 +27,35 @@ class DeepSquat(tk.Frame):
        tk.Frame.__init__(self, parent)
        self.controller = controller
 
-       self.DeepSquat = tk.Label(self)
+       self.centerFrame = tk.Frame(self)
+
+       self.DeepSquat = tk.Label(self.centerFrame)
        self.DeepSquat["text"] = "Deep Squat"
        self.DeepSquat.grid(row=0, column=0)
 
-       self.DeepSquatRate = tk.Label(self)
+       self.DeepSquatRate = tk.Label(self.centerFrame)
        self.DeepSquatRate["text"] = "Rating(0-3): "
        self.DeepSquatRate.grid(row=1, column=0)
 
-       self.DeepSquatRateText = tk.Text(self)
+       self.DeepSquatRateText = tk.Text(self.centerFrame)
        self.DeepSquatRateText["height"] = 1
        self.DeepSquatRateText["width"] = 5
        self.DeepSquatRateText.bind("<Tab>", self.focus_next_window)
        self.DeepSquatRateText.bind("<Shift-Tab>", self.focus_last_window)
        self.DeepSquatRateText.grid(row=1, column=1)
 
-       self.Next = NextButton(self, controller, self.saveData, self.validateInput)
-       self.Next.grid(row=2, column=0)
+       self.centerFrame.pack()
 
-       self.Back = BackButton(self, controller)
-       self.Back.grid(row=2, column=1)
+       self.buttonFrame = tk.Frame(self)
+       self.Next = NextButton(self.buttonFrame, controller, self.saveData, self.validateInput)
+       self.Next.grid(row=0, column=0)
 
-       self.Quit = QuitButton(self, controller)
-       self.Quit.grid(row=2, column=2)
+       self.Back = BackButton(self.buttonFrame, controller)
+       self.Back.grid(row=0, column=1)
+
+       self.Quit = QuitButton(self.buttonFrame, controller)
+       self.Quit.grid(row=0, column=2)
+       self.buttonFrame.pack()
 
    def loadData(self, person):
 

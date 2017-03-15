@@ -1,7 +1,7 @@
 import tkinter as tk
-from buttons.NextButton import NextButton
-from buttons.BackButton import BackButton
-from buttons.QuitButton import QuitButton
+from customWidgets.NextButton import NextButton
+from customWidgets.BackButton import BackButton
+from customWidgets.QuitButton import QuitButton
 
 class Coopers(tk.Frame):
 
@@ -27,29 +27,37 @@ class Coopers(tk.Frame):
        tk.Frame.__init__(self, parent)
        self.controller = controller
 
-       self.Cooper = tk.Label(self)
+       self.centerFrame = tk.Frame(self)
+
+       self.Cooper = tk.Label(self.centerFrame)
        self.Cooper["text"] = "Coopers Run"
        self.Cooper.grid(row=0, column=0)
 
-       self.CooperDist = tk.Label(self)
+       self.CooperDist = tk.Label(self.centerFrame)
        self.CooperDist["text"] = "Distance(miles): "
        self.CooperDist.grid(row=1, column=0)
 
-       self.CooperDistText = tk.Text(self)
+       self.CooperDistText = tk.Text(self.centerFrame)
        self.CooperDistText["height"] = 1
        self.CooperDistText["width"] = 5
        self.CooperDistText.bind("<Tab>", self.focus_next_window)
        self.CooperDistText.bind("<Shift-Tab>", self.focus_last_window)
        self.CooperDistText.grid(row=1, column=1)
 
-       self.Next = NextButton(self, controller, self.saveData, self.validateInput)
-       self.Next.grid(row=2, column=0)
+       self.centerFrame.pack()
 
-       self.Back = BackButton(self, controller)
-       self.Back.grid(row=2, column=1)
+       self.buttonFrame = tk.Frame(self)
 
-       self.Quit = QuitButton(self, controller)
-       self.Quit.grid(row=2, column=2)
+       self.Next = NextButton(self.buttonFrame, controller, self.saveData, self.validateInput)
+       self.Next.grid(row=0, column=0)
+
+       self.Back = BackButton(self.buttonFrame, controller)
+       self.Back.grid(row=0, column=1)
+
+       self.Quit = QuitButton(self.buttonFrame, controller)
+       self.Quit.grid(row=0, column=2)
+
+       self.buttonFrame.pack()
 
    def loadData(self, person):
       self.CooperDistText.delete(1.0, tk.END)

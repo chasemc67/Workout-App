@@ -1,8 +1,8 @@
 import tkinter as tk
 
-from buttons.NextButton import NextButton
-from buttons.BackButton import BackButton
-from buttons.QuitButton import QuitButton
+from customWidgets.NextButton import NextButton
+from customWidgets.BackButton import BackButton
+from customWidgets.QuitButton import QuitButton
 
 class RMtest(tk.Frame):
 
@@ -49,62 +49,68 @@ class RMtest(tk.Frame):
        tk.Frame.__init__(self, parent)
        self.controller = controller
 
-       self.RepMaxTest = tk.Label(self)
+       self.centerFrame = tk.Frame(self)
+
+       self.RepMaxTest = tk.Label(self.centerFrame)
        self.RepMaxTest["text"] = "1 Rep Max.(Tested)"
        self.RepMaxTest.grid(row=0, column=0)
 
-       self.RMTestExA = tk.Label(self)
+       self.RMTestExA = tk.Label(self.centerFrame)
        self.RMTestExA["text"] = "Exercise: "
        self.RMTestExA.grid(row=1, column=0)
 
-       self.RMTestExAText = tk.Text(self)
+       self.RMTestExAText = tk.Text(self.centerFrame)
        self.RMTestExAText["height"] = 1
        self.RMTestExAText["width"] = 10
        self.RMTestExAText.bind("<Tab>", self.focus_next_window)
        self.RMTestExAText.bind("<Shift-Tab>", self.focus_last_window)
        self.RMTestExAText.grid(row=1, column=1)
 
-       self.RMTestExAWeight = tk.Label(self)
+       self.RMTestExAWeight = tk.Label(self.centerFrame)
        self.RMTestExAWeight["text"] = "1RM(kg): "
        self.RMTestExAWeight.grid(row=1, column=2)
 
-       self.RMTestExAWeightText = tk.Text(self)
+       self.RMTestExAWeightText = tk.Text(self.centerFrame)
        self.RMTestExAWeightText["height"] = 1
        self.RMTestExAWeightText["width"] = 10
        self.RMTestExAWeightText.bind("<Tab>", self.focus_next_window)
        self.RMTestExAWeightText.bind("<Shift-Tab>", self.focus_last_window)
        self.RMTestExAWeightText.grid(row=1, column=3)
 
-       self.RMTestExB = tk.Label(self)
+       self.RMTestExB = tk.Label(self.centerFrame)
        self.RMTestExB["text"] = "Exercise: "
        self.RMTestExB.grid(row=2, column=0)
 
-       self.RMTestExBText = tk.Text(self)
+       self.RMTestExBText = tk.Text(self.centerFrame)
        self.RMTestExBText["height"] = 1
        self.RMTestExBText["width"] = 10
        self.RMTestExBText.bind("<Tab>", self.focus_next_window)
        self.RMTestExBText.bind("<Shift-Tab>", self.focus_last_window)
        self.RMTestExBText.grid(row=2, column=1)
 
-       self.RMTestExBWeight = tk.Label(self)
+       self.RMTestExBWeight = tk.Label(self.centerFrame)
        self.RMTestExBWeight["text"] = "1RM(kg): "
        self.RMTestExBWeight.grid(row=2, column=2)
 
-       self.RMTestExBWeightText = tk.Text(self)
+       self.RMTestExBWeightText = tk.Text(self.centerFrame)
        self.RMTestExBWeightText["height"] = 1
        self.RMTestExBWeightText["width"] = 10
        self.RMTestExBWeightText.bind("<Tab>", self.focus_next_window)
        self.RMTestExBWeightText.bind("<Shift-Tab>", self.focus_last_window)
        self.RMTestExBWeightText.grid(row=2, column=3)
 
-       self.Next = NextButton(self, controller, self.saveData, self.validateInput)
-       self.Next.grid(row=3, column=0)
+       self.centerFrame.pack()
 
-       self.Back = BackButton(self, controller)
-       self.Back.grid(row=3, column=1)
+       self.buttonFrame = tk.Frame(self)
+       self.Next = NextButton(self.buttonFrame, controller, self.saveData, self.validateInput)
+       self.Next.grid(row=0, column=0)
 
-       self.Quit = QuitButton(self, controller)
-       self.Quit.grid(row=3, column=2)
+       self.Back = BackButton(self.buttonFrame, controller)
+       self.Back.grid(row=0, column=1)
+
+       self.Quit = QuitButton(self.buttonFrame, controller)
+       self.Quit.grid(row=0, column=2)
+       self.buttonFrame.pack()
 
    def loadData(self, person):
 

@@ -1,7 +1,8 @@
 import tkinter as tk
-from buttons.NextButton import NextButton
-from buttons.QuitButton import QuitButton
-from buttons.PlaceholderTextBox import PlaceholderTextBox
+from customWidgets.NextButton import NextButton
+from customWidgets.BackButton import BackButton
+from customWidgets.QuitButton import QuitButton
+from customWidgets.PlaceholderTextBox import PlaceholderTextBox
 import datetime
 
 class MainPage(tk.Frame):
