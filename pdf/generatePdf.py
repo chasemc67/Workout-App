@@ -9,22 +9,24 @@ from reportlab.lib.units import inch
 from reportlab.lib.colors import HexColor
 
 def generatePdfForPerson(person):
-	doc = SimpleDocTemplate('form.pdf', rightMarge=72, leftMargin=72, topMargin=72, bottomMargin=18)
+	doc = SimpleDocTemplate('form.pdf', rightMarge=72, leftMargin=72, topMargin=10, bottomMargin=18)
 	Story=[]
-	logo = 'pdf/macewan-university-logo.png'		
+	logo = 'pdf/MSWLogo.jpg'		
 
-	im = Image(logo, 3*inch, 1*inch)
+	im = Image(logo, 2*inch, 2*inch)
+	im.hAlign = 'LEFT'
 	Story.append(im)
 
 	styles = getSampleStyleSheet()
 	styles.add(ParagraphStyle(name='Justify', alignment=TA_JUSTIFY, borderWidth=1, borderColor=HexColor('#800020'), borderPadding=3))
-	ptext = '<font size=12>%s</font>' % person.testDate
-
-	Story.append(Paragraph(ptext, styles["Justify"]))
-	Story.append(Spacer(1, 12))
-	 
-	Story.append(Spacer(1, 12))
-	ptext = '<font size=12>Name: %s</font>' % person.name
+	ptext = ""
+	ptext = ptext + '<font size=12>Name: %s</font> <br />' % person.name
+	ptext = ptext + '<font size=12>Test Date: %s</font> <br />' % person.testDate
+	ptext = ptext + '<br />'
+	ptext = ptext + '<font size=12>Heart Rate: %s</font><br />' % person.restHR
+	ptext = ptext + '<font size=12>Blood Pressure: %s</font><br />' % person.restBP
+	ptext = ptext + '<font size=12>Height (cm): %s</font><br />' % person.height
+	ptext = ptext + '<font size=12>Weight (kg): %s</font><br />' % person.weight
 	Story.append(Paragraph(ptext, styles["Justify"]))
 	Story.append(Spacer(1, 12))
 	 
