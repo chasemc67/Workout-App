@@ -37,32 +37,7 @@ from resultsFrames.WallSlideResultFrame import WallSlideResultFrame
 from customWidgets.ScrollWindow import ScrollWindow
 from customWidgets.QuitButton import QuitButton
 
-from pdf.generatePdf import *
-
-import os as os
-import sys, subprocess
-
 class ScrollingResults(tk.Frame):
-
-	def savePerson(self, alertObject):
-		try:
-		#if getattr(self.controller.person, "dbID") != "":
-			dbID = getattr(self.controller.person, "dbID")
-			updatePerson(self.controller.person)
-			alertObject["text"] = "Updated person successfully"
-			return
-			# update entry instead of adding new person     
-		except:
-		#else:
-			insertPerson(self.controller.person)
-			alertObject["text"] = "Saved person successfully"
-
-	def printPerson(self):
-		generatePdfForPerson(self.controller.person)
-		if sys.platform == "darwin":
-			subprocess.call(['open', 'form.pdf'])
-		else:
-			os.startfile('form.pdf', 'open')
 
 	def __init__(self, parent, controller):
 		tk.Frame.__init__(self, parent)
@@ -224,13 +199,13 @@ class ScrollingResults(tk.Frame):
 		self.SaveButton = tk.Button(self.buttonFrame)
 		self.SaveButton['text'] = "Save"
 		self.SaveButton['fg'] = "black"
-		self.SaveButton['command'] = lambda: self.savePerson(self.saveAlert)
+		self.SaveButton['command'] = lambda: self.controller.save_person(self.saveAlert)
 		self.SaveButton.grid(row=1, column=0)
 
 		self.PrintButton = tk.Button(self.buttonFrame)
 		self.PrintButton['text'] = "Print"
 		self.PrintButton['fg'] = "black"
-		self.PrintButton['command'] = self.printPerson
+		self.PrintButton['command'] = self.controller.print_person
 		self.PrintButton.grid(row=1, column=1)
 
 		self.QuitButton = QuitButton(self.buttonFrame, self.controller)

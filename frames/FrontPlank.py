@@ -26,11 +26,14 @@ class FrontPlank(tk.Frame):
        tk.Frame.__init__(self, parent)
        self.controller = controller
 
-       self.centerFrame = tk.Frame(self)
-
-       self.FrPlank = tk.Label(self.centerFrame)
+       self.FrPlank = tk.Label(self)
        self.FrPlank["text"] = "Front Plank"
-       self.FrPlank.grid(row=0, column=0)
+       self.FrPlank.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
+
+       self.centerFrame = tk.Frame(self)
 
        self.FrPlankRate = tk.Label(self.centerFrame)
        self.FrPlankRate["text"] = "Rating(0-3): "
@@ -44,6 +47,9 @@ class FrontPlank(tk.Frame):
        self.FrPlankRateText.grid(row=1, column=1)
 
        self.centerFrame.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
 
        self.buttonFrame = tk.Frame(self)
        self.Next = NextButton(self.buttonFrame, controller, self.saveData, self.validateInput)

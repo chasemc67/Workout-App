@@ -36,11 +36,14 @@ class Rockport(tk.Frame):
        tk.Frame.__init__(self, parent)
        self.controller = controller
 
-       self.centerFrame = tk.Frame(self)
-
-       self.Rockport = tk.Label(self.centerFrame)
+       self.Rockport = tk.Label(self)
        self.Rockport["text"] = "Rockport 1-Mile Walk"
-       self.Rockport.grid(row=0, column=0)
+       self.Rockport.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
+
+       self.centerFrame = tk.Frame(self)
 
        self.RockportHR = tk.Label(self.centerFrame)
        self.RockportHR["text"] = "Post Test HR: "
@@ -65,6 +68,9 @@ class Rockport(tk.Frame):
        self.RockportTimeText.grid(row=2, column=1)
 
        self.centerFrame.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
 
        self.buttonFrame = tk.Frame(self)
        self.Next = NextButton(self.buttonFrame, controller, self.saveData, self.validateInput)

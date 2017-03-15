@@ -27,11 +27,14 @@ class Coopers(tk.Frame):
        tk.Frame.__init__(self, parent)
        self.controller = controller
 
-       self.centerFrame = tk.Frame(self)
-
-       self.Cooper = tk.Label(self.centerFrame)
+       self.Cooper = tk.Label(self)
        self.Cooper["text"] = "Coopers Run"
-       self.Cooper.grid(row=0, column=0)
+       self.Cooper.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
+
+       self.centerFrame = tk.Frame(self)
 
        self.CooperDist = tk.Label(self.centerFrame)
        self.CooperDist["text"] = "Distance(miles): "
@@ -45,6 +48,8 @@ class Coopers(tk.Frame):
        self.CooperDistText.grid(row=1, column=1)
 
        self.centerFrame.pack()
+       spacer = tk.Label(self)
+       spacer.pack()
 
        self.buttonFrame = tk.Frame(self)
 

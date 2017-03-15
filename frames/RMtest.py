@@ -49,11 +49,14 @@ class RMtest(tk.Frame):
        tk.Frame.__init__(self, parent)
        self.controller = controller
 
-       self.centerFrame = tk.Frame(self)
-
-       self.RepMaxTest = tk.Label(self.centerFrame)
+       self.RepMaxTest = tk.Label(self)
        self.RepMaxTest["text"] = "1 Rep Max.(Tested)"
-       self.RepMaxTest.grid(row=0, column=0)
+       self.RepMaxTest.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
+
+       self.centerFrame = tk.Frame(self)
 
        self.RMTestExA = tk.Label(self.centerFrame)
        self.RMTestExA["text"] = "Exercise: "
@@ -100,6 +103,9 @@ class RMtest(tk.Frame):
        self.RMTestExBWeightText.grid(row=2, column=3)
 
        self.centerFrame.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
 
        self.buttonFrame = tk.Frame(self)
        self.Next = NextButton(self.buttonFrame, controller, self.saveData, self.validateInput)

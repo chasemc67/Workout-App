@@ -50,11 +50,14 @@ class SLstance(tk.Frame):
        tk.Frame.__init__(self, parent)
        self.controller = controller
 
-       self.centerFrame = tk.Frame(self)
-
-       self.SLStance = tk.Label(self.centerFrame)
+       self.SLStance = tk.Label(self)
        self.SLStance["text"] = "Single Leg Stance Test"
-       self.SLStance.grid(row=0, column=0)
+       self.SLStance.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
+
+       self.centerFrame = tk.Frame(self)
 
        self.SLOpenLeft = tk.Label(self.centerFrame)
        self.SLOpenLeft["text"] = "Eyes Open Left(sec.): "
@@ -101,6 +104,9 @@ class SLstance(tk.Frame):
        self.SLCloseRightText.grid(row=2, column=3)
 
        self.centerFrame.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
 
        self.buttonFrame = tk.Frame(self)
        self.Next = NextButton(self.buttonFrame, controller, self.saveData, self.validateInput)

@@ -29,11 +29,14 @@ class PlankEnd(tk.Frame):
        tk.Frame.__init__(self, parent)
        self.controller = controller
 
-       self.centerFrame = tk.Frame(self)
-
-       self.Plank = tk.Label(self.centerFrame)
+       self.Plank = tk.Label(self)
        self.Plank["text"] = "Front Plank"
-       self.Plank.grid(row=0, column=0)
+       self.Plank.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
+
+       self.centerFrame = tk.Frame(self)
 
        self.PlankTime = tk.Label(self.centerFrame)
        self.PlankTime["text"] = "Time(sec.)"
@@ -47,6 +50,9 @@ class PlankEnd(tk.Frame):
        self.PlankTimeText.grid(row=1, column=1)
 
        self.centerFrame.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
 
        self.buttonFrame = tk.Frame(self)
        self.Next = NextButton(self.buttonFrame, controller, self.saveData, self.validateInput)

@@ -50,11 +50,14 @@ class ModAst(tk.Frame):
        tk.Frame.__init__(self, parent)
        self.controller = controller
 
-       self.centerFrame = tk.Frame(self)
-
-       self.ModAst = tk.Label(self.centerFrame)
+       self.ModAst = tk.Label(self)
        self.ModAst["text"] = "Modified Astrand"
-       self.ModAst.grid(row=1, column=0)
+       self.ModAst.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
+
+       self.centerFrame = tk.Frame(self)
 
        self.ModAstLoadA = tk.Label(self.centerFrame)
        self.ModAstLoadA["text"] = "Warm-Up Load(kp): "
@@ -101,6 +104,9 @@ class ModAst(tk.Frame):
        self.ModAstCapacityText.grid(row=4, column=1)
 
        self.centerFrame.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
 
        self.buttonFrame = tk.Frame(self)
        self.Next = NextButton(self.buttonFrame, controller, self.saveData, self.validateInput)

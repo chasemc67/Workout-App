@@ -40,11 +40,14 @@ class Ebelling(tk.Frame):
        tk.Frame.__init__(self, parent)
        self.controller = controller
 
-       self.centerFrame = tk.Frame(self)
-
-       self.Ebelling = tk.Label(self.centerFrame)
+       self.Ebelling = tk.Label(self)
        self.Ebelling["text"] = "Ebbeling Treadmill Test"
-       self.Ebelling.grid(row=0, column=0)
+       self.Ebelling.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
+
+       self.centerFrame = tk.Frame(self)
 
        self.EbellingWU = tk.Label(self.centerFrame)
        self.EbellingWU["text"] = "Warm Up Speed"
@@ -80,6 +83,9 @@ class Ebelling(tk.Frame):
        self.EbellingHRText.grid(row=3, column=1)
 
        self.centerFrame.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
 
        self.buttonFrame = tk.Frame(self)
        self.Next = NextButton(self.buttonFrame, controller, self.saveData, self.validateInput)

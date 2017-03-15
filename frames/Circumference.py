@@ -56,11 +56,14 @@ class Circumference(tk.Frame):
        tk.Frame.__init__(self,parent)
        self.controller = controller
 
-       self.centerFrame = tk.Frame(self)
-
-       self.Circumference = tk.Label(self.centerFrame)
+       self.Circumference = tk.Label(self)
        self.Circumference["text"] = "Circumferences"
-       self.Circumference.grid(row=0, column=0)
+       self.Circumference.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
+
+       self.centerFrame = tk.Frame(self)
 
        self.HipCirc = tk.Label(self.centerFrame)
        self.HipCirc["text"] = "Hip(cm): "
@@ -118,6 +121,8 @@ class Circumference(tk.Frame):
        self.ChestCircText.grid(row=5, column=1)
 
        self.centerFrame.pack()
+       spacer = tk.Label(self)
+       spacer.pack()
 
        self.buttonFrame = tk.Frame(self)
 

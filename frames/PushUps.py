@@ -29,11 +29,14 @@ class PushUps(tk.Frame):
        tk.Frame.__init__(self, parent)
        self.controller = controller
 
-       self.centerFrame = tk.Frame(self)
-
-       self.PushUp = tk.Label(self.centerFrame)
+       self.PushUp = tk.Label(self)
        self.PushUp["text"] = "Push Ups"
-       self.PushUp.grid(row=0, column=0)
+       self.PushUp.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
+
+       self.centerFrame = tk.Frame(self)
 
        self.PushUpNum = tk.Label(self.centerFrame)
        self.PushUpNum["text"] = "Number: "
@@ -47,6 +50,9 @@ class PushUps(tk.Frame):
        self.PushUpNumText.grid(row=1, column=1)
 
        self.centerFrame.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
 
        self.buttonFrame = tk.Frame(self)
        self.Next = NextButton(self.buttonFrame, controller, self.saveData, self.validateInput)

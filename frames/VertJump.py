@@ -35,11 +35,14 @@ class VertJump(tk.Frame):
        tk.Frame.__init__(self, parent)
        self.controller = controller
 
-       self.centerFrame = tk.Frame(self)
-
-       self.VertJump = tk.Label(self.centerFrame)
+       self.VertJump = tk.Label(self)
        self.VertJump["text"] = "Vertical Jump"
-       self.VertJump.grid(row=0, column=0)
+       self.VertJump.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
+
+       self.centerFrame = tk.Frame(self)
 
        self.VertJumpSR = tk.Label(self.centerFrame)
        self.VertJumpSR["text"] = "Standing Reach(ft.inch): "
@@ -64,6 +67,9 @@ class VertJump(tk.Frame):
        self.VertJumpBestText.grid(row=2, column=1)
 
        self.centerFrame.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
 
        self.buttonFrame = tk.Frame(self)
        self.Next = NextButton(self.buttonFrame, controller, self.saveData, self.validateInput)

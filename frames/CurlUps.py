@@ -27,11 +27,14 @@ class CurlUps(tk.Frame):
        tk.Frame.__init__(self, parent)
        self.controller = controller
 
-       self.centerFrame = tk.Frame(self)
-
-       self.CurlUp = tk.Label(self.centerFrame)
+       self.CurlUp = tk.Label(self)
        self.CurlUp["text"] = "10cm Curl Ups"
-       self.CurlUp.grid(row=0, column=0)
+       self.CurlUp.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
+
+       self.centerFrame = tk.Frame(self)
 
        self.CurlUpNum = tk.Label(self.centerFrame)
        self.CurlUpNum["text"] = "Number: "
@@ -45,6 +48,9 @@ class CurlUps(tk.Frame):
        self.CurlUpNumText.grid(row=1, column=1)
 
        self.centerFrame.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
 
        self.buttonFrame = tk.Frame(self)
        self.Next = NextButton(self.buttonFrame, controller, self.saveData, self.validateInput)

@@ -28,11 +28,14 @@ class WallSit(tk.Frame):
        tk.Frame.__init__(self, parent)
        self.controller = controller
 
-       self.centerFrame = tk.Frame(self)
-
-       self.WallSit = tk.Label(self.centerFrame)
+       self.WallSit = tk.Label(self)
        self.WallSit["text"] = "Wall Sit"
-       self.WallSit.grid(row=0, column=0)
+       self.WallSit.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
+
+       self.centerFrame = tk.Frame(self)
 
        self.WallSitTime = tk.Label(self.centerFrame)
        self.WallSitTime["text"] = "Time(sec.): "
@@ -46,6 +49,9 @@ class WallSit(tk.Frame):
        self.WallSitTimeText.grid(row=1, column=1)
 
        self.centerFrame.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
 
        self.buttonFrame = tk.Frame(self)
        self.Next = NextButton(self.buttonFrame, controller, self.saveData, self.validateInput)

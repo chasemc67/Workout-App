@@ -35,11 +35,14 @@ class GripStrength(tk.Frame):
        tk.Frame.__init__(self, parent)
        self.controller = controller
 
-       self.centerFrame = tk.Frame(self)
-
-       self.GripStr = tk.Label(self.centerFrame)
+       self.GripStr = tk.Label(self)
        self.GripStr["text"] = "Grip Strength"
-       self.GripStr.grid(row=0, column=0)
+       self.GripStr.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
+
+       self.centerFrame = tk.Frame(self)
 
        self.GripStrLeft = tk.Label(self.centerFrame)
        self.GripStrLeft["text"] = "Max. Left Hand(kg): "
@@ -64,6 +67,9 @@ class GripStrength(tk.Frame):
        self.GripStrRightText.grid(row=2, column=1)
 
        self.centerFrame.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
 
        self.buttonFrame = tk.Frame(self)
        self.Next = NextButton(self.buttonFrame, controller, self.saveData, self.validateInput)

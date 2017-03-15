@@ -24,6 +24,15 @@ class Entry(tk.Frame):
       tk.Frame.__init__(self, parent)
       self.controller = controller
 
+      self.titleLabel = tk.Label(self, font=("Courier", 30))
+      self.titleLabel['text'] = "MacEwan University Sports and Wellness"
+      self.titleLabel.pack()
+
+      spacer = tk.Label(self)
+      spacer.pack()
+      spacer = tk.Label(self)
+      spacer.pack()
+
       self.centerFrame = tk.Frame(self)
 
       self.listFrame = tk.Frame(self)
@@ -38,10 +47,13 @@ class Entry(tk.Frame):
       #self.listbox.pack(fill=BOTH, expand=1)
       self.listFrame.pack()
 
+      spacer = tk.Label(self)
+      spacer.pack()
+      spacer = tk.Label(self)
+      spacer.pack()
+
       self.buttonFrame = tk.Frame(self)
       self.buttonFrame.pack()
-
-      self.centerFrame.pack()
 
       self.NewPerson = tk.Button(self.buttonFrame)
       self.NewPerson['text'] = "New Person"
@@ -54,6 +66,12 @@ class Entry(tk.Frame):
       self.EditPerson['fg'] = 'black'
       self.EditPerson['command'] = lambda: controller.start_main()
       self.EditPerson.grid(row=1, column=1)
+
+      self.PrintPerson = tk.Button(self.buttonFrame)
+      self.PrintPerson['text'] = "Print Selected"
+      self.PrintPerson['fg'] = 'black'
+      self.PrintPerson['command'] = lambda: controller.print_person()
+      self.PrintPerson.grid(row=1, column=2)
 
       
 

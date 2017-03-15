@@ -27,11 +27,14 @@ class FlexTests(tk.Frame):
        tk.Frame.__init__(self, parent)
        self.controller = controller
 
-       self.centerFrame = tk.Frame(self)
-
-       self.SitReach = tk.Label(self.centerFrame)
+       self.SitReach = tk.Label(self)
        self.SitReach["text"] = "Sit & Reach"
-       self.SitReach.grid(row=0, column=0)
+       self.SitReach.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
+
+       self.centerFrame = tk.Frame(self)
 
        self.SitReachDist = tk.Label(self.centerFrame)
        self.SitReachDist["text"] = "Max Distance (cm): "
@@ -45,6 +48,9 @@ class FlexTests(tk.Frame):
        self.SitReachDistText.grid(row=1, column=1)
 
        self.centerFrame.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
 
        self.buttonFrame = tk.Frame(self)
        self.Next = NextButton(self.buttonFrame, controller, self.saveData, self.validateInput)

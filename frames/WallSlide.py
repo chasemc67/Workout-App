@@ -27,11 +27,14 @@ class WallSlide(tk.Frame):
        tk.Frame.__init__(self, parent)
        self.controller = controller
 
-       self.centerFrame = tk.Frame(self)
-
-       self.WallSlide = tk.Label(self.centerFrame)
+       self.WallSlide = tk.Label(self)
        self.WallSlide["text"] = "Wall Slide"
-       self.WallSlide.grid(row=0,column=0)
+       self.WallSlide.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
+
+       self.centerFrame = tk.Frame(self)
 
        self.WallSlideRate = tk.Label(self.centerFrame)
        self.WallSlideRate["text"] = "Rating(0-3): "
@@ -45,6 +48,9 @@ class WallSlide(tk.Frame):
        self.WallSlideRateText.grid(row=1, column=1)
 
        self.centerFrame.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
 
        self.buttonFrame = tk.Frame(self)
        self.Next = NextButton(self.buttonFrame, controller, self.saveData, self.validateInput)

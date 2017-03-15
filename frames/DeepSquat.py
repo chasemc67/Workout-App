@@ -27,11 +27,14 @@ class DeepSquat(tk.Frame):
        tk.Frame.__init__(self, parent)
        self.controller = controller
 
-       self.centerFrame = tk.Frame(self)
-
-       self.DeepSquat = tk.Label(self.centerFrame)
+       self.DeepSquat = tk.Label(self)
        self.DeepSquat["text"] = "Deep Squat"
-       self.DeepSquat.grid(row=0, column=0)
+       self.DeepSquat.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
+
+       self.centerFrame = tk.Frame(self)
 
        self.DeepSquatRate = tk.Label(self.centerFrame)
        self.DeepSquatRate["text"] = "Rating(0-3): "
@@ -45,6 +48,9 @@ class DeepSquat(tk.Frame):
        self.DeepSquatRateText.grid(row=1, column=1)
 
        self.centerFrame.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
 
        self.buttonFrame = tk.Frame(self)
        self.Next = NextButton(self.buttonFrame, controller, self.saveData, self.validateInput)

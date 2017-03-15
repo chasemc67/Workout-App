@@ -28,11 +28,14 @@ class MBtoss(tk.Frame):
        tk.Frame.__init__(self, parent)
        self.controller = controller
 
-       self.centerFrame = tk.Frame(self)
-
-       self.SeatMB = tk.Label(self.centerFrame)
+       self.SeatMB = tk.Label(self)
        self.SeatMB["text"] = "Seated Med. Ball Toss"
-       self.SeatMB.grid(row=0, column=0)
+       self.SeatMB.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
+
+       self.centerFrame = tk.Frame(self)
 
        self.SeatMBDist = tk.Label(self.centerFrame)
        self.SeatMBDist["text"] = "Max. Distance(cm): "
@@ -46,6 +49,9 @@ class MBtoss(tk.Frame):
        self.SeatMBDistText.grid(row=1, column=1)
 
        self.centerFrame.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
 
        self.buttonFrame = tk.Frame(self)
        self.Next = NextButton(self.buttonFrame, controller, self.saveData, self.validateInput)

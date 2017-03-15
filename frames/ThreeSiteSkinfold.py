@@ -43,10 +43,13 @@ class ThreeSiteSkinfold(tk.Frame):
        tk.Frame.__init__(self, parent)
        self.controller = controller
 
-       self.centerFrame = tk.Frame(self)
+       self.ThreeSiteCalc = tk.Label(self)
+       self.ThreeSiteCalc.pack()
 
-       self.ThreeSiteCalc = tk.Label(self.centerFrame)
-       self.ThreeSiteCalc.grid(row=2, column=0)
+       spacer = tk.Label(self)
+       spacer.pack()
+
+       self.centerFrame = tk.Frame(self)
 
        self.ThreeSiteOne = tk.Label(self.centerFrame)
        self.ThreeSiteOne.grid(row=2, column=1)
@@ -79,6 +82,9 @@ class ThreeSiteSkinfold(tk.Frame):
        self.ThreeSiteThreeText.grid(row=2, column=6)
 
        self.centerFrame.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
 
        self.buttonFrame = tk.Frame(self)
        self.Next = NextButton(self.buttonFrame, controller, self.saveData, self.validateInput)

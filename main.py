@@ -34,6 +34,10 @@ from frames.Entry import Entry
 from Person import Person
 
 from Database.DB import *
+from pdf.generatePdf import *
+
+import os as os
+import sys, subprocess
 
 TITLE_FONT = ("Helvetica", 18, "bold")
 
@@ -72,6 +76,27 @@ class WorkoutApp(tk.Tk):
            frame.grid(row=0, column=0, sticky="nsew")
 
        self.show_frame("Entry")
+
+   def save_person(self, alertObject):
+      try:
+      #if getattr(self.controller.person, "dbID") != "":
+        dbID = getattr(self.person, "dbID")
+        updatePerson(self.person)
+        alertObject["text"] = "Updated person successfully"
+        return
+        # update entry instead of adding new person     
+      except:
+      #else:
+        insertPerson(self.person)
+        alertObject["text"] = "Saved person successfully"
+
+   def print_person(self):
+      generatePdfForPerson(self.person)
+      if sys.platform == "darwin":
+        subprocess.call(['open', 'form.pdf'])
+      else:
+        os.startfile('form.pdf', 'open')
+
 
 
    def show_frame(self, page_name):

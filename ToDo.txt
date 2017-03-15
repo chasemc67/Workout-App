@@ -34,8 +34,8 @@ ToDO:
 	[ ] FIx long decimals
 	[ ] Make back button save data?
 	[+] Make PDF Prettier	
-	[ ] Add a little padding and logo to first page
-	[ ] Add a little padding and titles to pages
+	[+] Add a little padding and logo to first page
+	[+] Add a little padding and titles to pages
 	[ ] Package with pynsist https://github.com/takluyver/pynsist
 
 	Bugs

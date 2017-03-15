@@ -43,11 +43,14 @@ class RMpredict(tk.Frame):
        tk.Frame.__init__(self, parent)
        self.controller = controller
 
-       self.centerFrame = tk.Frame(self)
-
-       self.RMPredict = tk.Label(self.centerFrame)
+       self.RMPredict = tk.Label(self)
        self.RMPredict["text"] = "1 Rep Max.(Predicted)"
-       self.RMPredict.grid(row=0, column=0)
+       self.RMPredict.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
+
+       self.centerFrame = tk.Frame(self)
 
        self.RMPredictEx = tk.Label(self.centerFrame)
        self.RMPredictEx["text"] = "Exercise: "
@@ -83,6 +86,9 @@ class RMpredict(tk.Frame):
        self.RMPredictLoadText.grid(row=3, column=1)
 
        self.centerFrame.pack()
+
+       spacer = tk.Label(self)
+       spacer.pack()
 
        self.buttonFrame = tk.Frame(self)
        self.Next = NextButton(self.buttonFrame, controller, self.saveData, self.validateInput)
