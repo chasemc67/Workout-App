@@ -1,3 +1,16 @@
 Code my Megan Denholm and Chase McCarty. 2017.
 
 A small python application for workout related data entry
+
+
+
+
+To build installer:
+
+Dependencies:
+brew install makensis
+pip install reportlab
+pip install pynsist
+
+run:
+pynsist installer.cfg

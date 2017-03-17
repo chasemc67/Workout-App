@@ -7,3 +7,5 @@ frames/__pycache__/*
 .idea/workspace.xml
 people.db
 form.pdf
+build/*
+dist/*
