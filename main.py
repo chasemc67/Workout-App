@@ -34,7 +34,7 @@ from frames.Entry import Entry
 from Person import Person
 
 from Database.DB import *
-#from pdf.generatePdf import *
+from pdf.generatePdf import *
 
 import os as os
 import sys, subprocess
@@ -91,7 +91,7 @@ class WorkoutApp(tk.Tk):
         alertObject["text"] = "Saved person successfully"
 
    def print_person(self):
-      #generatePdfForPerson(self.person)
+      generatePdfForPerson(self.person)
       if sys.platform == "darwin":
         subprocess.call(['open', 'form.pdf'])
       else:
