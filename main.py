@@ -33,6 +33,8 @@ from frames.Entry import Entry
 
 from Person import Person
 
+from tools import logger
+
 from Database.DB import *
 from pdf.generatePdf import *
 
@@ -91,11 +93,18 @@ class WorkoutApp(tk.Tk):
         alertObject["text"] = "Saved person successfully"
 
    def print_person(self):
-      generatePdfForPerson(self.person)
+      try:
+        logger.log("Trying to generate pdf")
+        generatePdfForPerson(self.person)
+      except Exception as e:
+        logger.log("error generating pdf, " + str(e))
       if sys.platform == "darwin":
         subprocess.call(['open', 'form.pdf'])
       else:
-        os.startfile('form.pdf', 'open')
+        try:
+          os.startfile('form.pdf', 'open')
+        except Exception as e:
+          logger.log("error opening pdf, " + str(e))
 
 
 
