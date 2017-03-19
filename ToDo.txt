@@ -52,3 +52,8 @@ Meg:
 
 
 
+Notes:
+Wont open on windows right now for some reason
+Works on commit 7f229d1, but you have to add tools/ to the installer.cfg
+
+
