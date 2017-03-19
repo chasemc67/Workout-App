@@ -1,4 +1,5 @@
 import sqlite3
+import os
 
 from Person import Person
 
@@ -80,7 +81,9 @@ def getUpdatePersonString(person):
 	return "".join(statement)
 
 def createDB():
-	conn = sqlite3.connect('people.db')
+	path = os.path.dirname(os.path.realpath(__file__))
+	path = "/".join(path.split("/")[:-1]) # remove characters after last "/"" in filepath
+	conn = sqlite3.connect(path + '/people.db')
 	print("Opened database successfully")
 	conn.execute(getCreateTableString())
 	print("Table created successfully")
