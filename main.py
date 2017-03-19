@@ -195,6 +195,7 @@ class WorkoutApp(tk.Tk):
     return self.person
 
 def main():
+  logger.logToOldPath("starting")
   app = WorkoutApp()
   app.mainloop() 
 

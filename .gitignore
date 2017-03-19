@@ -10,3 +10,5 @@ form.pdf
 build/*
 dist/*
 workoutapp_log.txt
+workoutapp_log_old.txt
+
