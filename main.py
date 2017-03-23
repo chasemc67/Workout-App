@@ -181,12 +181,17 @@ class WorkoutApp(tk.Tk):
        if saveFunction:
         saveFunction(self.person)
 
-       #if (self.currentFrameIndex < len(self.person.framesChecked)) and (self.person.framesChecked[self.currentFrameIndex] == "BMIframe"):
-       # self.currentFrameIndex += 1
+       # current value in index is value of next page
 
-       frame = self.frames[self.person.framesChecked[self.currentFrameIndex-1]]
-       self.currentFrameIndex -= 1
-       frame.tkraise()
+       if (self.currentFrameIndex < len(self.person.framesChecked)) and (self.person.framesChecked[self.currentFrameIndex-1] == "BMIframe"):
+        self.currentFrameIndex -= 1
+
+       if (self.currentFrameIndex <= 0):
+        self.start_main()
+       else:
+        frame = self.frames[self.person.framesChecked[self.currentFrameIndex-2]]
+        self.currentFrameIndex -= 1
+        frame.tkraise()
        # TODO refactor out into one function
        try:
         frame.loadData(self.person)
