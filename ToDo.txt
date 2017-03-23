@@ -28,19 +28,18 @@ ToDO:
 	[+] Hard code page size (or at least width) so scrolling
 		data entry page doesn't look so weird
 	[+] Center all test pages
-	[ ] Set min window size based on first page
-	
-	[ ] Back button a little jankey in general
-	[ ] FIx long decimals
 	[+] Make back button save data?
 	[+] Make PDF Prettier	
 	[+] Add a little padding and logo to first page
 	[+] Add a little padding and titles to pages
-	[ ] Package with pynsist https://github.com/takluyver/pynsist
+	[+] Package with pynsist https://github.com/takluyver/pynsist
 		or freeze with http://docs.python-guide.org/en/latest/shipping/freezing/#freezing-your-coode-ref 
-	[ ] Check terminal errors regarding to back button returning to 	main
-	[ ] Why does back button need to be pressed twice?
-	[ ] Test back button saving data properly
+	[+] Check terminal errors regarding to back button returning to 	main
+	[+] Why does back button need to be pressed twice?
+	[+] Test back button saving data properly
+	[+] Back button seeming to wrap around
+	[ ] Set min window size based on first page
+	[ ] FIx long decimals
 
 	Bugs
 	[+] Back button breaks on first page
@@ -48,10 +47,8 @@ ToDO:
 	[ ] Date of birth, height and blood pressure not clearing properly
 	[ ] On installed on windows version, app opens a second time on 	close
 	[ ] Installed version is saving DB to home directory
+	[ ] Installed version pathing issues
 
-Meg:
-[+] in generatePDF, try to make the boxes pretter
-[+] change styles to Justify
 
 
 

@@ -183,10 +183,12 @@ class WorkoutApp(tk.Tk):
 
        # current value in index is value of next page
 
-       if (self.currentFrameIndex < len(self.person.framesChecked)) and (self.person.framesChecked[self.currentFrameIndex-1] == "BMIframe"):
+       if (self.currentFrameIndex < len(self.person.framesChecked)) and (self.person.framesChecked[self.currentFrameIndex-2] == "BMIframe"):
         self.currentFrameIndex -= 1
 
-       if (self.currentFrameIndex <= 0):
+       if (self.currentFrameIndex <= 1):
+        frame = MainPage(parent=self.container, controller=self)
+        frame.grid(row=0, column=0, sticky="nsew")
         self.start_main()
        else:
         frame = self.frames[self.person.framesChecked[self.currentFrameIndex-2]]
