@@ -294,17 +294,20 @@ class MainPage(tk.Frame):
        self.nameText.insert(tk.END, self.controller.person.name)
 
        # Boxes with placeholders shouldn't overrite default strings
-       if self.controller.person.testDate.strip() != "":
-             self.testDateText.delete(1.0, tk.END)
-             self.testDateText.insert(tk.END, self.controller.person.testDate)
+       self.testDateText.delete(1.0, tk.END)
+       self.testDateText.insert(tk.END, self.controller.person.testDate)
+       if self.controller.person.testDate.strip() == "":
+            self.testDateText.insert(tk.END, self.testDateText.placeholder)
 
-       if self.controller.person.birthDate.strip() != "":
-            self.birthDateText.delete(1.0, tk.END)
-            self.birthDateText.insert(tk.END, self.controller.person.birthDate)
+       self.birthDateText.delete(1.0, tk.END)
+       self.birthDateText.insert(tk.END, self.controller.person.birthDate)
+       if self.controller.person.birthDate.strip() == "":
+            self.birthDateText.insert(tk.END, self.birthDateText.placeholder)
 
-       if self.controller.person.restBP.strip() != "":
-            self.restBPText.delete(1.0, tk.END)
-            self.restBPText.insert(tk.END, self.controller.person.restBP)
+       self.restBPText.delete(1.0, tk.END)
+       self.restBPText.insert(tk.END, self.controller.person.restBP)
+       if self.controller.person.restBP.strip() == "":
+            self.restBPText.insert(tk.END, self.restBPText.placeholder)
 
        self.phoneNumberText.delete(1.0, tk.END)
        self.phoneNumberText.insert(tk.END, self.controller.person.phoneNumber)
