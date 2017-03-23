@@ -53,7 +53,10 @@ Meg:
 
 
 Notes:
-Wont open on windows right now for some reason
-Works on commit 7f229d1, but you have to add tools/ to the installer.cfg
+Cant write log file to anywhere other than home dir
+see 
+http://stackoverflow.com/questions/1831810/is-appdata-now-the-correct-place-to-install-user-specific-apps-which-modify-t
+and 
+http://stackoverflow.com/questions/20713712/compiled-python-writing-to-program-files
 
 

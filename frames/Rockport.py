@@ -76,7 +76,7 @@ class Rockport(tk.Frame):
        self.Next = NextButton(self.buttonFrame, controller, self.saveData, self.validateInput)
        self.Next.grid(row=0, column=0)
 
-       self.Back = BackButton(self.buttonFrame, controller)
+       self.Back = BackButton(self.buttonFrame, controller, self.saveData)
        self.Back.grid(row=0, column=1)
 
        self.Quit = QuitButton(self.buttonFrame, controller)

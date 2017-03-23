@@ -177,7 +177,13 @@ class WorkoutApp(tk.Tk):
         print(e)
 
 
-   def prev_page(self):
+   def prev_page(self, saveFunction=None):
+       if saveFunction:
+        saveFunction(self.person)
+
+       #if (self.currentFrameIndex < len(self.person.framesChecked)) and (self.person.framesChecked[self.currentFrameIndex] == "BMIframe"):
+       # self.currentFrameIndex += 1
+
        frame = self.frames[self.person.framesChecked[self.currentFrameIndex-1]]
        self.currentFrameIndex -= 1
        frame.tkraise()
@@ -196,6 +202,7 @@ class WorkoutApp(tk.Tk):
 
 def main():
   logger.logToOldPath("starting")
+  logger.log("On logger")
   app = WorkoutApp()
   app.mainloop() 
 
