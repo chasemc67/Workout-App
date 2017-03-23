@@ -44,7 +44,7 @@ ToDO:
 	Bugs
 	[+] Back button breaks on first page
 	[+] Create person with no checkboxes. Save them. edit them. next buttons doesnt work (should go straight to save screen)
-	[ ] Date of birth, height and blood pressure not clearing properly
+	[+] Date of birth, height and blood pressure not clearing properly
 	[ ] On installed on windows version, app opens a second time on 	close
 	[ ] Installed version is saving DB to home directory
 	[ ] Installed version pathing issues

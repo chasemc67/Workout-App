@@ -110,60 +110,60 @@ class Person():
 
     # Calculations
     def getBMI(self):
-        return float(self.weight) / (float(self.height)/100 * float(self.height)/100)
+        return round(float(self.weight) / (float(self.height)/100 * float(self.height)/100), 2)
 
     def getSumOfFolds(self):
         if self.gender.lower() == "male" or self.gender.lower() == "m":
-            return float(self.threeSiteMaleChest) + float(self.threeSiteMaleAb) + float(self.threeSiteMaleThigh)
+            return round(float(self.threeSiteMaleChest) + float(self.threeSiteMaleAb) + float(self.threeSiteMaleThigh), 2)
         else:
-            return float(self.threeSiteFemaleSupra) + float(self.threeSiteFemaleTricep) + float(self.threeSiteFemaleThigh)
+            return round(float(self.threeSiteFemaleSupra) + float(self.threeSiteFemaleTricep) + float(self.threeSiteFemaleThigh), 2)
 
     def getThreeSiteMale(self):
-        return 1.10938 - (0.0008267 * float(self.getSumOfFolds())) + (0.0000016 * (float(self.getSumOfFolds()) * float(self.getSumOfFolds()))) - (0.0002574 * float(self.getAge()))
+        return round(1.10938 - (0.0008267 * float(self.getSumOfFolds())) + (0.0000016 * (float(self.getSumOfFolds()) * float(self.getSumOfFolds()))) - (0.0002574 * float(self.getAge())), 2)
 
     def getThreeSiteFemale(self):
-        return 1.0994921 - (0.0009929 * float(self.getSumOfFolds())) + (0.0000023 * (float(self.getSumOfFolds()) * float(self.getSumOfFolds()))) - (0.0001392 * float(self.getAge()))
+        return round(1.0994921 - (0.0009929 * float(self.getSumOfFolds())) + (0.0000023 * (float(self.getSumOfFolds()) * float(self.getSumOfFolds()))) - (0.0001392 * float(self.getAge())), 2)
 
     def getSevenSiteDensity(self):
         if self.gender.lower() == "male" or self.gender.lower() == "m":
-            return 1.112 - (0.00043499 * float(self.getSumOfFolds())) + (0.00000055 * (float(self.getSumOfFolds()) * float(self.getSumOfFolds()))) - (0.00028826 * float(self.getAge()))
+            return round(1.112 - (0.00043499 * float(self.getSumOfFolds())) + (0.00000055 * (float(self.getSumOfFolds()) * float(self.getSumOfFolds()))) - (0.00028826 * float(self.getAge())), 2)
         else:
-            return 1.097 - (0.00046971 * float(self.getSumOfFolds())) + (0.00000056 * (float(self.getSumOfFolds()) * float(self.getSumOfFolds()))) - (0.00012828 * float(self.getAge()))
+            return round(1.097 - (0.00046971 * float(self.getSumOfFolds())) + (0.00000056 * (float(self.getSumOfFolds()) * float(self.getSumOfFolds()))) - (0.00012828 * float(self.getAge())), 2)
 
     def getBodyFatThreeMale(self):
-        return ((495 / float(self.getThreeSiteMale())) - 450)
+        return round(((495 / float(self.getThreeSiteMale())) - 450), 2)
 
     def getBodyFatThreeFemale(self):
-        return ((495 / float(self.getThreeSiteFemale())) - 450)
+        return round(((495 / float(self.getThreeSiteFemale())) - 450), 2)
 
     def getBodyFatSeven(self):
         if self.gender.lower() == "male" or self.gender.lower() == "m":
-            return ((495 / float(self.getSevenSiteDensity())) - 450)
+            return round(((495 / float(self.getSevenSiteDensity())) - 450), 2)
         else:
-            return ((495 / float(self.getSevenSiteDensity())) - 450)
+            return round(((495 / float(self.getSevenSiteDensity())) - 450), 2)
 
     def getEbellingAerobic(self):
         if self.gender.lower() == "male" or self.gender.lower() == 'm':
             genderModifier = 1
         else:
             genderModifier = 0
-        return 15.1 + (21.8 * float(self.ebbelingWork)) - (0.327 * float(self.ebbelingHR)) - (0.263 * float(self.ebbelingWork) * float(self.getAge())) + (0.00504 * float(self.ebbelingHR) * float(self.getAge())) + (5.98 * float(genderModifier))
+        return round(15.1 + (21.8 * float(self.ebbelingWork)) - (0.327 * float(self.ebbelingHR)) - (0.263 * float(self.ebbelingWork) * float(self.getAge())) + (0.00504 * float(self.ebbelingHR) * float(self.getAge())) + (5.98 * float(genderModifier)), 2)
 
     def getRockportAerobic(self):
         if self.gender.lower() == "male" or self.gender.lower() == "m":
             genderModifier = 1
         else:
             genderModifier = 0
-        return 132.853 - (0.0769 * (float(self.weight) * 2.20462)) - (0.3877 * float(self.getAge())) + (6.315 * float(genderModifier)) - (0.32649 * float(self.rockportTime)) - (0.1565 * float(self.rockportHR))
+        return round(132.853 - (0.0769 * (float(self.weight) * 2.20462)) - (0.3877 * float(self.getAge())) + (6.315 * float(genderModifier)) - (0.32649 * float(self.rockportTime)) - (0.1565 * float(self.rockportHR)), 2)
 
     def getCooperAerobic(self):
-        return (35.97 * float(self.cooperDist)) - 11.29
+        return round((35.97 * float(self.cooperDist)) - 11.29, 2)
 
     def getVertJumpBest(self):
-        return (float(self.vertJumpBest) - float(self.vertJumpSR))
+        return round((float(self.vertJumpBest) - float(self.vertJumpSR)), 2)
 
     def getVertJumpPower(self):
-        return (60.7 * float(self.vertJumpBest)) + (45.3 * float(self.weight)) - 2055
+        return round((60.7 * float(self.vertJumpBest)) + (45.3 * float(self.weight)) - 2055, 2)
 
     def getRepMaxPredict(self):
-        return (1.0 + 0.0333 * float(self.RMPredictReps)) * float(self.RMPredictLoad)
+        return round((1.0 + 0.0333 * float(self.RMPredictReps)) * float(self.RMPredictLoad), 2)
