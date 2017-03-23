@@ -82,4 +82,8 @@ class Entry(tk.Frame):
       self.listbox.delete(0, tk.END)
 
       for person in self.people:
+            if '' in person.framesChecked:
+                  del person.framesChecked[person.framesChecked.index('')]
+
+      for person in self.people:
             self.listbox.insert(tk.END, (person.testDate + "          " + person.name))

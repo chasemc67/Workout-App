@@ -155,8 +155,8 @@ class WorkoutApp(tk.Tk):
 
        if (self.currentFrameIndex < len(self.person.framesChecked)) and (self.person.framesChecked[self.currentFrameIndex] == "BMIframe"):
         self.currentFrameIndex += 1
-
-       if (self.currentFrameIndex == len(self.person.framesChecked)):
+        
+       if (self.currentFrameIndex >= len(self.person.framesChecked)):
         #frame = self.frames["Results"]
         #frame = self.frames["ScrollingResults"]
         frame = ScrollingResults(parent=self.container, controller=self)
@@ -183,7 +183,7 @@ class WorkoutApp(tk.Tk):
 
        # current value in index is value of next page
 
-       if (self.currentFrameIndex < len(self.person.framesChecked)) and (self.person.framesChecked[self.currentFrameIndex-2] == "BMIframe"):
+       if (self.person.framesChecked[self.currentFrameIndex-2] == "BMIframe"):
         self.currentFrameIndex -= 1
 
        if (self.currentFrameIndex <= 1):
