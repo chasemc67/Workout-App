@@ -39,7 +39,7 @@ ToDO:
 	[+] Test back button saving data properly
 	[+] Back button seeming to wrap around
 	[ ] Set min window size based on first page
-	[ ] FIx long decimals
+	[+] FIx long decimals
 
 	Bugs
 	[+] Back button breaks on first page
