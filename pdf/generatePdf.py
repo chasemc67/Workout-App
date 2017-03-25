@@ -7,6 +7,10 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
 from reportlab.lib.colors import HexColor
+import os as os
+
+from tools import logger
+
 
 #import os as os
 
@@ -14,10 +18,12 @@ def generatePdfForPerson(person):
 	#path = os.path.dirname(os.path.realpath(__file__))
 	#path = "/".join(path.split("/")[:-1]) # remove characters after last "/"" in filepath
 	#doc = SimpleDocTemplate(path + '/form.pdf', rightMarge=72, leftMargin=72, topMargin=10, bottomMargin=18)
-	doc = SimpleDocTemplate('form.pdf', rightMarge=72, leftMargin=72, topMargin=10, bottomMargin=18)
+	doc = SimpleDocTemplate('Workout_App_Data\\form.pdf', rightMarge=72, leftMargin=72, topMargin=10, bottomMargin=18)
 	Story=[]
 	#logo = path + '/pdf/MSWLogo.jpg'		
-	logo = 'pdf/MSWLogo.jpg'		
+
+	logger.log("opening: " + str(os.path.dirname(os.path.realpath(__file__)) + '\\' + 'MSWLogo.jpg'))
+	logo = os.path.dirname(os.path.realpath(__file__)) + '\\' + 'MSWLogo.jpg'
 
 	im = Image(logo, 2*inch, 2*inch)
 	im.hAlign = 'LEFT'

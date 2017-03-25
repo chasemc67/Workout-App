@@ -11,4 +11,4 @@ build/*
 dist/*
 workoutapp_log.txt
 workoutapp_log_old.txt
-
+Workout_App_Data/*

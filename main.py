@@ -43,10 +43,18 @@ import sys, subprocess
 
 TITLE_FONT = ("Helvetica", 18, "bold")
 
-createDB()
+try:
+  if not os.path.exists('Workout_App_Data'):
+    os.makedirs('Workout_App_Data')
+  createDB()
+except Exception as e:
+    logger.log("Failed to open database: " + str(e))
 #insertTestPeople()
 #testDBStuff()
 #exit()
+
+# Code to handle main being called twice by windows
+mainCalled = False
 
 class WorkoutApp(tk.Tk):
 
@@ -99,10 +107,10 @@ class WorkoutApp(tk.Tk):
       except Exception as e:
         logger.log("error generating pdf, " + str(e))
       if sys.platform == "darwin":
-        subprocess.call(['open', 'form.pdf'])
+        subprocess.call(['open', 'Workout_App_Data/form.pdf'])
       else:
         try:
-          os.startfile('form.pdf', 'open')
+          os.startfile('Workout_App_Data\\form.pdf', 'open')
         except Exception as e:
           logger.log("error opening pdf, " + str(e))
 
@@ -208,11 +216,18 @@ class WorkoutApp(tk.Tk):
     return self.person
 
 def main():
-  logger.logToOldPath("starting")
-  logger.log("On logger")
-  app = WorkoutApp()
-  app.mainloop() 
+  global mainCalled
+  if not mainCalled:
+    mainCalled = True
+    logger.log("App Starting")
+    try:
+      app = WorkoutApp()
+      app.mainloop() 
+    except Exception as e:
+      logger.log("Exception: " + str(e))
 
-main()
+if not mainCalled:
+  main()
+  mainCalled = True
    
 

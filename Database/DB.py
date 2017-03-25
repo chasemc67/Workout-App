@@ -84,7 +84,7 @@ def createDB():
 	#path = os.path.dirname(os.path.realpath(__file__))
 	#path = "/".join(path.split("/")[:-1]) # remove characters after last "/"" in filepath
 	#conn = sqlite3.connect(path + '/people.db')
-	conn = sqlite3.connect('people.db')
+	conn = sqlite3.connect('Workout_App_Data\\people.db')
 	print("Opened database successfully")
 	conn.execute(getCreateTableString())
 	print("Table created successfully")
@@ -92,7 +92,7 @@ def createDB():
 
 # Takes a person object and inserts it into the DB
 def insertPerson(person):
-	conn = sqlite3.connect('people.db')
+	conn = sqlite3.connect('Workout_App_Data\\people.db')
 	if person.name.strip() == "":
 		raise Exception("Tried to save person with no name to DB")
 	conn.execute(getInsertPersonString(person))
@@ -106,7 +106,7 @@ def insertPerson(person):
 	print("inserted new person: " + str(person.name))
 
 def updatePerson(person):
-	conn = sqlite3.connect('people.db')
+	conn = sqlite3.connect('Workout_App_Data\\people.db')
 	if person.name.strip() == "":
 		raise Exception("Tried to save person with no name to DB")
 	conn.execute(getUpdatePersonString(person))
@@ -118,7 +118,7 @@ def updatePerson(person):
 # Limit of 0 returns all entries
 def getPeople(limit=0):
 	people = list()
-	conn = sqlite3.connect('people.db')
+	conn = sqlite3.connect('Workout_App_Data\\people.db')
 	if limit > 0:
 		cursor = conn.execute("SELECT * from ( SELECT * FROM PEOPLE ORDER BY id DESC LIMIT %i ) sub ORDER BY id ASC" % limit)
 	else:
