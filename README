@@ -1,16 +1,29 @@
-Code my Megan Denholm and Chase McCarty. 2017.
+#### Graphical Python application for workout data entry
 
-A small python application for workout related data entry
+My good friend Megan Denholm is a personal trainer, and wanted to learn how to code.  
+We built this together, piece by piece, so she could learn to code.  
+  
+
+##### Feautures:
+* Graphical input built using tkinter
+* Dynamic page creation for different types of workout data entry
+* SQL database for data persistence
+* Packages into a windows installer for deployment on windows computers
+* Prints results to PDF for printing
 
 
 
-
-To build installer:
-
-Dependencies:
+##### Dependencies:
+```
 brew install makensis
 pip install reportlab
 pip install pynsist
+```
 
-run:
+##### Run:
+```
+Pythin main.py
+```
+
+##### Build the installer:
 pynsist installer.cfg
