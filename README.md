@@ -26,4 +26,6 @@ Pythin main.py
 ```
 
 ##### Build the installer:
+```
 pynsist installer.cfg
+```
