@@ -33,3 +33,4 @@ Pythin main.py
 ```
 pynsist installer.cfg
 ```
+ 
